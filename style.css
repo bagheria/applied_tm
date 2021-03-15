@@ -1,0 +1,35 @@
+ /*------------- Whole Document---------------- */
+
+body {
+    /* font-family: 'Muli';*/
+    /* font-size: 19px;*/
+    /* color:orange;*/
+    background: gainsboro;
+}
+
+.header-container-wrapper {
+	background-color: orange;
+}   
+
+h1 {
+  background-color: black;
+  color: white;
+}
+
+
+.navbar {
+  background-color:slategray;
+  border-color:black;
+}
+
+.navbar-brand {
+  color:purple;
+}
+
+.section.sidebar {
+  background-color:silver;
+}
+
+a:link {
+  color: blue;
+}

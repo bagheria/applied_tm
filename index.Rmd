@@ -1,18 +1,20 @@
 ---
-title: "ADD COURSE TITLE"
+title: "Data Science: Applied Text Mining"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: scroll
+    # css: style.css
 ---
 
 # Intro {.sidebar}
-ADD DASHBOARD DESCRIPTION
+This dashboard covers the course materials for the course [S42: Data Science: Applied Text Mining](https://www.utrechtsummerschool.nl/courses/social-sciences/data-science-applied-text-mining).
+
 
 ---
 
 <center>
-ADD COURSE LOGO
+![](logo.jpg){width=100%}
 </center>
 
 ---
@@ -24,16 +26,15 @@ Assessment: FILL
 
 ---
 
-ADD COURSE SCHEDULE
+\
+Course director: [Ayoub Bagheri](https://ayoubbagheri.nl/)
 
-|  When?  |      | Where? |
-|:--------|:-----|:-------|
-|  FILL   | 9 am | Online |
-|  FILL   | 9 am | Online |
-|  FILL   | 9 am | Online |
-|  FILL   | 9 am | Online |
-|  FILL   | 9 am | Online |
-|  FILL   | 9 am | Online |
+Instructors:
+
+* [Ayoub Bagheri](https://ayoubbagheri.nl/)\
++ [Dong Nguyen](https://dongnguyen.nl/)\
+* [Berit Janssen](https://www.uu.nl/staff/BDJanssen)\
+- [Anastasia Giachanou](http://giachanou.com/)
 
 ---
 
@@ -55,9 +56,19 @@ LINK TO OPEN IN COLAB
 
 ## Column 2
 
-### Schedule
-ADD SCHEDULE
+### Daily schedule
 
+|  When?  |      | What? |
+|:--------|:-----|:-------|
+|  09:00  | 10:30| Lecture|
+|         |**Break**|        |
+|  10:45  | 11:45| Practical |
+|  11:45  | 12:30| Discussion |
+|         |**Lunch**|        |
+|  14:00  | 15:30| Lecture |
+|         |**Break**|        |
+|  15:45  | 16:30| Practical |
+|  16:30  | 17:00| Discussion |
 
 
 # How to prepare
@@ -130,22 +141,6 @@ Add course material
 Add additional info/references
 
 # Thursday
-## Column 1
-
-### Materials
-
-Add course material
-
-[INSERT LINK NAME](INSERT FILE PATH)
-
-
-## Column 2
-
-### References
-
-Add additional info/references
-
-# Friday
 ## Column 1
 
 ### Materials
