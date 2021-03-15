@@ -113,9 +113,12 @@ Add additional info/references
 
 ### Materials
 
-Add course material
+Here you'll find the lecture slides as well as the practical for today.
 
-[INSERT LINK NAME](INSERT FILE PATH)
+- [Lecture](tuesday/Lectures/Lecture 3.pptx)
+
+- [Practical 1 html](monday/Practicals/Practical 1.html) 
+- [Practical 1 as notebook](https://colab.research.google.com/github/Goorbergh/applied_tm/blob/main/monday/Practicals/Practical%201.ipynb)  THIS MUST BE A PUBLIC REPOSITORY IN ORDER TO WORK!
 
 
 ## Column 2
