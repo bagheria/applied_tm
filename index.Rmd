@@ -59,7 +59,7 @@ The course deals with the following topics:
 
 The course starts with reviewing basic concepts of text mining and implementing advanced concepts in natural language processing. At the end of the week, participants will master advanced skills of text mining with Python.
 
-Participants should have a basic knowledge and a motivation of scripting and programming in Python.
+Participants should have a basic knowledge of data science and programming and a motivation of scripting and programming in Python.
 
 ### Certificate
 Participants will receive a certificate at the end of the course.
@@ -105,13 +105,17 @@ Add info
 
 ### Materials
 
-Here you'll find the lecture slides as well as the practical for today.
+Here you'll find the lecture slides as well as the practical for Monday.
 
-- [Lecture](monday/Lectures/Lecture 1.pptx)
+- [Lecture 1](monday/Lectures/Lecture 1.pptx)
+- [Impractical 1]()
+- [Practical 1 as HTML](monday/Practicals/Practical 1.html) 
+- [Practical 1 as a notebook](https://colab.research.google.com/github/Goorbergh/applied_tm/blob/main/monday/Practicals/Practical%201.ipynb)
 
-- [Practical 1 html](monday/Practicals/Practical 1.html) 
-- [Practical 1 as notebook](https://colab.research.google.com/github/Goorbergh/applied_tm/blob/main/monday/Practicals/Practical%201.ipynb)  THIS MUST BE A PUBLIC REPOSITORY IN ORDER TO WORK!
-
+- [Lecture 2]()
+- [Impractical 2]()
+- [Practical 2 as HTML]() 
+- [Practical 2 as a notebook]()
 
 ## Column 2
 
@@ -124,12 +128,17 @@ Add additional info/references
 
 ### Materials
 
-Here you'll find the lecture slides as well as the practical for today.
+Here you'll find the lecture slides as well as the practical for Tuesday.
 
-- [Lecture](tuesday/Lectures/Lecture 3.pptx)
+- [Lecture 3]()
+- [Impractical 3]()
+- [Practical 3 as HTML]() 
+- [Practical 3 as a notebook]()
 
-- [Practical 3 html](monday/Practicals/Practical 1.html) 
-- [Practical 3 as notebook](https://colab.research.google.com/github/Goorbergh/applied_tm/blob/main/monday/Practicals/Practical%201.ipynb)  THIS MUST BE A PUBLIC REPOSITORY IN ORDER TO WORK!
+- [Lecture 4]()
+- [Impractical 4]()
+- [Practical 4 as HTML]() 
+- [Practical 4 as a notebook]()
 
 
 ## Column 2
@@ -143,9 +152,17 @@ Add additional info/references
 
 ### Materials
 
-Add course material
+Here you'll find the lecture slides as well as the practical for Wednesday.
 
-[INSERT LINK NAME](INSERT FILE PATH)
+- [Lecture 5]()
+- [Impractical 5]()
+- [Practical 5 as HTML]() 
+- [Practical 5 as a notebook]()
+
+- [Lecture 6]()
+- [Impractical 6]()
+- [Practical 6 as HTML]() 
+- [Practical 6 as a notebook]()
 
 
 ## Column 2
@@ -159,9 +176,17 @@ Add additional info/references
 
 ### Materials
 
-Add course material
+Here you'll find the lecture slides as well as the practical for Thursday.
 
-[INSERT LINK NAME](INSERT FILE PATH)
+- [Lecture 7]()
+- [Impractical 7]()
+- [Practical 7 as HTML]() 
+- [Practical 7 as a notebook]()
+
+- [Lecture 8]()
+- [Impractical 8]()
+- [Practical 8 as HTML]() 
+- [Practical 8 as a notebook]()
 
 
 ## Column 2
