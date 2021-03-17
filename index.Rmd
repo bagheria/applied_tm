@@ -4,7 +4,7 @@ output:
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: scroll
-    # css: style.css
+    css: style.css
 ---
 
 # Intro {.sidebar}
@@ -44,31 +44,42 @@ Instructors:
 
 ## Column 1
 
-ADD A DESCRIPTION OF THE COURSE
+### Outline
 
-### Assignment and Grading
+Given the rapid rate at which text data are being digitally gathered in many domains of science, there is growing need for automated tools that can analyse, classify, and interpret this kind of data. Text mining techniques can be applied to create a structured representation of text, making its content more accessible for researchers. Applications of text mining are everywhere: social media, web search, advertising, emails, customer service, healthcare, marketing, etc. This course offers an extensive exploration into text mining with Python. The course has a strongly practical hands-on focus, and students will gain experience in using text mining on real data from for example social sciences and healthcare and interpreting the results. Through lectures and practicals, the students will learn the necessary skills to design, implement, and understand their own text mining pipeline. The topics in this course include preprocessing text, text classification, topic modeling, word embedding, deep learning models, and responsible text mining.
 
-ADD INFO ON GRADING
+The course deals with the following topics:
 
+* Review the fundamental approaches to text mining;
+* Understand and apply current methods for analysing texts;
+* Define a text mining pipeline given a practical data science problem;
+* Implement all steps in a text mining pipeline: feature extraction, feature selection, model learning, model evaluation;
+* Understand and apply state-of-the-art methods in text mining;
+* Implement word embedding and advanced deep learning techniques.
 
-LINK TO OPEN IN COLAB
+The course starts with reviewing basic concepts of text mining and implementing advanced concepts in natural language processing. At the end of the week, participants will master advanced skills of text mining with Python.
+
+Participants should have a basic knowledge and a motivation of scripting and programming in Python.
+
+### Certificate
+Participants will receive a certificate at the end of the course.
 
 
 ## Column 2
 
 ### Daily schedule
 
-|  When?  |      | What? |
-|:--------|:-----|:-------|
-|  09:00  | 10:30| Lecture|
-|         |**Break**|        |
-|  10:45  | 11:45| Practical |
-|  11:45  | 12:30| Discussion |
-|         |**Lunch**|        |
-|  14:00  | 15:30| Lecture |
-|         |**Break**|        |
-|  15:45  | 16:30| Practical |
-|  16:30  | 17:00| Discussion |
+| Start time | End time | Type      |
+|:-----------|:---------|:----------|
+|  09:00     | 10:30    | Lecture   |
+|            |**Break** |           |
+|  10:45     | 11:45    | Practical |
+|  11:45     | 12:30    | Discussion|
+|            |**Lunch** |           |
+|  14:00     | 15:30    | Lecture   |
+|            |**Break** |           |
+|  15:45     | 16:30    | Practical |
+|  16:30     | 17:00    | Discussion|
 
 
 # How to prepare

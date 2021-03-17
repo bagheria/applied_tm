@@ -1,9 +1,9 @@
  /*------------- Whole Document---------------- */
-
+/*
 body {
-    /* font-family: 'Muli';*/
-    /* font-size: 19px;*/
-    /* color:orange;*/
+    font-family: 'Muli';
+    font-size: 19px;
+    color:orange;
     background: gainsboro;
 }
 
@@ -15,16 +15,18 @@ h1 {
   background-color: black;
   color: white;
 }
-
+*/
 
 .navbar {
-  background-color:slategray;
-  border-color:black;
+  background-color:darkslateblue;
+  /*border-color:black;*/
 }
 
+/*
 .navbar-brand {
-  color:purple;
+  color:red;
 }
+
 
 .section.sidebar {
   background-color:silver;
@@ -32,4 +34,4 @@ h1 {
 
 a:link {
   color: blue;
-}
+} */
