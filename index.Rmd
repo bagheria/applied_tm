@@ -59,6 +59,7 @@ The course deals with the following topics:
 
 The course starts with reviewing basic concepts of text mining and implementing advanced concepts in natural language processing. At the end of the week, participants will master advanced skills of text mining with Python.
 
+### Requirements
 Participants should have a basic knowledge of data science and programming and a motivation of scripting and programming in Python.
 
 ### Certificate
