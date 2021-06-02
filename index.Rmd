@@ -112,9 +112,9 @@ Here you will find the lecture slides as well as the practical for Monday.
 - [Impractical 1](monday/Practicals/Impractical 1.html)
 - [Practical 1](monday/Practicals/Practical 1.html)
 
-- [Lecture 2]()
-- [Impractical 2]()
-- [Practical 2]()
+- [Lecture 2](monday/Lectures/Lecture 2.slides.html)
+- [Impractical 2](monday/Practicals/Impractical 2.html)
+- [Practical 2](monday/Practicals/Practical 2.html)
 
 ## Column 2
 
@@ -129,13 +129,13 @@ Add additional info/references
 
 Here you will find the lecture slides as well as the practical for Tuesday.
 
-- [Lecture 3]()
-- [Impractical 3]()
-- [Practical 3]()
+- [Lecture 3](tuesday/Lectures/Lecture 3.slides.html)
+- [Impractical 3](tuesday/Practicals/Impractical 3.html)
+- [Practical 3](tuesday/Practicals/Practical 3.html)
 
-- [Lecture 4]()
-- [Impractical 4]()
-- [Practical 4]()
+- [Lecture 4](tuesday/Lectures/Lecture 4.slides.html)
+- [Impractical 4](tuesday/Practicals/Impractical 4.html)
+- [Practical 4](tuesday/Practicals/Practical 4.html)
 
 
 ## Column 2
@@ -151,13 +151,13 @@ Add additional info/references
 
 Here you will find the lecture slides as well as the practical for Wednesday.
 
-- [Lecture 5]()
-- [Impractical 5]()
-- [Practical 5]()
+- [Lecture 5](wednesday/Lectures/Lecture 5.slides.html)
+- [Impractical 5](wednesday/Practicals/Impractical 5.html)
+- [Practical 5](wednesday/Practicals/Practical 5.html)
 
-- [Lecture 6]()
-- [Impractical 6]()
-- [Practical 6]() 
+- [Lecture 6](wednesday/Lectures/Lecture 6.slides.html)
+- [Impractical 6](wednesday/Practicals/Impractical 6.html)
+- [Practical 6](wednesday/Practicals/Practical 6.html) 
 
 
 ## Column 2
@@ -173,13 +173,13 @@ Add additional info/references
 
 Here you will find the lecture slides as well as the practical for Thursday.
 
-- [Lecture 7]()
-- [Impractical 7]()
-- [Practical 7]()
+- [Lecture 7](thursday/Lectures/Lecture 7.slides.html)
+- [Impractical 7](thursday/Practicals/Impractical 7.html)
+- [Practical 7](thursday/Practicals/Practical 7.html)
 
-- [Lecture 8]()
-- [Impractical 8]()
-- [Practical 8]()
+- [Lecture 8](thursday/Lectures/Lecture 8.slides.html)
+- [Impractical 8](thursday/Practicals/Impractical 8.html)
+- [Practical 8](thursday/Practicals/Practical 8.html)
 
 
 ## Column 2
