@@ -13103,7 +13103,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
@@ -13137,14 +13137,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>1. <strong>.</strong></p>
+<p>1. <strong>In this practical we will use a dataset of tab-delimited Bilingual Sentence Pairs from <a href="http://www.manythings.org/anki/">http://www.manythings.org/anki/</a>. Use the following two functions (read_text and to_lines) and read the nld.txt dataset (provided in the data folder). This dataset contains phrases in Dutch with their translation in English. Convert the text sequences to an array and check the first items in your array.</strong></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># function to read raw text file</span>
@@ -13162,17 +13162,9 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>2. <strong>.</strong></p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># split a text into sentences</span>
@@ -13187,17 +13179,9 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>3. <strong>.</strong></p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">read_text</span><span class="p">(</span><span class="s2">&quot;nld-eng/nld.txt&quot;</span><span class="p">)</span>
@@ -13212,7 +13196,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nld_eng</span><span class="o">.</span><span class="n">shape</span>
@@ -13228,7 +13212,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13245,20 +13229,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nld_eng</span> <span class="o">=</span> <span class="n">nld_eng</span><span class="p">[:</span><span class="mi">5000</span><span class="p">,:]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nld_eng</span>
@@ -13274,7 +13245,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[11]:</div>
+    <div class="prompt output_prompt">Out[6]:</div>
 
 
 
@@ -13287,12 +13258,15 @@ div#notebook {
        [&#39;Hi.&#39;, &#39;Hoi.&#39;,
         &#39;CC-BY 2.0 (France) Attribution: tatoeba.org #538123 (CM) &amp; #537889 (Dorenda)&#39;],
        ...,
-       [&#39;Did you find it?&#39;, &#39;Heb je het gevonden?&#39;,
-        &#39;CC-BY 2.0 (France) Attribution: tatoeba.org #3333986 (CK) &amp; #9333148 (megamanenm)&#39;],
-       [&#39;Did you find it?&#39;, &#39;Heb jij het gevonden?&#39;,
-        &#39;CC-BY 2.0 (France) Attribution: tatoeba.org #3333986 (CK) &amp; #9333150 (megamanenm)&#39;],
-       [&#39;Did you get wet?&#39;, &#39;Bent u nat geworden?&#39;,
-        &#39;CC-BY 2.0 (France) Attribution: tatoeba.org #5853263 (CK) &amp; #8538509 (simonbr)&#39;]],
+       [&#39;Always use distilled water in steam irons because using ordinary water will cause a mineral build-up over time that will clog the steam holes.&#39;,
+        &#39;Gebruik altijd gedistilleerd water in stoomstrijkijzers, want gewoon water zorgt voor mineraalophoping dat de stoomgaatjes na verloop van tijd verstopt.&#39;,
+        &#39;CC-BY 2.0 (France) Attribution: tatoeba.org #3020388 (Delian) &amp; #3037091 (Citrine)&#39;],
+       [&#34;If you translate from your second language into your own native language, rather than the other way around, you&#39;re less likely to make mistakes.&#34;,
+        &#39;Als je vanuit je tweede taal naar je eigen moedertaal vertaalt, in plaats van andersom, maak je minder snel fouten.&#39;,
+        &#39;CC-BY 2.0 (France) Attribution: tatoeba.org #1230823 (CK) &amp; #8627687 (MarijnKp)&#39;],
+       [&#34;If someone who doesn&#39;t know your background says that you sound like a native speaker, it means they probably noticed something about your speaking that made them realize you weren&#39;t a native speaker. In other words, you don&#39;t really sound like a native speaker.&#34;,
+        &#39;Als iemand die je achtergrond niet kent zegt dat je klinkt als een moedertaalspreker betekent dat dat diegene waarschijnlijk iets in je spreken opgemerkt heeft dat hem deed realiseren dat je geen moedertaalspreker bent. Met andere woorden, je klinkt niet echt als een moedertaalspreker.&#39;,
+        &#39;CC-BY 2.0 (France) Attribution: tatoeba.org #953936 (CK) &amp; #1056762 (ReneeMona)&#39;]],
       dtype=&#39;&lt;U286&#39;)</pre>
 </div>
 
@@ -13302,9 +13276,93 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Using a code like nld_eng = nld_eng[:1000,:], you can use a subset of data, for example the first 1000 sentence pairs, to reduce the training time of the model. Be aware that you will lose the performance.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Pre-processing">Pre-processing<a class="anchor-link" href="#Pre-processing">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>2. <strong>The maketrans() function is a function from the library str that is used to construct a transition table i.e specify a list of characters that need to be replaced in a string or the characters that need to be deleted from the string. To use this transition table, you can use the translate() function and apply that on a string. It is also possible to use these functions to remove the punctuations. Similar to the example below, apply the maketrans() function to remove punctuations from the nld_eng array.</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># specify the list of characters that need to be replaced</span>
+<span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;mtex&quot;</span>
+
+<span class="c1"># specify the list of characters with which the characters need to be replaced</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s2">&quot;dwoo&quot;</span>
+
+<span class="c1"># specify the list of characters that needs to be deleted</span>
+<span class="n">str3</span> <span class="o">=</span> <span class="s2">&quot;u&quot;</span>
+
+<span class="c1"># target string </span>
+<span class="n">temp_str</span> <span class="o">=</span> <span class="s2">&quot;text mining&quot;</span>
+
+<span class="c1"># using maketrans() to construct a translate table</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">temp_str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">str3</span><span class="p">)</span>
+  
+<span class="c1"># Printing original string </span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;The string before translating is : &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">temp_str</span><span class="p">)</span>
+  
+<span class="c1"># using translate() to make translations.</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;The string after translating is : &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">temp_str</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">table</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The string before translating is : text mining
+The string after translating is : woow dining
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that it is possible to replace one character with two or more. You need to supply a dict as argument to maketrans().</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nld_eng</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">nld_eng</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]]</span>
@@ -13318,7 +13376,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nld_eng</span>
@@ -13334,7 +13392,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[49]:</div>
+    <div class="prompt output_prompt">Out[8]:</div>
 
 
 
@@ -13365,9 +13423,17 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>3. <strong>Convert all words to their lowercase.</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># convert to lowercase</span>
@@ -13383,7 +13449,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">nld_eng</span>
@@ -13399,7 +13465,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[51]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13430,15 +13496,29 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Text-to-Sequence">Text to Sequence<a class="anchor-link" href="#Text-to-Sequence">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>4. <strong>What is the maximum length of a sentence in each of the Dutch and English sets? What about the average length?</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># empty lists</span>
 <span class="n">eng_l</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">nld_l</span> <span class="o">=</span> <span class="p">[]</span>
-
 <span class="c1"># populate the lists with sentence lengths</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nld_eng</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]:</span>
     <span class="n">eng_l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
@@ -13454,7 +13534,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">length_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;eng&#39;</span><span class="p">:</span><span class="n">eng_l</span><span class="p">,</span> <span class="s1">&#39;nld&#39;</span><span class="p">:</span><span class="n">nld_l</span><span class="p">})</span>
@@ -13491,7 +13571,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">eng_l</span><span class="p">)</span>
@@ -13507,7 +13587,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[54]:</div>
+    <div class="prompt output_prompt">Out[33]:</div>
 
 
 
@@ -13524,7 +13604,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="n">nld_l</span><span class="p">)</span>
@@ -13540,7 +13620,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[55]:</div>
+    <div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -13557,7 +13637,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">nld_l</span><span class="p">)</span>
@@ -13575,7 +13655,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[62]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
@@ -13592,7 +13672,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">statistics</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">eng_l</span><span class="p">)</span>
@@ -13608,7 +13688,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[63]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
@@ -13626,14 +13706,44 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The maximum length of the Dutch sentences is 12 and that of the English phrases is 5.</p>
+<p>Coincidentally the maximum length of the Dutch sentences and that of the English phrases is equal to 44.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>5. <strong>Using train_test_split from sklearn split the dataset into training (80%) and test (20%) sets.</strong></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">nld_eng</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">321</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>6. <strong>Time to tokenize the sentences. The function below uses the Tokenizer function from Keras and fits that on its input text. Apply this function and find out about the vocabulary size for the Dutch and English sets. For this you can use the entire sets.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># function to build a tokenizer</span>
@@ -13650,14 +13760,12 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># prepare english tokenizer</span>
 <span class="n">eng_tokenizer</span> <span class="o">=</span> <span class="n">tokenization</span><span class="p">(</span><span class="n">nld_eng</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="n">eng_vocab_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">eng_tokenizer</span><span class="o">.</span><span class="n">word_index</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="n">eng_length</span> <span class="o">=</span> <span class="mi">6</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;English Vocabulary Size: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">eng_vocab_size</span><span class="p">)</span>
 </pre></div>
 
@@ -13686,15 +13794,13 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># prepare Dutch tokenizer</span>
 <span class="n">nld_tokenizer</span> <span class="o">=</span> <span class="n">tokenization</span><span class="p">(</span><span class="n">nld_eng</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
 <span class="n">nld_vocab_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nld_tokenizer</span><span class="o">.</span><span class="n">word_index</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-
-<span class="n">nld_length</span> <span class="o">=</span> <span class="mi">6</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Deutch Vocabulary Size: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">nld_vocab_size</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dutch Vocabulary Size: </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">nld_vocab_size</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13720,17 +13826,25 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>7. <strong>Write a function to convert tokens to sequences. Also perform sequence padding to a maximum sentence length. Input arguments to this function are tokenizer, maximum_length, and textlines, and its output will be sequences of tokens.</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># encode and pad sequences</span>
-<span class="k">def</span> <span class="nf">encode_sequences</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">lines</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">encode_sequences</span><span class="p">(</span><span class="n">tokenizer</span><span class="p">,</span> <span class="n">maximum_length</span><span class="p">,</span> <span class="n">textlines</span><span class="p">):</span>
     <span class="c1"># integer encode sequences</span>
-    <span class="n">seq</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">texts_to_sequences</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="n">tokenizer</span><span class="o">.</span><span class="n">texts_to_sequences</span><span class="p">(</span><span class="n">textlines</span><span class="p">)</span>
     <span class="c1"># pad sequences with 0 values</span>
-    <span class="n">seq</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">length</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
+    <span class="n">seq</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">maximum_length</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;post&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">seq</span>
 </pre></div>
 
@@ -13739,13 +13853,24 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>8. <strong>Convert your tokenized training data into sequences. Use a maximum length of 20 and name the dataframs train_X and train_Y.</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">nld_eng</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">12</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">eng_length</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">nld_length</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="c1"># prepare training data</span>
+<span class="n">train_X</span> <span class="o">=</span> <span class="n">encode_sequences</span><span class="p">(</span><span class="n">nld_tokenizer</span><span class="p">,</span> <span class="n">nld_length</span><span class="p">,</span> <span class="n">train</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">train_Y</span> <span class="o">=</span> <span class="n">encode_sequences</span><span class="p">(</span><span class="n">eng_tokenizer</span><span class="p">,</span> <span class="n">eng_length</span><span class="p">,</span> <span class="n">train</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13753,14 +13878,22 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>9. <strong>In the same way, convert your tokenized test data into sequences and name the dataframs test_X and test_Y.</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># prepare training data</span>
-<span class="n">trainX</span> <span class="o">=</span> <span class="n">encode_sequences</span><span class="p">(</span><span class="n">nld_tokenizer</span><span class="p">,</span> <span class="n">nld_length</span><span class="p">,</span> <span class="n">train</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">trainY</span> <span class="o">=</span> <span class="n">encode_sequences</span><span class="p">(</span><span class="n">eng_tokenizer</span><span class="p">,</span> <span class="n">eng_length</span><span class="p">,</span> <span class="n">train</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># prepare test data</span>
+<span class="n">test_X</span> <span class="o">=</span> <span class="n">encode_sequences</span><span class="p">(</span><span class="n">nld_tokenizer</span><span class="p">,</span> <span class="n">nld_length</span><span class="p">,</span> <span class="n">test</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">test_Y</span> <span class="o">=</span> <span class="n">encode_sequences</span><span class="p">(</span><span class="n">eng_tokenizer</span><span class="p">,</span> <span class="n">eng_length</span><span class="p">,</span> <span class="n">test</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -13768,33 +13901,33 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># prepare validation data</span>
-<span class="n">testX</span> <span class="o">=</span> <span class="n">encode_sequences</span><span class="p">(</span><span class="n">nld_tokenizer</span><span class="p">,</span> <span class="n">nld_length</span><span class="p">,</span> <span class="n">test</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
-<span class="n">testY</span> <span class="o">=</span> <span class="n">encode_sequences</span><span class="p">(</span><span class="n">eng_tokenizer</span><span class="p">,</span> <span class="n">eng_length</span><span class="p">,</span> <span class="n">test</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
-</pre></div>
-
-    </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Neural-Network-Model">Neural Network Model<a class="anchor-link" href="#Neural-Network-Model">&#182;</a></h1>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>10. <strong>Defince a Seq2Seq model architecture using an Embedding layer as the input layer, an LSTM layer as our encoder and another LSTM layer followed by a Dense layer as the decoder. Make this a function and name it build_model(). At least make the embedding_size and LSTMunits as input arguments for the function.</strong></p>
 
 </div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># build NMT model</span>
-<span class="k">def</span> <span class="nf">build_model</span><span class="p">(</span><span class="n">in_vocab</span><span class="p">,</span> <span class="n">out_vocab</span><span class="p">,</span> <span class="n">in_timesteps</span><span class="p">,</span> <span class="n">out_timesteps</span><span class="p">,</span> <span class="n">units</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">build_model</span><span class="p">(</span><span class="n">in_vocab</span><span class="p">,</span> <span class="n">out_vocab</span><span class="p">,</span> <span class="n">in_timesteps</span><span class="p">,</span> <span class="n">out_timesteps</span><span class="p">,</span> <span class="n">embedding_size</span><span class="p">,</span> <span class="n">LSTMunits</span><span class="p">):</span>
     <span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="n">in_vocab</span><span class="p">,</span> <span class="n">units</span><span class="p">,</span> <span class="n">input_length</span><span class="o">=</span><span class="n">in_timesteps</span><span class="p">,</span> <span class="n">mask_zero</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LSTM</span><span class="p">(</span><span class="n">units</span><span class="p">))</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="n">in_vocab</span><span class="p">,</span> <span class="n">embedding_size</span><span class="p">,</span> <span class="n">input_length</span><span class="o">=</span><span class="n">in_timesteps</span><span class="p">,</span> <span class="n">mask_zero</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LSTM</span><span class="p">(</span><span class="n">LSTMunits</span><span class="p">))</span>
     <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">RepeatVector</span><span class="p">(</span><span class="n">out_timesteps</span><span class="p">))</span>
-    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LSTM</span><span class="p">(</span><span class="n">units</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">LSTM</span><span class="p">(</span><span class="n">LSTMunits</span><span class="p">,</span> <span class="n">return_sequences</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
     <span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="n">out_vocab</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">model</span>
 </pre></div>
@@ -13804,13 +13937,42 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>11. <strong>Create a model by calling the function with embedding_size = 300 and LSTMunits = 512.</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">build_model</span><span class="p">(</span><span class="n">nld_vocab_size</span><span class="p">,</span> <span class="n">eng_vocab_size</span><span class="p">,</span> <span class="n">nld_length</span><span class="p">,</span> <span class="n">eng_length</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span>
-<span class="n">rms</span> <span class="o">=</span> <span class="n">optimizers</span><span class="o">.</span><span class="n">RMSprop</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">build_model</span><span class="p">(</span><span class="n">nld_vocab_size</span><span class="p">,</span> <span class="n">eng_vocab_size</span><span class="p">,</span> <span class="n">nld_length</span><span class="p">,</span> <span class="n">eng_length</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>12. <strong>Compile the model with the RMSprop optimizer and sparse_categorical_crossentropy for loss.</strong>
+Note that we have used 'sparse_categorical_crossentropy' as the loss function as it allows us to use the target sequence as it is instead of one-hot encoded format. One-hot encoding the target sequences with such a huge vocabulary might consume your system's entire memory.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rms</span> <span class="o">=</span> <span class="n">optimizers</span><span class="o">.</span><span class="n">RMSprop</span><span class="p">(</span><span class="n">lr</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
 <span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">rms</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -13819,16 +13981,24 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>13. <strong>Fit the model with 5 epochs, validation_split of 0.2, and batch_size of 128</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;model.h1.09_jun_21&#39;</span>
 <span class="n">checkpoint</span> <span class="o">=</span> <span class="n">ModelCheckpoint</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">monitor</span><span class="o">=</span><span class="s1">&#39;val_loss&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">save_best_only</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">)</span>
 
 <span class="n">history</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainX</span><span class="p">,</span> <span class="n">trainY</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">trainY</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">trainY</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">),</span> 
-          <span class="n">epochs</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> 
+          <span class="n">epochs</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> 
           <span class="n">validation_split</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
           <span class="n">callbacks</span><span class="o">=</span><span class="p">[</span><span class="n">checkpoint</span><span class="p">],</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
@@ -13847,67 +14017,137 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Epoch 1/10
-69/69 [==============================] - ETA: 0s - loss: 5.7361
-Epoch 00001: val_loss improved from inf to 5.32297, saving model to model.h1.09_jul_21
-INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
-69/69 [==============================] - 101s 1s/step - loss: 5.7361 - val_loss: 5.3230
-Epoch 2/10
-69/69 [==============================] - ETA: 0s - loss: 5.2138
-Epoch 00002: val_loss improved from 5.32297 to 5.18957, saving model to model.h1.09_jul_21
-INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
-69/69 [==============================] - 111s 2s/step - loss: 5.2138 - val_loss: 5.1896
-Epoch 3/10
-69/69 [==============================] - ETA: 0s - loss: 5.0032
-Epoch 00003: val_loss improved from 5.18957 to 5.04063, saving model to model.h1.09_jul_21
-INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
-69/69 [==============================] - 112s 2s/step - loss: 5.0032 - val_loss: 5.0406
-Epoch 4/10
-69/69 [==============================] - ETA: 0s - loss: 4.7860
-Epoch 00004: val_loss improved from 5.04063 to 4.84828, saving model to model.h1.09_jul_21
-INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
-69/69 [==============================] - 113s 2s/step - loss: 4.7860 - val_loss: 4.8483
-Epoch 5/10
-69/69 [==============================] - ETA: 0s - loss: 4.5822
-Epoch 00005: val_loss improved from 4.84828 to 4.65718, saving model to model.h1.09_jul_21
-INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
-69/69 [==============================] - 124s 2s/step - loss: 4.5822 - val_loss: 4.6572
-Epoch 6/10
-69/69 [==============================] - ETA: 0s - loss: 4.3581
-Epoch 00006: val_loss improved from 4.65718 to 4.49669, saving model to model.h1.09_jul_21
-INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
-69/69 [==============================] - 145s 2s/step - loss: 4.3581 - val_loss: 4.4967
-Epoch 7/10
-69/69 [==============================] - ETA: 0s - loss: 4.1461
-Epoch 00007: val_loss improved from 4.49669 to 4.34277, saving model to model.h1.09_jul_21
-INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
-69/69 [==============================] - 144s 2s/step - loss: 4.1461 - val_loss: 4.3428
-Epoch 8/10
-69/69 [==============================] - ETA: 0s - loss: 3.9429
-Epoch 00008: val_loss improved from 4.34277 to 4.21160, saving model to model.h1.09_jul_21
-INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
-69/69 [==============================] - 140s 2s/step - loss: 3.9429 - val_loss: 4.2116
-Epoch 9/10
-69/69 [==============================] - ETA: 0s - loss: 3.7427
-Epoch 00009: val_loss improved from 4.21160 to 4.06054, saving model to model.h1.09_jul_21
-INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
-69/69 [==============================] - 135s 2s/step - loss: 3.7427 - val_loss: 4.0605
-Epoch 10/10
-69/69 [==============================] - ETA: 0s - loss: 3.5505
-Epoch 00010: val_loss improved from 4.06054 to 3.92364, saving model to model.h1.09_jul_21
-INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
-69/69 [==============================] - 150s 2s/step - loss: 3.5505 - val_loss: 3.9236
-</pre>
+<pre>Epoch 1/7
+275/275 [==============================] - ETA: 0s - loss: 1.9605
+Epoch 00001: val_loss improved from inf to 1.73187, saving model to model.h1.09_jun_21
+INFO:tensorflow:Assets written to: model.h1.09_jun_21\assets
+275/275 [==============================] - 441s 2s/step - loss: 1.9605 - val_loss: 1.7319
+Epoch 2/7
+275/275 [==============================] - ETA: 0s - loss: 1.6299
+Epoch 00002: val_loss improved from 1.73187 to 1.57127, saving model to model.h1.09_jun_21
+INFO:tensorflow:Assets written to: model.h1.09_jun_21\assets
+275/275 [==============================] - 574s 2s/step - loss: 1.6299 - val_loss: 1.5713
+Epoch 3/7
+275/275 [==============================] - ETA: 0s - loss: 1.4751
+Epoch 00003: val_loss improved from 1.57127 to 1.45343, saving model to model.h1.09_jun_21
+INFO:tensorflow:Assets written to: model.h1.09_jun_21\assets
+275/275 [==============================] - 615s 2s/step - loss: 1.4751 - val_loss: 1.4534
+Epoch 4/7
+275/275 [==============================] - ETA: 0s - loss: 1.3484
+Epoch 00004: val_loss improved from 1.45343 to 1.35369, saving model to model.h1.09_jun_21
+INFO:tensorflow:Assets written to: model.h1.09_jun_21\assets
+275/275 [==============================] - 672s 2s/step - loss: 1.3484 - val_loss: 1.3537
+Epoch 5/7
+275/275 [==============================] - ETA: 0s - loss: 1.2401
+Epoch 00005: val_loss improved from 1.35369 to 1.27164, saving model to model.h1.09_jun_21
+INFO:tensorflow:Assets written to: model.h1.09_jun_21\assets
+275/275 [==============================] - 647s 2s/step - loss: 1.2401 - val_loss: 1.2716
+Epoch 6/7
+275/275 [==============================] - ETA: 0s - loss: 1.1424
+Epoch 00006: val_loss improved from 1.27164 to 1.20789, saving model to model.h1.09_jun_21
+INFO:tensorflow:Assets written to: model.h1.09_jun_21\assets
+275/275 [==============================] - 627s 2s/step - loss: 1.1424 - val_loss: 1.2079
+Epoch 7/7
+ 47/275 [====&gt;.........................] - ETA: 9:12 - loss: 1.0608</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">KeyboardInterrupt</span>                         Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-45-2965f96eb0f9&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">      5</span>           epochs<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-cyan-intense-fg ansi-bold">7</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> batch_size<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-cyan-intense-fg ansi-bold">128</span><span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-fg">      6</span>           validation_split <span class="ansi-yellow-intense-fg ansi-bold">=</span> <span class="ansi-cyan-intense-fg ansi-bold">0.2</span><span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 7</span><span class="ansi-yellow-intense-fg ansi-bold">           callbacks=[checkpoint], verbose=1)
+</span>
+<span class="ansi-green-intense-fg ansi-bold">c:\programdata\miniconda3\lib\site-packages\tensorflow\python\keras\engine\training.py</span> in <span class="ansi-cyan-fg">_method_wrapper</span><span class="ansi-blue-intense-fg ansi-bold">(self, *args, **kwargs)</span>
+<span class="ansi-green-fg">     64</span>   <span class="ansi-green-intense-fg ansi-bold">def</span> _method_wrapper<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">     65</span>     <span class="ansi-green-intense-fg ansi-bold">if</span> <span class="ansi-green-intense-fg ansi-bold">not</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_in_multi_worker_mode<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>  <span class="ansi-red-intense-fg ansi-bold"># pylint: disable=protected-access</span>
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 66</span><span class="ansi-yellow-intense-fg ansi-bold">       </span><span class="ansi-green-intense-fg ansi-bold">return</span> method<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     67</span> 
+<span class="ansi-green-fg">     68</span>     <span class="ansi-red-intense-fg ansi-bold"># Running inside `run_distribute_coordinator` already.</span>
+
+<span class="ansi-green-intense-fg ansi-bold">c:\programdata\miniconda3\lib\site-packages\tensorflow\python\keras\engine\training.py</span> in <span class="ansi-cyan-fg">fit</span><span class="ansi-blue-intense-fg ansi-bold">(self, x, y, batch_size, epochs, verbose, callbacks, validation_split, validation_data, shuffle, class_weight, sample_weight, initial_epoch, steps_per_epoch, validation_steps, validation_batch_size, validation_freq, max_queue_size, workers, use_multiprocessing)</span>
+<span class="ansi-green-fg">    846</span>                 batch_size=batch_size):
+<span class="ansi-green-fg">    847</span>               callbacks<span class="ansi-yellow-intense-fg ansi-bold">.</span>on_train_batch_begin<span class="ansi-yellow-intense-fg ansi-bold">(</span>step<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 848</span><span class="ansi-yellow-intense-fg ansi-bold">               </span>tmp_logs <span class="ansi-yellow-intense-fg ansi-bold">=</span> train_function<span class="ansi-yellow-intense-fg ansi-bold">(</span>iterator<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    849</span>               <span class="ansi-red-intense-fg ansi-bold"># Catch OutOfRangeError for Datasets of unknown size.</span>
+<span class="ansi-green-fg">    850</span>               <span class="ansi-red-intense-fg ansi-bold"># This blocks until the batch has finished executing.</span>
+
+<span class="ansi-green-intense-fg ansi-bold">c:\programdata\miniconda3\lib\site-packages\tensorflow\python\eager\def_function.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-intense-fg ansi-bold">(self, *args, **kwds)</span>
+<span class="ansi-green-fg">    578</span>         xla_context<span class="ansi-yellow-intense-fg ansi-bold">.</span>Exit<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    579</span>     <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 580</span><span class="ansi-yellow-intense-fg ansi-bold">       </span>result <span class="ansi-yellow-intense-fg ansi-bold">=</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_call<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwds<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">    581</span> 
+<span class="ansi-green-fg">    582</span>     <span class="ansi-green-intense-fg ansi-bold">if</span> tracing_count <span class="ansi-yellow-intense-fg ansi-bold">==</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_get_tracing_count<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-green-intense-fg ansi-bold">c:\programdata\miniconda3\lib\site-packages\tensorflow\python\eager\def_function.py</span> in <span class="ansi-cyan-fg">_call</span><span class="ansi-blue-intense-fg ansi-bold">(self, *args, **kwds)</span>
+<span class="ansi-green-fg">    609</span>       <span class="ansi-red-intense-fg ansi-bold"># In this case we have created variables on the first call, so we run the</span>
+<span class="ansi-green-fg">    610</span>       <span class="ansi-red-intense-fg ansi-bold"># defunned version which is guaranteed to never create variables.</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 611</span><span class="ansi-yellow-intense-fg ansi-bold">       </span><span class="ansi-green-intense-fg ansi-bold">return</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_stateless_fn<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwds<span class="ansi-yellow-intense-fg ansi-bold">)</span>  <span class="ansi-red-intense-fg ansi-bold"># pylint: disable=not-callable</span>
+<span class="ansi-green-fg">    612</span>     <span class="ansi-green-intense-fg ansi-bold">elif</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_stateful_fn <span class="ansi-green-intense-fg ansi-bold">is</span> <span class="ansi-green-intense-fg ansi-bold">not</span> <span class="ansi-green-intense-fg ansi-bold">None</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    613</span>       <span class="ansi-red-intense-fg ansi-bold"># Release the lock early so that multiple threads can perform the call</span>
+
+<span class="ansi-green-intense-fg ansi-bold">c:\programdata\miniconda3\lib\site-packages\tensorflow\python\eager\function.py</span> in <span class="ansi-cyan-fg">__call__</span><span class="ansi-blue-intense-fg ansi-bold">(self, *args, **kwargs)</span>
+<span class="ansi-green-fg">   2418</span>     <span class="ansi-green-intense-fg ansi-bold">with</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_lock<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">   2419</span>       graph_function<span class="ansi-yellow-intense-fg ansi-bold">,</span> args<span class="ansi-yellow-intense-fg ansi-bold">,</span> kwargs <span class="ansi-yellow-intense-fg ansi-bold">=</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>_maybe_define_function<span class="ansi-yellow-intense-fg ansi-bold">(</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 2420</span><span class="ansi-yellow-intense-fg ansi-bold">     </span><span class="ansi-green-intense-fg ansi-bold">return</span> graph_function<span class="ansi-yellow-intense-fg ansi-bold">.</span>_filtered_call<span class="ansi-yellow-intense-fg ansi-bold">(</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span>  <span class="ansi-red-intense-fg ansi-bold"># pylint: disable=protected-access</span>
+<span class="ansi-green-fg">   2421</span> 
+<span class="ansi-green-fg">   2422</span>   <span class="ansi-yellow-intense-fg ansi-bold">@</span>property
+
+<span class="ansi-green-intense-fg ansi-bold">c:\programdata\miniconda3\lib\site-packages\tensorflow\python\eager\function.py</span> in <span class="ansi-cyan-fg">_filtered_call</span><span class="ansi-blue-intense-fg ansi-bold">(self, args, kwargs)</span>
+<span class="ansi-green-fg">   1663</span>          if isinstance(t, (ops.Tensor,
+<span class="ansi-green-fg">   1664</span>                            resource_variable_ops.BaseResourceVariable))),
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 1665</span><span class="ansi-yellow-intense-fg ansi-bold">         self.captured_inputs)
+</span><span class="ansi-green-fg">   1666</span> 
+<span class="ansi-green-fg">   1667</span>   <span class="ansi-green-intense-fg ansi-bold">def</span> _call_flat<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">,</span> args<span class="ansi-yellow-intense-fg ansi-bold">,</span> captured_inputs<span class="ansi-yellow-intense-fg ansi-bold">,</span> cancellation_manager<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-green-intense-fg ansi-bold">None</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-green-intense-fg ansi-bold">c:\programdata\miniconda3\lib\site-packages\tensorflow\python\eager\function.py</span> in <span class="ansi-cyan-fg">_call_flat</span><span class="ansi-blue-intense-fg ansi-bold">(self, args, captured_inputs, cancellation_manager)</span>
+<span class="ansi-green-fg">   1744</span>       <span class="ansi-red-intense-fg ansi-bold"># No tape is watching; skip to running the function.</span>
+<span class="ansi-green-fg">   1745</span>       return self._build_call_outputs(self._inference_function.call(
+<span class="ansi-green-intense-fg ansi-bold">-&gt; 1746</span><span class="ansi-yellow-intense-fg ansi-bold">           ctx, args, cancellation_manager=cancellation_manager))
+</span><span class="ansi-green-fg">   1747</span>     forward_backward = self._select_forward_and_backward_functions(
+<span class="ansi-green-fg">   1748</span>         args<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+
+<span class="ansi-green-intense-fg ansi-bold">c:\programdata\miniconda3\lib\site-packages\tensorflow\python\eager\function.py</span> in <span class="ansi-cyan-fg">call</span><span class="ansi-blue-intense-fg ansi-bold">(self, ctx, args, cancellation_manager)</span>
+<span class="ansi-green-fg">    596</span>               inputs<span class="ansi-yellow-intense-fg ansi-bold">=</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-fg">    597</span>               attrs<span class="ansi-yellow-intense-fg ansi-bold">=</span>attrs<span class="ansi-yellow-intense-fg ansi-bold">,</span>
+<span class="ansi-green-intense-fg ansi-bold">--&gt; 598</span><span class="ansi-yellow-intense-fg ansi-bold">               ctx=ctx)
+</span><span class="ansi-green-fg">    599</span>         <span class="ansi-green-intense-fg ansi-bold">else</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">    600</span>           outputs = execute.execute_with_cancellation(
+
+<span class="ansi-green-intense-fg ansi-bold">c:\programdata\miniconda3\lib\site-packages\tensorflow\python\eager\execute.py</span> in <span class="ansi-cyan-fg">quick_execute</span><span class="ansi-blue-intense-fg ansi-bold">(op_name, num_outputs, inputs, attrs, ctx, name)</span>
+<span class="ansi-green-fg">     58</span>     ctx<span class="ansi-yellow-intense-fg ansi-bold">.</span>ensure_initialized<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">     59</span>     tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+<span class="ansi-green-intense-fg ansi-bold">---&gt; 60</span><span class="ansi-yellow-intense-fg ansi-bold">                                         inputs, attrs, num_outputs)
+</span><span class="ansi-green-fg">     61</span>   <span class="ansi-green-intense-fg ansi-bold">except</span> core<span class="ansi-yellow-intense-fg ansi-bold">.</span>_NotOkStatusException <span class="ansi-green-intense-fg ansi-bold">as</span> e<span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-fg">     62</span>     <span class="ansi-green-intense-fg ansi-bold">if</span> name <span class="ansi-green-intense-fg ansi-bold">is</span> <span class="ansi-green-intense-fg ansi-bold">not</span> <span class="ansi-green-intense-fg ansi-bold">None</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+
+<span class="ansi-red-intense-fg ansi-bold">KeyboardInterrupt</span>: </pre>
 </div>
 </div>
 
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>14. <strong>Plot the loss for the training and validations sets.</strong></p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">[</span><span class="s1">&#39;loss&#39;</span><span class="p">])</span>
@@ -13929,14 +14169,60 @@ INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-27-314735a9fdda&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>plt<span class="ansi-yellow-intense-fg ansi-bold">.</span>plot<span class="ansi-yellow-intense-fg ansi-bold">(</span>history<span class="ansi-yellow-intense-fg ansi-bold">.</span>history<span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">&#39;loss&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">      2</span> plt<span class="ansi-yellow-intense-fg ansi-bold">.</span>plot<span class="ansi-yellow-intense-fg ansi-bold">(</span>history<span class="ansi-yellow-intense-fg ansi-bold">.</span>history<span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">&#39;val_loss&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">      3</span> plt<span class="ansi-yellow-intense-fg ansi-bold">.</span>legend<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-blue-intense-fg ansi-bold">&#39;train&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-blue-intense-fg ansi-bold">&#39;validation&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
+<span class="ansi-green-fg">      4</span> plt<span class="ansi-yellow-intense-fg ansi-bold">.</span>show<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
 
-
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
-"
->
+<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;history&#39; is not defined</pre>
+</div>
 </div>
 
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>15. <strong>Predict translations for the test set.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;model.h1.09_jun_21&#39;</span><span class="p">)</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_classes</span><span class="p">(</span><span class="n">testX</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">testX</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">testX</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>WARNING:tensorflow:From &lt;ipython-input-28-1f727fc9f0f2&gt;:2: Sequential.predict_classes (from tensorflow.python.keras.engine.sequential) is deprecated and will be removed after 2021-01-01.
+Instructions for updating:
+Please use instead:* `np.argmax(model.predict(x), axis=-1)`,   if your model does multi-class classification   (e.g. if it uses a `softmax` last-layer activation).* `(model.predict(x) &gt; 0.5).astype(&#34;int32&#34;)`,   if your model does binary classification   (e.g. if it uses a `sigmoid` last-layer activation).
+</pre>
+</div>
 </div>
 
 </div>
@@ -13948,7 +14234,7 @@ INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">preds</span>
 </pre></div>
 
     </div>
@@ -13956,23 +14242,25 @@ INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;model.h1.09_jun_21&#39;</span><span class="p">)</span>
-<span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_classes</span><span class="p">(</span><span class="n">testX</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">testX</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">testX</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As you noticed preds are only indices of words, so we need to convert them to words to be able to read them.</p>
 
 </div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>16. <strong>Use the function get_word from below to convert an index to a word. Apply it on your predictions.</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_word</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">):</span>
@@ -13989,7 +14277,7 @@ INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># convert predictions into text (English)</span>
@@ -14020,7 +14308,28 @@ INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">preds_text</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>17. <strong>Create a new dataframe with two columns where you show the actual text of the test set versus your predictions. Use the sample() function with your dataframe to randomly check some of the lines.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pred_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;actual&#39;</span> <span class="p">:</span> <span class="n">test</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="s1">&#39;predicted&#39;</span> <span class="p">:</span> <span class="n">preds_text</span><span class="p">})</span>
@@ -14033,10 +14342,10 @@ INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_colwidth&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#pd.set_option(&#39;display.max_colwidth&#39;, 50)</span>
 </pre></div>
 
     </div>
@@ -14046,7 +14355,7 @@ INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pred_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
@@ -14062,7 +14371,7 @@ INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[79]:</div>
+    <div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -14093,77 +14402,77 @@ INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
     <tr>
       <th>0</th>
       <td>i must refuse</td>
-      <td>i have to a</td>
+      <td>i have to</td>
     </tr>
     <tr>
       <th>1</th>
       <td>they are singers</td>
-      <td>theyre they</td>
+      <td>theyre are</td>
     </tr>
     <tr>
       <th>2</th>
       <td>who switched off the light</td>
-      <td>they the</td>
+      <td>who turned the  light</td>
     </tr>
     <tr>
       <th>3</th>
       <td>tom was really different</td>
-      <td>tom is have</td>
+      <td>tom was really kind</td>
     </tr>
     <tr>
       <th>4</th>
       <td>do you need anything</td>
-      <td>do you need</td>
+      <td>do you need something</td>
     </tr>
     <tr>
       <th>5</th>
       <td>im fixing the clock</td>
-      <td>i opened the</td>
+      <td>i am the  clock</td>
     </tr>
     <tr>
       <th>6</th>
       <td>i cant tell you when tom will get here</td>
-      <td>tom  to   us</td>
+      <td>i cant tell you when come here</td>
     </tr>
     <tr>
       <th>7</th>
       <td>he solved the problem with ease</td>
-      <td>the are  in</td>
+      <td>he talked that to this</td>
     </tr>
     <tr>
       <th>8</th>
       <td>im not suicidal</td>
-      <td>i dont have a</td>
+      <td>i dont have any</td>
     </tr>
     <tr>
       <th>9</th>
       <td>please take another one</td>
-      <td>please a</td>
+      <td>please dont a</td>
     </tr>
     <tr>
       <th>10</th>
       <td>go ahead and ask tom</td>
-      <td>that tom</td>
+      <td>ask tom</td>
     </tr>
     <tr>
       <th>11</th>
       <td>do you want us to leave the room</td>
-      <td>you   the</td>
+      <td>do you want to  the</td>
     </tr>
     <tr>
       <th>12</th>
       <td>you may have read this book already</td>
-      <td>i you have this</td>
+      <td>you have read this   book</td>
     </tr>
     <tr>
       <th>13</th>
       <td>i have been to the us twice</td>
-      <td>the  at in the month</td>
+      <td>i was in  the</td>
     </tr>
     <tr>
       <th>14</th>
       <td>according to the tv it will rain tomorrow</td>
-      <td>the  will to</td>
+      <td>will  the will next tomorrow</td>
     </tr>
   </tbody>
 </table>
@@ -14421,12 +14730,21 @@ INFO:tensorflow:Assets written to: model.h1.09_jul_21\assets
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>18. <strong>You may not get very good results mainly because of the memory/time limit that you did not create a very efficient model. For this, we already trained a model with 30 epochs on the entire training dataset. Load this model with load_model('model.h1.09_jun_21') and repeat the steps in 15, 16 and 17 again.</strong></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;model.h1.09_jun_21&#39;</span><span class="p">)</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_classes</span><span class="p">(</span><span class="n">testX</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="n">testX</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">testX</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
 </pre></div>
 
     </div>
