@@ -111,7 +111,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 Here you will find the materials for Monday:
 
 - Part 1: Introduction
-    - [Lecture 1](monday/Lectures/lecture 1/Lecture 1.slides.html)
+    - [Lecture 1](monday/Lectures/lecture 1/Lecture 1.html)
     - [Impractical 1](monday/Practicals/Impractical 1.html)
     - [Practical 1](monday/Practicals/Practical 1.html)
 
@@ -136,12 +136,12 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 Here you will find the materials for Tuesday:
 
 - Part 3: Feature selection
-    - [Lecture 3](tuesday/Lectures/lecture 3/Lecture 3.slides.html)
+    - [Lecture 3](tuesday/Lectures/lecture 3/Lecture 3.html)
     - [Impractical 3](tuesday/Practicals/Impractical 3.html)
     - [Practical 3](tuesday/Practicals/Practical 3.html)
 
 - Part 4: Text clustering
-    - [Lecture 4](tuesday/Lectures/lecture 4/Lecture 4.slides.html)
+    - [Lecture 4](tuesday/Lectures/lecture 4/Lecture 4.html)
     - [Impractical 4](tuesday/Practicals/Impractical 4.html)
     - [Practical 4](tuesday/Practicals/Practical 4.html)
 
