@@ -13077,7 +13077,8 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Impractical-3">Impractical 3<a class="anchor-link" href="#Impractical-3">&#182;</a></h1><h4 id="Applied-Text-Mining---Utrecht-Summer-School">Applied Text Mining - Utrecht Summer School<a class="anchor-link" href="#Applied-Text-Mining---Utrecht-Summer-School">&#182;</a></h4>
+<h1 id="Practical-3:-Feature-Selection-&amp;-Dimension-Reduction">Practical 3: Feature Selection &amp; Dimension Reduction<a class="anchor-link" href="#Practical-3:-Feature-Selection-&amp;-Dimension-Reduction">&#182;</a></h1><p><img src="img/uu_logo.png" alt="logo" align="right" title="UU" width="50" height="20" /></p>
+<h4 id="Applied-Text-Mining---Utrecht-Summer-School">Applied Text Mining - Utrecht Summer School<a class="anchor-link" href="#Applied-Text-Mining---Utrecht-Summer-School">&#182;</a></h4>
 </div>
 </div>
 </div>
@@ -13099,14 +13100,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercises">Exercises<a class="anchor-link" href="#Exercises">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>1. <strong>Here we are going to use a news article datasets, originating from BBC News (<a href="http://mlg.ucd.ie/datasets/bbc.html">http://mlg.ucd.ie/datasets/bbc.html</a>). This dataset provided for use as benchmarks for machine learning research. The BBC dataset consists of 2225 documents and 5 categories: business, entertainment, politics, sport, and tech. Your first task is to load the dataset so that you can proceed. Do not forget to import the necessary dependencies, you are going to need. You can import the other ones as you go along.</strong></p>
+<p>1. <strong>Here we are going to use a news article data set, originating from BBC News (<a href="http://mlg.ucd.ie/datasets/bbc.html">http://mlg.ucd.ie/datasets/bbc.html</a>). This data set provided for use as benchmarks for machine learning research. The BBC data set consists of 2225 documents and 5 categories: business, entertainment, politics, sport, and tech. Your first task is to load the dataset so that you can proceed. Do not forget to import the necessary dependencies, you are going to need. You can import the other ones as you go along.</strong></p>
 
 </div>
 </div>
@@ -13114,7 +13108,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>2. <strong>Use the CountVectorizer from sklearn and convert the text data into a document-term matrix. What is the difference between CountVectorizer and tfidfVectorizer(use_idf=False)?</strong></p>
+<p>2. <strong>Print the unique target names in your data and check the number of articles in each category.</strong></p>
 
 </div>
 </div>
@@ -13122,7 +13116,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The only difference is that the TfidfVectorizer() returns floats while the CountVectorizer() returns ints. And that’s to be expected – as explained in the documentation quoted above, TfidfVectorizer() assigns a score while CountVectorizer() counts.</p>
+<p>3. <strong>Use the CountVectorizer from sklearn and convert the text data into a document-term matrix. What is the difference between CountVectorizer and tfidfVectorizer(use_idf=False)?</strong></p>
 
 </div>
 </div>
@@ -13130,7 +13124,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>3. <strong>Print top 20 frequent words of the dataset.</strong></p>
+<p>4. <strong>Print top 20 frequent words in the training set.</strong></p>
 
 </div>
 </div>
@@ -13138,7 +13132,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>4. <strong>From the feature selection library in sklearn load the SelectKBest function and apply it on the BBC dataset using the chi-squared method. Extract top 20 features.</strong></p>
+<h3 id="Feature-selection">Feature selection<a class="anchor-link" href="#Feature-selection">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>5. <strong>From the feature selection library in sklearn load the SelectKBest function and apply it on the BBC dataset using the chi-squared method. Extract top 20 features.</strong></p>
 
 </div>
 </div>
@@ -13146,7 +13147,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>5. <strong>This time extract the 20 best features using mutual information method. Do you get the same list of words as with the chi-squared method?</strong></p>
+<p>6. <strong>Extract the 20 top features according to the mutual information feature selection method. Do you get the same list of words as compared to the chi-squared method?</strong></p>
 
 </div>
 </div>
@@ -13154,69 +13155,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>6. <strong>One of the functions for embedded feature selection is the SelectFromModel function in sklearn. Use this function with L1 norm SVM and check how many non-zero coefficients left in the model.</strong></p>
-
+<h3 id="Embedded-feature-selection">Embedded feature selection<a class="anchor-link" href="#Embedded-feature-selection">&#182;</a></h3>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">LinearSVC</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_selection</span> <span class="kn">import</span> <span class="n">SelectFromModel</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">X</span><span class="o">.</span><span class="n">shape</span>
-
-<span class="n">lsvc</span> <span class="o">=</span> <span class="n">LinearSVC</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">penalty</span><span class="o">=</span><span class="s2">&quot;l1&quot;</span><span class="p">,</span> <span class="n">dual</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">model</span> <span class="o">=</span> <span class="n">SelectFromModel</span><span class="p">(</span><span class="n">lsvc</span><span class="p">,</span> <span class="n">prefit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">X_new</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">X_new</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>c:\programdata\miniconda3\lib\site-packages\sklearn\svm\_base.py:947: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
-  &#34;the number of iterations.&#34;, ConvergenceWarning)
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[2]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>(150, 3)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>7. <strong>What are the top features according to the SVM model?</strong></p>
+<p>7. <strong>One of the functions for embedded feature selection is the SelectFromModel function in sklearn. Use this function with L1 norm SVM and check how many non-zero coefficients left in the model.</strong></p>
 
 </div>
 </div>
@@ -13224,65 +13170,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>8. <strong>Create a pipeline with tfidf representation and random forest classifier.</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
-<span class="n">text_clf</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-    <span class="p">(</span><span class="s1">&#39;vect&#39;</span><span class="p">,</span> <span class="n">CountVectorizer</span><span class="p">()),</span>
-    <span class="p">(</span><span class="s1">&#39;tfidf&#39;</span><span class="p">,</span> <span class="n">TfidfTransformer</span><span class="p">()),</span>
-    <span class="p">(</span><span class="s1">&#39;clf&#39;</span><span class="p">,</span> <span class="n">MultinomialNB</span><span class="p">()),</span>
-<span class="p">])</span>
-
-<span class="n">clf</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-  <span class="p">(</span><span class="s1">&#39;feature_selection&#39;</span><span class="p">,</span> <span class="n">SelectFromModel</span><span class="p">(</span><span class="n">LinearSVC</span><span class="p">(</span><span class="n">penalty</span><span class="o">=</span><span class="s2">&quot;l1&quot;</span><span class="p">))),</span>
-  <span class="p">(</span><span class="s1">&#39;classification&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">())</span>
-<span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-3-9765c91f32b3&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">      1</span> <span class="ansi-green-intense-fg ansi-bold">from</span> sklearn<span class="ansi-yellow-intense-fg ansi-bold">.</span>pipeline <span class="ansi-green-intense-fg ansi-bold">import</span> Pipeline
-<span class="ansi-green-fg">      2</span> text_clf = Pipeline([
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 3</span><span class="ansi-yellow-intense-fg ansi-bold">     </span><span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;vect&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> CountVectorizer<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span>
-<span class="ansi-green-fg">      4</span>     <span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;tfidf&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> TfidfTransformer<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span>
-<span class="ansi-green-fg">      5</span>     <span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;clf&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> MultinomialNB<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span>
-
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;CountVectorizer&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>9. <strong>Create another pipeline with tfidf representation, chi2 feature selection, and random forest classifier.</strong></p>
+<p>8. <strong>What are the top features according to the SVM model? Tip: Use the function model.get_support() to find these features.</strong></p>
 
 </div>
 </div>
@@ -13290,51 +13178,14 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>10. <strong>Train both piplines on a training subset of the BBC dataset.</strong></p>
-
+<h3 id="Model-comparison">Model comparison<a class="anchor-link" href="#Model-comparison">&#182;</a></h3>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-4-b0953fbb1d6e&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>clf<span class="ansi-yellow-intense-fg ansi-bold">.</span>fit<span class="ansi-yellow-intense-fg ansi-bold">(</span>X<span class="ansi-yellow-intense-fg ansi-bold">,</span> y<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;clf&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>11. <strong>Evaluate the performance of the models using the classification_report function on the test subset. How do you analyze your results?</strong></p>
+<p>9. <strong>Create a pipeline with the tfidf representation and a random forest classifier.</strong></p>
 
 </div>
 </div>
@@ -13342,118 +13193,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>12. <strong>We can change the learner by simply plugging a different classifier object into our pipeline. Create your third pipeline with L1 norm SVM for the feature selection method and naive Bayes for the classifier. Compare your results on the test set with the previous two pipelines.</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
-  <span class="p">(</span><span class="s1">&#39;feature_selection&#39;</span><span class="p">,</span> <span class="n">SelectFromModel</span><span class="p">(</span><span class="n">LinearSVC</span><span class="p">(</span><span class="n">penalty</span><span class="o">=</span><span class="s2">&quot;l1&quot;</span><span class="p">))),</span>
-  <span class="p">(</span><span class="s1">&#39;classification&#39;</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">())</span>
-<span class="p">])</span>
-<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-6-495a2e09d66f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">      1</span> clf = Pipeline([
-<span class="ansi-green-fg">      2</span>   <span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;feature_selection&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> SelectFromModel<span class="ansi-yellow-intense-fg ansi-bold">(</span>LinearSVC<span class="ansi-yellow-intense-fg ansi-bold">(</span>penalty<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-blue-intense-fg ansi-bold">&#34;l1&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">,</span>
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 3</span><span class="ansi-yellow-intense-fg ansi-bold">   </span><span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#39;classification&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span> RandomForestClassifier<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">      4</span> ])
-<span class="ansi-green-fg">      5</span> clf<span class="ansi-yellow-intense-fg ansi-bold">.</span>fit<span class="ansi-yellow-intense-fg ansi-bold">(</span>X<span class="ansi-yellow-intense-fg ansi-bold">,</span> y<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-
-<span class="ansi-red-intense-fg ansi-bold">NameError</span>: name &#39;RandomForestClassifier&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Dimension-reduction">Dimension reduction<a class="anchor-link" href="#Dimension-reduction">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>13. <strong>Dimensionality reduction methods such as PCA can be used to project the data to a lower dimensional space. Use the PCA function from sklearn and find out how much of the variance in the BBC dataset is explained in the first three components.</strong></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
-<span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)</span>
-<span class="p">[</span><span class="mf">0.9924</span><span class="o">...</span> <span class="mf">0.0075</span><span class="o">...</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">pca</span><span class="o">.</span><span class="n">singular_values_</span><span class="p">)</span>
-<span class="p">[</span><span class="mf">6.30061</span><span class="o">...</span> <span class="mf">0.54980</span><span class="o">...</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-cyan-intense-fg ansi-bold">  File </span><span class="ansi-green-intense-fg ansi-bold">&#34;&lt;ipython-input-7-9f5d9c9c6d88&gt;&#34;</span><span class="ansi-cyan-intense-fg ansi-bold">, line </span><span class="ansi-green-intense-fg ansi-bold">8</span>
-<span class="ansi-yellow-intense-fg ansi-bold">    [0.9924... 0.0075...]</span>
-<span class="ansi-white-intense-fg ansi-bold">             ^</span>
-<span class="ansi-red-intense-fg ansi-bold">SyntaxError</span><span class="ansi-red-intense-fg ansi-bold">:</span> invalid syntax
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html#examples-using-sklearn-decomposition-pca">https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html#examples-using-sklearn-decomposition-pca</a></p>
+<p>10. <strong>Fit the pipeline on the training set.</strong></p>
 
 </div>
 </div>
@@ -13461,7 +13201,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>14. <strong>To getter a better understanding of interaction of the dimensions plot the first three PCA dimensions.</strong></p>
+<p>11. <strong>Use the pipeline to predict the outcome variable on your test set. Evaluate the performance of the pipeline using the classification_report function on the test subset. How do you analyze your results?</strong></p>
 
 </div>
 </div>
@@ -13469,7 +13209,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html#sphx-glr-auto-examples-datasets-plot-iris-dataset-py">https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html#sphx-glr-auto-examples-datasets-plot-iris-dataset-py</a></p>
+<p>12. <strong>Create your second pipeline with the tfidf representation and a random forest classifier with the addition of an embedded feature selection using the SVM classification method with L1 penalty. Fit the pipeline on your training set and test it with the test set. How does the performance change?</strong></p>
 
 </div>
 </div>
@@ -13477,7 +13217,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>15. <strong>How many components are needed to explain at least 90% of the variance?</strong></p>
+<p>13. <strong>Create your third and forth pipelines with the tfidf representation, a chi2 feature selection (with 20 and 200 features for clf3 and clf4, respectively), and a random forest classifier.</strong></p>
 
 </div>
 </div>
@@ -13485,7 +13225,62 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>16. <strong>Use these components and train a SVM model on the BBC dataset. Compare your results on the test set with the previous pipelines.</strong></p>
+<p>14. <strong>We can change the learner by simply plugging a different classifier object into our pipeline. Create your fifth pipeline with L1 norm SVM for the feature selection method and naive Bayes for the classifier. Compare your results on the test set with the previous pipelines.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dimension-reduction">Dimension reduction<a class="anchor-link" href="#Dimension-reduction">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>15. <strong>Dimensionality reduction methods such as PCA and SVD can be used to project the data into a lower dimensional space. If you run PCA with your text data, you might end up with the message "PCA does not support sparse input. See TruncatedSVD for a possible alternative." Therefore, we will use the Truncated SVD function from the sklearn package and we want to find out how much of the variance in the BBC data set is explained with different components. For this, first create a tfidf matrix and use that to make a co-occurrence matrix.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>16. <strong>Run the SVD function with different values for components: 1, 2, 4, 5, 10, 15, 20, 50, 100. Plot the explained variance ratio for each component of Truncated SVD.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>17. <strong>How many components are needed to explain at least 95% of the variance?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Based on the selected values, it seems 15 components are needed to explain 95% of the variance.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>18. <strong>Use these components and train a SVM model on the BBC dataset. Make a pipeline for your model. Compare your results on the test set with the previous pipelines.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>19. <strong>Can you make a plot of accuracies of your 5 pipelines?</strong></p>
 
 </div>
 </div>
