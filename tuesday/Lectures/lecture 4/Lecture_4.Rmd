@@ -1,6 +1,6 @@
 ---
 title: "Text Clustering"
-author: "Ayoub Bagheri, <a.bagheri@uu.nl>"
+author: "Ayoub Bagheri"
 output:
   ioslides_presentation:
     logo: logo.png
@@ -9,253 +9,270 @@ output:
 ---
 
 ```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
 library(knitr)
 library(kableExtra)
+library(magick)
+library(magrittr)
 ```
 
-## Lecture’s Plan
-
+## Lecture’s plan
 1. What is text clustering?
+
 2. What are the applications?
+
 3. How to cluster text data?
 
 ## Unsupervised learning
-
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
+```{r, out.width="100%"}
 include_graphics("img/page 3.png")
 ```
 
-## Clustering v.s. Classification
-
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
+## Clustering versus classification
+```{r, echo=FALSE, out.width="100%"}
 include_graphics("img/page 4.png")
 ```
 
 ## Clustering
+- Clustering: the process of grouping a set of objects into clusters of similar objects
 
 - Discover “natural structure” of data
-    - What is the criterion? 
-    - How to identify them?
-    - How to evaluate the results?
-    
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
+  
+  - What is the criterion? 
+  - How to identify them?
+  - How to evaluate the results?
+
+```{r, echo=FALSE, out.width="100%"}
 include_graphics("img/page 5.png")
 ```
 
-## Clustering
+## Question
 
-- Clustering - the process of grouping a set of objects into clusters of similar objects
-    - Basic criteria
-        - high intra-cluster similarity
-        - low inter-cluster similarity
-    - No (little) supervision signal about the underlying clustering structure
-    - Need similarity/distance as guidance to form clusters
+Which one is not a text clustering task?
+
+- Grouping Trump's tweets and finding the main topics
+- Finding similar patterns (demands) in customer reviews
+- Grouping scientific articles
+- Detection of heart failure (0 or 1) using discharge summaries
+
+Please go to <a href="www.menti.com">www.menti.com</a> and use the code 9594 3321
+
+## Clustering
+  
+- Basic criteria
+
+  - high intra-cluster similarity
+
+  - low inter-cluster similarity
+
+- No (little) supervision signal about the underlying clustering structure
+
+- Need similarity/distance as guidance to form clusters
 
 ## Applications of text clustering
-
-<div style="float:left;width:50%">
+<div style="float:left; width:50%">
 - Organize document collections
+  
   - Automatically identify hierarchical/topical relation among documents
 </div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
+<div style="float:right; width:60%">
+```{r, echo=FALSE, out.width="100%"}
 include_graphics("img/page 7.png")
 ```
 </div>
 
 ## Applications of text clustering
-
-<div style="float:left;width:50%">
+<div style="float:left; width:50%">
 - Grouping search results
+  
   - Organize documents by topics
+  
   - Facilitate user browsing
 </div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
+<div style="float:right; width:50%">
+```{r, echo=FALSE, out.width="100%"}
 include_graphics("img/page 8.png")
 ```
 </div>
 
 ## Applications of text clustering
-
 - Topic modeling
-    - Grouping words into topics
-
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
+  - Grouping words into topics
+  
+```{r, echo=FALSE, out.width="100%"}
 include_graphics("img/page 9.png")
 ```
 
-# Distance metric
+<!-- # Distance metric -->
 
-## Distance metric
+<!-- ## Distance metric -->
+<!-- - Basic properties -->
 
-- Basic properties
-  
-  - Positive separation
-$$𝐷(x,y)>0, \forall x \neq y$$
-$$𝐷(x,y)=0, \mathrm{i.f.f.}, x=y$$
+<!--   - Positive separation -->
+<!--     - $𝐷(x,y)>0, \forall x \neq y$ -->
+<!--     - $𝐷(x,y)=0, \mathrm{i.f.f.}, x=y$ -->
 
-  - Symmetry 
-$$𝐷(x,y)=𝐷(y,x)$$
+<!--   - Symmetry  -->
+<!--     - $𝐷(x,y)=𝐷(y,x)$ -->
 
-  - Triangle inequality
-$$𝐷(x,y)≤𝐷(x,z)+𝐷(z,y)$$
+<!--   - Triangle inequality -->
+<!--     - $𝐷(x,y)≤𝐷(x,z)+𝐷(z,y)$ -->
 
-## Typical distance metric
+<!-- ## Typical distance metric -->
+<!-- - Minkowski metric -->
 
-- Minkowski metric
+<!--   - $d(x,y) = \sqrt[p]{\sum^V_{i=1}{(x_i-y_i)^p}}$ -->
 
-  - $d(x,y) = \sqrt[p]{\sum^V_{i=1}{(x_i-y_i)^p}}$
-    
-    - When $p=2$, it is <span style="color:red">Euclidean distance</span>
+<!--     - When $p=2$, it is <span style="color:red">Euclidean distance</span> -->
 
-- Cosine metric
+<!-- - Cosine metric -->
 
-  - $𝑑(x,y)=1−cosine(x,y)$
+<!--   - $𝑑(x,y)=1−cosine(x,y)$ -->
 
-    - when $|x|^2=|y|^2=1$, $1−cosine(x,y)=\frac{r^2}{2}$
+<!--     - when $|x|^2=|y|^2=1$, $1−cosine(x,y)=\frac{r^2}{2}$ -->
 
-## Typical distance metric
+<!-- ## Typical distance metric -->
+<!-- - Edit distance -->
 
-- Edit distance
-  
-  - Count the minimum number of operations required to transform one string into the other
-    
-    - Possible operations: insertion, deletion and replacement
+<!--   - Count the minimum number of operations required to transform one string into the other -->
 
-<div style="float:left; width:70%">
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 13.png")
-```
-</div>
-<div style="float:right; width:30%">
-  <br> <br> <br> <br> 
-  <p style="color:red">&larr; Can be efficiently solved by dynamic programming
-   </p>
-</div>
+<!--     - Possible operations: insertion, deletion and replacement -->
 
-## Typical distance metric
+<!-- <div style="float:left; width:70%"> -->
+<!-- ```{r, echo=FALSE, out.width="70%", fig.align='right'} -->
+<!-- include_graphics("img/page 13.png") -->
+<!-- ``` -->
+<!-- </div> -->
+<!-- <div style="float:right; width:30%"> -->
+<!-- <br> <br> <br> <br>  -->
+<!-- <p style="color:red">&larr; Can be efficiently solved by dynamic programming -->
+<!-- </p> -->
+<!-- </div> -->
 
-- Edit distance
+<!-- ## Typical distance metric -->
+<!-- - Edit distance -->
 
-  - Count the minimum number of operations required to transform one string into the other
-    
-    - Possible operations: insertion, deletion and replacement
-  
-  - Extent to distance between sentences
-    
-    - Word similarity as cost of replacement
-      
-      - “terrible” -> “bad”: low cost <span style="color:red">&rarr; Lexicon or distributional semantics</span>
-      
-      - “terrible” -> “terrific”: high cost <span style="color:red">&rarr; Lexicon or distributional semantics</span>
-    
-    - Preserving word order in distance computation
+<!--   - Count the minimum number of operations required to transform one string into the other -->
+
+<!--     - Possible operations: insertion, deletion and replacement -->
+
+<!--   - Extent to distance between sentences -->
+
+<!--     - Word similarity as cost of replacement -->
+
+<!--       - “terrible” -> “bad”: low cost <span style="color:red">&rarr; Lexicon or distributional semantics</span> -->
+
+<!--       - “terrible” -> “terrific”: high cost <span style="color:red">&rarr; Lexicon or distributional semantics</span> -->
+
+<!--     - Preserving word order in distance computation -->
 
 # Clustering algorithms
 
 ## Clustering algorithms
 
-1. Partitional clustering algorithms
-    - Partition the instances into different groups
-    - Flat structure
-        - Need to specify the number of classes in advance
-        
-## Clustering algorithms
+- Partitional clustering
 
-<ol start="2">
-  <li>Hierarchical clustering algorithms</li>
-  <ul>
-    <li>Create a hierarchical decomposition of objects</li>
-    <li>Rich internal structure</li>
-    <ul>
-      <li>No need to specify the number of clusters</li>
-      <li>Can be used to organize objects</li>
-    </ul>
-  </ul>
-</ol>
+- Hierarchical clustering
 
-## Clustering algorithms
+- Topic modeling
 
-<ol start="3">
-  <li>Topic modeling</li>
-  <ul>
-    <li>Topic models are a suite of algorithms that uncover the hidden thematic structure in document collections. These algorithms help us develop new ways to search, browse and summarize large archives of texts.</li>
-    <li>We want to find themes (or topics) in documents</li>
-    <li>We don’t want to do supervised topic classification – rather not fix topics in advance nor do manual annotation </li>
-    <li>Need an approach which automatically teases out the topics</li>
-    <li>This is essentially a clustering problem - can think of both words and documents as being clustered</li>
-  </ul>
-</ol>
+<!-- <ol> -->
+<!--   <li>Partitional clustering algorithms</li> -->
+<!--   <ul> -->
+<!--     <li>Partition the instances into different groups</li> -->
+<!--     <li>Flat structure</li> -->
+<!--     <ul> -->
+<!--       <li>Need to specify the number of classes in advance</li> -->
+<!--     </ul> -->
+<!--   </ul> -->
+<!-- </ol> -->
 
-## Hard vs. soft clustering
+<!-- ## Clustering algorithms -->
+<!-- <ol start="2"> -->
+<!--   <li>Hierarchical clustering algorithms</li> -->
+<!--   <ul> -->
+<!--     <li>Create a hierarchical decomposition of objects</li> -->
+<!--     <li>Rich internal structure</li> -->
+<!--     <ul> -->
+<!--       <li>No need to specify the number of clusters</li> -->
+<!--       <li>Can be used to organize objects</li> -->
+<!--     </ul> -->
+<!--   </ul> -->
+<!-- </ol> -->
 
+<!-- ## Clustering algorithms -->
+<!-- <ol start="3"> -->
+<!--   <li>Topic modeling</li> -->
+<!--   <ul> -->
+<!--     <li>Topic models are a suite of algorithms that uncover the hidden thematic structure in document collections. These algorithms help us develop new ways to search, browse and summarize large archives of texts.</li> -->
+<!--     <li>We want to find themes (or topics) in documents</li> -->
+<!--     <li>We don’t want to do supervised topic classification – rather not fix topics in advance nor do manual annotation </li> -->
+<!--     <li>Need an approach which automatically teases out the topics</li> -->
+<!--     <li>This is essentially a clustering problem - can think of both words and documents as being clustered</li> -->
+<!--   </ul> -->
+<!-- </ol> -->
+
+## Hard versus soft clustering
 - Hard clustering: Each document belongs to exactly one cluster
-    - More common and easier to do
+  
+  - More common and easier to do
+
 - Soft clustering: A document can belong to more than one cluster.
-    - Makes more sense for applications like creating browsable hierarchies
-    - You may want to put a pair of sneakers in two clusters: (i) sports apparel and (ii) shoes
-    - You can only do that with a soft clustering approach.
+  
 
-# Partitioning clustering
+# Partitional clustering
 
-## Partitioning Algorithms
-
-- Partitioning method: Construct a partition of <span style="color:blue">$n$</span> documents into a set of <span style="color:blue">$K$</span> clusters
-- Given: a set of documents and the number <span style="color:blue">$K$</span> 
-- Find: a partition of <span style="color:blue">$K$</span> clusters that optimizes the chosen partitioning criterion
+## Partitional clustering algorithms
+- Partitional clustering method: Construct a partition of <span style="color:lightgreen">$n$</span> documents into a set of <span style="color:lightgreen">$K$</span> clusters
+- Given: a set of documents and the number <span style="color:lightgreen">$K$</span> 
+- Find: a partition of <span style="color:lightgreen">$K$</span> clusters that optimizes the chosen partitioning criterion
 
   - Globally optimal
     - Intractable for many objective functions
     - Ergo, exhaustively enumerate all partitions
   
   - Effective heuristic methods: <em>K</em>-means and <em>K</em>-medoids algorithms
-
-## Partitioning Algorithms
-
+  
+## Partitional clustering algorithms
 - Typical partitional clustering algorithms
   
   - <em>k</em>-means clustering
     
     - Partition data by its closest mean
-    
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
+
+```{r, echo=FALSE, out.width="70%", fig.align='right'}
 include_graphics("img/page 22.png")
 ```
 
-## Partitioning Algorithms
+<!-- ## Partitional clustering algorithms -->
+<!-- <div style="float:left;width:70%"> -->
+<!-- - Typical partitional clustering algorithms -->
 
-<div style="float:left;width:70%">
+<!--   - <em>k</em>-means clustering -->
 
-<ul>
-    <li>Typical partitional clustering algorithms</li>
-    <ul>
-        <li><em>k</em>-means clustering</li>
-        <ul><li>Partition data by its closest mean</li></ul>
-        <li>Gaussian Mixture Model</li>
-        <ul><li>Consider variance within the cluster as well</li></ul>
+<!--     - Partition data by its closest mean -->
 
-</div>
-<div style="float:right;width:30%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 23.png")
-```
-</div>
+<!--   - Gaussian Mixture Model -->
 
-## <em>K</em>-Means
+<!--     - Consider variance within the cluster as well -->
+<!-- </div> -->
+<!-- <div style="float:right;width:30%"> -->
+<!-- ```{r, echo=FALSE,out.width="100%"} -->
+<!-- include_graphics("img/page 23.png") -->
+<!-- ``` -->
+<!-- </div> -->
 
+## K-Means algorithm
 - Assumes documents are real-valued vectors.
 
-- Clusters based on <span style="font-style:italic;color:red">centroids</span> (aka the <span style="font-style:italic;color:red">center of gravity</span> or mean) of points in a cluster, $c$:
+- Clusters based on <span style="font-style:italic;color:red">centroids</span> of points in a cluster, $c$:
 
 $$\vec \mu(c)=\frac{1}{|c|}\sum_{\vec a \in c}{\vec x}$$
 
 - Reassignment of instances to clusters is based on distance to the current cluster centroids.
   
-  - (Or one can equivalently phrase it in terms of similarities)
 
-## K-Means Algorithm
-
+## K-Means algorithm
 - Select $K$ random docs $\{s_1, s_2,… s_K\}$ as seeds.
 - Until clustering converges (or other stopping criterion):
   
@@ -265,149 +282,93 @@ $$\vec \mu(c)=\frac{1}{|c|}\sum_{\vec a \in c}{\vec x}$$
   
   - <span style="color:DarkCyan">(Next, update the seeds to the centroid of each cluster)</span>
   
-  - For each cluster $c_j$
+  - For each cluster cj
     - $s_j = \mu(c_j)$
-
-## K Means Example (K=2)
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 26_1.png")
-```
-
-## K Means Example (K=2)
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 26_2.png")
-```
-
-## K Means Example (K=2)
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 26_3.png")
-```
-
-## K Means Example (K=2)
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 26_4.png")
-```
-
-## K Means Example (K=2)
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 26_5.png")
-```
-
-## K Means Example (K=2)
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 26_6.png")
-```
-
-## K Means Example (K=2)
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 26_7.png")
-```
-
-## K Means Example (K=2)
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 26_8.png")
-```
-
-## Termination conditions
-
-- Several possibilities, e.g.,
-  
-  - A fixed number of iterations.
-
-  - Doc partition unchanged.
-
-  - Centroid positions don’t change.
-
-## Convergence
-
-- Why should the <em>K</em>-means algorithm ever reach a <em>fixed point</em>?
-
-  - A state in which clusters don’t change.
-
-- <em>K</em>-means is a special case of a general procedure known as the <em>Expectation Maximization (EM) algorithm</em>.
-
-  - EM is known to converge.
-
-  - Number of iterations could be large.
     
-    - But in practice usually isn’t
+## K-Means example (K=2)
+```{r, out.width="100%", cache=TRUE}
+list.files(path='img/', pattern = 'page 26', full.names = TRUE) %>% 
+        image_read() %>% # reads each path file
+        image_join() %>% # joins image
+        image_animate(fps=.25) %>% # animates, can opt for number of loops
+        image_write("img/kmeans.gif") # write to current dir
 
-## Seed Choice
+include_graphics("img/kmeans.gif")
+```
 
-- Results can vary based on random seed selection.
+<!-- ## Termination conditions -->
+<!-- - Several possibilities, e.g., -->
 
-- Some seeds can result in poor convergence rate, or convergence to sub-optimal clusterings.
-  
-  - Select good seeds using a heuristic (e.g., doc least similar to any existing mean)
-  
-  - <span style="color:blue">Try out multiple starting points</em>
-  
-  - Initialize with the results of another method.
+<!--   - A fixed number of iterations. -->
 
-## <em>K</em>-means issues, variations, etc.
+<!--   - Doc partition unchanged. -->
 
-- Recomputing the centroid after every assignment (rather than after all points are re-assigned) can improve speed of convergence of <em>K</em>-means
+<!--   - Centroid positions don’t change. -->
 
-- Assumes clusters are spherical in vector space
-  
-  - Sensitive to coordinate changes, weighting etc. 
+<!-- ## Convergence -->
+<!-- - Why should the <em>K</em>-means algorithm ever reach a <em>fixed point</em>? -->
 
-- Disjoint and exhaustive
-  
-  - Doesn’t have a notion of “outliers” by default
-  
-  - But can add outlier filtering
-  
-## MBK
+<!--   - A state in which clusters don’t change. -->
 
-## DBScan
+<!-- - <em>K</em>-means is a special case of a general procedure known as the <em>Expectation Maximization (EM) algorithm</em>. -->
 
-# Hierarchical clustering
+<!--   - EM is known to converge. -->
 
-## Dendrogram: Hierarchical Clustering
+<!--   - Number of iterations could be large. -->
 
+<!--     - But in practice usually isn’t -->
+
+<!-- ## Seed Choice -->
+<!-- - Results can vary based on random seed selection. -->
+
+<!-- - Some seeds can result in poor convergence rate, or convergence to sub-optimal clusterings. -->
+
+<!--   - Select good seeds using a heuristic (e.g., doc least similar to any existing mean) -->
+
+<!--   - <span style="color:blue">Try out multiple starting points</em> -->
+
+<!--   - Initialize with the results of another method. -->
+
+<!-- ## <em>K</em>-means issues, variations, etc. -->
+<!-- - Recomputing the centroid after every assignment (rather than after all points are re-assigned) can improve speed of convergence of <em>K</em>-means -->
+
+<!-- - Assumes clusters are spherical in vector space -->
+
+<!--   - Sensitive to coordinate changes, weighting etc.  -->
+
+<!-- - Disjoint and exhaustive -->
+
+<!--   - Doesn’t have a notion of “outliers” by default -->
+
+<!--   - But can add outlier filtering -->
+
+# Hierarchical Clustering
+
+## Dendrogram: Hierarchical clustering
+<div style="float:left;width:50%">
 - Build a tree-based hierarchical taxonomy (<em>dendrogram</em>) from a set of documents.
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 34.png")
-```
-
-- One approach: recursive application of a partitional clustering algorithm.
-
-## Dendrogram: Hierarchical Clustering
-
-<div style="float:left;width:50%">
 - Clustering obtained by cutting the dendrogram at a desired level: each <b>connected</b> component forms a cluster.
 </div>
 <div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="90%", fig.align='center'}
-include_graphics("img/page 35.png")
+```{r, out.width="100%"}
+include_graphics("img/page 33.png")
 ```
 </div>
 
 ## Clustering algorithms
-
 - Typical hierarchical clustering algorithms
   
   - Bottom-up agglomerative clustering
     
     - Start with individual objects as separated clusters
-    - Repeatedly merge closest pair of clusters   
-    
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 36.png")
+    - Repeatedly merge closest pair of clusters
+
+```{r, out.width="100%"}
+include_graphics("img/page 34.png")
 ```
 
 ## Clustering algorithms
-
 - Typical hierarchical clustering algorithms
   
   - Top-down divisive clustering
@@ -416,12 +377,11 @@ include_graphics("img/page 36.png")
     
     - Repeatedly splitting the remaining clusters into two
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 37.png")
+```{r, out.width="60%", fig.align='right'}
+include_graphics("img/page 35.png")
 ```
 
 ## Hierarchical Agglomerative Clustering (HAC)
-
 - Starts with each doc in a separate cluster
   
   - then repeatedly joins the <em><u>closest pair</u></em> of clusters, until there is only one cluster.
@@ -429,11 +389,10 @@ include_graphics("img/page 37.png")
 - The history of merging forms a binary tree or hierarchy.
 
 ## Closest pair of clusters
-
-- Many variants to defining closest pair of clusters
+- Many variants to defining closest pair of clusters (linkage methods):
   
   - <b>Single-link</b>
-    - Similarity of the <em>most</em> cosine-similar (single-link)
+    - Similarity of the <em>most</em> cosine-similar
 
   - <b>Complete-link</b>
     - Similarity of the “furthest” points, the <em>least</em> cosine-similar
@@ -443,294 +402,189 @@ include_graphics("img/page 37.png")
 
   - <b>Average-link</b>
     - Average cosine between pairs of elements
-
-## Single Link Agglomerative Clustering
-
-- Use maximum similarity of pairs:
-
-$$sim(c_i, c_j) = \max_{x \in c_i, y\in c_j}{sim(x,y)}$$
-
-- Can result in “straggly” (long and thin) clusters due to chaining effect.
-
-- After merging $c_i$ and $c_j$, the similarity of the resulting cluster to another cluster, $c_k$, is:
-
-$$sim((c_i \cup c_j), c_k) = max(sim(c_i, c_k), sim(c_j, c_k))$$
-\newpage
-
-## Complete Link
-&nbsp;
-
-- Use minimum similarity of pairs:
-
-$$sim(c_i, c_j) = \min_{x \in c_i, y\in c_j}{sim(x,y)}$$
-
-- Makes “tighter,” spherical clusters that are typically preferable.
-
-- After merging $c_i$ and $c_j$, the similarity of the resulting cluster to another cluster, $c_k$, is:
-
-$$sim((c_i \cup c_j), c_k) = min(sim(c_i, c_k), sim(c_j, c_k))$$
-
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 41.png")
-```
-
-# Matrix Factorization
-
-## Dimensionality Reduction and Matrix Factorization
-
-$$D \approx UV^T$$
-
-Maximize similarity between entries of $D$ and $UV^T$
-
-&nbsp; &nbsp; &nbsp; subject to:
     
-&nbsp; &nbsp; &nbsp; Constraints on $U$ and $V$
+  - <b>Ward's linkage</b>
+    - Ward's minimum variance method, much in common with analysis of variance (ANOVA)
+    - The distance between two clusters is computed as the increase in the "error sum of squares" (ESS) after fusing two clusters into a single cluster.
 
-## Singular Value Decomposition
+<!-- ## Single Link Agglomerative Clustering -->
+<!-- - Use maximum similarity of pairs: -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 44.png")
-```
+<!-- $$sim(c_i, c_j) = \max_{x \in c_i, y\in c_j}{sim(x,y)}$$ -->
 
-## Example SVD
+<!-- - Can result in “straggly” (long and thin) clusters due to chaining effect. -->
 
-lexicon: lion, tiger, cheetah, jaguar, porsche, ferrari
+<!-- - After merging $c_i$ and $c_j$, the similarity of the resulting cluster to another cluster, $c_k$, is: -->
 
-$$
-D = \begin{pmatrix}
-    & \text{lion} & \text{tiger} & \text{cheetah} & \text{jaguar} & \text{porsche} & \text{ferrari} \\
-   \text{Document-1} & 2 & 2 & 1 & 2 & 0 & 0 \\
-   \text{Document-2} & 2 & 3 & 3 & 3 & 0 & 0 \\
-   \text{Document-3} & 1 & 1 & 1 & 1 & 0 & 0 \\
-   \text{Document-4} & 2 & 2 & 2 & 3 & 1 & 1 \\
-   \text{Document-5} & 0 & 0 & 0 & 1 & 1 & 1 \\
-   \text{Document-6} & 0 & 0 & 0 & 2 & 1 & 2
-  \end{pmatrix}
-$$
+<!-- $$sim((c_i \cup c_j), c_k) = max(sim(c_i, c_k), sim(c_j, c_k))$$ -->
+<!-- \newpage -->
 
-## Example SVD 
+<!-- ## Complete Link -->
+<!-- - Use minimum similarity of pairs: -->
 
-<p style="font-size:16px">
-$$
-\begin{align}
-    D &\approx Q\Sigma P^T \\
-    &\approx \begin{pmatrix}
-                -0.41 & 0.17 \\
-                -0.65 & 0.31 \\
-                -0.23 & 0.13 \\
-                -0.56 & -0.20 \\
-                -0.10 & -0.46 \\
-                -0.19 & -0.78
-             \end{pmatrix}
-             \begin{pmatrix}
-                8.4 & 0 \\
-                0 & 3.3
-             \end{pmatrix}
-             \begin{pmatrix}
-                -0.41 & -0.49 & -0.44 & -0.61 & -0.10 & -0.12 \\
-                0.21 & 0.31 & 0.26 & -0.37 & -0.44 & -0.68
-             \end{pmatrix} \\
-    &= \begin{pmatrix}
-           1.55 & 1.87 & 1.67 & 1.91 & 0.10 & 0.04 \\
-           2.46 & 2.98 & 2.66 & 2.95 & 0.10 & -0.03 \\
-           0.89 & 1.08 & 0.96 & 1.04 & 0.01 & -0.04 \\
-           1.81 & 2.11 & 1.91 & 3.14 & 0.77 & 1.03 \\
-           0.02 & -0.05 & -0.02 & 1.06 & 0.74 & 1.11 \\
-           0.10 & -0.02 & 0.04 & 1.89 & 1.28 & 1.92
-       \end{pmatrix}
-\end{align}
-$$
-</p>
+<!-- $$sim(c_i, c_j) = \min_{x \in c_i, y\in c_j}{sim(x,y)}$$ -->
 
-\newpage
+<!-- - Makes “tighter,” spherical clusters that are typically preferable. -->
 
-## Advantages and Disadvantages of SVD/LSA
+<!-- - After merging $c_i$ and $c_j$, the similarity of the resulting cluster to another cluster, $c_k$, is: -->
 
-1. The orthogonal basis representation of SVD is useful for folding in the reduced representation of new documents not included in the data matrix $D$. For example, if $\vec X$ is a row vector of a new document, then its reduced representation is givenn by the *k*-dimensional vector $\vec XV$. This type of out-of-sample embedding is harder (albeit possible) with other forms of matrix factorization.
-
-2. The SVD solution provides the same error as <em>unconstrained</em> matrix factorization problem. Since most other forms of dimensionality reductiona are constrained matrix factorization problems, one can typically achieve a lower residual error with SVD at the same value of the rank $k$.
-
-## Advantages and Disadvantages of SVD/LSA
-
-<ol start="3">
-    <li>The topics of a text collection are often highly overlapping in terms of their vocabulary. As a result, the directions represented by the various topics are naturally not orthogonal, which matches poorly with orthogonal basis vectors. SVD does a poor job at revealing the actual semantic topics (or <em>clusters</em>) in the underlying data. Most forms of nonnegative matrix factorization that do not use orthogonal basis vectors are more adept at representing the clustering structure in the underlying data.</li>
-    <li>The representation provided by SVD is not very interpretable and it is hard to match with the semantic concepts in the collection. A key part of the problem is that the eigenvectors contain both positive and negative components that are hard to interpret.</li>
-</ol>   
-
-## Nonnegative Matrix Factorization
-
-**lexicon: lion, tiger, cheetah, jaguar, porsche, ferrari**
-&nbsp;
-
-**Cats**: lion, tiger, cheetah, jaguar
-
-**Cars**: japuar, porche, ferrari
-
-$$
-D = \begin{pmatrix}
-    & \text{lion} & \text{tiger} & \text{cheetah} & \text{jaguar} & \text{porsche} & \text{ferrari} \\
-   \text{Document-1} & 2 & 2 & 1 & 2 & 0 & 0 \\
-   \text{Document-2} & 2 & 3 & 3 & 3 & 0 & 0 \\
-   \text{Document-3} & 1 & 1 & 1 & 1 & 0 & 0 \\
-   \text{Document-4} & 2 & 2 & 2 & 3 & 1 & 1 \\
-   \text{Document-5} & 0 & 0 & 0 & 1 & 1 & 1 \\
-   \text{Document-6} & 0 & 0 & 0 & 2 & 1 & 2
-  \end{pmatrix}
-$$
-
-## Nonnegative Matrix Factorization
-
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 48.png")
-```
-
-## Nonnegative Matrix Factorization
-
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 49.png")
-```
-
-## Advantages and Disadvantages of Nonnegative Matrix Factorization
-
-1. Nonnegativity enables a highly interpretable decomposition because of ability to represent the factorization as a sum of parts.
-2. The semantic clusters (or topics) are often captured more accurately by allowing non-orthogonality in the basis vectors. This is because semantic topics are often related.
-3. Nonnegative matrix factorization can better address polysemy than SVD.
-4. One disadvantage of nonnegative matrix factorization is that it is harder (than SVD) to compute the reduced representations of documents that were not included in the original data matrix $D$. SVD is able to fold in such documents more easily as a simple projection because of its orthogonal basis system.
-
-## Probabilistic Latent Semantic Analysis
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 51.png")
-```
-
-## Probabilistic Latent Semantic Analysis
-
-$$
-\begin{align}
-    \text{Maximize}_{(P,Q,\Sigma)}&[\text{Log likelihood of generating }D \text{ using parameters in matrices }(P,Q,\Sigma)] \\
-    &= log(\prod_{i,j}{P(\text{Adding one occurnce of term }j \text{ in document }i)^{D_{ij}}}) \\
-    &= \sum_{i=1}^n\sum_{j=1}^d{D_{ij}} \begin{matrix} \underbrace{ log(P(\vec X_i, t_j)) } \\ \text{Parametrized by }P,Q,\Sigma \end{matrix} \\
-    &\text{subject to:} \\
-    &P,Q,\Sigma \geq 0 \\
-    &\text{Entries in each column of } P \text{ sum to 1} \\
-    &\text{Entries in each column of } Q \text{ sum to 1} \\
-    &\Sigma \text{ is a diagonal matrix that sums to 1}
-\end{align}
-$$
-
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 52.png")
-```
-
-## Comparison with SVD
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 53.png")
-```
-
-
-## Example of PLSA
- 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 54.png")
-```
+<!-- $$sim((c_i \cup c_j), c_k) = min(sim(c_i, c_k), sim(c_j, c_k))$$ -->
+<!-- ```{r, out.width="100%"} -->
+<!-- include_graphics("img/page 39.png") -->
+<!-- ``` -->
 
 # Topic Modeling
 
 ## Topic models
-
 <div style="float:left;width:60%">
-<ul>
-    <li>Three concepts: words, topics, and documents</li>
-    <li>Documents are a collection of words and have a probability distribution over topics</li>
-    <li>Topics have a probability distribution over words</li>
-    <li>Model:</li>
-    <ul><li>Topics made up of words used to generate documents</li></ul>
+- Three concepts: words, topics, and documents
+
+- Documents are a collection of words and have a probability distribution over topics
+
+- Topics have a probability distribution over words
+
+- Model: 
+  
+  - Topics made up of words used to generate documents
 </div>
 <div style="float:right;width:40%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 56.png")
+```{r,out.width="100%"}
+include_graphics("img/page 41.png")
 ```
+
 </div>
 
-## Topic models (lda or gensim) | Reality: Documents observed, infer  topics
+## Topic models | Reality: Documents observed, infer  topics
+```{r,out.width="80%"}
+include_graphics("img/page 42.png")
+```
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 57.png")
+## LDA graphical model
+```{r, out.width="100%"}
+include_graphics("img/page 46.png")
 ```
 
 ## Probabilistic modeling
-
 1. Treat data as observations that arise from a generative probabilistic process that includes hidden variables: For documents, the hidden variables reflect the thematic structure of the collection.
 
 2. Infer the hidden structure using posterior inference: What are the topics that describe this collection?
 
 3. Situate new data into the estimated model: How does this query or new document fit into the estimated topic structure?
 
-## 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 59.png")
+## LDA: Identifying structure in text
+```{r, out.width="100%"}
+include_graphics("img/lda.png")
 ```
 
-## Intro to Latent Dirichlet Allocation (LDA)
+<!-- ##  -->
+<!-- ```{r,out.width="100%"} -->
+<!-- include_graphics("img/page 44.png") -->
+<!-- ``` -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 60.png")
-```
+<!-- ## Latent Dirichlet Allocation -->
+<!-- ```{r} -->
+<!-- question <- c("What is Latent Dirichlet Allocation (LDA)?", "What is used for?", "How is it related to text mining and other machine learning techniques?") -->
 
-## 
+<!-- answers <- c("A generative probabilistic model for collections of discrete data such as text corpora. LDA is a three-level hierarchical Bayesian model, in which each item of a collection is modeled as a finite mixture over an underlying set of latent topics. Each observed word originates from a topic that we do not directly observe. Each topic is, in turn, modeled as an infinite mixture over an underlying set of topic probabilities.", -->
+<!-- "The fitted model can be used to estimate the similarity between documents as well as between a set of specified keywords using an additional layer of latent variables which are referred to as topics. -->
+<!-- ", -->
+<!-- "Topic models can be seen as classical text mining or natural language processing tools. Fitting topic models based on data structures from the text mining usually done by considering the problem of modeling text corpora and other collections of discrete data. One of the advantages of LDA over related latent variable models is that it provides well-defined inference procedures for previously unseen documents (LSI uses a singular value decomposition)") -->
+<!-- lda <- data.frame(q = question, a = answers) -->
+<!-- lda[1] <- cell_spec(lda[[1]],bold = T,font_size = 24) -->
+<!-- colnames(lda) <- c("", "") -->
+<!-- lda %>%  -->
+<!--   kbl(booktabs = T, escape = F, align = "l") %>%  -->
+<!--   kable_styling(fixed_thead = T) %>% -->
+<!--   kable_paper("hover", full_width=T) %>%  -->
+<!--   column_spec(1, width = "18em") -->
+<!-- ``` -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 61.png")
-```
+<!-- ## Topic Matrix -->
+<!-- ```{r, out.width="100%"} -->
+<!-- include_graphics("img/page 47.png") -->
+<!-- ``` -->
 
-## 
+<!-- ## The Dirichlet Distribution -->
+<!-- <div style="float:left; width:40%"> -->
+<!-- ```{r, out.width="100%"} -->
+<!-- include_graphics("img/page 48.png") -->
+<!-- ``` -->
+<!-- </div> -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 62.png")
-```
+<!-- <div style="float:right; width:60%"> -->
+<!-- 1. The Dirichlet distribution is an exponential family distribution over the simplex, i.e., positive vectors that sum to one -->
 
-## 
+<!-- $$p(\theta|\vec a) = \frac{\Gamma(\sum_i{a_i})}{\prod_i{\Gamma(\alpha_i)}}\prod_i{\theta_i^{\alpha_i - 1}}$$ -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 63.png")
-```
+<!-- 2. The Dirichlet is <u>conjugate</u> to the multinomial. Given a multinomial -->
+<!-- observation, the posterior distribution of $\theta$ is a Dirichlet. -->
 
-## 
+<!-- 3. The parameter $\alpha$ controls the mean shape and sparsity of $\theta$. Parameter $\alpha$ is a k-vector with components $\alpha_i$ >0   -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 64.png")
-```
+<!-- 4. The topic proportions are a K dimensional Dirichlet. The topics are a V dimensional Dirichlet. -->
 
-## 
+<!-- </div> -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 65.png")
-```
+<!-- ## Geometric Interpretation of LDA -->
+<!-- <div style="float:left; width:45%"> -->
+<!-- ```{r, out.width="100%"} -->
+<!-- include_graphics("img/page 49_1.png") -->
+<!-- ``` -->
+<!-- </div> -->
 
-## 
+<!-- <div style="float:right; width:55%"> -->
+<!-- as we draw random variables from theta, I’m going to get distributions over 3 elements.  -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 66.png")
-```
+<!-- $\theta$ ~ Dirichlet(1,1,1) = $\alpha_1$ = $\alpha_2$ = $\alpha_3$ = 1, uniform distribution as an example -->
 
-## 
+<!-- ```{r,out.width="80%"} -->
+<!-- include_graphics("img/page 49_2.png") -->
+<!-- ``` -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 67.png")
-```
+<!-- Dirichlet is parameterized by $\alpha$, so as $\alpha$ increases the chart gets more peaky. -->
+<!-- </div> -->
 
-## 
+<!-- ## Density Example -->
+<!-- <div style="float:left;width:40%"> -->
+<!-- ```{r,out.width="100%"} -->
+<!-- include_graphics("img/page 50_1.png") -->
+<!-- ``` -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 68.png")
-```
+<!-- When $\alpha < 1 (s < k)$, you get sparsity and on the 3 simplex you get a figure with increased probability at the corners. -->
+<!-- </div> -->
+<!-- <div style="float:right;width:60%"> -->
+<!-- <span style="font-size:20px">Important piece of info:</span><br> -->
+<!-- <ol>  -->
+<!--   <li>The expectations of the posterior (sometimes called M for mean)</li> -->
+<!--   <li>The sum of the alphas, which determines the peaky-ness of the Dirichlet </li> -->
+<!--   <ul> -->
+<!--     <li>If this sum is small, the Dirichlet will be more spread out</li> -->
+<!--     <li>If large, the Dirichlet will have more peaks at its expectation (sometimes called S for scaling)</li> -->
+<!--   </ul> -->
+<!-- </ol> -->
+<!-- ```{r,out.width="50%", fig.align='center'} -->
+<!-- include_graphics("img/page 50_2.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## LDA Inferences -->
+<!-- ```{r, out.width="100%"} -->
+<!-- include_graphics("img/page 51.png") -->
+<!-- ``` -->
+
+<!-- ## Posterior distribution & model estimation for LDA -->
+<!-- ```{r, out.width="100%"} -->
+<!-- include_graphics("img/page 52.png") -->
+<!-- ``` -->
+
+<!-- ## Maximum likelihood (Ml) estimation -->
+<!-- ```{r, out.width="100%"} -->
+<!-- include_graphics("img/page 53.png") -->
+<!-- ``` -->
 
 # Cluster Validation
 
 ## Desirable properties of clustering algorithms 
-
 - Scalability
   
   - Both in time and space
@@ -743,8 +597,17 @@ include_graphics("img/page 68.png")
 
 - Interpretability and usability
 
-## Cluster validation
+## What is a good clustering?
+- Internal criterion: A good clustering will produce high quality clusters in which:
 
+  - the <u>intra-class</u> (that is, intra-cluster) similarity is high
+  
+  - the <u>inter-class</u> similarity is low
+
+  - The measured quality of a clustering depends on both the document representation and the similarity measure used
+
+
+## Cluster validation
 - Criteria to determine whether the clusters are meaningful
   
   - Internal validation
@@ -765,168 +628,143 @@ include_graphics("img/page 68.png")
     
     - $DB = \frac{1}{k}\sum_{i=1}^k{\underset{j \neq i}{\operatorname{max}}{(\frac{\sigma_i + \sigma_j}{d(c_i,c_j)})}}$  <span style="color:red">&larr;</span> <em>Evaluate every pair of clusters</em>
 
-      - where $k$ is total number of clusters, $\sigma_i$ is average distance of all elements in cluster $i$, $d(c_i, c_j)$ is the distance between cluster centroid $c_i$ and $c_j$.
+      - where $k$ is total number of clusters, $\sigma_i$ is average distance of all elements in cluster $i$ from the cluster center, $d(c_i, c_j)$ is the distance between cluster centroid $c_i$ and $c_j$.
 
 <p style="color:red">We prefer smaller DB-index!</p>
 
-## Internal validation
+<!-- ## Internal validation -->
+<!-- - Coherence -->
 
-- Coherence
+<!--   - Inter-cluster similarity v.s. intra-cluster similarity -->
 
-  - Inter-cluster similarity v.s. intra-cluster similarity
-  
-  - Davies–Bouldin index
-    
-    - $DB = \frac{1}{k}\sum_{i=1}^k{\underset{j \neq i}{\operatorname{max}}{(\frac{\sigma_i + \sigma_j}{d(c_i,c_j)})}}$  <span style="color:red">&larr;</span> <em>Evaluate every pair of clusters</em>
+<!--   - Dunn index -->
 
-      - where $k$ is total number of clusters, $\sigma_i$ is average distance of all elements in cluster $i$, $d(c_i, c_j)$ is the distance between cluster centroid $c_i$ and $c_j$.
+<!--     - $D = \frac{ \underset{1 \leq i < j \leq k}{\operatorname{min}}d(c_i, c_j)}{\underset{1 \leq i \leq k}{\operatorname{max}} \sigma_i}$  \ \ \ \ <span style="color:red">We prefer larger D-index!</span> -->
 
-<p style="color:red">We prefer smaller DB-index!</p>
+<!--       - Worst situation analysis -->
 
-## External validation
-&nbsp;
+<!-- - Limitation -->
 
-- Given class label $\Omega$ (<span style="color:blue; font-size: 18px">Required, might need extra cost</span>) on each instance
+<!--   - No indication of actual application’s performance -->
 
-  - Purity: correctly clustered documents in each cluster
-    
-    - $purity(\Omega,C) = \frac{1}{N}\sum_{i=1}^k{\underset{j}{\operatorname{max}}|c_i \cap w_j|}$   <span style="color:red; font-size:18px">&larr; Not a good metric if we assign each document into a single cluster</span>
-      - where $c_i$ is a set of documents in cluster $i$, and $w_j$ is a set of documents in class $j$
-      
-<div style="float: left; width:30%">
-$$purity(\Omega, C) = \\ \frac{1}{17}(5 + 4 + 3)$$
-</div>
-<div style="float: right; width:70%">
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 74.png")
-```
-</div>
+<!--   - Bias towards a specific type of clustering algorithm if that algorithm is designed to optimize a similar metric -->
 
-## External validation
+<!-- ## External validation -->
+<!-- - Given class label $\Omega$ (<span style="color:blue; font-size: 18px">Required, might need extra cost</span>) on each instance -->
 
-- Given class label Ω on each instance
-  
-  - Normalized mutual information (NMI)
-    
-    - $NMI(\Omega, C) = \frac{I(\Omega, C)}{[H(\Omega)+H(C)]/2}$ <span style="color:red; font-size:18px">&swarr; Normalization by entropy will penalize too many clusters</span>
-      - where $I(\Omega, C) = \sum_i \sum_j P(w_i \cap c_j)log{\frac{P(w_i \cap c_j)}{P(w_i)P(c_j)}} \\ H(\Omega) = - \sum_i{P(w_i) logP(w_i)} \ \ \ \mathrm{and} \ \ \ H(C) = - \sum_j{P(c_j)logP(c_j)}$ 
-    
-    - Indicate the increase of knowledge about classes when we know the clustering results
+<!--   - Purity: correctly clustered documents in each cluster -->
 
-## External validation
+<!--     - $purity(\Omega,C) = \frac{1}{N}\sum_{i=1}^k{\underset{j}{\operatorname{max}}|c_i \cap w_j|}$   <span style="color:red; font-size:18px">&larr; Not a good metric if we assign each document into a single cluster</span> -->
+<!--       - where $c_i$ is a set of documents in cluster $i$, and $w_j$ is a set of documents in class $j$ -->
 
-- Given class label $\Omega$ on each instance
+<!-- <div style="float: left; width:30%"> -->
+<!-- $$purity(\Omega, C) = \\ \frac{1}{17}(5 + 4 + 3)$$ -->
+<!-- </div> -->
+<!-- <div style="float: right; width:70%"> -->
+<!-- ```{r, out.width="80%"} -->
+<!-- include_graphics("img/page 59.png") -->
+<!-- ``` -->
+<!-- </div> -->
 
-  - Rand index
-    
-    - Idea: we want to assign two documents to the same cluster if and only if they are from the same class
-    
-    - $RI = \frac{TP + TN}{TP + FP + FN + TN}$ <span style="color:red;font-size:18px">&larr; Essentially it is like classification accuracy</span>
-    
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 76.png")
-```
+<!-- ## External validation -->
+<!-- - Given class label Ω on each instance -->
 
-## External validation
+<!--   - Normalized mutual information (NMI) -->
 
-- Given class label $\Omega$ on each instance
-  - Rand index
-    
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 77.png")
-```
+<!--     - $NMI(\Omega, C) = \frac{I(\Omega, C)}{[H(\Omega)+H(C)]/2}$ <span style="color:red; font-size:18px">&swarr; Normalization by entropy will penalize too many clusters</span> -->
+<!--       - where $I(\Omega, C) = \sum_i \sum_j P(w_i \cap c_j)log{\frac{P(w_i \cap c_j)}{P(w_i)P(c_j)}} \\ H(\Omega) = - \sum_i{P(w_i) logP(w_i)} \ \ \ \mathrm{and} \ \ \ H(C) = - \sum_j{P(c_j)logP(c_j)}$  -->
 
-## External validation
+<!--     - Indicate the increase of knowledge about classes when we know the clustering results -->
 
-- Given class label $\Omega$ on each instance
-  
-  - Precision/Recall/F-measure
-     
-     - Based on the contingency table, we can also define precision/recall/F-measure of clustering quality
-     
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 78.png")
-```
+<!-- ## External validation -->
+<!-- - Given class label $\Omega$ on each instance -->
 
-## Group Average
+<!--   - Rand index -->
 
-- Similarity of two clusters = average similarity of all pairs within merged cluster.
+<!--     - Idea: we want to assign two documents to the same cluster if and only if they are from the same class -->
 
-$$sim(c_i, c_j) = \frac{1}{|c_i \cup c_j|(|c_i \cup c_j| - 1)}\sum_{\vec x \in (c_i \cup c_j)} \sum_{\vec y \in (c_i \cup c_j): \vec y \neq \vec x}{sim(\vec x, \vec y)}$$
+<!--     - $RI = \frac{TP + TN}{TP + FP + FN + TN}$ <span style="color:red;font-size:18px">&larr; Essentially it is like classification accuracy</span> -->
 
-- Compromise between single and complete link.
+<!-- ```{r, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 61.png") -->
+<!-- ``` -->
 
-- Two options:
- 
-  - Averaged across all ordered pairs in the merged cluster 
- 
-  - Averaged over all pairs between the two original clusters
+<!-- ## External validation -->
+<!-- - Given class label $\Omega$ on each instance -->
+<!--   - Rand index -->
 
-- No clear difference in efficacy
+<!-- ```{r, out.width="90%", fig.align='center'} -->
+<!-- include_graphics("img/page 62.png") -->
+<!-- ``` -->
 
-## Computing Group Average Similarity
+<!-- ## External validation -->
+<!-- - Given class label $\Omega$ on each instance -->
 
-- Always maintain sum of vectors in each cluster.
+<!--   - Precision/Recall/F-measure -->
 
-$$\vec s(c_j) = \sum_{\vec x \in c_j}{\vec x}$$
-- Compute similarity of clusters in constant time:
+<!--      - Based on the contingency table, we can also define precision/recall/F-measure of clustering quality -->
 
-$$sim(c_i, c_j) = \frac{\vec s(c_i) + \vec s(c_j) \cdot (\vec s(c_j) + \vec s(c_j)) - (|c_i| + |c_j|)}{(|c_i| + |c_j|)(|c_i| + |c_j| - 1)}$$
+<!-- ```{r, out.width="60%", fig.align='center'} -->
+<!-- include_graphics("img/page 63.png") -->
+<!-- ``` -->
 
-## What Is A Good Clustering?
+<!-- ## Group Average -->
+<!-- - Similarity of two clusters = average similarity of all pairs within merged cluster. -->
 
-- Internal criterion: A good clustering will produce high quality clusters in which:
+<!-- $$sim(c_i, c_j) = \frac{1}{|c_i \cup c_j|(|c_i \cup c_j| - 1)}\sum_{\vec x \in (c_i \cup c_j)} \sum_{\vec y \in (c_i \cup c_j): \vec y \neq \vec x}{sim(\vec x, \vec y)}$$ -->
 
-  - the <u>intra-class</u> (that is, intra-cluster) similarity is high
-  
-  - the <u>inter-class</u> similarity is low
+<!-- - Compromise between single and complete link. -->
 
-  - The measured quality of a clustering depends on both the document representation and the similarity measure used
-  
+<!-- - Two options: -->
+
+<!--   - Averaged across all ordered pairs in the merged cluster  -->
+
+<!--   - Averaged over all pairs between the two original clusters -->
+
+<!-- - No clear difference in efficacy -->
+
+<!-- ## Computing Group Average Similarity -->
+<!-- - Always maintain sum of vectors in each cluster. -->
+
+<!-- $$\vec s(c_j) = \sum_{\vec x \in c_j}{\vec x}$$ -->
+<!-- - Compute similarity of clusters in constant time: -->
+
+<!-- $$sim(c_i, c_j) = \frac{\vec s(c_i) + \vec s(c_j) \cdot (\vec s(c_j) + \vec s(c_j)) - (|c_i| + |c_j|)}{(|c_i| + |c_j|)(|c_i| + |c_j| - 1)}$$ -->
+<!-- \newpage -->
+
 ## External criteria for clustering quality
-
 - Quality measured by its ability to discover some or all of the hidden patterns or latent classes in gold standard data
 
 - Assesses a clustering with respect to <u>ground truth</u> … requires <span style="color:green; font-style:italic">labeled data</span>
 
 - Assume documents with $C$ gold standard classes, while our clustering algorithms produce $K$ clusters, $\omega_1$, $\omega_2$, …, $\omega_K$  with $n_i$ members.
 
-## External Evaluation of Cluster Quality
+<!-- ## External Evaluation of Cluster Quality -->
+<!-- - Simple measure: <u>purity</u>, the ratio between the dominant class in the cluster $\pi_i$ and the size of cluster $\omega_i$ -->
 
-- Simple measure: <u>purity</u>, the ratio between the dominant class in the cluster $\pi_i$ and the size of cluster $\omega_i$
+<!-- $$Purity(\omega_i) = \frac{1}{n_i}\max_j(n_{ij}) \ \ \ j \in C$$ -->
 
-$$Purity(\omega_i) = \frac{1}{n_i}\max_j(n_{ij}) \ \ \ j \in C$$
+<!-- - Biased because having n clusters maximizes purity -->
 
-- Biased because having n clusters maximizes purity
+<!-- - Others are entropy of classes in clusters (or mutual information between classes and clusters) -->
 
-- Others are entropy of classes in clusters (or mutual information between classes and clusters)
+<!-- ## Rand index and Cluster F-measure -->
 
-## Rand index and Cluster F-measure
+<!-- $$RI = \frac{A + D}{A + B + C + D}$$ -->
+<!-- <center style="color:darkred">Compare with standard Precision and Recall:</center> -->
 
-$$RI = \frac{A + D}{A + B + C + D}$$
-<center style="color:darkred">Compare with standard Precision and Recall:</center>
+<!-- $$P= \frac{A}{A + B} \ \ \ \ \ \ P = \frac{A}{A + C}$$ -->
+<!-- <center style="color:darkred">People also define and use a cluster F-measure, which is probably a better measure</center> -->
 
-$$P= \frac{A}{A + B} \ \ \ \ \ \ P = \frac{A}{A + C}$$
-<center style="color:darkred">People also define and use a cluster F-measure, which is probably a better measure</center>
+# Summary 
 
-# Summary
-
-## Summary: what did we learn?
-
+## Summary
 - Text clustering
 
 - In clustering, clusters are inferred from the data without human input (unsupervised learning)
 
-- However, in practice, it’s a bit less clear: there are many ways of influencing the outcome of clustering: number of clusters, similarity measure, representation of documents
+- Many ways of influencing the outcome of clustering: number of clusters, similarity measure, representation of documents
 
 - Evaluation
 
-# Time for Practical 4!
-
-
-
-
-
-
-
-
+# Practical 5
