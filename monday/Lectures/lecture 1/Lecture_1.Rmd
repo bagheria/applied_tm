@@ -395,52 +395,6 @@ source: https://nlp.stanford.edu/~wcmac/papers/20140716-UNLU.pdf
 </div>
 
 
-# Python
-
-## How familiar are you with Python?
-
-- From 1 to 5 how familiar are you with Python?
-
-  - Go to <a hre="www.menti.com">www.menti.com</a> and use the code 81 09 57 8
-  
-## Python IDE?!
-
-- Which Python IDE do you mostly use?
-
-  - Go to <a href="www.menti.com">www.menti.com</a> and use the code 81 09 57 8
-
-- From 1 to 10 how familiar are you with Google Colab?
-
-## Python
-
-- Latest: <a href="https://www.python.org/downloads/release/python-391/">Python 3.9.1</a>
-
-- Python For Beginners
-    - <a href="https://www.python.org/about/gettingstarted/">https://www.python.org/about/gettingstarted/</a>
-
-- The Python Language Reference
-    - <a href="https://docs.python.org/3/reference/">https://docs.python.org/3/reference/</a>
-
-- Python 3.9.1 documentation
-    - <a href="https://docs.python.org/3/">https://docs.python.org/3/</a>
-
-## Google Colab?!
-
-- From 1 to 5 how familiar are you with Google Colab?
-  
-  - Go to <a href="www.menti.com">www.menti.com</a> and use the code 81 09 57 8
-  
-
-## Google Colab
-
-- Colaboratory, or "Colab" for short, allows you to write and execute Python in your browser, with
-  - Zero configuration required
-  - Free access to GPUs
-  - Easy sharing
-
-- <a href="https://colab.research.google.com/notebooks/intro.ipynb">https://colab.research.google.com/notebooks/intro.ipynb</a>
-
-
 # Text preprocessing
 
 ## How to represent a document
@@ -835,6 +789,52 @@ include_graphics("img/page 50.png")
 - CCG Demos: https://cogcomp.seas.upenn.edu/page/demos/
 
 - Stanford parser: http://nlp.stanford.edu:8080/parser/index.jsp
+
+# Python
+
+## How familiar are you with Python?
+
+- From 1 to 5 how familiar are you with Python?
+
+  - Go to <a hre="www.menti.com">www.menti.com</a> and use the code 81 09 57 8
+  
+## Python IDE?!
+
+- Which Python IDE do you mostly use?
+
+  - Go to <a href="www.menti.com">www.menti.com</a> and use the code 81 09 57 8
+
+- From 1 to 10 how familiar are you with Google Colab?
+
+## Python
+
+- Latest: <a href="https://www.python.org/downloads/release/python-391/">Python 3.9.1</a>
+
+- Python For Beginners
+    - <a href="https://www.python.org/about/gettingstarted/">https://www.python.org/about/gettingstarted/</a>
+
+- The Python Language Reference
+    - <a href="https://docs.python.org/3/reference/">https://docs.python.org/3/reference/</a>
+
+- Python 3.9.1 documentation
+    - <a href="https://docs.python.org/3/">https://docs.python.org/3/</a>
+
+## Google Colab?!
+
+- From 1 to 5 how familiar are you with Google Colab?
+  
+  - Go to <a href="www.menti.com">www.menti.com</a> and use the code 81 09 57 8
+  
+
+## Google Colab
+
+- Colaboratory, or "Colab" for short, allows you to write and execute Python in your browser, with
+  - Zero configuration required
+  - Free access to GPUs
+  - Easy sharing
+
+- <a href="https://colab.research.google.com/notebooks/intro.ipynb">https://colab.research.google.com/notebooks/intro.ipynb</a>
+
 
 # Summary
 
