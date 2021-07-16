@@ -35,6 +35,8 @@ Instructors:
 + [Dong Nguyen](https://dongnguyen.nl/)\
 * [Berit Janssen](https://www.uu.nl/staff/BDJanssen)\
 - [Anastasia Giachanou](http://giachanou.com/)
+- [Nikos Bentis](https://www.linkedin.com/in/nikos-bentis-704187119/?originalSubdomain=nl)
+- [Jelle Teijema](https://teije.ma/)
 
 ---
 
@@ -62,8 +64,17 @@ The course starts with reviewing basic concepts of text mining and implementing 
 ### Requirements
 Participants should have a basic knowledge of data science and programming and a motivation of scripting and programming in Python.
 
+### Prerequisites
+Participants are requested to bring their own laptop for the lab meetings.
+
 ### Certificate
 Participants will receive a certificate at the end of the course.
+
+### Additional references
+1- Jurafsky, D., Martin, J.H. (2021). Speech and language processing, third edition. Find online chapters [here](https://web.stanford.edu/~jurafsky/slp3/)
+
+
+2- Eisenstein, J. (2018). Natural Language Processing. Find online chapters [here](https://github.com/jacobeisenstein/gt-nlp-class/blob/master/notes/eisenstein-nlp-notes.pdf)
 
 
 ## Column 2
