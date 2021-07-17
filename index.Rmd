@@ -123,13 +123,13 @@ Here you will find the materials for Monday:
 
 - Part 1: Introduction
     - [Lecture 1](monday/Lectures/lecture 1/Lecture_1.html)
-    - [Impractical 1](monday/Practicals/Impractical 1.html)
-    - [Practical 1](monday/Practicals/Practical 1.html)
+    - [Impractical 1](monday/Practicals/Practical 1/Impractical 1.html)
+    - [Practical 1](monday/Practicals/Practical 1/Practical 1.html)
 
 - Part 2: Text classification and sentiment analysis
     - [Lecture 2](monday/Lectures/lecture 2/Lecture_2.html)
-    - [Impractical 2](monday/Practicals/Impractical 2.html)
-    - [Practical 2](monday/Practicals/Practical 2.html)
+    - [Impractical 2](monday/Practicals/Practical 2/Impractical 2.html)
+    - [Practical 2](monday/Practicals/Practical 2/Practical 2.html)
 
 ## Column 2
 
@@ -148,13 +148,13 @@ Here you will find the materials for Tuesday:
 
 - Part 3: Feature selection
     - [Lecture 3](tuesday/Lectures/lecture 3/Lecture_3.html)
-    - [Impractical 3](tuesday/Practicals/Impractical 3.html)
-    - [Practical 3](tuesday/Practicals/Practical 3.html)
+    - [Impractical 3](tuesday/Practicals/Practical 3/Impractical 3.html)
+    - [Practical 3](tuesday/Practicals/Practical 3/Practical 3.html)
 
 - Part 4: Text clustering
     - [Lecture 4](tuesday/Lectures/lecture 4/Lecture_4.html)
-    - [Impractical 4](tuesday/Practicals/Impractical 4.html)
-    - [Practical 4](tuesday/Practicals/Practical 4.html)
+    - [Impractical 4](tuesday/Practicals/Practical 4/Impractical 4.html)
+    - [Practical 4](tuesday/Practicals/Practical 4/Practical 4.html)
 
 
 ## Column 2
@@ -174,13 +174,13 @@ Here you will find the materials for Wednesday:
 
 - Part 5: Word embedding
     - [Lecture 5](wednesday/Lectures/lecture 5/Lecture 5.slides.html)
-    - [Impractical 5](wednesday/Practicals/Impractical 5.html)
-    - [Practical 5](wednesday/Practicals/Practical 5.html)
+    - [Impractical 5](wednesday/Practicals/Practical 5/Impractical 5.html)
+    - [Practical 5](wednesday/Practicals/Practical 5/Practical 5.html)
 
 - Part 6: Deep learning for text 1
     - [Lecture 6](wednesday/Lectures/lecture 6/Lecture 6.slides.html)
-    - [Impractical 6](wednesday/Practicals/Impractical 6.html)
-    - [Practical 6](wednesday/Practicals/Practical 6.html) 
+    - [Impractical 6](wednesday/Practicals/Practical 6/Impractical 6.html)
+    - [Practical 6](wednesday/Practicals/Practical 6/Practical 6.html) 
 
 
 ## Column 2
@@ -200,13 +200,13 @@ Here you will find the materials for Thursday:
 
 - Part 7: Deep learning for text 2
     - [Lecture 7](thursday/Lectures/lecture 7/Lecture 7.slides.html)
-    - [Impractical 7](thursday/Practicals/Impractical 7.html)
-    - [Practical 7](thursday/Practicals/Practical 7.html)
+    - [Impractical 7](thursday/Practicals/Practical 7/Impractical 7.html)
+    - [Practical 7](thursday/Practicals/Practical 7/Practical 7.html)
 
 - Part 8: Responsible text mining
     - [Lecture 8](thursday/Lectures/lecture 8/Lecture 8.slides.html)
-    - [Impractical 8](thursday/Practicals/Impractical 8.html)
-    - [Practical 8](thursday/Practicals/Practical 8.html)
+    - [Impractical 8](thursday/Practicals/Practical 8/Impractical 8.html)
+    - [Practical 8](thursday/Practicals/Practical 8/Practical 8.html)
 
 
 ## Column 2
