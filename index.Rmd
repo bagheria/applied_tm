@@ -87,7 +87,7 @@ Participants will receive a certificate at the end of the course.
 |            |**Break** |           |
 |  10:45     | 11:45    | Practical |
 |  11:45     | 12:15    | Discussion|
-|            |**Lunch** |           |
+|            |**[Lunch](https://www.uu.nl/en/educatorium)** |           |
 |  13:45     | 15:15    | Lecture   |
 |            |**Break** |           |
 |  15:30     | 16:30    | Practical |
@@ -133,9 +133,9 @@ Here you will find the materials for Monday:
 
 ## Column 2
 
-### References
-
-Add additional info/references
+### Additional references
+- Ref 1: Chapters 2, 3, 4, 5, 6
+- Ref 2: Chapters 1, 2, 3, 4
 
 # Tuesday
 ## Column 1
@@ -159,9 +159,8 @@ Here you will find the materials for Tuesday:
 
 ## Column 2
 
-### References
-
-Add additional info/references
+### Additional references
+- Ref 2: Chapter 5
 
 # Wednesday
 ## Column 1
@@ -173,21 +172,21 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 Here you will find the materials for Wednesday:
 
 - Part 5: Word embedding
-    - [Lecture 5](wednesday/Lectures/lecture 5/Lecture 5.slides.html)
+    - [Lecture 5](wednesday/Lectures/lecture 5/Lecture_5.pdf)
     - [Impractical 5](wednesday/Practicals/Practical 5/Impractical 5.html)
     - [Practical 5](wednesday/Practicals/Practical 5/Practical 5.html)
 
 - Part 6: Deep learning for text 1
-    - [Lecture 6](wednesday/Lectures/lecture 6/Lecture 6.slides.html)
+    - [Lecture 6](wednesday/Lectures/lecture 6/Lecture 6.html)
     - [Impractical 6](wednesday/Practicals/Practical 6/Impractical 6.html)
     - [Practical 6](wednesday/Practicals/Practical 6/Practical 6.html) 
 
 
 ## Column 2
 
-### References
-
-Add additional info/references
+### Additional references
+- Ref 1: Chapters 6, 7, 9
+- Ref 2: Chapters 6, 14
 
 # Thursday
 ## Column 1
@@ -199,7 +198,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 Here you will find the materials for Thursday:
 
 - Part 7: Deep learning for text 2
-    - [Lecture 7](thursday/Lectures/lecture 7/Lecture 7.slides.html)
+    - [Lecture 7](thursday/Lectures/lecture 7/Lecture 7.html)
     - [Impractical 7](thursday/Practicals/Practical 7/Impractical 7.html)
     - [Practical 7](thursday/Practicals/Practical 7/Practical 7.html)
 
@@ -211,7 +210,9 @@ Here you will find the materials for Thursday:
 
 ## Column 2
 
-### References
+### Additional references
+- Ref 1: Chapters 6, 7, 9
+- Ref 2: Chapters 6, 14
 
-Add additional info/references
-
+# Archive
+On the last day of the course, all the course materials will be availabe to download in a compact file.
