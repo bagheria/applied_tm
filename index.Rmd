@@ -214,6 +214,7 @@ Here you will find the materials for Thursday:
     - [Lecture 8](thursday/Lectures/lecture 8/Lecture 8.slides.html)
     - [Impractical 8](thursday/Practicals/Practical 8/Impractical 8.html)
     - [Practical 8](thursday/Practicals/Practical 8/Practical 8.html)
+    - [Data for practical 8](thursday/Practicals/Practical 8/nld-eng.zip)
 
 
 ## Column 2
