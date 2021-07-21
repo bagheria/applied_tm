@@ -105,17 +105,34 @@ Participants will receive a certificate at the end of the course.
 
 ### Preparing your machine for the course
 
-Add machine preparation
+Dear all,
+
+This summer you will participate in the S42: Data Science: Applied Text Mining course in Utrecht, the Netherlands. To realize a steeper learning curve, we will use some functionality from the Python programming language using Google Colab. The below steps guide you through how to use Python and work on the practicals in this course.
+
+If you follow this course online please have a look at [this instructional page on MS Teams.](https://www.uu.nl/en/education/quality-and-innovation/remote-teaching/microsoft-teams)
+
+We look forward to see you all in Utrecht and online.
+
+_The Applied Text Mining team_
 
 ### System requirements
 
-Add system requirements
+Bring a laptop computer to the course and make sure that you have an Internet connection to be able to use Python in Google Colab. If you are using PyCharm or Jupyte Notebook, also check that you have full write access and administrator rights to the machine. We will explore programming and compiling in this course. Some corporate laptops come with limited access for their users, we therefore advice you to bring a personal laptop computer, if you have one.
+
+### Python in Google Colab
+Python is a general-purpose interpreted, interactive, object-oriented, and high-level programming language. It is a powerful environment for scientific computing.
+
+We expect that many of you will have some experience with Python; for the rest of you, this section will serve as a quick crash course both on the Python programming language and on the use of Python in Google Colab.
 
 ## Column 2
 
-### What if the steps to the left do not work for me?
+### Alternative approach
 
-Add info
+I prefer to use Jupyter Notebook or PyCharm when I am not using Google Colab. 
+
+- You can find an extensive tutorial by JetBrains on how to install and use PyCharm from [here.](https://www.jetbrains.com/help/pycharm/quick-start-guide.html)
+
+- A beginner’s tutorial on how to use Jupyter Notebook: [link](https://www.dataquest.io/blog/jupyter-notebook-tutorial/)
 
 # Monday
 ## Column 1
