@@ -156,6 +156,7 @@ Here you will find the materials for Tuesday:
     - [Lecture 3](tuesday/Lectures/lecture 3/Lecture_3.html)
     - [Impractical 3](tuesday/Practicals/Practical 3/Impractical 3.html)
     - [Practical 3](tuesday/Practicals/Practical 3/Practical 3.html)
+    - [Data for practical 3](tuesday/Practicals/Practical 3/data.zip)
 
 - Part 4: Text clustering
     - [Lecture 4](tuesday/Lectures/lecture 4/Lecture_4.html)
