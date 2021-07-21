@@ -122,7 +122,11 @@ Bring a laptop computer to the course and make sure that you have an Internet co
 ### Python in Google Colab
 Python is a general-purpose interpreted, interactive, object-oriented, and high-level programming language. It is a powerful environment for scientific computing.
 
-We expect that many of you will have some experience with Python; for the rest of you, this section will serve as a quick crash course both on the Python programming language and on the use of Python in Google Colab.
+We expect that many of you will have some experience with Python; for the rest of you, this section will serve as a quick crash course both on the Python programming language and on the use of Python in Google Colab:
+
+Follow the [tutorial on Python in Google Colab for the Applied Text Mining course from here.](Python_in_Google_Colab_Applied_Text_Mining.html)
+
+This tutorial is mainly from the [CS231n Python Tutorial With Google Colab](https://colab.research.google.com/github/cs231n/cs231n.github.io/blob/master/python-colab.ipynb#scrollTo=dzNng6vCL9eP).
 
 ## Column 2
 
