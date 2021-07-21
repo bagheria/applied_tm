@@ -130,6 +130,7 @@ Here you will find the materials for Monday:
     - [Lecture 1](monday/Lectures/lecture 1/Lecture_1.html)
     - [Impractical 1](monday/Practicals/Practical 1/Impractical 1.html)
     - [Practical 1](monday/Practicals/Practical 1/Practical 1.html)
+    - [Data for practical 1](monday/Practicals/Practical 1/data.zip)
 
 - Part 2: Text classification and sentiment analysis
     - [Lecture 2](monday/Lectures/lecture 2/Lecture_2.html)
