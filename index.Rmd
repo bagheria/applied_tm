@@ -162,6 +162,7 @@ Here you will find the materials for Tuesday:
     - [Lecture 4](tuesday/Lectures/lecture 4/Lecture_4.html)
     - [Impractical 4](tuesday/Practicals/Practical 4/Impractical 4.html)
     - [Practical 4](tuesday/Practicals/Practical 4/Practical 4.html)
+    - [Data for practical 4](tuesday/Practicals/Practical 4/bbcsport-fulltext.zip)
 
 
 ## Column 2
