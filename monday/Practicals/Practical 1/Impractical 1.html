@@ -13077,7 +13077,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Practical-1:-Text-Pre-processing">Practical 1: Text Pre-processing<a class="anchor-link" href="#Practical-1:-Text-Pre-processing">&#182;</a></h1><p><img src="img/uu_logo.png" alt="logo" align="right" title="UU" width="50" height="20" /></p>
+<h1 id="Impractical-1:-Text-Pre-processing">Impractical 1: Text Pre-processing<a class="anchor-link" href="#Impractical-1:-Text-Pre-processing">&#182;</a></h1><h4 id="Ayoub-Bagheri">Ayoub Bagheri<a class="anchor-link" href="#Ayoub-Bagheri">&#182;</a></h4><p><img src="img/uu_logo.png" alt="logo" align="right" title="UU" width="50" height="20" /></p>
 <h4 id="Applied-Text-Mining---Utrecht-Summer-School">Applied Text Mining - Utrecht Summer School<a class="anchor-link" href="#Applied-Text-Mining---Utrecht-Summer-School">&#182;</a></h4>
 </div>
 </div>
@@ -13121,7 +13121,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>1. <strong>Open Colab and create a new empty notebook to work with Python 3!</strong> We are going to work with the Python libraries NLTK, Gensim, and spaCy.</p>
+<p>1. <strong>Open Colab and create a new empty notebook to work with Python 3!</strong></p>
 
 </div>
 </div>
@@ -13175,7 +13175,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install numpy
@@ -13186,6 +13186,105 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: numpy in c:\programdata\miniconda3\lib\site-packages (1.18.1)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>ERROR: Could not find a version that satisfies the requirement string (from versions: none)
+ERROR: No matching distribution found for string
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Requirement already satisfied: nltk in c:\programdata\miniconda3\lib\site-packages (3.5)
+Requirement already satisfied: joblib in c:\programdata\miniconda3\lib\site-packages (from nltk) (0.14.1)
+Requirement already satisfied: tqdm in c:\programdata\miniconda3\lib\site-packages (from nltk) (4.36.1)
+Requirement already satisfied: click in c:\programdata\miniconda3\lib\site-packages (from nltk) (7.1.2)
+Requirement already satisfied: regex in c:\programdata\miniconda3\lib\site-packages (from nltk) (2020.11.13)
+Requirement already satisfied: gensim in c:\programdata\miniconda3\lib\site-packages (3.8.3)
+Requirement already satisfied: six&gt;=1.5.0 in c:\programdata\miniconda3\lib\site-packages (from gensim) (1.12.0)
+Requirement already satisfied: scipy&gt;=0.18.1 in c:\programdata\miniconda3\lib\site-packages (from gensim) (1.4.1)
+Requirement already satisfied: smart-open&gt;=1.8.1 in c:\programdata\miniconda3\lib\site-packages (from gensim) (5.1.0)
+Requirement already satisfied: numpy&gt;=1.11.3 in c:\programdata\miniconda3\lib\site-packages (from gensim) (1.18.1)
+Requirement already satisfied: Cython==0.29.14 in c:\programdata\miniconda3\lib\site-packages (from gensim) (0.29.14)
+Collecting spacy
+  Using cached https://files.pythonhosted.org/packages/04/11/09c1fcbd0ef9741142f4a990406a2adddbc9f951163b49cbd7170bb539be/spacy-3.1.1-cp37-cp37m-win_amd64.whl
+Requirement already satisfied: spacy-legacy&lt;3.1.0,&gt;=3.0.7 in c:\programdata\miniconda3\lib\site-packages (from spacy) (3.0.8)
+Collecting tqdm&lt;5.0.0,&gt;=4.38.0
+  Using cached https://files.pythonhosted.org/packages/7a/ec/f8ff3ccfc4e59ce619a66a0bf29dc3b49c2e8c07de29d572e191c006eaa2/tqdm-4.61.2-py2.py3-none-any.whl
+Requirement already satisfied: numpy&gt;=1.15.0 in c:\programdata\miniconda3\lib\site-packages (from spacy) (1.18.1)
+Requirement already satisfied: murmurhash&lt;1.1.0,&gt;=0.28.0 in c:\programdata\miniconda3\lib\site-packages (from spacy) (1.0.5)
+Requirement already satisfied: jinja2 in c:\programdata\miniconda3\lib\site-packages (from spacy) (2.11.1)
+Requirement already satisfied: wasabi&lt;1.1.0,&gt;=0.8.1 in c:\programdata\miniconda3\lib\site-packages (from spacy) (0.8.2)
+Requirement already satisfied: catalogue&lt;2.1.0,&gt;=2.0.4 in c:\programdata\miniconda3\lib\site-packages (from spacy) (2.0.4)
+Requirement already satisfied: typing-extensions&lt;4.0.0.0,&gt;=3.7.4; python_version &lt; &#34;3.8&#34; in c:\programdata\miniconda3\lib\site-packages (from spacy) (3.7.4.3)
+Requirement already satisfied: preshed&lt;3.1.0,&gt;=3.0.2 in c:\programdata\miniconda3\lib\site-packages (from spacy) (3.0.5)
+Requirement already satisfied: blis&lt;0.8.0,&gt;=0.4.0 in c:\programdata\miniconda3\lib\site-packages (from spacy) (0.7.4)
+Requirement already satisfied: srsly&lt;3.0.0,&gt;=2.4.1 in c:\programdata\miniconda3\lib\site-packages (from spacy) (2.4.1)
+Requirement already satisfied: thinc&lt;8.1.0,&gt;=8.0.8 in c:\programdata\miniconda3\lib\site-packages (from spacy) (8.0.8)
+Requirement already satisfied: cymem&lt;2.1.0,&gt;=2.0.2 in c:\programdata\miniconda3\lib\site-packages (from spacy) (2.0.5)
+Requirement already satisfied: pydantic!=1.8,!=1.8.1,&lt;1.9.0,&gt;=1.7.4 in c:\programdata\miniconda3\lib\site-packages (from spacy) (1.8.2)
+Requirement already satisfied: setuptools in c:\programdata\miniconda3\lib\site-packages (from spacy) (41.4.0)
+Requirement already satisfied: typer&lt;0.4.0,&gt;=0.3.0 in c:\programdata\miniconda3\lib\site-packages (from spacy) (0.3.2)
+Requirement already satisfied: packaging&gt;=20.0 in c:\programdata\miniconda3\lib\site-packages (from spacy) (21.0)
+Requirement already satisfied: pathy&gt;=0.3.5 in c:\programdata\miniconda3\lib\site-packages (from spacy) (0.6.0)
+Requirement already satisfied: requests&lt;3.0.0,&gt;=2.13.0 in c:\programdata\miniconda3\lib\site-packages (from spacy) (2.22.0)
+Requirement already satisfied: colorama; platform_system == &#34;Windows&#34; in c:\programdata\miniconda3\lib\site-packages (from tqdm&lt;5.0.0,&gt;=4.38.0-&gt;spacy) (0.4.3)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in c:\programdata\miniconda3\lib\site-packages (from jinja2-&gt;spacy) (1.1.1)
+Requirement already satisfied: zipp&gt;=0.5; python_version &lt; &#34;3.8&#34; in c:\programdata\miniconda3\lib\site-packages (from catalogue&lt;2.1.0,&gt;=2.0.4-&gt;spacy) (3.1.0)
+Requirement already satisfied: click&lt;7.2.0,&gt;=7.1.1 in c:\programdata\miniconda3\lib\site-packages (from typer&lt;0.4.0,&gt;=0.3.0-&gt;spacy) (7.1.2)
+Requirement already satisfied: pyparsing&gt;=2.0.2 in c:\programdata\miniconda3\lib\site-packages (from packaging&gt;=20.0-&gt;spacy) (2.4.6)
+Requirement already satisfied: smart-open&lt;6.0.0,&gt;=5.0.0 in c:\programdata\miniconda3\lib\site-packages (from pathy&gt;=0.3.5-&gt;spacy) (5.1.0)
+Requirement already satisfied: idna&lt;2.9,&gt;=2.5 in c:\programdata\miniconda3\lib\site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy) (2.8)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in c:\programdata\miniconda3\lib\site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy) (1.24.2)
+Requirement already satisfied: chardet&lt;3.1.0,&gt;=3.0.2 in c:\programdata\miniconda3\lib\site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy) (3.0.4)
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\programdata\miniconda3\lib\site-packages (from requests&lt;3.0.0,&gt;=2.13.0-&gt;spacy) (2019.11.28)
+Installing collected packages: tqdm, spacy
+  Found existing installation: tqdm 4.36.1
+    Uninstalling tqdm-4.36.1:
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>ERROR: Could not install packages due to an EnvironmentError: [WinError 5] Access is denied: &#39;c:\\programdata\\miniconda3\\lib\\site-packages\\tqdm-4.36.1.dist-info\\entry_points.txt&#39;
+Consider using the `--user` option or check the permissions.
+
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13294,7 +13393,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>11. Read the “taylor_swift.csv” data set from the data folder. Check the head and tail functions with your dataframe.</p>
+<p>11. <strong>Read the “taylor_swift.csv” data set from the data folder. Check the head and tail functions with your dataframe.</strong></p>
 
 </div>
 </div>
@@ -13302,7 +13401,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>12. Add a new column to the dataframe and name it <em>Preprocessed</em> <em>Lyrics</em> , then fill the column out with the preprocessed text including the steps in this and the following questions. First replace the '\n' notations with a space character.</p>
+<p>12. <strong>Add a new column to the dataframe and name it <em>Preprocessed</em> <em>Lyrics</em> , then fill the column out with the preprocessed text including the steps in this and the following questions. First replace the '\n' notations with a space character.</strong></p>
 
 </div>
 </div>
@@ -13310,7 +13409,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>13. Write another custom function to remove the punctuations. You can use the previous method or make use of the function maketrans from the string package.</p>
+<p>13. <strong>Write another custom function to remove the punctuations. You can use the previous method or make use of the function maketrans from the string package.</strong></p>
 
 </div>
 </div>
@@ -13318,7 +13417,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>14. Change all the characters to their lower forms. Think about why and when we need this step in our analysis.</p>
+<p>14. <strong>Change all the characters to their lower forms. Think about why and when we need this step in our analysis.</strong></p>
 
 </div>
 </div>
@@ -13326,7 +13425,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>15. List the 20 most frequent terms in this dataframe.</p>
+<p>15. <strong>List the 20 most frequent terms in this dataframe.</strong></p>
 
 </div>
 </div>
@@ -13334,14 +13433,14 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>16. Plot a wordcloud with max 50 words using the WordCloud function from the wordcloud package. Use the command <em>?WordCloud</em> to check the help for this function.</p>
+<p>16. <strong>Plot a wordcloud with max 50 words using the WordCloud function from the wordcloud package. Use the command <em>?WordCloud</em> to check the help for this function.</strong></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[310]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install wordcloud
@@ -13362,14 +13461,14 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Requirement already satisfied: wordcloud in c:\programdata\miniconda3\lib\site-packages (1.8.1)
-Requirement already satisfied: pillow in c:\programdata\miniconda3\lib\site-packages (from wordcloud) (7.2.0)
 Requirement already satisfied: matplotlib in c:\programdata\miniconda3\lib\site-packages (from wordcloud) (3.1.3)
+Requirement already satisfied: pillow in c:\programdata\miniconda3\lib\site-packages (from wordcloud) (7.2.0)
 Requirement already satisfied: numpy&gt;=1.6.1 in c:\programdata\miniconda3\lib\site-packages (from wordcloud) (1.18.1)
-Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.1 in c:\programdata\miniconda3\lib\site-packages (from matplotlib-&gt;wordcloud) (2.4.6)
-Requirement already satisfied: cycler&gt;=0.10 in c:\programdata\miniconda3\lib\site-packages (from matplotlib-&gt;wordcloud) (0.10.0)
 Requirement already satisfied: python-dateutil&gt;=2.1 in c:\programdata\miniconda3\lib\site-packages (from matplotlib-&gt;wordcloud) (2.8.1)
+Requirement already satisfied: cycler&gt;=0.10 in c:\programdata\miniconda3\lib\site-packages (from matplotlib-&gt;wordcloud) (0.10.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.1 in c:\programdata\miniconda3\lib\site-packages (from matplotlib-&gt;wordcloud) (2.4.6)
 Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\programdata\miniconda3\lib\site-packages (from matplotlib-&gt;wordcloud) (1.1.0)
-Requirement already satisfied: six in c:\programdata\miniconda3\lib\site-packages (from cycler&gt;=0.10-&gt;matplotlib-&gt;wordcloud) (1.12.0)
+Requirement already satisfied: six&gt;=1.5 in c:\programdata\miniconda3\lib\site-packages (from python-dateutil&gt;=2.1-&gt;matplotlib-&gt;wordcloud) (1.12.0)
 Requirement already satisfied: setuptools in c:\programdata\miniconda3\lib\site-packages (from kiwisolver&gt;=1.0.1-&gt;matplotlib-&gt;wordcloud) (41.4.0)
 </pre>
 </div>
@@ -13381,7 +13480,7 @@ Requirement already satisfied: setuptools in c:\programdata\miniconda3\lib\site-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[311]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">wordcloud</span> <span class="kn">import</span> <span class="n">WordCloud</span>
@@ -13419,7 +13518,7 @@ Requirement already satisfied: setuptools in c:\programdata\miniconda3\lib\site-
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[320]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.stem.snowball</span> <span class="kn">import</span> <span class="n">SnowballStemmer</span>
@@ -13436,7 +13535,7 @@ Requirement already satisfied: setuptools in c:\programdata\miniconda3\lib\site-
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[320]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -13476,7 +13575,7 @@ Requirement already satisfied: setuptools in c:\programdata\miniconda3\lib\site-
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>19. Use the CountVectorizer from the sklearn package and build a bag of words model on <em>Preprocessed Lyrics</em> based on term frequency. Check the shape of the output matrix.</p>
+<p>19. <strong>Use the CountVectorizer from the sklearn package and build a bag of words model on <em>Preprocessed Lyrics</em> based on term frequency. Check the shape of the output matrix.</strong></p>
 
 </div>
 </div>
@@ -13484,7 +13583,7 @@ Requirement already satisfied: setuptools in c:\programdata\miniconda3\lib\site-
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>20. Inspect the first 100 terms in the vocabulary.</p>
+<p>20. <strong>Inspect the first 100 terms in the vocabulary.</strong></p>
 
 </div>
 </div>
@@ -13492,7 +13591,7 @@ Requirement already satisfied: setuptools in c:\programdata\miniconda3\lib\site-
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>21. Using TfidfVectorizer, you can create a model based on tfidf. Does the shape of the output matrix differ from dtm?</p>
+<p>21. <strong>Using TfidfVectorizer, you can create a model based on tfidf. Apply a TfidfVectorizer to your text data. Does the shape of the output matrix differ from dtm?</strong></p>
 
 </div>
 </div>
@@ -13500,7 +13599,7 @@ Requirement already satisfied: setuptools in c:\programdata\miniconda3\lib\site-
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>22. Use the TfidfVectorizer to create an n-gram based model with n = 1 and 2. Use the ngram_range argument to determine the lower and upper boundary of the range of n-values for different n-grams to be extracted. (tip: use ?TfidfVectorizer)</p>
+<p>22. <strong>Use the TfidfVectorizer to create an n-gram based model with n = 1 and 2. Use the ngram_range argument to determine the lower and upper boundary of the range of n-values for different n-grams to be extracted. (tip: use ?TfidfVectorizer)</strong></p>
 
 </div>
 </div>
@@ -13508,14 +13607,14 @@ Requirement already satisfied: setuptools in c:\programdata\miniconda3\lib\site-
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>23. Now we want to compare the lyrics of Friends theme song with the lyrics of Taylor Swift's songs and find the most similar one. Use the string below, first, apply the pre-processing steps and then transform the text into count and tfidf vectors. Do the bag of words models agree on the most similar song to Friends theme song?</p>
+<p>23. <strong>We want to compare the lyrics of Friends theme song with the lyrics of Taylor Swift's songs and find the most similar one. Use the string below, first, apply the pre-processing steps and then transform the text into count and tfidf vectors. Do the bag of words models agree on the most similar song to Friends theme song?</strong></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[327]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">friends_theme_lyrics</span> <span class="o">=</span> <span class="s2">&quot;So no one told you life was going to be this way. Your job&#39;s a joke, you&#39;re broke, you&#39;re love life&#39;s DOA. It&#39;s like you&#39;re always stuck in second gear, When it hasn</span><span class="se">\&#39;</span><span class="s2">t been your day, your week, your month, or even your year. But, I</span><span class="se">\&#39;</span><span class="s2">ll be there for you, when the rain starts to pour. I</span><span class="se">\&#39;</span><span class="s2">ll be there for you, like I</span><span class="se">\&#39;</span><span class="s2">ve been there before. I</span><span class="se">\&#39;</span><span class="s2">ll be there for you, cause you</span><span class="se">\&#39;</span><span class="s2">re there for me too.&quot;</span>
@@ -13532,7 +13631,7 @@ Requirement already satisfied: setuptools in c:\programdata\miniconda3\lib\site-
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[327]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
