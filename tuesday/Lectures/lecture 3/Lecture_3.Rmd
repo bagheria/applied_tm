@@ -1,6 +1,7 @@
 ---
-title: "Feature selection in text"
-author: "Ayoub Bagheri, <a.bagheri@uu.nl>"
+title: "Feature Selection in Text"
+author: "Ayoub Bagheri"
+subtitle: "Applied Text Mining"
 output:
   ioslides_presentation:
     logo: logo.png
@@ -13,7 +14,7 @@ library(knitr)
 library(kableExtra)
 ```
 
-## Lecture’s Plan
+## Lecture’s plan
 
 1. How to do feature selection for text data?
 
@@ -29,13 +30,13 @@ library(kableExtra)
 include_graphics("img/page 3.png")
 ```
 
-## Feature Selection:  What
+## Feature selection:  What
 
 <center><span style="color:red">You have some data, and you want to use it to build a classifier, so that you can predict something
  (e.g. email spam classification)
 </span></center>
 
-## Feature Selection:  What
+## Feature selection:  What
 
 <center><span style="color:blue">You have some data, and you want to use it to build a classifier, so that you can predict something (e.g. email spam classification)
 </span></center>
@@ -44,7 +45,7 @@ include_graphics("img/page 3.png")
 
 <center><span style="color:red">The data has 10,000 fields (features)</span></center>
 
-## Feature Selection:  What
+## Feature selection:  What
 
 <center><span style="color:red">You have some data, and you want to use it to build a classifier, so that you can predict something (e.g. email spam classification)
 </span></center>
@@ -57,7 +58,7 @@ include_graphics("img/page 3.png")
 
 <center><span style="color:brown">you need to cut it down to 1,000 fields before you try machine learning. Which 1,000? </span></center>
 
-## Feature Selection:  What
+## Feature selection:  What
 
 <center><span style="color:blue">You have some data, and you want to use it to build a classifier, so that you can predict something (e.g. email spam classification)
 </span></center>
@@ -74,13 +75,13 @@ include_graphics("img/page 3.png")
 
 <center><span style="color:red">The process of choosing the 1,000 fields to use is called Feature Selection</span></center>
 
-## Feature Selection:  Why?
+<!-- ## Feature Selection:  Why? -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 8.png")
-```
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 8.png") -->
+<!-- ``` -->
 
-## Feature Selection:  Why?
+## Feature selection:  Why
 
 ```{r, echo=FALSE, out.width="80%", fig.align='center'}
 include_graphics("img/page 9.png")
@@ -88,39 +89,47 @@ include_graphics("img/page 9.png")
 
 <p style="float:right">From http://elpub.scix.net/data/works/att/02-28.content.pdf</p>
 
-## Why accuracy reduces:
+## Why accuracy reduces
 
-- Note: suppose the best feature set has 20 features. If you *add* another 5 features, typically the accuracy of machine learning may reduce. But you still have the original 20 features!! Why does this happen???
+- Suppose the best feature set has 20 features. 
+- If you *add* another 5 features, typically the accuracy of machine learning may reduce. 
+- But you still have the original 20 features! 
+- Why does this happen?
 
 ## Noise / Explosion
 
 - The additional features typically add *noise*. Machine learning will pick up on spurious correlations, that might be true in the training set, but not in the test set.
 
-- For some ML methods, more features means more *parameters* to learn (more NN weights, more decision tree nodes, etc…) – the increased space of possibilities is more difficult to search.
+- For some ML methods, more features means more *parameters* to learn (more NN weights, more decision tree nodes, etc…) 
+
+- The increased space of possibilities is more difficult to search.
+
 
 ## Feature selection
 
-- Why we need FS:
-    1. to improve performance (in terms of speed, predictive power, simplicity of the model).
+Why we need FS:
 
-    2. to visualize the data for model selection.
+    1. To improve performance (in terms of speed, predictive power, simplicity of the model).
 
-    3. to reduce dimensionality and remove noise.
+    2. To visualize the data for model selection.
 
-- *Feature Selection* is a process that chooses an optimal subset of features according to a certain criterion.
+    3. To reduce dimensionality and remove noise.
 
-## Feature selection
+*Feature Selection* is a process that chooses an optimal subset of features according to a certain criterion.
 
-- Reasons for performing FS may include:
-    - removing irrelevant data.
-    - increasing predictive accuracy of learned models.
-    - reducing the cost of the data.
-    - improving learning efficiency, such as reducing storage requirements and computational cost.
-    - reducing the complexity of the resulting model description, improving the understanding of the data and the model
+<!-- ## Feature selection -->
+
+<!-- Reasons for performing FS may include: -->
+<!--     - removing irrelevant data. -->
+<!--     - increasing predictive accuracy of learned models. -->
+<!--     - reducing the cost of the data. -->
+<!--     - improving learning efficiency, such as reducing storage requirements and computational cost. -->
+<!--     - reducing the complexity of the resulting model description, improving the understanding of the data and the model -->
 
 ## Feature selection for text
 
-- Feature selection is the process of selecting a specific subset of the terms of the training set and using only them in the classification algorithm.
+*Feature selection* is the process of selecting a specific subset of the terms of the training set and using only them in the classification algorithm.
+
 - high dimensionality of text features
 - Select the most informative features for model training
     - Reduce noise in feature representation
@@ -131,7 +140,7 @@ include_graphics("img/page 9.png")
 
 # Feature Selection Methods
 
-## Feature Selection Methods
+## Feature selection methods
 
 <ul>
 <li><span style="color:blue; font-weight:bold">Thousands to millions of low level features</span>: select the most relevant one to build <span style="color:blue; font-weight:bold">better, faster, and easier to understand</span> learning machines.</li>
@@ -141,7 +150,7 @@ include_graphics("img/page 9.png")
 include_graphics("img/page 16_1.png")
 ```
 
-## Feature Selection Methods
+## Feature selection methods
 
 <ul>
 <li><span style="color:blue; font-weight:bold">Thousands to millions of low level features</span>: select the most relevant one to build <span style="color:blue; font-weight:bold">better, faster, and easier to understand</span> learning machines.</li>
@@ -151,42 +160,42 @@ include_graphics("img/page 16_1.png")
 include_graphics("img/page 16_2.png")
 ```
 
-## Other criteria
+<!-- ## Other criteria -->
 
-## Other criteria
+<!-- ## Other criteria -->
 
-<center>A choice of feature selection ranking methods           depending on the nature of:</center>
+<!-- <center>A choice of feature selection ranking methods           depending on the nature of:</center> -->
 
-## Other criteria
+<!-- ## Other criteria -->
 
-<center>A choice of feature selection ranking methods           depending on the nature of:</center>
+<!-- <center>A choice of feature selection ranking methods           depending on the nature of:</center> -->
 
-<ul>
-    <li><u>the variables and the target</u> (binary, categorical, continuous)
-</ul>
+<!-- <ul> -->
+<!--     <li><u>the variables and the target</u> (binary, categorical, continuous) -->
+<!-- </ul> -->
 
-## Other criteria
+<!-- ## Other criteria -->
 
-<center>A choice of feature selection ranking methods           depending on the nature of:</center>
+<!-- <center>A choice of feature selection ranking methods           depending on the nature of:</center> -->
 
-<ul>
-    <li><u>the variables and the target</u> (binary, categorical, continuous)
-</li>
-    <li><u>the problem</u> (dependencies between variables, linear/non-linear relationships between variables and target)</li>
-</ul>
+<!-- <ul> -->
+<!--     <li><u>the variables and the target</u> (binary, categorical, continuous) -->
+<!-- </li> -->
+<!--     <li><u>the problem</u> (dependencies between variables, linear/non-linear relationships between variables and target)</li> -->
+<!-- </ul> -->
 
-## Other criteria
+<!-- ## Other criteria -->
 
-<center>A choice of feature selection ranking methods           depending on the nature of:</center>
+<!-- <center>A choice of feature selection ranking methods           depending on the nature of:</center> -->
 
-<ul>
-    <li><u>the variables and the target</u> (binary, categorical, continuous)
-</li>
-    <li><u>the problem</u> (dependencies between variables, linear/non-linear relationships between variables and target)</li>
-    <li><u>the available data</u> (number of examples and number of variables, noise in data)</li>
-</ul>
+<!-- <ul> -->
+<!--     <li><u>the variables and the target</u> (binary, categorical, continuous) -->
+<!-- </li> -->
+<!--     <li><u>the problem</u> (dependencies between variables, linear/non-linear relationships between variables and target)</li> -->
+<!--     <li><u>the available data</u> (number of examples and number of variables, noise in data)</li> -->
+<!-- </ul> -->
 
-## Other criteria
+## Some criteria
 
 <center>A choice of feature selection ranking methods           depending on the nature of:</center>
 
@@ -203,9 +212,7 @@ include_graphics("img/page 16_2.png")
 include_graphics("img/page 18.png")
 ```
 
-## Menti
- 
-# Wrapper methods
+# Wrapper Methods
 
 ## Feature selection methods
 
@@ -216,7 +223,7 @@ include_graphics("img/page 18.png")
 include_graphics("img/page 21.png")
 ```
 
-## Feature Selection - Wrappers
+## Feature selection: Wrappers
 
 - Optimizes for a specific learning algorithm
 - The feature subset selection algorithm is a "wrapper" around the learning algorithm
@@ -228,7 +235,7 @@ include_graphics("img/page 21.png")
 - Basic approach is simple
 - Variations are based on how to select the feature subsets, since there are an exponential number of subsets
 
-## Feature Selection - Wrappers
+## Feature selection: Wrappers
 
 - Exhaustive Search - Exhausting
 - Forward Search – $O(n^2 \cdot \text{learning/testing time})$ - Greedy
@@ -241,7 +248,7 @@ include_graphics("img/page 21.png")
     3. Continue until begin to get significant decreases in accuracy
 - Branch and Bound and other heuristic approaches available
 
-## Feature selection methods
+## Wrapper method
 
 - Wrapper method
     - Search in the whole space of feature groups
@@ -251,7 +258,7 @@ include_graphics("img/page 21.png")
 include_graphics("img/page 24.png")
 ```
 
-## Feature selection methods
+## Wrapper method
 
 - Wrapper method
     - Consider all possible dependencies among the features
@@ -266,7 +273,7 @@ include_graphics("img/page 24.png")
 include_graphics("img/page 26.png")
 ```
 
-## Search Strategies
+## Search strategies
 
 - **Exhaustive search**.
 - **Simulated annealing, genetic algorithms**.
@@ -275,48 +282,48 @@ include_graphics("img/page 26.png")
 - **PTA(l,r)**: plus l , take away r – at each step, run SFS l times then SBS r times.
 - **Floating search** (SFFS and SBFS): One step of SFS (resp. SBS), then SBS (resp. SFS) as long as we find better subsets than those of the same size obtained so far. Any time, if a better subset of the same size was already found, switch abruptly.
 
-## Forward Selection (wrapper)
+<!-- ## Forward Selection (wrapper) -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 28.png")
-```
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 28.png") -->
+<!-- ``` -->
 
-## Forward Selection (embedded)
+<!-- ## Forward Selection (embedded) -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 29.png")
-```
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 29.png") -->
+<!-- ``` -->
 
-## Backward Elimination (wrapper)
+<!-- ## Backward Elimination (wrapper) -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 30.png")
-```
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 30.png") -->
+<!-- ``` -->
 
-## Backward Elimination (embedded)
+<!-- ## Backward Elimination (embedded) -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 31.png")
-```
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 31.png") -->
+<!-- ``` -->
 
-## Scaling Factors
+<!-- ## Scaling Factors -->
 
-<b>Idea</b>: Transform a discrete space into a continuous space.
+<!-- <b>Idea</b>: Transform a discrete space into a continuous space. -->
 
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 32.png")
-```
+<!-- ```{r, echo=FALSE, out.width="60%", fig.align='center'} -->
+<!-- include_graphics("img/page 32.png") -->
+<!-- ``` -->
 
-<ul>
-    <li>Discrete indicators of feature presence: $\sigma_i \in \{0,1\}$</li>
-    <li>Continuous scaling factors: $\sigma_i \in \text{IR}$</li>
-</ul>
-<br><br>
-<center><span style="background-color:yellow; font-size:26pt">Now we can do gradient descent!</span></center>
+<!-- <ul> -->
+<!--     <li>Discrete indicators of feature presence: $\sigma_i \in \{0,1\}$</li> -->
+<!--     <li>Continuous scaling factors: $\sigma_i \in \text{IR}$</li> -->
+<!-- </ul> -->
+<!-- <br><br> -->
+<!-- <center><span style="background-color:yellow; font-size:26pt">Now we can do gradient descent!</span></center> -->
 
-# Filter methods
+# Filter Methods
 
-## Feature selection methods
+## Filter method
 
 - Filter method
     - Evaluate the features <u>independently</u> from the classifier and other features
@@ -330,18 +337,6 @@ include_graphics("img/page 34.png")
 ```
 
 
-## Feature Selection - Wrappers
-
-- Optimizes for a specific learning algorithm
-- The feature subset selection algorithm is a "wrapper" around the learning algorithm
-    1. Pick a feature subset and pass it in to learning algorithm
-    2. Create training/test set based on the feature subset
-    3. Train the learning algorithm with the training set
-    4. Find accuracy (objective) with validation set
-    5. Repeat for all feature subsets and pick the feature subset which led to the highest predictive accuracy (or other objective)
-- Basic approach is simple
-- Variations are based on how to select the feature subsets, since there are an exponential number of subsets
-
 ## Document frequency
 
 - Rare words: non-influential for global prediction, reduce vocabulary size
@@ -350,19 +345,19 @@ include_graphics("img/page 34.png")
 include_graphics("img/page 36.png")
 ```
 
-## Information gain
+<!-- ## Information gain -->
 
-- Decrease in entropy of categorical prediction when the feature is present or absent
+<!-- - Decrease in entropy of categorical prediction when the feature is present or absent -->
 
-<br>
+<!-- <br> -->
 
-$$
-\begin{align}
-IG(t) = &-\sum_c{p(c)log{p(c)}} \\
-        &+ p(t)\sum_c{p(c|t)log{p(c|t)}} \\
-        &+ p(\bar t)\sum_c{p(c|\bar t)log{p(c|\bar t)}}
-\end{align}
-$$
+<!-- $$ -->
+<!-- \begin{align} -->
+<!-- IG(t) = &-\sum_c{p(c)log{p(c)}} \\ -->
+<!--         &+ p(t)\sum_c{p(c|t)log{p(c|t)}} \\ -->
+<!--         &+ p(\bar t)\sum_c{p(c|\bar t)log{p(c|\bar t)}} -->
+<!-- \end{align} -->
+<!-- $$ -->
 
 ## Information gain
 
@@ -372,7 +367,7 @@ $$
 include_graphics("img/page 37.png")
 ```
 
-## Gini Index
+## Gini index
 
 Let $p(c | t)$ be the conditional probability that a document belongs to class $c$, given the fact that it contains the term $t$. Therefore, we have:
 
@@ -392,81 +387,81 @@ $$G(t) = \sum^k_{c=1}{p(c | t)^2}$$
 
 - &#10132; normalized gini-index
 
-## Normalized Gini Index 
+<!-- ## Normalized Gini Index  -->
 
-- Let $p(c)$ represent the unconditional probability of class $c$. Then, we determine the normalized probability value $p'(c | t)$ as: 
+<!-- - Let $p(c)$ represent the unconditional probability of class $c$. Then, we determine the normalized probability value $p'(c | t)$ as:  -->
 
-$$p'(c|t) \equiv \frac{p(c|t)/p(c)}{\sum_{i=1}^k{p(i|t)/p(i)}} $$
+<!-- $$p'(c|t) \equiv \frac{p(c|t)/p(c)}{\sum_{i=1}^k{p(i|t)/p(i)}} $$ -->
 
-- Then, the gini-index is computed in terms of these normalized probability values. 
+<!-- - Then, the gini-index is computed in terms of these normalized probability values.  -->
 
-$$G(t) \equiv \sum^k_{c=1}{p'(c|t)^2}$$
+<!-- $$G(t) \equiv \sum^k_{c=1}{p'(c|t)^2}$$ -->
 
-## Mutual Information
+<!-- ## Mutual Information -->
 
-- The pointwise mutual information $M_c(t)$ between the term $t$ and the class $c$ is defined on the basis of the level of co-occurrence between the class $c$ and term $t$. Let $p(c)$ be the unconditional probability of class $c$, and $p(c | t)$ be the probability of class $c$, given that the document contains the term $t$. 
+<!-- - The pointwise mutual information $M_c(t)$ between the term $t$ and the class $c$ is defined on the basis of the level of co-occurrence between the class $c$ and term $t$. Let $p(c)$ be the unconditional probability of class $c$, and $p(c | t)$ be the probability of class $c$, given that the document contains the term $t$.  -->
 
-- Let $p(t)$ be the fraction of the documents containing the term $t$, i.e. the unconditional probability of term $t$. 
+<!-- - Let $p(t)$ be the fraction of the documents containing the term $t$, i.e. the unconditional probability of term $t$.  -->
 
-- The expected co-occurrence of class $c$ and term $t$ on the basis of mutual independence is given by $p(c) \cdot p(t)$. The true co-occurrence is of course given by $p(c | t) \cdot p(t)$.
+<!-- - The expected co-occurrence of class $c$ and term $t$ on the basis of mutual independence is given by $p(c) \cdot p(t)$. The true co-occurrence is of course given by $p(c | t) \cdot p(t)$. -->
 
-## Mutual Information 
+<!-- ## Mutual Information  -->
 
-- In practice, the value of $p(c | t) \cdot p(t)$ may be much larger or smaller than $p(c) \cdot p(t)$, depending upon the level of correlation between the class $c$ and term $t$. The mutual information is defined in terms of the ratio between these two values.
+<!-- - In practice, the value of $p(c | t) \cdot p(t)$ may be much larger or smaller than $p(c) \cdot p(t)$, depending upon the level of correlation between the class $c$ and term $t$. The mutual information is defined in terms of the ratio between these two values. -->
 
-$$M_c(t) = log(\frac{p(c|t) \cdot p(t)}{p(c) \cdot p(t)}) = log(\frac{p(c|t)}{p(c)})$$
+<!-- $$M_c(t) = log(\frac{p(c|t) \cdot p(t)}{p(c) \cdot p(t)}) = log(\frac{p(c|t)}{p(c)})$$ -->
 
-- Clearly, the term $t$ is positively correlated to the class $c$, when $M_c (t) > 0$, and the term $t$ is negatively correlated to class $c$, when $M_c (t) < 0$.
+<!-- - Clearly, the term $t$ is positively correlated to the class $c$, when $M_c (t) > 0$, and the term $t$ is negatively correlated to class $c$, when $M_c (t) < 0$. -->
 
-## Mutual Information 
+<!-- ## Mutual Information  -->
 
-- Note that $M_c(t)$ is specific to a particular class $c$. We need to compute the overall mutual information as a function of the mutual information of the term $t$ with the different classes.
+<!-- - Note that $M_c(t)$ is specific to a particular class $c$. We need to compute the overall mutual information as a function of the mutual information of the term $t$ with the different classes. -->
 
-$$M_{avg}(t) = \sum^k_{c=1}{p(c) \cdot M_c(t)}$$
-$$M_{max}(t) = \max_c{\{M_c(t)\}}$$
+<!-- $$M_{avg}(t) = \sum^k_{c=1}{p(c) \cdot M_c(t)}$$ -->
+<!-- $$M_{max}(t) = \max_c{\{M_c(t)\}}$$ -->
 
-- The second measure is particularly useful, when it is more important to determine high levels of positive correlation of the term $t$ with any of the classes.
+<!-- - The second measure is particularly useful, when it is more important to determine high levels of positive correlation of the term $t$ with any of the classes. -->
 
-## ${\chi}^2$-Statistic 
+<!-- ## ${\chi}^2$-Statistic  -->
 
-- The ${\chi^2}$-statistic is a different way to compute the lack of independence between the term $t$ and a particular class $c$. Let $n$ be the total number of documents, then:
+<!-- - The ${\chi^2}$-statistic is a different way to compute the lack of independence between the term $t$ and a particular class $c$. Let $n$ be the total number of documents, then: -->
 
-$${\chi}_c^2(t) = \frac{n \cdot p(t)^2 \cdot (p(c|t) - p(c))^2}{p(t) \cdot (1- p(t)) \cdot p(c) \cdot (1 - p(c))}$$
+<!-- $${\chi}_c^2(t) = \frac{n \cdot p(t)^2 \cdot (p(c|t) - p(c))^2}{p(t) \cdot (1- p(t)) \cdot p(c) \cdot (1 - p(c))}$$ -->
 
-- As in the case of the mutual information, we can compute a global ${\chi^2}$ statistic from the class-specific values. One major advantage of the ${\chi^2}$-statistic is that it is a normalized value and we can test statistical significance using the ${\chi^2}$ distribution with one degree of freedom.
+<!-- - As in the case of the mutual information, we can compute a global ${\chi^2}$ statistic from the class-specific values. One major advantage of the ${\chi^2}$-statistic is that it is a normalized value and we can test statistical significance using the ${\chi^2}$ distribution with one degree of freedom. -->
 
-##  ${\chi}^2$-Statistic 
+<!-- ##  ${\chi}^2$-Statistic  -->
 
-- Test whether distributions of two categorical variables are independent of one another
-  - $H_0$: they are independent
-  - $H_1$: they are dependent 
+<!-- - Test whether distributions of two categorical variables are independent of one another -->
+<!--   - $H_0$: they are independent -->
+<!--   - $H_1$: they are dependent  -->
 
-<img src="img/page 45_1.png" width="50%">
-<img src="img/page 45_2.png" width="50%">
+<!-- <img src="img/page 45_1.png" width="50%"> -->
+<!-- <img src="img/page 45_2.png" width="50%"> -->
 
-## ${\chi}^2$-Statistic
+<!-- ## ${\chi}^2$-Statistic -->
 
-- Test whether distributions of two categorical variables are independent of one another
-  
-  - Degree of freedom = $(\#col-1) \times (\#row-1)$
-  
-  - Significance level: $\alpha$, i.e., $p\mbox{-}value<\alpha$ 
-<p><span style="color:red">&#8627;</span> Look into ${\chi}^2$ distribution table to find the threshold
-</p>
+<!-- - Test whether distributions of two categorical variables are independent of one another -->
 
-<img src="img/page 46.png" width="550">
+<!--   - Degree of freedom = $(\#col-1) \times (\#row-1)$ -->
 
-## Feature scoring metrics
+<!--   - Significance level: $\alpha$, i.e., $p\mbox{-}value<\alpha$  -->
+<!-- <p><span style="color:red">&#8627;</span> Look into ${\chi}^2$ distribution table to find the threshold -->
+<!-- </p> -->
 
-- ${\chi}^2$ statistics
+<!-- <img src="img/page 46.png" width="550"> -->
 
-  - Test whether distributions of two categorical variables are independent of one another
-    
-    - Degree of freedom = $(\#col-1) \times (\#row-1)$
-  
-    - Significance level: $\alpha$, i.e., $p\mbox{-}value<\alpha$ 
+<!-- ## Feature scoring metrics -->
 
-    - For the features passing the threshold, rank them by descending order of ${\chi}^2$ values and choose the top $k$ features
+<!-- - ${\chi}^2$ statistics -->
+
+<!--   - Test whether distributions of two categorical variables are independent of one another -->
+
+<!--     - Degree of freedom = $(\#col-1) \times (\#row-1)$ -->
+
+<!--     - Significance level: $\alpha$, i.e., $p\mbox{-}value<\alpha$  -->
+
+<!--     - For the features passing the threshold, rank them by descending order of ${\chi}^2$ values and choose the top $k$ features -->
     
 ## Feature scoring metrics
 
@@ -479,7 +474,7 @@ $${\chi}_c^2(t) = \frac{n \cdot p(t)^2 \cdot (p(c|t) - p(c))^2}{p(t) \cdot (1- p
   <br>
   - ${\chi}^2(t) = \underset{c}{max}\ {\chi}^2(c,t)$
 
-    - Strongest dependency between a category    
+    - Strongest dependency between a category and a term
     
 ## Other metrics
 
@@ -498,136 +493,7 @@ $${\chi}_c^2(t) = \frac{n \cdot p(t)^2 \cdot (p(c|t) - p(c))^2}{p(t) \cdot (1- p
 $$Odds(t;c) = \frac{p(t,c)}{1 - p(t,c)} \times \frac{1 - p(t,\bar{c})}{p(t,\bar{c})}$$
 \newpage
 
-# PCA
-
-## Feature Selection and Feature Reduction
-
-- Given $n$ original features, it is often advantageous to reduce this to a smaller set of features for actual training
-    - Can improve/maintain accuracy if we can preserve the most relevant information while discarding the most irrelevant information
-    - and/or Can make the learning process more computationally and algorithmically manageable by working with less features
-    - Curse of dimensionality requires an exponential increase in data set size in relation to the number of features to learn without overfit – thus decreasing features can be critical
-- *Feature Selection* seeks a *subset* of the $n$ original features which retains most of the relevant information
-    - Filters, Wrappers
-- *Feature Reduction <u>combines/fuses</u>* the $n$ original features into a smaller set of newly created features which hopefully retains most of the relevant information from *all* the original features - Data fusion (e.g. LDA, PCA, etc.)
-
-## PCA – Principal Components Analysis
-
-- PCA is one of the most common feature reduction techniques
-- A linear method for dimensionality reduction
-- Allows us to combine much of the information contained in $n$ features into $p$ features where $p < n$
-- PCA is *unsupervised* in that it does not consider the output class/value of an instance – There are other algorithms which do (e.g. Linear Discriminant Analysis)
-- PCA works well in many cases where data has mostly linear correlations
-- Non-linear dimensionality reduction is also a successful area and can give much better results for data with significant non-linearities
-
-## PCA Overview
-
-- Seek new set of bases which correspond to the highest variance in the data
-- Transform $n$-dimensional *normalized* data to a new $n$-dimensional basis
-    - The new dimension with the most variance is the first principal component
-    - The next is the second principal component, etc.
-    - Note $z_1$ <u>combines/fuses</u> significant information from both $x_1$ and $x_2$
-- Drop dimensions for which there is little variance
-
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 53.png")
-```
-
-## Variance and Covariance
-
-- Variance is a measure of data spread in one dimension (feature)
-- Covariance measures how two dimensions (features) vary with respect to each other
-
-$$var(X) = \frac{\sum_{i = 1}^n{(X_i - \bar X)(X_i - \bar X)}}{(n - 1)}$$
-$$cov(X,Y) = \frac{\sum_{i = 1}^n{(X_i - \bar X)(Y_i - \bar Y)}}{(n - 1)}$$
-
-## Covariance and the Covariance Matrix
-
-- Considering the sign (rather than exact value) of covariance:
-    - Positive value means that as one feature increases or decreases the other does also (positively correlated)
-    - Negative value means that as one feature increases the other decreases and vice versa (negatively correlated)
-    - A value close to zero means the features are independent
-    - If highly covariant, are both features necessary?
-- Covariance matrix is an $n \times n$ matrix containing the covariance values for all pairs of features in a data set with $n$ features (dimensions)
-- The diagonal contains the covariance of a feature with itself which is the variance (which is the square of the standard deviation)
-- The matrix is symmetric
-
-## PCA Example
-
-- First step is to center the original data around 0 by subtracting the mean in each dimension
-
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 56.png")
-```
-
-## PCA Example
-
-- Second: Calculate the covariance matrix of the centered data
-- Only $2 \times 2$ for this case
-
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 57.png")
-```
-
-## PCA Example
-
-- Third: Calculate the unit eigenvectors and eigenvalues of the covariance matrix (remember linear algebra)
-    - Covariance matrix is always square $n \times n$ and positive semi-definite, thus n non-negative eigenvalues will exist
-    - All eigenvectors (principal components) are orthogonal to each other and form the new set of bases/dimensions for the data (columns)
-    - The magnitude of each eigenvalue corresponds to the variance along that new dimension – Just what we wanted!
-    - We can sort the principal components according to their eigenvalues
-    - Just keep those dimensions with the largest eigenvalues
-    
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 58.png")
-```
-
-## PCA Example
-
-- Below are the two eigenvectors overlaying the centered data
-- Which eigenvector has the largest eigenvalue?
-- Fourth Step:  Just keep the $p$ eigenvectors with the largest eigenvalues
-    - Do lose some information, but if we just drop dimensions with small eigenvalues then we lose only a little information, hopefully noise
-    - We can then have $p$ input features rather than $n$
-    - The $p$ features contain the most pertinent *combined* information from all $n$ original features
-    - How many dimensions $p$ should we keep?
-    
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 59.png")
-```
-
-## PCA Example
-
-- Last Step:  Transform the $n$ features to the $p$ ($< n$) chosen bases (Eigenvectors)
-- Transformed data (m instances) is a matrix multiply $T =  A \times B$
-    - $A$ is a $p \times n$ matrix with the $p$ principal components in the rows, component one on top
-    - $B$ is a $n \times m$ matrix containing the transposed centered original data set
-    - $T^T$ is a $m \times p$ matrix containing the transformed data set  
-- Now we have the new transformed data set with dimensionality $p$
-- Keep matrix $A$ to transform future centered data instances
-- Below is shown the transform of both dimensions. Would if we just kept the $1^{st}$ component?
-
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
-include_graphics("img/page 60.png")
-```
-
-## PCA Algorithm Summary
-
-1. Center the $n$ normalized TS features (subtract the n means)
-2. Calculate the covariance matrix of the centered TS
-3. Calculate the unit eigenvectors and eigenvalues of the covariance matrix
-4. Keep the $p$ ($< n$) eigenvectors with the largest eigenvalues
-5. Matrix multiply the p eigenvectors with the centered TS to get a new TS with only $p$ features
-
-- Given a novel instance during execution
-    1. Center the normalized instance (subtract the $n$ means)
-    2. Do the matrix multiply (step 5 above) to change the new instance from $n$ to $p$ features
-
-## Principal Component Analysis of Text Data
-
-- <a href="https://www.displayr.com/principal-component-analysis-of-text-data/">https://www.displayr.com/principal-component-analysis-of-text-data/</a>
-- <a href="https://community.jmp.com/t5/JMP-Blog/Text-analysis-in-the-social-sciences-A-new-spectrum-of/ba-p/45139">https://community.jmp.com/t5/JMP-Blog/Text-analysis-in-the-social-sciences-A-new-spectrum-of/ba-p/45139</a>
-
-# Embedded methods
+# Embedded Methods
 
 ## Formalism
 
@@ -654,6 +520,10 @@ include_graphics("img/page 64.png")
 - Embedded methods are therefore not too far from wrapper techniques and can be extended to multiclass, regression, etc…
 
 ## Lasso vs Ridge
+```{r, echo=FALSE, out.width="90%", fig.align='center'}
+include_graphics("img/lassoridge.png")
+```
+
 
 ## The $l_1$ SVM
 
@@ -675,100 +545,238 @@ include_graphics("img/page 64.png")
   3. Set $\sigma = |w^*| \circ \sigma$
   4. back to 2
 
-## Menti
 
-## Bilevel optimization;
+# PCA
 
-<div style="float:left;width:50%">
-  <img src="img/page 70_1.png" width="400">
-</div>
-<div style="float:right;width:50%">
-  Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>.
-</div>
+## Feature selection vs feature reduction
 
-## Bilevel optimization;
+<!-- - Given $n$ original features, it is often advantageous to reduce this to a smaller set of features for actual training -->
+<!--     - Can improve/maintain accuracy if we can preserve the most relevant information while discarding the most irrelevant information -->
+<!--     - and/or Can make the learning process more computationally and algorithmically manageable by working with less features -->
+<!--     - Curse of dimensionality requires an exponential increase in data set size in relation to the number of features to learn without overfit – thus decreasing features can be critical -->
+- *Feature Selection* seeks a *subset* of the $n$ original features which retains most of the relevant information
+    - Wrappers (e.g. forward selection), Filters (e.g. PMI), Embedded (e.g. Lasso, Regularized SVN)
+- *Feature Reduction <u>combines/fuses</u>* the $n$ original features into a smaller set of newly created features which hopefully retains most of the relevant information from *all* the original features - Data fusion (e.g. LDA, PCA, etc.)
 
-<div style="float:left;width:50%">
-  <img src="img/page 70_2.png" width="400">
-</div>
-<div style="float:right;width:50%">
-  Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>.
-</div>
+## PCA: Principal Component Analysis
 
-## Bilevel optimization;
+- PCA is one of the most common feature reduction techniques
 
-<div style="float:left;width:50%">
-  <img src="img/page 70_3.png" width="400">
-</div>
-<div style="float:right;width:50%">
-  Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>.
-</div>
+- A linear method for dimensionality reduction
 
-## Bilevel optimization;
+- Allows us to combine much of the information contained in $n$ features into $p$ features where $p < n$
 
-<div style="float:left;width:50%">
-  <img src="img/page 70_4.png" width="400">
-</div>
-<div style="float:right;width:50%">
-  Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>.
-</div>
+- PCA is *unsupervised* in that it does not consider the output class/value of an instance – There are other algorithms which do (e.g. Linear Discriminant Analysis)
 
-## Bilevel optimization;
+- PCA works well in many cases where data have mostly linear correlations
 
-<div style="float:left;width:50%">
-  <img src="img/page 70_4.png" width="400">
-</div>
-<div style="float:right;width:50%">
-  Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>.
+<!-- - Non-linear dimensionality reduction is also a successful area and can give much better results for data with significant non-linearities -->
+
+## PCA overview
+
+- Seek new set of bases which correspond to the highest variance in the data
+- Transform $n$-dimensional *normalized* data to a new $n$-dimensional basis
+    - The new dimension with the most variance is the first principal component
+    - The next is the second principal component, etc.
+    - Note $z_1$ <u>combines/fuses</u> significant information from both $x_1$ and $x_2$
+- Drop dimensions for which there is little variance
+
+```{r, echo=FALSE, out.width="60%", fig.align='center'}
+include_graphics("img/page 53.png")
+```
+
+## Variance and covariance
+
+- Variance is a measure of data spread in one dimension (feature)
+- Covariance measures how two dimensions (features) vary with respect to each other
+
+$$var(X) = \frac{\sum_{i = 1}^n{(X_i - \bar X)(X_i - \bar X)}}{(n - 1)}$$
+$$cov(X,Y) = \frac{\sum_{i = 1}^n{(X_i - \bar X)(Y_i - \bar Y)}}{(n - 1)}$$
+
+## Covariance and the covariance matrix
+
+- Considering the sign (rather than exact value) of covariance:
+    - Positive value means that as one feature increases or decreases the other does also (positively correlated)
+    - Negative value means that as one feature increases the other decreases and vice versa (negatively correlated)
+    - A value close to zero means the features are independent
+    - If highly covariant, are both features necessary?
+- Covariance matrix is an $n \times n$ matrix containing the covariance values for all pairs of features in a data set with $n$ features (dimensions)
+- The diagonal contains the covariance of a feature with itself which is the variance (which is the square of the standard deviation)
+- The matrix is symmetric
+
+## PCA example
+
+- First step is to center the original data around 0 by subtracting the mean in each dimension
+
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+include_graphics("img/page 56.png")
+```
+
+## PCA example
+
+- Second: Calculate the covariance matrix of the centered data
+- Only $2 \times 2$ for this case
+
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+include_graphics("img/page 57.png")
+```
+
+## PCA example
+
+- Third: Calculate the unit eigenvectors and eigenvalues of the covariance matrix (remember linear algebra)
+    - Covariance matrix is always square $n \times n$ and positive semi-definite, thus n non-negative eigenvalues will exist
+    - All eigenvectors (principal components) are orthogonal to each other and form the new set of bases/dimensions for the data (columns)
+    - The magnitude of each eigenvalue corresponds to the variance along that new dimension – Just what we wanted!
+    - We can sort the principal components according to their eigenvalues
+    - Just keep those dimensions with the largest eigenvalues
     
-<ol>
-    <li>For each feature subset, train predictor on <span style="color:red">training data</span>.</li>
-</ol>
-</div>
+```{r, echo=FALSE, out.width="70%", fig.align='center'}
+include_graphics("img/page 58.png")
+```
 
-## Bilevel optimization;
+## PCA example
 
-<div style="float:left;width:50%">
-  <img src="img/page 70_4.png" width="400">
-</div>
-<div style="float:right;width:50%">
-  Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>.
+- Below are the two eigenvectors overlaying the centered data
+- Which eigenvector has the largest eigenvalue?
+- Fourth Step:  Just keep the $p$ eigenvectors with the largest eigenvalues
+    - Do lose some information, but if we just drop dimensions with small eigenvalues then we lose only a little information, hopefully noise
+    - We can then have $p$ input features rather than $n$
+    - The $p$ features contain the most pertinent *combined* information from all $n$ original features
+    - How many dimensions $p$ should we keep?
     
-<ol>
-    <li>For each feature subset, train predictor on <span style="color:red">training data</span>.</li>
-    <li>
-        Select the feature subset, which performs best on <span style="color:pink">validation data</span>.
-        <ul>
-            <li>Repeat and average if you want to reduce variance (cross-validation).</li>
-        </ul>
-    </li>
-</ol>
-</div>
+```{r, echo=FALSE, out.width="60%", fig.align='center'}
+include_graphics("img/page 59.png")
+```
 
-## Bilevel optimization;
+## PCA example
 
-<div style="float:left;width:50%">
-  <img src="img/page 70_4.png" width="400">
-</div>
-<div style="float:right;width:50%">
-  Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>.
-    
-<ol>
-    <li>For each feature subset, train predictor on <span style="color:red">training data</span>.</li>
-    <li>
-        Select the feature subset, which performs best on <span style="color:pink">validation data</span>.
-        <ul>
-            <li>Repeat and average if you want to reduce variance (cross-validation).</li>
-        </ul>
-    </li>
-    <li>Test on <span style="color:green">test data</span>.</li>
-</ol>
-</div>
+- Last Step:  Transform the $n$ features to the $p$ ($< n$) chosen bases (Eigenvectors)
+- Transformed data (m instances) is a matrix multiply $T =  A \times B$
+    - $A$ is a $p \times n$ matrix with the $p$ principal components in the rows, component one on top
+    - $B$ is a $n \times m$ matrix containing the transposed centered original data set
+    - $T^T$ is a $m \times p$ matrix containing the transformed data set  
+- Now we have the new transformed data set with dimensionality $p$
+- Keep matrix $A$ to transform future centered data instances
+- Below is shown the transform of both dimensions. Would if we just kept the $1^{st}$ component?
+
+```{r, echo=FALSE, out.width="50%", fig.align='center'}
+include_graphics("img/page 60.png")
+```
+
+## PCA algorithm summary
+
+1. Center the $n$ normalized TS features (subtract the n means)
+2. Calculate the covariance matrix of the centered TS
+3. Calculate the unit eigenvectors and eigenvalues of the covariance matrix
+4. Keep the $p$ ($< n$) eigenvectors with the largest eigenvalues
+5. Matrix multiply the p eigenvectors with the centered TS to get a new TS with only $p$ features
+
+- Given a novel instance during execution
+    1. Center the normalized instance (subtract the $n$ means)
+    2. Do the matrix multiply (step 5 above) to change the new instance from $n$ to $p$ features
+
+<!-- ## PCA for text data -->
+
+<!-- - <a href="https://www.displayr.com/principal-component-analysis-of-text-data/">https://www.displayr.com/principal-component-analysis-of-text-data/</a> -->
+<!-- - <a href="https://community.jmp.com/t5/JMP-Blog/Text-analysis-in-the-social-sciences-A-new-spectrum-of/ba-p/45139">https://community.jmp.com/t5/JMP-Blog/Text-analysis-in-the-social-sciences-A-new-spectrum-of/ba-p/45139</a> -->
+
+
+<!-- ## Menti -->
+
+<!-- ## Bilevel optimization; -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!--   <img src="img/page 70_1.png" width="400"> -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!--   Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>. -->
+<!-- </div> -->
+
+<!-- ## Bilevel optimization; -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!--   <img src="img/page 70_2.png" width="400"> -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!--   Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>. -->
+<!-- </div> -->
+
+<!-- ## Bilevel optimization; -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!--   <img src="img/page 70_3.png" width="400"> -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!--   Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>. -->
+<!-- </div> -->
+
+<!-- ## Bilevel optimization; -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!--   <img src="img/page 70_4.png" width="400"> -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!--   Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>. -->
+<!-- </div> -->
+
+<!-- ## Bilevel optimization; -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!--   <img src="img/page 70_4.png" width="400"> -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!--   Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>. -->
+
+<!-- <ol> -->
+<!--     <li>For each feature subset, train predictor on <span style="color:red">training data</span>.</li> -->
+<!-- </ol> -->
+<!-- </div> -->
+
+<!-- ## Bilevel optimization; -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!--   <img src="img/page 70_4.png" width="400"> -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!--   Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>. -->
+
+<!-- <ol> -->
+<!--     <li>For each feature subset, train predictor on <span style="color:red">training data</span>.</li> -->
+<!--     <li> -->
+<!--         Select the feature subset, which performs best on <span style="color:pink">validation data</span>. -->
+<!--         <ul> -->
+<!--             <li>Repeat and average if you want to reduce variance (cross-validation).</li> -->
+<!--         </ul> -->
+<!--     </li> -->
+<!-- </ol> -->
+<!-- </div> -->
+
+<!-- ## Bilevel optimization; -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!--   <img src="img/page 70_4.png" width="400"> -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!--   Split data into 3 sets: <span style="color:red">training</span>, <span style="color:pink">validation</span>, and <span style="color:green">test set</span>. -->
+
+<!-- <ol> -->
+<!--     <li>For each feature subset, train predictor on <span style="color:red">training data</span>.</li> -->
+<!--     <li> -->
+<!--         Select the feature subset, which performs best on <span style="color:pink">validation data</span>. -->
+<!--         <ul> -->
+<!--             <li>Repeat and average if you want to reduce variance (cross-validation).</li> -->
+<!--         </ul> -->
+<!--     </li> -->
+<!--     <li>Test on <span style="color:green">test data</span>.</li> -->
+<!-- </ol> -->
+<!-- </div> -->
 
 # Summary
 
-## Summary: what did we learn?
+## Summary
 
-- The book: ML for text data
+- Feature selection for text
+- Different methods
+- Can be quite effective!
 
 # Time for Practical 3!
