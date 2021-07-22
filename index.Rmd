@@ -149,14 +149,17 @@ Here you will find the materials for Monday:
 
 - Part 1: Introduction
     - [Lecture 1](monday/Lectures/lecture 1/Lecture_1.html)
+    - [Lecture 1 Handout](monday/Lectures/lecture 1/Lecture_1_Handout.pdf)
     - [Impractical 1](monday/Practicals/Practical 1/Impractical 1.html)
     - [Practical 1](monday/Practicals/Practical 1/Practical 1.html)
     - [Data for practical 1](monday/Practicals/Practical 1/data.zip)
 
 - Part 2: Text classification and sentiment analysis
-    - [Lecture 2](monday/Lectures/lecture 2/Lecture_2.html)
+    - [Lecture 2](monday/Lectures/lecture 2/Lecture_2.pdf)
+    - [Lecture 2 Handout](monday/Lectures/lecture 2/Lecture_2_Handout.pdf)
     - [Impractical 2](monday/Practicals/Practical 2/Impractical 2.html)
     - [Practical 2](monday/Practicals/Practical 2/Practical 2.html)
+    - [Data for practical 2](monday/Practicals/Practical 2/data.zip)
 
 ## Column 2
 
