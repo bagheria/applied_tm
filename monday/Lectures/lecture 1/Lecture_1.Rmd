@@ -30,7 +30,7 @@ Some guidelines
 
 4- We will introduce frequent question breaks
 
-## Lecturers and Assistants
+## Lecturers and assistants
 <div style="float:right; width:50%">
 ```{r, echo=FALSE, fig.align='center', out.width="35%"}
 include_graphics("img/page17dong.png")
@@ -106,7 +106,7 @@ program %>%
   - on a variety of applications 
   - in many domains.
 
-# What is text mining?
+# What is Text Mining?
 
 ## Text mining in an example 
 
@@ -201,9 +201,9 @@ include_graphics("img/page5_person3.png")
 
 - Can you guess what are the challenges Garry, Larry, and Harry encounter in doing their job, when working with text data?
 
-  - Go to [www.menti.com](https://www.menti.com/) and use the code 9594 3321
+  - Go to [www.menti.com](https://www.menti.com/) and use the code 7338 2184
 
-# Challenges with text data
+# Challenges with Text Data
 
 ## Challenges with text data
 
@@ -291,7 +291,7 @@ include_graphics("img/page 12.png")
 
 <span style="color:green">(You can choose multiple answers)</span>
 
-Go to [www.menti.com](https://www.menti.com/) and use the code 9594 3321
+Go to [www.menti.com](https://www.menti.com/) and use the code 7338 2184
 
 ## Text mining definition
 - “the discovery by computer of <span style="color:blue">new</span>, <span style="color:blue">previously unknown</span> information, by <span style="color:blue">automatically extracting</span> information from <span style="color:blue">different</span> written resources” Hearst (1999)
@@ -314,7 +314,7 @@ include_graphics("img/page 22.png")
 
 https://dh2017.adho.org/abstracts/079/079.pdf
 
-## Text Classification
+## Text classification
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 26.png")
 ```
@@ -344,12 +344,12 @@ Complicaties: geen Ontslag naar: CCU <INSTELLING-2>.
 ## Which ICD-10 codes should I give this doctor's note?
 <img src="img/bagheri-coefficients-horizontal.png" height="370"/>
 
-## Sentiment Analysis / Opinion Mining
+## Sentiment analysis / Opinion mining
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 27.png")
 ```
 
-## Statistical Machine Translation
+## Statistical machine translation
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 28.png")
 ```
@@ -395,7 +395,7 @@ source: https://nlp.stanford.edu/~wcmac/papers/20140716-UNLU.pdf
 </div>
 
 
-# Text preprocessing
+# Text Preprocessing
 
 ## How to represent a document
 
@@ -638,7 +638,7 @@ D1: <em>‘text-mine’, ‘mine-is’, ‘is-to’, ‘to-identify’, ‘ident
 D1: <em>‘text-mine’, ‘to-identify’, ‘identify-use’, ‘use-inform’</em>
 </ol>
 
-## Vector space model
+## VSM: How do we represent vectors?
 
 After tokenization and pre-processing, we have three options:
 
@@ -688,7 +688,7 @@ include_graphics("img/page 122.png")
 
   - Raw TF: $tf(t,d) = c(t,d)$
   
-## tf "Document - Term matrix" (DTM)
+## TF: Document - Term matrix (DTM)
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/tf.png")
 ```
@@ -702,7 +702,7 @@ $$TF_{d,t} = \frac{n_{d,t}}{\sum_i{n_{d,i}}}$$
 Let $N$ denote the number of documents annd $N_t$ denote the number of documents containing the $t$-th term.
 
 $$IDF_t = log(\frac{N}{N_t})$$
-TF-IDF weight: 
+TFiDF weight: 
 
 $$w_{d,t} = TF_{d,t} \cdot IDF_t$$
 
@@ -715,7 +715,7 @@ $$w_{d,t} = TF_{d,t} \cdot IDF_t$$
 <!-- include_graphics("img/page 39.png") -->
 <!-- ``` -->
 
-## tf-idf "Document - Term matrix" (DTM)
+## TFiDF: Document - Term matrix (DTM)
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/tfidf.png")
 ```
@@ -745,13 +745,19 @@ include_graphics("img/page 75_2.png")
 ## How to define a good similarity metric?
 
 - Euclidean distance
+
     $dist(d_i, d_j) = \sqrt{\sum_{t\in V}{[tf(t,d_i)idf(t) - tf(t, d_j)idf(t)]^2}}$
+    
     - Longer documents will be penalized by the extra words
+    
     - We care more about how these two vectors are overlapped
     
 - Cosine similarity
-  - Angle between two vectors 
+  
+  - Angle between two vectors:
+  
     $cosine(d_i, d_j) = \frac{V_{d_i}^TV_{d_j}}{|V_{d_i}|_2 \times |V_{d_j}|_2}$ <span style="color:red">&#x2190; TF-IDF vector</span>
+  
   - Documents are normalized by length
     
 ## More pre-processing: Named entity recognition
@@ -771,7 +777,7 @@ include_graphics("img/page 48_1.png")
 include_graphics("img/page 48_2.png")
 ```
 
-## Part Of Speech (POS) Tagging
+## Part Of Speech (POS) tagging
 
 - Annotate each word in a sentence with a part-of-speech.
 
@@ -790,25 +796,38 @@ include_graphics("img/page 50.png")
 
 - Stanford parser: http://nlp.stanford.edu:8080/parser/index.jsp
 
-# Python
+# Python | before starting the first practical
 
 ## How familiar are you with Python?
 
-- From 1 to 5 how familiar are you with Python?
+- What is your experience level with Python?
 
-  - Go to <a hre="www.menti.com">www.menti.com</a> and use the code 81 09 57 8
+  - I don't know anything about Python.
+  - I know a bit about Python and/or I have worked with Python years ago.
+  - I am familiar with Python, but I use another programming language for my work.
+  - I use Python for my daily work, but I don't know it very well.
+  - I use Python for my daily work and I know it very well, but I am not an expert.
+  - I am an expert with Python.
+
+  - Go to <a hre="www.menti.com">www.menti.com</a> and use the code 7338 2184
   
-## Python IDE?!
+## Python IDE?
 
-- Which Python IDE do you mostly use?
+- Which Python IDE do you mostly use? If you use more than one environment fill in the other text boxes.
 
-  - Go to <a href="www.menti.com">www.menti.com</a> and use the code 81 09 57 8
+  - Go to <a href="www.menti.com">www.menti.com</a> and use the code 7338 2184
 
-- From 1 to 10 how familiar are you with Google Colab?
+## Google Colab?
+
+- From 0 (none) to 5 (expert), how familiar are you with Google Colab?
+  
+  - Go to <a href="www.menti.com">www.menti.com</a> and use the code 7338 2184
 
 ## Python
 
 - Latest: <a href="https://www.python.org/downloads/release/python-391/">Python 3.9.1</a>
+
+- Follow the tutorial on Python in Google Colab for the Applied Text Mining course: [link](https://ayoubbagheri.nl/applied_tm/Python_in_Google_Colab_Applied_Text_Mining.html)
 
 - Python For Beginners
     - <a href="https://www.python.org/about/gettingstarted/">https://www.python.org/about/gettingstarted/</a>
@@ -819,13 +838,6 @@ include_graphics("img/page 50.png")
 - Python 3.9.1 documentation
     - <a href="https://docs.python.org/3/">https://docs.python.org/3/</a>
 
-## Google Colab?!
-
-- From 1 to 5 how familiar are you with Google Colab?
-  
-  - Go to <a href="www.menti.com">www.menti.com</a> and use the code 81 09 57 8
-  
-
 ## Google Colab
 
 - Colaboratory, or "Colab" for short, allows you to write and execute Python in your browser, with
@@ -833,8 +845,14 @@ include_graphics("img/page 50.png")
   - Free access to GPUs
   - Easy sharing
 
-- <a href="https://colab.research.google.com/notebooks/intro.ipynb">https://colab.research.google.com/notebooks/intro.ipynb</a>
+- [Intro](<a href="https://colab.research.google.com/notebooks/intro.ipynb">https://colab.research.google.com/notebooks/intro.ipynb</a>)
 
+- [Cheat-sheet for Google Colab](https://colab.research.google.com/github/Tanu-N-Prabhu/Python/blob/master/Cheat_sheet_for_Google_Colab.ipynb)
+
+- Keyboard shortcuts:
+```{r, echo=FALSE, out.width="90%", fig.align='center'}
+include_graphics("img/colab.png")
+```
 
 # Summary
 
