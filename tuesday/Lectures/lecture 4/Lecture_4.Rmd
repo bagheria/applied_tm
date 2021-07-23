@@ -1,6 +1,7 @@
 ---
 title: "Text Clustering"
 author: "Ayoub Bagheri"
+subtitle: "Applied Text Mining"
 output:
   ioslides_presentation:
     logo: logo.png
@@ -55,7 +56,7 @@ Which one is not a text clustering task?
 - Grouping scientific articles
 - Detection of heart failure (0 or 1) using discharge summaries
 
-Please go to <a href="www.menti.com">www.menti.com</a> and use the code 9594 3321
+Please go to <a href="www.menti.com">www.menti.com</a> and use the code 7338 2184
 
 ## Clustering
   
@@ -287,10 +288,10 @@ $$\vec \mu(c)=\frac{1}{|c|}\sum_{\vec a \in c}{\vec x}$$
     
 ## K-Means example (K=2)
 ```{r, out.width="100%", cache=TRUE}
-list.files(path='img/', pattern = 'page 26', full.names = TRUE) %>% 
+list.files(path = 'img/', pattern = 'page 26', full.names = TRUE) %>% 
         image_read() %>% # reads each path file
         image_join() %>% # joins image
-        image_animate(fps=.25) %>% # animates, can opt for number of loops
+        image_animate(delay = 1000) %>% # animates, can opt for number of loops
         image_write("img/kmeans.gif") # write to current dir
 
 include_graphics("img/kmeans.gif")
