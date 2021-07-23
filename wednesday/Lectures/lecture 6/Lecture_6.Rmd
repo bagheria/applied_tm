@@ -718,7 +718,7 @@ include_graphics("img/page 34.png")
     - Output gate
 - Prevents vanishing/exploding gradient problem and allows network to retain state information over longer periods of time.
 
-## LSTM network architecture
+## LSTM network architecture | <font size="4"> https://colah.github.io/posts/2015-08-Understanding-LSTMs/  </font>
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 36.png")
@@ -733,11 +733,11 @@ include_graphics("img/page 36.png")
 include_graphics("img/page 37.png")
 ```  
 
-## Cell state example
+<!-- ## Cell state example -->
 
-- Want to remember person & number of a subject noun so that it can be checked to agree with the person & number of verb when it is eventually encountered.
-- Forget gate will remove existing information of a prior subject when a new one is encountered.
-- Input gate "adds" in the information for the new subject
+<!-- - Want to remember person & number of a subject noun so that it can be checked to agree with the person & number of verb when it is eventually encountered. -->
+<!-- - Forget gate will remove existing information of a prior subject when a new one is encountered. -->
+<!-- - Input gate "adds" in the information for the new subject -->
 
 ## Forget gate
 
@@ -751,14 +751,14 @@ include_graphics("img/page 39.png")
 $$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$$
 \newpage
 
-## Hyperbolic Tangent units
+<!-- ## Hyperbolic Tangent units -->
 
-- Tanh can be used as an alternative nonlinear function to the sigmoid logistic (0-1) output function.
-- Used to produce thresholded output between –1 and 1.
+<!-- - Tanh can be used as an alternative nonlinear function to the sigmoid logistic (0-1) output function. -->
+<!-- - Used to produce thresholded output between –1 and 1. -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 40.png")
-```  
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 40.png") -->
+<!-- ```   -->
 
 ## Input gate
 
@@ -898,55 +898,55 @@ $$h_t = (1 - z_t) * h_{t-1} + z_t * \tilde(h)_t$$
 include_graphics("img/page 55.png")
 ```  
 
-## Attention: Scoring
+<!-- ## Attention: Scoring -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 56_1.png")
-```  
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 56_1.png") -->
+<!-- ```   -->
 
-$$score(h_{t-1},\bar{h}_s) = h_t^T\bar{h}_s$$
+<!-- $$score(h_{t-1},\bar{h}_s) = h_t^T\bar{h}_s$$ -->
 
-<span style="color:orange;font-weight:bold">Compare</span> target and source hidden states
+<!-- <span style="color:orange;font-weight:bold">Compare</span> target and source hidden states -->
 
-## Attention: Scoring
+<!-- ## Attention: Scoring -->
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 56_2.png")
-```  
+<!-- ```{r, echo=FALSE, out.width="70%", fig.align='center'} -->
+<!-- include_graphics("img/page 56_2.png") -->
+<!-- ```   -->
 
-$$score(h_{t-1},\bar{h}_s) = h_t^T\bar{h}_s$$
+<!-- $$score(h_{t-1},\bar{h}_s) = h_t^T\bar{h}_s$$ -->
 
-<span style="color:orange;font-weight:bold">Compare</span> target and source hidden states
+<!-- <span style="color:orange;font-weight:bold">Compare</span> target and source hidden states -->
 
-## Attention: Normalization
+<!-- ## Attention: Normalization -->
 
-```{r, echo=FALSE, out.width="65%", fig.align='center'}
-include_graphics("img/page 57.png")
-```  
+<!-- ```{r, echo=FALSE, out.width="65%", fig.align='center'} -->
+<!-- include_graphics("img/page 57.png") -->
+<!-- ```   -->
 
-$$a_t(s) = \frac{e^{score(s)}}{\sum_{s'}{e^{score(s')}}}$$
+<!-- $$a_t(s) = \frac{e^{score(s)}}{\sum_{s'}{e^{score(s')}}}$$ -->
 
-<span style="color:orange;font-weight:bold">Convert</span> into alignment weights
+<!-- <span style="color:orange;font-weight:bold">Convert</span> into alignment weights -->
 
-## Attention: Context
+<!-- ## Attention: Context -->
 
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 58.png")
-```  
+<!-- ```{r, echo=FALSE, out.width="60%", fig.align='center'} -->
+<!-- include_graphics("img/page 58.png") -->
+<!-- ```   -->
 
-$$c_t = \sum_s{a_t(s)\bar{h}_s}$$
+<!-- $$c_t = \sum_s{a_t(s)\bar{h}_s}$$ -->
 
-Build <span style="color:orange;font-weight:bold">context</span> vector: weighted average
+<!-- Build <span style="color:orange;font-weight:bold">context</span> vector: weighted average -->
 
-## Attention: Context
+<!-- ## Attention: Context -->
 
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 59.png")
-```  
+<!-- ```{r, echo=FALSE, out.width="60%", fig.align='center'} -->
+<!-- include_graphics("img/page 59.png") -->
+<!-- ```   -->
 
-$$h_t = f(h_{t-1}, c_t, e_t)$$
+<!-- $$h_t = f(h_{t-1}, c_t, e_t)$$ -->
 
-Compute <span style="color:orange;font-weight:bold">next</span> hidden state
+<!-- Compute <span style="color:orange;font-weight:bold">next</span> hidden state -->
 
 # Summary
 
