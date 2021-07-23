@@ -130,7 +130,7 @@ include_graphics("img/page 11_2.gif")
 </div>
 
 
-## (2) Non-linear Layer 
+## (2) Non-linear layer 
 
 ```{r, echo=FALSE, out.width="40%", fig.align='center'}
 include_graphics("img/page 12_1.png")
@@ -149,7 +149,7 @@ include_graphics("img/page 12_1.png")
 include_graphics("img/page 12_2.png")
 ```
 
-## (3) Pooling Layer
+## (3) Pooling layer
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center'}
 include_graphics("img/page 13_1.png")
@@ -162,13 +162,13 @@ include_graphics("img/page 13_1.png")
 include_graphics("img/page 13_2.png")
 ```
 
-## Pooling ( down sampling ) 
+## Pooling (down sampling) 
 
 ```{r, echo=FALSE, out.width="90%", fig.align='center'}
 include_graphics("img/page 14.png")
 ```
 
-## Other Layers
+## Other layers
 
 - The convolution, non-linear, and pooling layers are typically used as a set. Multiple sets of the above three layers can appear in a CNN design.
     - Input &rarr; <span style="color:green">Conv. &rarr; Non-linear &rarr; Pooling</span> &rarr;  <span style="color:green">Conv. &rarr; Non-linear &rarr; Pooling</span> &rarr; … &rarr; Output
@@ -182,7 +182,7 @@ include_graphics("img/page 14.png")
 include_graphics("img/page 15.png")
 ```
 
-## Other Layers
+## Other layers
 
 - The final layer of a CNN is determined by the research task.
 - Classification: Softmax Layer
@@ -194,7 +194,7 @@ $$f(\boldsymbol{x}) = \boldsymbol{w} \cdot \boldsymbol{x}$$
 
 # CNN for Text 
 
-## Convolutional Neural Networks (CNNs)
+## CNN
 
 Main CNN idea for text:
 
@@ -354,7 +354,7 @@ include_graphics("img/page 29.png")
 <!-- include_graphics("img/page 33.png") -->
 <!-- ``` -->
 
-## (simple) Encoder Decoder Networks
+## (Simple) Encoder decoder networks
 &nbsp;
 
 ```{r, echo=FALSE, out.width="90%", fig.align='center'}
@@ -364,7 +364,7 @@ include_graphics("img/page 34.png")
 - Encoder generates a contextualized representation of the input (last state).
 - Decoder takes that state and autoregressively generates a sequence of outputs
 
-## General Encoder Decoder Networks 
+## General encoder decoder networks 
 
 Abstracting away from these choices
 
@@ -385,7 +385,7 @@ Widely used encoder design: **stacked Bi-LSTMs**
 include_graphics("img/page 36.png")
 ```
 
-## Decoder Basic Design
+## Decoder basic design
 
 - produce an output sequence an element at a time
 
@@ -393,7 +393,7 @@ include_graphics("img/page 36.png")
 include_graphics("img/page 37.png")
 ```
 
-## Decoder Design <br> Enhancement
+## Decoder design <br> enhancement
 
 ```{r, echo=FALSE, out.width="90%", fig.align='center'}
 include_graphics("img/page 38.png")
@@ -503,7 +503,7 @@ include_graphics("img/page 40.png")
 
 # Transformers
 
-## Transformers | (Attention is all you need)
+## Transformers | (Attention is all you need!)
 
 - A transformer adopts an encoder-decoder architecture.
 
@@ -521,6 +521,14 @@ include_graphics("img/page 40.png")
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/bertelmogpt.png")
 ```
+
+## Transformers
+
+- Write with Transformer: https://transformer.huggingface.co/
+
+- Talk to Transformer: https://app.inferkit.com/demo
+
+- Transformer model for language understanding: https://www.tensorflow.org/text/tutorials/transformer
 
 <!-- ## High-level architecture -->
 
