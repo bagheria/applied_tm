@@ -650,7 +650,7 @@ include_graphics("img/page 24.png")
 include_graphics("img/page 25.png")
 ```  
 
-## Determining the Best <br> Number of Hidden Units
+## Determining the best <br> number of hidden units
 
 - Too few hidden units prevents the network from adequately fitting the data.
 - Too many hidden units can result in over-fitting.
