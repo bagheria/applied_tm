@@ -1,6 +1,7 @@
 ---
 title: "Deep Learning for Text 1"
-author: "Ayoub Bagheri, <a.bagheri@uu.nl>"
+author: "Ayoub Bagheri"
+subtitle: "Applied Text Mining"
 output:
   ioslides_presentation:
     logo: logo.png
@@ -13,20 +14,20 @@ library(knitr)
 library(kableExtra)
 ```
 
-## Lecture’s Plan
+## Lecture’s plan
 
-1. Feed-forward neural net
-2. Recurrent neural net
+1. Feed-forward neural networks
+2. Recurrent neural networks
     1. SRN
     2. LSTM
-    3. GRU
-    4. Bi-LSTM
+    3. Bi-LSTM
+    4. GRU
 
 ## What is Deep Learning (DL) ? 
 
 A machine learning subfield of learning <span style="color:orange;">representations</span> of data. Exceptional effective at <span style="color:orange;">learning patterns</span>.
 
-Deep learning algorithms attempt to learn (multiple levels of) representation by using a <span style="color:orange;">hierarchy of multiple layers</span>
+Deep learning algorithms attempt to learn (multiple levels of) representation by using a <span style="color:orange;">hierarchy of multiple layers</span>.
 
 If you provide the system <span style="color:orange;">tons of information</span>, it begins to understand it and respond in useful ways.
 
@@ -34,7 +35,7 @@ If you provide the system <span style="color:orange;">tons of information</span>
 include_graphics("img/page 3.png")
 ```
 
-## Multi-Layer Feed-Forward Networks
+## Feed-forward neural networks
 
 - Multi-layer networks can represent arbitrary functions, but an effective learning algorithm for such networks was thought to be difficult.
 - A typical multi-layer network consists of an input, hidden and output layer, each fully connected to the next, with activation feeding forward.
@@ -45,7 +46,7 @@ include_graphics("img/page 4.png")
 
 - The weights determine the function computed. Given an arbitrary number of hidden units, any boolean function can be computed with a single hidden layer.
 
-## Neural Network Intro
+## Introduction
 
 <div style="float:left;width:50%">
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
@@ -57,7 +58,7 @@ include_graphics("img/page 5_1.png")
   <span style="color:green">$$y = \sigma(W_2h + b_2)$$</span>
 </div>
 
-## Neural Network Intro
+## Introduction
 
 <div style="float:left;width:50%">
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
@@ -81,19 +82,19 @@ include_graphics("img/page 5_1.png")
 <span style="color:orange">26 learnable <b>parameters</b></span>
 </div>
 
-## Neural Network Intro
+## Introduction
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 5_2.png")
 ```
 
-## Neural Network Intro
+## Introduction
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 5_3.png")
 ```
 
-## Neural Network Intro
+## Introduction
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 5_4.png")
@@ -130,7 +131,7 @@ Use error signal to change the <span style="color:orange;font-weight:bold">weigh
 Subtracting a fraction of the <span style="color:orange;font-weight:bold">gradient</span> moves you towards the <span style="color:orange;font-weight:bold">(local) minimum of the cost function</span>
 </div>
 
-## Gradient Descent
+## Gradient descent
 
 - Define objective to minimize error:
 $$E(W) = \sum_{d \in D} \sum_{k \in K} (t_{kd} - O_{kd})^2$$
@@ -141,7 +142,7 @@ $$\frac{\partial{o_j}}{\partial{net_j}} = o_j(1-o_j)$$
 - Learning rule to change weights to minimize 
 $$\Delta w_{ji} = - \eta \frac{\partial{E}}{\partial{w_{ji}}}$$
 
-## Backpropagation Learning Rule
+## Backpropagation learning rule
 
 - Each weight changed by:
 $$\Delta w_{ji} = \eta \delta_j o_i $$
@@ -154,7 +155,7 @@ $$\delta_j = o_j(1 - o_j)\sum_k{\delta_k w_{kj}} \ \ \ \text{if } j \text{ is a 
     
     $\delta_j$ is the error measure for unit $j$
 
-## Gradient Descent
+## Gradient descent
 
 <span style="color:orange;font-weight:bold">objective/cost function <b>$J$</b>$(\theta)$</span>
 
@@ -171,315 +172,315 @@ include_graphics("img/page 9.png")
 
 Recursively apply <span style="color:orange;font-weight:bold">chain rule</span> though each node
 
-## Gradient Descent
-
-<span style="color:orange;font-weight:bold">objective/cost function <b>$J$</b>$(\theta)$</span> &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:darkred"><u>Review of backpropagation</u></span>
-
-Update each element of $\theta$:
-
-$$\theta^{new}_j = \theta^{old}_j - \alpha \frac{d}{\theta^{old}_j} J(\theta)$$ 
-
-Matrix notation for all parameters (<span style="color:red">$\alpha$: learning rate</span>):
-
-$$\theta^{new}_j = \theta^{old}_j - \alpha \nabla _{\theta}J(\theta)$$
-
-```{r, echo=FALSE, out.width="30%", fig.align='center'}
-include_graphics("img/page 9.png")
-```
-
-Recursively apply <span style="color:orange;font-weight:bold">chain rule</span> though each node
-
-## Error Backpropagation
-
-<ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul>
-
-<div style="float:left;width:50%">
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 10_1.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul>
-
-<div style="float:left;width:50%">
-Current output: $o_j=0.2$
-
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 10_1.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul>
-
-<div style="float:left;width:50%">
-Current output: $o_j=0.2$
-<br>
-    
-Correct output: $t_j=1.0$
-    
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 10_1.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul>
-
-<div style="float:left;width:50%">
-Current output: $o_j=0.2$
-<br>
-    
-Correct output: $t_j=1.0$
-<br>
-    
-Error $\delta_j = o_j(1–o_j)(t_j–o_j)$
-<br>
-    
-$0.2(1–0.2)(1–0.2)=0.128$
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 10_1.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul>
-
-<div style="float:left;width:50%">
-Current output: $o_j=0.2$
-<br>
-    
-Correct output: $t_j=1.0$
-<br>
-    
-Error $\delta_j = o_j(1–o_j)(t_j–o_j)$
-<br>
-    
-$0.2(1–0.2)(1–0.2)=0.128$
-<br>
-    
-Update weights into $j$
-    
-$$\Delta w_{ji} = \eta \delta_j o_i$$
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 10_1.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul>
-
-<div style="float:left;width:50%">
-Current output: $o_j=0.2$
-<br>
-    
-Correct output: $t_j=1.0$
-<br>
-    
-Error $\delta_j = o_j(1–o_j)(t_j–o_j)$
-<br>
-    
-$0.2(1–0.2)(1–0.2)=0.128$
-<br>
-    
-Update weights into $j$
-<br>  
-
-$$\Delta w_{ji} = \eta \delta_j o_i$$
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 10_2.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul>
-
-<div style="float:left;width:50%">
-Current output: $o_j=0.2$
-<br>  
-
-Correct output: $t_j=1.0$
-<br>
-    
-Error $\delta_j = o_j(1–o_j)(t_j–o_j)$
-<br>
-    
-$0.2(1–0.2)(1–0.2)=0.128$
-<br>
-    
-Update weights into $j$
-<br>
-    
-$$\Delta w_{ji} = \eta \delta_j o_i$$
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 10_3.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>Next calculate error for hidden units based on errors on the output units it feeds into.</li></ul>
-
-<div style="float:left;width:50%">
-
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 11_1.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>Next calculate error for hidden units based on errors on the output units it feeds into.</li></ul>
-
-<div style="float:left;width:50%">
-
-$$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$
-    
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 11_1.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>Next calculate error for hidden units based on errors on the output units it feeds into.</li></ul>
-
-<div style="float:left;width:50%">
-
-$$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$
-    
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 11_2.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>Next calculate error for hidden units based on errors on the output units it feeds into.</li></ul>
-
-<div style="float:left;width:50%">
-
-$$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$
-    
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 11_3.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>Finally update bottom layer of weights based on errors calculated for hidden units.</li></ul>
-
-<div style="float:left;width:50%">
-
-$$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$ 
-
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 12_1.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>Finally update bottom layer of weights based on errors calculated for hidden units.</li></ul>
-
-<div style="float:left;width:50%">
-
-$$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$ 
-
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 12_2.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>Finally update bottom layer of weights based on errors calculated for hidden units.</li></ul>
-
-<div style="float:left;width:50%">
-
-$$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$
-
-Update weights into $j$
-    
-$$\Delta w_{ji} = \eta \delta_j o_i$$    
-
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 12_2.png")
-```
-</div>
-
-## Error Backpropagation
-
-<ul><li>Finally update bottom layer of weights based on errors calculated for hidden units.</li></ul>
-
-<div style="float:left;width:50%">
-
-$$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$
-
-Update weights into $j$
-    
-$$\Delta w_{ji} = \eta \delta_j o_i$$    
-
-</div>
-<div style="float:right;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 12_3.png")
-```
-</div>
-
-## Backpropagation Training Algorithm
-&nbsp;
-
-- Create the 3-layer network with $H$ hidden units with full connectivity between layers. Set weights to small random real values.
-
-- Until all training examples produce the correct value (within $\epsilon$), or mean squared error ceases to decrease, or other termination criteria:
-    
-  - Begin epoch
-       
-  - For each training example, $d$, do:
-
-      - Calculate network output for $d$’s input values 
-      - Compute error between current output and correct output for $d$
-      - Update weights by backpropagating error and using learning rule
-  - End epoch
+<!-- ## Gradient Descent -->
+
+<!-- <span style="color:orange;font-weight:bold">objective/cost function <b>$J$</b>$(\theta)$</span> &nbsp;&nbsp;&nbsp;&nbsp; <span style="color:darkred"><u>Review of backpropagation</u></span> -->
+
+<!-- Update each element of $\theta$: -->
+
+<!-- $$\theta^{new}_j = \theta^{old}_j - \alpha \frac{d}{\theta^{old}_j} J(\theta)$$  -->
+
+<!-- Matrix notation for all parameters (<span style="color:red">$\alpha$: learning rate</span>): -->
+
+<!-- $$\theta^{new}_j = \theta^{old}_j - \alpha \nabla _{\theta}J(\theta)$$ -->
+
+<!-- ```{r, echo=FALSE, out.width="30%", fig.align='center'} -->
+<!-- include_graphics("img/page 9.png") -->
+<!-- ``` -->
+
+<!-- Recursively apply <span style="color:orange;font-weight:bold">chain rule</span> though each node -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 10_1.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!-- Current output: $o_j=0.2$ -->
+
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 10_1.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!-- Current output: $o_j=0.2$ -->
+<!-- <br> -->
+
+<!-- Correct output: $t_j=1.0$ -->
+
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 10_1.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!-- Current output: $o_j=0.2$ -->
+<!-- <br> -->
+
+<!-- Correct output: $t_j=1.0$ -->
+<!-- <br> -->
+
+<!-- Error $\delta_j = o_j(1–o_j)(t_j–o_j)$ -->
+<!-- <br> -->
+
+<!-- $0.2(1–0.2)(1–0.2)=0.128$ -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 10_1.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!-- Current output: $o_j=0.2$ -->
+<!-- <br> -->
+
+<!-- Correct output: $t_j=1.0$ -->
+<!-- <br> -->
+
+<!-- Error $\delta_j = o_j(1–o_j)(t_j–o_j)$ -->
+<!-- <br> -->
+
+<!-- $0.2(1–0.2)(1–0.2)=0.128$ -->
+<!-- <br> -->
+
+<!-- Update weights into $j$ -->
+
+<!-- $$\Delta w_{ji} = \eta \delta_j o_i$$ -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 10_1.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!-- Current output: $o_j=0.2$ -->
+<!-- <br> -->
+
+<!-- Correct output: $t_j=1.0$ -->
+<!-- <br> -->
+
+<!-- Error $\delta_j = o_j(1–o_j)(t_j–o_j)$ -->
+<!-- <br> -->
+
+<!-- $0.2(1–0.2)(1–0.2)=0.128$ -->
+<!-- <br> -->
+
+<!-- Update weights into $j$ -->
+<!-- <br>   -->
+
+<!-- $$\Delta w_{ji} = \eta \delta_j o_i$$ -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 10_2.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>First calculate error of output units and use this to change the top layer of weights.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+<!-- Current output: $o_j=0.2$ -->
+<!-- <br>   -->
+
+<!-- Correct output: $t_j=1.0$ -->
+<!-- <br> -->
+
+<!-- Error $\delta_j = o_j(1–o_j)(t_j–o_j)$ -->
+<!-- <br> -->
+
+<!-- $0.2(1–0.2)(1–0.2)=0.128$ -->
+<!-- <br> -->
+
+<!-- Update weights into $j$ -->
+<!-- <br> -->
+
+<!-- $$\Delta w_{ji} = \eta \delta_j o_i$$ -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 10_3.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>Next calculate error for hidden units based on errors on the output units it feeds into.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 11_1.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>Next calculate error for hidden units based on errors on the output units it feeds into.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+
+<!-- $$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$ -->
+
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 11_1.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>Next calculate error for hidden units based on errors on the output units it feeds into.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+
+<!-- $$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$ -->
+
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 11_2.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>Next calculate error for hidden units based on errors on the output units it feeds into.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+
+<!-- $$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$ -->
+
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 11_3.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>Finally update bottom layer of weights based on errors calculated for hidden units.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+
+<!-- $$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$  -->
+
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 12_1.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>Finally update bottom layer of weights based on errors calculated for hidden units.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+
+<!-- $$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$  -->
+
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 12_2.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>Finally update bottom layer of weights based on errors calculated for hidden units.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+
+<!-- $$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$ -->
+
+<!-- Update weights into $j$ -->
+
+<!-- $$\Delta w_{ji} = \eta \delta_j o_i$$     -->
+
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 12_2.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Error Backpropagation -->
+
+<!-- <ul><li>Finally update bottom layer of weights based on errors calculated for hidden units.</li></ul> -->
+
+<!-- <div style="float:left;width:50%"> -->
+
+<!-- $$\delta_j = o_j(1-o_j)\sum_k{\delta_kw_{kj}}$$ -->
+
+<!-- Update weights into $j$ -->
+
+<!-- $$\Delta w_{ji} = \eta \delta_j o_i$$     -->
+
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 12_3.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+<!-- ## Backpropagation Training Algorithm -->
+<!-- &nbsp; -->
+
+<!-- - Create the 3-layer network with $H$ hidden units with full connectivity between layers. Set weights to small random real values. -->
+
+<!-- - Until all training examples produce the correct value (within $\epsilon$), or mean squared error ceases to decrease, or other termination criteria: -->
+
+<!--   - Begin epoch -->
+
+<!--   - For each training example, $d$, do: -->
+
+<!--       - Calculate network output for $d$’s input values  -->
+<!--       - Compute error between current output and correct output for $d$ -->
+<!--       - Update weights by backpropagating error and using learning rule -->
+<!--   - End epoch -->
       
-## Comments on Training Algorithm
+## Notes on training
 
 - Not guaranteed to converge to zero training error, may converge to local optima or oscillate indefinitely.
 - However, in practice, does converge to low error for many large networks on real data.
@@ -488,7 +489,7 @@ include_graphics("img/page 12_3.png")
     - Take results of trial with lowest training set error.
     - Build a committee of results from multiple trials (possibly weighting votes by training set accuracy).
 
-## Hidden Unit Representations
+## Hidden unit representations
 
 - Trained hidden units can be seen as newly constructed features that make the target concept linearly separable in the transformed space.
 - On many real domains, hidden units can be interpreted as representing meaningful features such as vowel detectors or edge detectors, etc..
@@ -500,83 +501,83 @@ include_graphics("img/page 12_3.png")
 include_graphics("img/page 16.png")
 ```
 
-## Activation functions
+<!-- ## Activation functions -->
 
-Non-linearities needed to learn complex (non-linear) representations of data, otherwise the NN would be just a linear function $W_1W_2x = Wx$
+<!-- Non-linearities needed to learn complex (non-linear) representations of data, otherwise the NN would be just a linear function $W_1W_2x = Wx$ -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 17.png")
-```
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 17.png") -->
+<!-- ``` -->
 
-More layers and neurons can approximate more complex functions
+<!-- More layers and neurons can approximate more complex functions -->
 
-Full list: https://en.wikipedia.org/wiki/Activation_function 
+<!-- Full list: https://en.wikipedia.org/wiki/Activation_function  -->
 
-## Activation: Sigmoid
+<!-- ## Activation: Sigmoid -->
 
-<div style="float:left;width:50%">
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
-include_graphics("img/page 18.png")
-```
-</div>
-<div style="float:right;width:50%">
-Takes a real-valued number and “squashes” it into range between 0 and 1. 
-$$R^n \rightarrow [0,1]$$
+<!-- <div style="float:left;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="50%", fig.align='center'} -->
+<!-- include_graphics("img/page 18.png") -->
+<!-- ``` -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- Takes a real-valued number and “squashes” it into range between 0 and 1.  -->
+<!-- $$R^n \rightarrow [0,1]$$ -->
 
-<br> <br> <br> 
-</div>
+<!-- <br> <br> <br>  -->
+<!-- </div> -->
 
-- $+$ Nice interpretation as the <span style="color:orange;font-weight:bold">firing rate</span> of a neuron
-  - 0 = not firing at all 
-  - 1 = fully firing
+<!-- - $+$ Nice interpretation as the <span style="color:orange;font-weight:bold">firing rate</span> of a neuron -->
+<!--   - 0 = not firing at all  -->
+<!--   - 1 = fully firing -->
 
-- $-$ Sigmoid neurons <span style="color:orange;font-weight:bold">saturate</span> and <span style="color:orange;font-weight:bold">kill gradients</span>, thus NN will barely learn
-    - when the neuron’s activation are 0 or 1 (saturate)
-        - gradient at these regions almost zero 
-        - almost no signal will flow to its weights 
-        - if initial weights are too large then most neurons would saturate
+<!-- - $-$ Sigmoid neurons <span style="color:orange;font-weight:bold">saturate</span> and <span style="color:orange;font-weight:bold">kill gradients</span>, thus NN will barely learn -->
+<!--     - when the neuron’s activation are 0 or 1 (saturate) -->
+<!--         - gradient at these regions almost zero  -->
+<!--         - almost no signal will flow to its weights  -->
+<!--         - if initial weights are too large then most neurons would saturate -->
 
-## Activation: Tanh
+<!-- ## Activation: Tanh -->
 
-<div style="float:left;width:50%">
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
-include_graphics("img/page 19.png")
-```
-</div>
-<div style="float:right;width:50%">
-Takes a real-valued number and “squashes” it into range between -1 and 1. 
-$$R^n \rightarrow [-1,1]$$
+<!-- <div style="float:left;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="50%", fig.align='center'} -->
+<!-- include_graphics("img/page 19.png") -->
+<!-- ``` -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- Takes a real-valued number and “squashes” it into range between -1 and 1.  -->
+<!-- $$R^n \rightarrow [-1,1]$$ -->
 
-<br> <br> <br>
-</div>
+<!-- <br> <br> <br> -->
+<!-- </div> -->
 
-- Like sigmoid, tanh neurons <span style="color:orange;font-weight:bold">saturate</span>
-- Unlike sigmoid, output is <span style="color:orange;font-weight:bold">zero-centered</span>
-- Tanh is a <span style="color:orange;font-weight:bold">scaled sigmoid</span>: $tanh⁡(x)=2sigm(2x)−1$
+<!-- - Like sigmoid, tanh neurons <span style="color:orange;font-weight:bold">saturate</span> -->
+<!-- - Unlike sigmoid, output is <span style="color:orange;font-weight:bold">zero-centered</span> -->
+<!-- - Tanh is a <span style="color:orange;font-weight:bold">scaled sigmoid</span>: $tanha(x)=2sigm(2x)−1$ -->
 
-## Activation: Tanh
+<!-- ## Activation: Tanh -->
 
-Most Deep Networks use ReLU nowadays 
+<!-- Most Deep Networks use ReLU nowadays  -->
 
-<div style="float:left;width:50%">
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
-include_graphics("img/page 20.png")
-```
-</div>
-<div style="float:right;width:50%">
-Takes a real-valued number and thresholds it at zero $f(x) = max(0,x)$
-$$R^n \rightarrow R^n_+$$
-<br> <br> <br>
-</div>
+<!-- <div style="float:left;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="50%", fig.align='center'} -->
+<!-- include_graphics("img/page 20.png") -->
+<!-- ``` -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!-- Takes a real-valued number and thresholds it at zero $f(x) = max(0,x)$ -->
+<!-- $$R^n \rightarrow R^n_+$$ -->
+<!-- <br> <br> <br> -->
+<!-- </div> -->
 
-- $+$ Trains much <span style="color:orange;font-weight:bold">faster</span>
-    - accelerates the convergence of SGD
-    - due to linear, non-saturating form 
-- $+$ Less expensive operations
-    - compared to sigmoid/tanh (exponentials etc.)
-    - implemented by simply thresholding a matrix at zero
-- $+$ More <span style="color:orange;font-weight:bold">expressive </span>
-- $+$ Prevents the <span style="color:orange;font-weight:bold">gradient vanishing problem</span>
+<!-- - $+$ Trains much <span style="color:orange;font-weight:bold">faster</span> -->
+<!--     - accelerates the convergence of SGD -->
+<!--     - due to linear, non-saturating form  -->
+<!-- - $+$ Less expensive operations -->
+<!--     - compared to sigmoid/tanh (exponentials etc.) -->
+<!--     - implemented by simply thresholding a matrix at zero -->
+<!-- - $+$ More <span style="color:orange;font-weight:bold">expressive </span> -->
+<!-- - $+$ Prevents the <span style="color:orange;font-weight:bold">gradient vanishing problem</span> -->
 
 ## Overfitting
 &nbsp;
@@ -594,7 +595,7 @@ include_graphics("img/page 21_2.png")
 ```
 </div>
 
-## Overfitting Prevention
+## Overfitting prevention
 
 - Running too many epochs can result in over-fitting.
 
@@ -637,7 +638,7 @@ include_graphics("img/page 23.png")
     <li>$n$ is called patience</li>
 </ul>
 
-## Tuning hyper-parameters {.smaller}
+## Tuning hyperparameters {.smaller}
 
 ```{r, echo=FALSE, out.width="90%", fig.align='center'}
 include_graphics("img/page 24.png")
@@ -660,9 +661,9 @@ include_graphics("img/page 26.png")
 
 - Use internal cross-validation to empirically determine an optimal number of hidden units.
 
-# Recurrent Neural Network
+# Recurrent Neural Networks
 
-## Recurrent Neural Networks (RNN)
+## Recurrent Neural Network (RNN)
 
 - Add feedback loops where some units’ current outputs determine some future network inputs.
 - RNNs can model dynamic finite-state machines, beyond the static combinatorial circuits modeled by feed-forward networks. 
@@ -684,7 +685,7 @@ include_graphics("img/page 29.png")
 include_graphics("img/page 30.png")
 ```  
 
-## Training RNN’s
+## Training RNNs
 
 - RNNs can be trained using “backpropagation through time.”
 - Can viewed as applying normal backprop to the unrolled network.
@@ -695,12 +696,12 @@ include_graphics("img/page 31.png")
 
 # LSTM
 
-## Vanishing/Exploding Gradient Problem
+## Vanishing/Exploding gradient problem
 
 - Backpropagated errors multiply at each layer, resulting in exponential decay (if derivative is small) or growth (if derivative is large).
 - Makes it very difficult train deep networks, or simple recurrent networks over many time steps.
 
-## Long Distance Dependencies
+## Long distance dependencies
 
 - It is very difficult to train SRNs to retain information over many time steps
 - This make is very difficult to learn SRNs that handle long-distance dependencies, such as subject-verb agreement.
@@ -717,13 +718,13 @@ include_graphics("img/page 34.png")
     - Output gate
 - Prevents vanishing/exploding gradient problem and allows network to retain state information over longer periods of time.
 
-## LSTM Network Architecture
+## LSTM network architecture
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 36.png")
 ```  
 
-## Cell State
+## Cell state
 
 - Maintains a vector $C_t$ that is the same dimensionality as the hidden state, $h_t$
 - Information can be added or deleted from this state vector via the forget and input gates.
@@ -732,13 +733,13 @@ include_graphics("img/page 36.png")
 include_graphics("img/page 37.png")
 ```  
 
-## Cell State Example
+## Cell state example
 
 - Want to remember person & number of a subject noun so that it can be checked to agree with the person & number of verb when it is eventually encountered.
 - Forget gate will remove existing information of a prior subject when a new one is encountered.
 - Input gate "adds" in the information for the new subject
 
-## Forget Gate
+## Forget gate
 
 - Forget gate computes a 0-1 value using a logistic sigmoid output function from the input, $x_t$, and the current hidden state, $h_t$:
 - Multiplicatively combined with cell state, "forgetting" information where the gate outputs something close to 0.
@@ -750,7 +751,7 @@ include_graphics("img/page 39.png")
 $$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$$
 \newpage
 
-## Hyperbolic Tangent Units
+## Hyperbolic Tangent units
 
 - Tanh can be used as an alternative nonlinear function to the sigmoid logistic (0-1) output function.
 - Used to produce thresholded output between –1 and 1.
@@ -759,7 +760,7 @@ $$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$$
 include_graphics("img/page 40.png")
 ```  
 
-## Input Gate
+## Input gate
 
 - First, determine which entries in the cell state to update by computing 0-1 sigmoid output.
 - Then determine what amount to add/subtract from these entries by computing a tanh output (valued –1 to 1) function of the input and hidden state.
@@ -772,7 +773,7 @@ $$i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)$$
 $$\tilde{C}_t = tanh(W_C \cdot [h_{t-1}, x_t] + b_C)$$
 \newpage
 
-## Updating the Cell State
+## Updating the cell state
 
 - Cell state is updated by using component-wise vector multiply to "forget" and vector addition to "input" new information.
 
@@ -783,7 +784,7 @@ include_graphics("img/page 42.png")
 $$C_t = f_t * C_{t-1} + i_t * \tilde{C}_t$$
 \newpage
 
-## Output Gate
+## Output gate
 
 - Hidden state is updated based on a "filtered" version of the cell state, scaled to –1 to 1 using tanh.
 - Output gate computes a sigmoid function of the input and current hidden state to determine which elements of the cell state to "output".
@@ -797,7 +798,7 @@ $$h_t = o_t * tanh(C_t)$$
 
 \newpage
 
-## Overall Network Architecture
+## Overall network architecture
 
 - Single or multilayer networks can compute LSTM inputs from problem inputs and problem outputs from LSTM outputs.
 
@@ -805,7 +806,7 @@ $$h_t = o_t * tanh(C_t)$$
 include_graphics("img/page 44.png")
 ```  
 
-## LSTM Training
+## LSTM training
 
 - Trainable with backprop derivatives such as:
     - Stochastic gradient descent (randomize order of examples in each epoch) with momentum (bias weight changes to continue in same direction as last update).
@@ -814,7 +815,7 @@ include_graphics("img/page 44.png")
     - Generally requires lots of training data.
     - Requires lots of compute time that exploits GPU clusters.
 
-## General Problems Solved with LSTMs
+## General problems solved with LSTM
 
 - Sequence labeling 
     - Train with supervised output at each time step computed using a single or multilayer network that maps the hidden state ($h_t$) to an output vector ($O_t$).
@@ -823,7 +824,7 @@ include_graphics("img/page 44.png")
 - Sequence (e.g. text) classification
     - Train a single or multilayer network that maps the final hidden state ($h_n$) to an output vector ($O$).
 
-## Sequence to Sequence <br> Transduction (Mapping)
+## Sequence to sequence <br> transduction (mapping)
 
 - Encoder/Decoder framework maps one sequence to a "deep vector" then another LSTM maps this vector to an output sequence.
 
@@ -833,13 +834,13 @@ include_graphics("img/page 47.png")
 
 - Train model "end to end" on I/O pairs of sequences.
 
-## Summary of <br> LSTM Application Architectures
+## Summary of <br> LSTM application architectures
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 48.png")
 ```  
 
-## Successful Applications of LSTMs
+## Successful applications of LSTM
 
 - Speech recognition: Language and acoustic modeling
 - Sequence labeling
@@ -878,12 +879,11 @@ $$\tilde{h}_t = tanh(W \cdot [r_t * h_{t-1}, x_t])$$
 $$h_t = (1 - z_t) * h_{t-1} + z_t * \tilde(h)_t$$
 \newpage
 
-## GRU vs. LSTM
+## GRU versus LSTM
 
 - GRU has significantly fewer parameters and trains faster.
 - Experimental results comparing the two are still inconclusive, many problems they perform the same, but each has problems on which they work better.
 
-## Menti
 
 ## Attention
 
@@ -892,13 +892,13 @@ $$h_t = (1 - z_t) * h_{t-1} + z_t * \tilde(h)_t$$
 - Used in image captioning to focus on different parts of an image when generating different parts of the output sentence.
 - In MT, allows focusing attention on different parts of the source sentence when generating different parts of the translation.
 
-## Attention Mechanism
+## Attention mechanism
 
 ```{r, echo=FALSE, out.width="80%", fig.align='center'}
 include_graphics("img/page 55.png")
 ```  
 
-## Attention - Scoring
+## Attention: Scoring
 
 ```{r, echo=FALSE, out.width="80%", fig.align='center'}
 include_graphics("img/page 56_1.png")
@@ -908,7 +908,7 @@ $$score(h_{t-1},\bar{h}_s) = h_t^T\bar{h}_s$$
 
 <span style="color:orange;font-weight:bold">Compare</span> target and source hidden states
 
-## Attention - Scoring
+## Attention: Scoring
 
 ```{r, echo=FALSE, out.width="70%", fig.align='center'}
 include_graphics("img/page 56_2.png")
@@ -918,7 +918,7 @@ $$score(h_{t-1},\bar{h}_s) = h_t^T\bar{h}_s$$
 
 <span style="color:orange;font-weight:bold">Compare</span> target and source hidden states
 
-## Attention - Normalization
+## Attention: Normalization
 
 ```{r, echo=FALSE, out.width="65%", fig.align='center'}
 include_graphics("img/page 57.png")
@@ -928,7 +928,7 @@ $$a_t(s) = \frac{e^{score(s)}}{\sum_{s'}{e^{score(s')}}}$$
 
 <span style="color:orange;font-weight:bold">Convert</span> into alignment weights
 
-## Attention - Context
+## Attention: Context
 
 ```{r, echo=FALSE, out.width="60%", fig.align='center'}
 include_graphics("img/page 58.png")
@@ -938,7 +938,7 @@ $$c_t = \sum_s{a_t(s)\bar{h}_s}$$
 
 Build <span style="color:orange;font-weight:bold">context</span> vector: weighted average
 
-## Attention - Context
+## Attention: Context
 
 ```{r, echo=FALSE, out.width="60%", fig.align='center'}
 include_graphics("img/page 59.png")
@@ -950,6 +950,14 @@ Compute <span style="color:orange;font-weight:bold">next</span> hidden state
 
 # Summary
 
-## Summary: what did we learn?
+## Summary
+
+- Feed-forward neural networks
+- Backpropagation
+- Recurrent neural networks
+- SRN
+- LSTM
+- Bi-LSTM
+- GRU
 
 # Time for Practical 6!
