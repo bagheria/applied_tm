@@ -377,7 +377,7 @@ Then, the gini-index for the term $t$, denoted by $G(t)$ is defined as:
 
 $$G(t) = \sum^k_{c=1}{p(c | t)^2}$$
 
-## Gini Index 
+## Gini index 
 
 - The value of the gini-index lies in the range $(1/k, 1)$. 
 
