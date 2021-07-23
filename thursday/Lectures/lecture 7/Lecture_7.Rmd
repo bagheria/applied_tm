@@ -1,6 +1,7 @@
 ---
-title: "Deep Learning for Text 2  "
-author: "Ayoub Bagheri, <a.bagheri@uu.nl>"
+title: "Deep Learning for Text 2"
+author: "Ayoub Bagheri"
+subtitle: "Applied Text Mining"
 output:
   ioslides_presentation:
     logo: logo.png
@@ -13,9 +14,9 @@ library(knitr)
 library(kableExtra)
 ```
 
-## Lecture’s Plan
+## Lecture’s plan
 
-1. CNN
+1. Convolutional Neural Network (CNN)
 2. Encoder-Decoder
 3. Attention
 4. Transformers
@@ -36,7 +37,7 @@ library(kableExtra)
     - **Pooling**
     - **Use of many layers**
     
-## CNN Architecture
+## CNN architecture
 
 - Intuition: Neural network with specialized connectivity structure
     - Stacking multiple layers of feature extractors, low-level layers extract local features, and high-level layers extract learn global patterns.
@@ -51,7 +52,7 @@ library(kableExtra)
 include_graphics("img/page 6.png")
 ```
 
-## (1) Convolutional Layer
+## (1) Convolutional layer
 
 - The core layer of CNNs
 - Convolutional layer consists of a set of filters, $W_{kl}$
@@ -65,7 +66,7 @@ include_graphics("img/page 6.png")
 include_graphics("img/page 7.png")
 ```
 
-## Convolutional Layer: Local Connectivity
+## Convolutional layer: Local connectivity
 
 <div style="float:left; width:60%">
   <ul>
@@ -82,7 +83,7 @@ include_graphics("img/page 8.png")
 ```
 </div>
 
-## Convolutional Layer: Shared Weights
+## Convolutional layer: Shared weights
 
 <div style="float:left; width:60%">
   <ul>
@@ -138,11 +139,11 @@ include_graphics("img/page 12_1.png")
 
 - Intuition: Increase the nonlinearity of the entire architecture without affecting the receptive fields of the convolution layer
 - A layer of neurons that applies the non-linear activation function, such as,
-    - **$f(x)=max⁡(0,x)$** - Rectified Linear Unit (ReLU); 
+    - **$f(x)=maxa(0,x)$** - Rectified Linear Unit (ReLU); 
     
     fast and most widely used in CNN
     - $f(x)=\text{tanh}x$
-    - $f(x)=|\text{tanh}⁡𝑥|$
+    - $f(x)=|\text{tanh}a𝑥|$
     - $f(x)=(1+𝑒^{−𝑥})^{−1}$ - sigmoid
 
 ```{r, echo=FALSE, out.width="50%", fig.align='center'}
@@ -616,10 +617,8 @@ include_graphics("img/page 58.png")
 include_graphics("img/page 59.png")
 ```
 
-## Menti
-
 # Summary
 
-## Summary: what did we learn?
+## Summary
 
 # Time for Practical 7!
