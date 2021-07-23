@@ -18,10 +18,9 @@ library(kableExtra)
 
 1. Convolutional Neural Network (CNN)
 2. Encoder-Decoder
-3. Attention
-4. Transformers
+3. Transformers
 
-# CNN for Text
+# Convolutional Neural Network
 
 ## Convolutional Neural Network (CNN)
 
@@ -193,7 +192,7 @@ $$P(y=j|\boldsymbol{x}) = \frac{e^{w_j \cdot x}}{\sum_{k=1}^K{e^{w_k \cdot x}}}$
 $$f(\boldsymbol{x}) = \boldsymbol{w} \cdot \boldsymbol{x}$$
     - The output is a real number.
 
-# Implementation for text in Python 
+# CNN for Text 
 
 ## Convolutional Neural Networks (CNNs)
 
@@ -226,22 +225,22 @@ include_graphics("img/page 19.png")
 include_graphics("img/page 20.png")
 ```
 
-## Python CNN Implementation
+<!-- ## Python CNN Implementation -->
 
-- Prerequisites:
-    - Python 3.5+ (https://www.python.org/)
-    - TensorFlow (https://www.tensorflow.org/)
-    - Keras (https://keras.io/)
-        - **Keras is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano.**
-- Recommended:
-    - NumPy
-    - Scikit-Learn
-    - NLTK
-    - SciPy
+<!-- - Prerequisites: -->
+<!--     - Python 3.5+ (https://www.python.org/) -->
+<!--     - TensorFlow (https://www.tensorflow.org/) -->
+<!--     - Keras (https://keras.io/) -->
+<!--         - **Keras is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano.** -->
+<!-- - Recommended: -->
+<!--     - NumPy -->
+<!--     - Scikit-Learn -->
+<!--     - NLTK -->
+<!--     - SciPy -->
 
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
-include_graphics("img/page 21.png")
-```
+<!-- ```{r, echo=FALSE, out.width="50%", fig.align='center'} -->
+<!-- include_graphics("img/page 21.png") -->
+<!-- ``` -->
 
 ## Build a CNN in Keras
 
@@ -275,23 +274,23 @@ and before fully connected layer;
 **SGD is stochastic gradient descent algorithm.**
 </div>
 
-## Build a CNN in Keras
+<!-- ## Build a CNN in Keras -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 23.png")
-```
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 23.png") -->
+<!-- ``` -->
 
-## Build a CNN in Keras
+<!-- ## Build a CNN in Keras -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 24.png")
-```
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 24.png") -->
+<!-- ``` -->
 
-## Build a CNN in Keras
+<!-- ## Build a CNN in Keras -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 25.png")
-```
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 25.png") -->
+<!-- ``` -->
 
 # Encoder-Decoder
  
@@ -326,34 +325,34 @@ include_graphics("img/page 28.png")
 include_graphics("img/page 29.png")
 ```
 
-## RNN Applications
+<!-- ## RNN Applications -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 30.png")
-```
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 30.png") -->
+<!-- ``` -->
 
-## Sentence Completion using an RNN
+<!-- ## Sentence Completion using an RNN -->
 
-```{r, echo=FALSE, out.width="90%", fig.align='center'}
-include_graphics("img/page 31.png")
-```
+<!-- ```{r, echo=FALSE, out.width="90%", fig.align='center'} -->
+<!-- include_graphics("img/page 31.png") -->
+<!-- ``` -->
 
-- **Trained Neural Language Model** can be used to generate novel sequences 
-- Or to complete a given sequence (until end of sentence token <\s> is generated)
+<!-- - **Trained Neural Language Model** can be used to generate novel sequences  -->
+<!-- - Or to complete a given sequence (until end of sentence token <\s> is generated) -->
 
-## 
+<!-- ##  -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 32.png")
-```
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 32.png") -->
+<!-- ``` -->
 
-## Extending (autoregressive) generation to Machine Translation
+<!-- ## Extending (autoregressive) generation to Machine Translation -->
 
-- Translation as Sentence Completion!
+<!-- - Translation as Sentence Completion! -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 33.png")
-```
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 33.png") -->
+<!-- ``` -->
 
 ## (simple) Encoder Decoder Networks
 &nbsp;
@@ -415,210 +414,225 @@ include_graphics("img/page 39.png")
 include_graphics("img/page 40.png")
 ```
 
-# Attention
+<!-- # Attention -->
 
-## Flexible context: Attention
+<!-- ## Flexible context: Attention -->
 
-**Context vector $c$**: function of **$h_{1:n}$** and conveys the essence of the input to the decoder.
+<!-- **Context vector $c$**: function of **$h_{1:n}$** and conveys the essence of the input to the decoder. -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 42.png")
-```
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 42.png") -->
+<!-- ``` -->
 
-## Flexible context: Attention
+<!-- ## Flexible context: Attention -->
 
-**Context vector $c$**: function of **$h_{1:n}$** and conveys the essence of the input to the decoder.
+<!-- **Context vector $c$**: function of **$h_{1:n}$** and conveys the essence of the input to the decoder. -->
 
-**Flexible?**  
-- Different for each $h_i$
-- Flexibly combining the $h_j$ 
+<!-- **Flexible?**   -->
+<!-- - Different for each $h_i$ -->
+<!-- - Flexibly combining the $h_j$  -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 42.png")
-```
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 42.png") -->
+<!-- ``` -->
 
-## Attention (1): dynamically derived context
+<!-- ## Attention (1): dynamically derived context -->
 
-- Replace static context vector with dynamic <span style="color:lightblue">$c_i$</span>
-- derived from the encoder hidden states at each point <span style="color:lightblue">$i$</span> during decoding
+<!-- - Replace static context vector with dynamic <span style="color:lightblue">$c_i$</span> -->
+<!-- - derived from the encoder hidden states at each point <span style="color:lightblue">$i$</span> during decoding -->
 
-**Ideas**:
-- should be a linear combination of those states 
-$$c_i = \sum_j{\alpha_{ij}h^e_j}$$
-- $\alpha_{ij}$ should depend on?
+<!-- **Ideas**: -->
+<!-- - should be a linear combination of those states  -->
+<!-- $$c_i = \sum_j{\alpha_{ij}h^e_j}$$ -->
+<!-- - $\alpha_{ij}$ should depend on? -->
 
-```{r, echo=FALSE, out.width="40%", fig.align='center'}
-include_graphics("img/page 43.png")
-```
+<!-- ```{r, echo=FALSE, out.width="40%", fig.align='center'} -->
+<!-- include_graphics("img/page 43.png") -->
+<!-- ``` -->
 
-## Attention (2): computing $c_i$
+<!-- ## Attention (2): computing $c_i$ -->
 
-- Compute a vector of scores that capture the relevance of each encoder hidden state to the decoder state $h_{i-1}^d$
-$$score(h_{i-1}^d, h_j^e)$$
+<!-- - Compute a vector of scores that capture the relevance of each encoder hidden state to the decoder state $h_{i-1}^d$ -->
+<!-- $$score(h_{i-1}^d, h_j^e)$$ -->
 
-- Just the similarity
-$$score(h_{i-1}^d, h_j^e) = h_{i-1}^d \cdot h_j^e$$
+<!-- - Just the similarity -->
+<!-- $$score(h_{i-1}^d, h_j^e) = h_{i-1}^d \cdot h_j^e$$ -->
 
-- Give network the ability to <span style="background-color:lightgray">learn which aspects</span> of similarity between the decoder and encoder states are important to the current application.
+<!-- - Give network the ability to <span style="background-color:lightgray">learn which aspects</span> of similarity between the decoder and encoder states are important to the current application. -->
 
-$$score(h_{i-1}^d, h_j^e) = h_{i-1}^d W_S h_j^e$$
+<!-- $$score(h_{i-1}^d, h_j^e) = h_{i-1}^d W_S h_j^e$$ -->
 
-```{r, echo=FALSE, out.width="40%", fig.align='center'}
-include_graphics("img/page 44.png")
-```
+<!-- ```{r, echo=FALSE, out.width="40%", fig.align='center'} -->
+<!-- include_graphics("img/page 44.png") -->
+<!-- ``` -->
 
-## Attention (3): computing $c_i$ <br> From scores to weights
+<!-- ## Attention (3): computing $c_i$ <br> From scores to weights -->
 
-- Create vector of weights  by normalizing scores
+<!-- - Create vector of weights  by normalizing scores -->
 
-$$
-\begin{align}
-a_{ij} &= \text{softmax}(score(h_{i-1}^d, h_j^e)\ \forall j \in e) \\
-&= \frac{exp(score(h_{i-1}^d, h_j^e))}{\sum_k{exp(score(h_{i-1}^d, h_k^e))}}
-\end{align}
-$$
+<!-- $$ -->
+<!-- \begin{align} -->
+<!-- a_{ij} &= \text{softmax}(score(h_{i-1}^d, h_j^e)\ \forall j \in e) \\ -->
+<!-- &= \frac{exp(score(h_{i-1}^d, h_j^e))}{\sum_k{exp(score(h_{i-1}^d, h_k^e))}} -->
+<!-- \end{align} -->
+<!-- $$ -->
 
-- **Goal achieved**: compute a fixed-length context vector for the current decoder state by taking a weighted average over all the encoder hidden states.
+<!-- - **Goal achieved**: compute a fixed-length context vector for the current decoder state by taking a weighted average over all the encoder hidden states. -->
 
-```{r, echo=FALSE, out.width="40%", fig.align='center'}
-include_graphics("img/page 45.png")
-```
+<!-- ```{r, echo=FALSE, out.width="40%", fig.align='center'} -->
+<!-- include_graphics("img/page 45.png") -->
+<!-- ``` -->
 
-## Attention: Summary
+<!-- ## Attention: Summary -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 46.png")
-```
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 46.png") -->
+<!-- ``` -->
 
-## Explain Y. Goldberg different notation
+<!-- ## Explain Y. Goldberg different notation -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 47.png")
-```
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 47.png") -->
+<!-- ``` -->
 
-## Intro to Encoder-Decoder and Attention (Goldberg’s notation)
+<!-- ## Intro to Encoder-Decoder and Attention (Goldberg’s notation) -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 48.png")
-```
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 48.png") -->
+<!-- ``` -->
 
 # Transformers
 
-## Transformers (Attention is all you need 2017)
+## Transformers | (Attention is all you need)
 
-- Just an introduction: These are two valuable resources to learn more details on the architecture and implementation
+- A transformer adopts an encoder-decoder architecture.
+
+- Transformers were developed to solve the problem of sequence transduction, or neural machine translation. That means any task that transforms an input sequence to an output sequence. 
+
+- These are two valuable resources to learn more details on the architecture and implementation
 
 - http://nlp.seas.harvard.edu/2018/04/03/attention.html
 
 - https://jalammar.github.io/illustrated-transformer/ (slides come from this source)
 
-## High-level architecture
 
-- Will only look at the ENCODER(s) part in detail
-
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 51.png")
-```
-
-## 
+## Transformers
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 52.png")
+include_graphics("img/bertelmogpt.png")
 ```
 
-## 
+<!-- ## High-level architecture -->
 
-**Key property of Transformer**: word in each position flows through its own path in the encoder. 
-- There are dependencies between these paths in the self-attention layer. 
-- Feed-forward layer does not have those dependencies => various paths can be executed in parallel !
+<!-- - Will only look at the ENCODER(s) part in detail -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 53.png")
-```
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 51.png") -->
+<!-- ``` -->
 
-## Visually clearer on two words
+<!-- ##  -->
 
-- dependencies in self-attention layer. 
-- No dependencies in Feed-forward layer 
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 52.png") -->
+<!-- ``` -->
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 54.png")
-```
+<!-- ##  -->
 
-## Self-Attention
+<!-- **Key property of Transformer**: word in each position flows through its own path in the encoder.  -->
+<!-- - There are dependencies between these paths in the self-attention layer.  -->
+<!-- - Feed-forward layer does not have those dependencies => various paths can be executed in parallel ! -->
 
-While processing **each word** it allows to look at other positions in the input sequence for clues to build a better encoding for **this word**.
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 53.png") -->
+<!-- ``` -->
 
-**Step1: create three vectors** from each of the encoder’s input vectors: 
+<!-- ## Visually clearer on two words -->
 
-<span style="color:purple">Query</span>, a <span style="color:orange">Key</span>, <span style="color:lightblue">Value</span>  (typically smaller dimension). 
+<!-- - dependencies in self-attention layer.  -->
+<!-- - No dependencies in Feed-forward layer  -->
 
-by multiplying the embedding by three matrices that we **trained** during the training process.
+<!-- ```{r, echo=FALSE, out.width="70%", fig.align='center'} -->
+<!-- include_graphics("img/page 54.png") -->
+<!-- ``` -->
 
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
-include_graphics("img/page 55.png")
-```
+<!-- ## Self-Attention -->
 
-## Self-Attention
+<!-- While processing **each word** it allows to look at other positions in the input sequence for clues to build a better encoding for **this word**. -->
 
-**Step 2: calculate a score** (like we have seen for regular attention!)  how much focus to place on other parts of the input sentence as we encode a word at a certain position.
+<!-- **Step1: create three vectors** from each of the encoder’s input vectors:  -->
 
-Take dot product of the <span style="color:purple">query vector</span> with the <span style="color:orange">key vector</span> of the respective word we’re scoring. 
+<!-- <span style="color:purple">Query</span>, a <span style="color:orange">Key</span>, <span style="color:lightblue">Value</span>  (typically smaller dimension).  -->
+
+<!-- by multiplying the embedding by three matrices that we **trained** during the training process. -->
+
+<!-- ```{r, echo=FALSE, out.width="50%", fig.align='center'} -->
+<!-- include_graphics("img/page 55.png") -->
+<!-- ``` -->
+
+<!-- ## Self-Attention -->
+
+<!-- **Step 2: calculate a score** (like we have seen for regular attention!)  how much focus to place on other parts of the input sentence as we encode a word at a certain position. -->
+
+<!-- Take dot product of the <span style="color:purple">query vector</span> with the <span style="color:orange">key vector</span> of the respective word we’re scoring.  -->
 
 
-E.g., Processing the self-attention for word “Thinking” in position $\text{#}1$, the first score would be the dot product of <span style="color:purple">q1</span> and <span style="color:orange">k1</span>. The second score would be the dot product of <span style="color:purple">q1</span> and <span style="color:orange">k2</span>.
+<!-- E.g., Processing the self-attention for word “Thinking” in position $\text{#}1$, the first score would be the dot product of <span style="color:purple">q1</span> and <span style="color:orange">k1</span>. The second score would be the dot product of <span style="color:purple">q1</span> and <span style="color:orange">k2</span>. -->
 
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
-include_graphics("img/page 56.png")
-```
+<!-- ```{r, echo=FALSE, out.width="50%", fig.align='center'} -->
+<!-- include_graphics("img/page 56.png") -->
+<!-- ``` -->
 
-## Self Attention
+<!-- ## Self Attention -->
 
-- **Step 3** divide scores by the square root of the dimension of the <span style="color:orange">key vectors</span>  (more stable gradients). 
-- **Step 4** pass result through a softmax operation. (all positive and add up to 1)
+<!-- - **Step 3** divide scores by the square root of the dimension of the <span style="color:orange">key vectors</span>  (more stable gradients).  -->
+<!-- - **Step 4** pass result through a softmax operation. (all positive and add up to 1) -->
 
-**Intuition**: softmax score determines how much each word will be expressed at this position. 
+<!-- **Intuition**: softmax score determines how much each word will be expressed at this position.  -->
 
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 57.png")
-```
+<!-- ```{r, echo=FALSE, out.width="60%", fig.align='center'} -->
+<!-- include_graphics("img/page 57.png") -->
+<!-- ``` -->
 
-## Self Attention
+<!-- ## Self Attention -->
 
-**Step6** : sum up the weighted <span style="color:blue">value vectors</span>. This produces <span style="color:pink">the output of the self-attention layer</span> at this position
+<!-- **Step6** : sum up the weighted <span style="color:blue">value vectors</span>. This produces <span style="color:pink">the output of the self-attention layer</span> at this position -->
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 57.png")
-```
+<!-- ```{r, echo=FALSE, out.width="70%", fig.align='center'} -->
+<!-- include_graphics("img/page 57.png") -->
+<!-- ``` -->
 
-## Self Attention
+<!-- ## Self Attention -->
 
-**Step6** : sum up the weighted <span style="color:blue">value vectors</span>. This produces <span style="color:pink">the output of the self-attention layer</span> at this position
+<!-- **Step6** : sum up the weighted <span style="color:blue">value vectors</span>. This produces <span style="color:pink">the output of the self-attention layer</span> at this position -->
 
-More details:
-- What we have seen for a word is done **for all words** (using matrices) 
-- Need to **encode position** of words
-- And improved using a mechanism called “**multi-headed**” attention
+<!-- More details: -->
+<!-- - What we have seen for a word is done **for all words** (using matrices)  -->
+<!-- - Need to **encode position** of words -->
+<!-- - And improved using a mechanism called “**multi-headed**” attention -->
 
-(kind of like multiple filters for CNN)
+<!-- (kind of like multiple filters for CNN) -->
 
-see https://jalammar.github.io/illustrated-transformer/
+<!-- see https://jalammar.github.io/illustrated-transformer/ -->
 
-```{r, echo=FALSE, out.width="30%", fig.align='center'}
-include_graphics("img/page 58.png")
-```
+<!-- ```{r, echo=FALSE, out.width="30%", fig.align='center'} -->
+<!-- include_graphics("img/page 58.png") -->
+<!-- ``` -->
 
-## The Decoder Side
+<!-- ## The Decoder Side -->
 
-- Relies on most of the concepts on the encoder side
-- See animation on https://jalammar.github.io/illustrated-transformer/
+<!-- - Relies on most of the concepts on the encoder side -->
+<!-- - See animation on https://jalammar.github.io/illustrated-transformer/ -->
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 59.png")
-```
+<!-- ```{r, echo=FALSE, out.width="70%", fig.align='center'} -->
+<!-- include_graphics("img/page 59.png") -->
+<!-- ``` -->
 
 # Summary
 
 ## Summary
+- Convolutional Neural Network (CNN)
+- Encoder-Decoder
+- Transformers
+
 
 # Time for Practical 7!
