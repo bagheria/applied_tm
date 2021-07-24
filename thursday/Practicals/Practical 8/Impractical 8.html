@@ -13348,7 +13348,7 @@ The string after translating is : woow dining
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>13. <strong>Fit the model with your desired number of epochs (e.g. 2 :)), validation_split of 0.2, and batch_size of 128</strong></p>
+<p>13. <strong>Fit the model with your desired number of epochs (e.g. 1 :)), validation_split of 0.2, and batch_size of 128. You can use smaller values for the number of LSTM units (100) and embedding size (50) if it takes a lot of time to run.</strong></p>
 
 </div>
 </div>
@@ -13380,7 +13380,7 @@ The string after translating is : woow dining
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>17. <strong>Create a new dataframe with two columns where you show the actual text of the test set versus your predictions. Use the sample() function with your dataframe to randomly check some of the lines.</strong></p>
+<p>17. <strong>Create a new dataframe with three columns where you show the input Dutch text of the test set, the actual output, and your predictions. Use the sample() function with your dataframe to randomly check some of the lines.</strong></p>
 
 </div>
 </div>
@@ -13388,7 +13388,7 @@ The string after translating is : woow dining
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>18. <strong>You may not get very good results mainly because of the memory/time limit that you did not create a very efficient model. For this, we already trained a model with 30 epochs on the entire training dataset. Load this model with load_model('model.h1.09_jun_21') and repeat the steps in 15, 16 and 17 again.</strong></p>
+<p>18. <strong>Tatoeba.org (<a href="https://tatoeba.org/en/downloads">https://tatoeba.org/en/downloads</a>) has a large database of example sentences translated into many languages by volunteers. To have a better data for your neural machine translator you can use this tool to generate and download customized sentence pairs. For example it has more than one million sentence pairs translated from Dutch to English. This time, try to tune the hyperparameters and add an attention layer after the dense layer.</strong></p>
 
 </div>
 </div>
