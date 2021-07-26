@@ -82,19 +82,19 @@ include_graphics("img/page 7.png")
 ```
 </div>
 
-## Applications of text clustering
-<div style="float:left; width:50%">
-- Grouping search results
-  
-  - Organize documents by topics
-  
-  - Facilitate user browsing
-</div>
-<div style="float:right; width:50%">
-```{r, echo=FALSE, out.width="100%"}
-include_graphics("img/page 8.png")
-```
-</div>
+<!-- ## Applications of text clustering -->
+<!-- <div style="float:left; width:50%"> -->
+<!-- - Grouping search results -->
+
+<!--   - Organize documents by topics -->
+
+<!--   - Facilitate user browsing -->
+<!-- </div> -->
+<!-- <div style="float:right; width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%"} -->
+<!-- include_graphics("img/page 8.png") -->
+<!-- ``` -->
+<!-- </div> -->
 
 ## Applications of text clustering
 - Topic modeling
@@ -768,4 +768,4 @@ include_graphics("img/lda.png")
 
 - Evaluation
 
-# Practical 5
+# Practical 4
