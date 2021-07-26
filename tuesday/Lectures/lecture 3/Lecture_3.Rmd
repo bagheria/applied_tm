@@ -578,18 +578,18 @@ include_graphics("img/diff.png")
 
 <!-- - Non-linear dimensionality reduction is also a successful area and can give much better results for data with significant non-linearities -->
 
-## PCA overview
+<!-- ## PCA overview -->
 
-- Seek new set of bases which correspond to the highest variance in the data
-- Transform $n$-dimensional *normalized* data to a new $n$-dimensional basis
-    - The new dimension with the most variance is the first principal component
-    - The next is the second principal component, etc.
-    - Note $z_1$ <u>combines/fuses</u> significant information from both $x_1$ and $x_2$
-- Drop dimensions for which there is little variance
+<!-- - Seek new set of bases which correspond to the highest variance in the data -->
+<!-- - Transform $n$-dimensional *normalized* data to a new $n$-dimensional basis -->
+<!--     - The new dimension with the most variance is the first principal component -->
+<!--     - The next is the second principal component, etc. -->
+<!--     - Note $z_1$ <u>combines/fuses</u> significant information from both $x_1$ and $x_2$ -->
+<!-- - Drop dimensions for which there is little variance -->
 
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 53.png")
-```
+<!-- ```{r, echo=FALSE, out.width="60%", fig.align='center'} -->
+<!-- include_graphics("img/page 53.png") -->
+<!-- ``` -->
 
 ## PCA overview
 
