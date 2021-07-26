@@ -510,15 +510,15 @@ $$\min_\alpha{\hat{R}(\alpha, \sigma)} = \min_\alpha{\sum_{k=1}^m{L(f(\alpha, \s
 include_graphics("img/page 64.png")
 ```
 
-## Embedded method
+<!-- ## Embedded method -->
 
-- Embedded methods are a good inspiration to design new feature selection techniques for your own algorithms:
-    - Find a functional that represents your prior knowledge about what a good model is.
-    - Add the s weights into the functional and make sure it’s either differentiable or you can perform a sensitivity analysis efficiently
-    - Optimize alternatively according to $\alpha$ and $\sigma$
-    - Use early stopping (validation set) or your own stopping criterion to stop and select the subset of features
+<!-- - Embedded methods are a good inspiration to design new feature selection techniques for your own algorithms: -->
+<!--     - Find a functional that represents your prior knowledge about what a good model is. -->
+<!--     - Add the s weights into the functional and make sure it’s either differentiable or you can perform a sensitivity analysis efficiently -->
+<!--     - Optimize alternatively according to $\alpha$ and $\sigma$ -->
+<!--     - Use early stopping (validation set) or your own stopping criterion to stop and select the subset of features -->
 
-- Embedded methods are therefore not too far from wrapper techniques and can be extended to multiclass, regression, etc…
+<!-- - Embedded methods are therefore not too far from wrapper techniques and can be extended to multiclass, regression, etc… -->
 
 ## Lasso vs Ridge
 ```{r, echo=FALSE, out.width="90%", fig.align='center'}
