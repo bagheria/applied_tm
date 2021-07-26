@@ -178,12 +178,14 @@ Here you will find the materials for Tuesday:
 
 - Part 3: Feature selection
     - [Lecture 3](tuesday/Lectures/lecture 3/Lecture_3.html)
+    - [Lecture 3 Handout](tuesday/Lectures/lecture 3/Lecture_3_Handout.pdf)
     - [Impractical 3](tuesday/Practicals/Practical 3/Impractical 3.html)
     - [Practical 3](tuesday/Practicals/Practical 3/Practical 3.html)
     - [Data for practical 3](tuesday/Practicals/Practical 3/data.zip)
 
 - Part 4: Text clustering
     - [Lecture 4](tuesday/Lectures/lecture 4/Lecture_4.html)
+    - [Lecture 4 Handout](tuesday/Lectures/lecture 4/Lecture_4_Handout.pdf)
     - [Impractical 4](tuesday/Practicals/Practical 4/Impractical 4.html)
     - [Practical 4](tuesday/Practicals/Practical 4/Practical 4.html)
     - [Data for practical 4](tuesday/Practicals/Practical 4/bbcsport-fulltext.zip)
