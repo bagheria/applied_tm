@@ -13085,9 +13085,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Upload the "book_reviews.csv" from your machine, following the <a href="https://colab.research.google.com/notebooks/io.ipynb">Colab documentation</a> This file contains 10000 English language book reviews from Goodreads, with genre, age and star rating labels. Uploading may take a minute or so. Read the </li>
-</ol>
+<p>1. Upload the "book_reviews.csv" from your machine, following the <a href="https://colab.research.google.com/notebooks/io.ipynb">Colab documentation</a> This file contains 10000 English language book reviews from Goodreads, with genre, age and star rating labels. Uploading may take a minute or so. Read the</p>
 
 </div>
 </div>
@@ -13146,9 +13144,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Load the .csv file into a <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html?highlight=read_csv#pandas.read_csv">Pandas dataframe</a>. This makes it easy to acess and filter data.</li>
-</ol>
+<p>2. Load the .csv file into a <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html?highlight=read_csv#pandas.read_csv">Pandas dataframe</a>. This makes it easy to acess and filter data.</p>
 
 </div>
 </div>
@@ -13277,9 +13273,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Now you can construct the document-term matrix. The <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">CountVectorizer</a> class counts how often each word occurs in each document. Optionally, you can also pass ngram_range as a parameter, to see if combinations of multiple words are better predictors for ratings. Define the output of the <code>fit_transform</code> function on 'tokenised_text' as your feature matrix X, and the star ratings ('rating_no') as the variable y you're trying to predict.</li>
-</ol>
+<p>3. Now you can construct the document-term matrix. The <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">CountVectorizer</a> class counts how often each word occurs in each document. Optionally, you can also pass ngram_range as a parameter, to see if combinations of multiple words are better predictors for ratings. Define the output of the <code>fit_transform</code> function on 'tokenised_text' as your feature matrix X, and the star ratings ('rating_no') as the variable y you're trying to predict.</p>
 
 </div>
 </div>
@@ -13356,7 +13350,7 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
 <span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tokenised_text&#39;</span><span class="p">])</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;rating_no&#39;</span><span class="p">]</span>
 </pre></div>
 
@@ -13368,9 +13362,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>After defining your document-term matrix, you can split the data into train- and test sets. Note that <code>random_state</code> is used so that the split will be the same for everyone in the group, such that different random selections don't cause slightly different results.</li>
-</ol>
+<p>4. After defining your document-term matrix, you can split the data into train- and test sets. Note that <code>random_state</code> is used so that the split will be the same for everyone in the group, such that different random selections don't cause slightly different results.</p>
 
 </div>
 </div>
@@ -13392,16 +13384,13 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Now pick one of the following classifiers:<ul>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier">K-Nearest Neighbor classifier</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB">Multionimal Naive Bayes</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC">Support Vector Machine</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier">Decision Tree Classifier</a></li>
-<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier">Random Forest Classifier</a></li>
-</ul>
-</li>
-</ol>
+<p>5. Now pick one of the following classifiers:</p>
+
+<pre><code>- [K-Nearest Neighbor classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier)
+- [Multionimal Naive Bayes](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB)
+- [Support Vector Machine](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC)
+- [Decision Tree Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier)
+- [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier)</code></pre>
 
 </div>
 </div>
@@ -13621,9 +13610,7 @@ accuracy with 20 trees: 0.32151515151515153
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Find the parameters which lead to best results. You can also automatate this with <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html">GridSearch</a>, as shown below.</li>
-</ol>
+<p>6. Find the parameters which lead to best results. You can also automatate this with <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html">GridSearch</a>, as shown below.</p>
 
 </div>
 </div>
@@ -13704,9 +13691,7 @@ accuracy with 20 trees: 0.32151515151515153
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ol>
-<li>Try combining multiple classifiers, for instance with a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html#sklearn.ensemble.VotingClassifier">Voting Classifier</a> Can you get a better result?</li>
-</ol>
+<p>7. Try combining multiple classifiers, for instance with a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html#sklearn.ensemble.VotingClassifier">Voting Classifier</a> Can you get a better result?</p>
 
 </div>
 </div>
