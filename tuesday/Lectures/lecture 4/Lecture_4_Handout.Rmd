@@ -1,12 +1,12 @@
 ---
 title: "Text Clustering"
 author: "Ayoub Bagheri"
-date: "Introduction to Text Mining with R"
+subtitle: "Applied Text Mining"
 output:
-  word_document:
+  pdf_document:
     toc: yes
     toc_depth: '5'
-  pdf_document:
+  word_document:
     toc: yes
     toc_depth: '5'
   beamer_presentation: default
@@ -50,6 +50,17 @@ include_graphics("img/page 4.png")
 include_graphics("img/page 5.png")
 ```
 
+## Question
+
+Which one is not a text clustering task?
+
+- Grouping Trump's tweets and finding the main topics
+- Finding similar patterns (demands) in customer reviews
+- Grouping scientific articles
+- Detection of heart failure (0 or 1) using discharge summaries
+
+Please go to <a href="www.menti.com">www.menti.com</a> and use the code 7338 2184
+
 ## Clustering
   
 - Basic criteria
@@ -74,19 +85,19 @@ include_graphics("img/page 7.png")
 ```
 </div>
 
-## Applications of text clustering
-<div style="float:left; width:50%">
-- Grouping search results
-  
-  - Organize documents by topics
-  
-  - Facilitate user browsing
-</div>
-<div style="float:right; width:50%">
-```{r, echo=FALSE, out.width="100%"}
-include_graphics("img/page 8.png")
-```
-</div>
+<!-- ## Applications of text clustering -->
+<!-- <div style="float:left; width:50%"> -->
+<!-- - Grouping search results -->
+
+<!--   - Organize documents by topics -->
+
+<!--   - Facilitate user browsing -->
+<!-- </div> -->
+<!-- <div style="float:right; width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%"} -->
+<!-- include_graphics("img/page 8.png") -->
+<!-- ``` -->
+<!-- </div> -->
 
 ## Applications of text clustering
 - Topic modeling
@@ -278,11 +289,16 @@ $$\vec \mu(c)=\frac{1}{|c|}\sum_{\vec a \in c}{\vec x}$$
   - For each cluster cj
     - $s_j = \mu(c_j)$
     
-## K-Means example (K=2)
+<!-- ## K-Means example (K=2) -->
+<!-- ```{r, out.width="100%", cache=TRUE} -->
+<!-- list.files(path = 'img/', pattern = 'page 26', full.names = TRUE) %>%  -->
+<!--         image_read() %>% # reads each path file -->
+<!--         image_join() %>% # joins image -->
+<!--         image_animate(delay = 1000) %>% # animates, can opt for number of loops -->
+<!--         image_write("img/kmeans.gif") # write to current dir -->
 
-```{r, out.width="100%"}
-include_graphics("img/page 26_8.png")
-```
+<!-- include_graphics("img/kmeans.gif") -->
+<!-- ``` -->
 
 <!-- ## Termination conditions -->
 <!-- - Several possibilities, e.g., -->
@@ -755,4 +771,4 @@ include_graphics("img/lda.png")
 
 - Evaluation
 
-# Practical 5
+# Practical 4
