@@ -783,6 +783,67 @@ https://towardsdatascience.com/
 <!-- </ol> -->
 <!-- </div> -->
 
+# Evaluation| Supervised learning
+
+## Data Splitting
+
+- Training set
+  - Validation set (dev set)
+    - A validation dataset is a dataset of examples used to tune the hyperparameters (i.e. the architecture) of a classifier. It is sometimes also called the development set or the "dev set".
+    
+- Test set
+
+## Cross Validation
+
+```{r, echo=FALSE, out.width="75%"}
+include_graphics("img/page 331.png")
+```
+
+<br>
+<p style="font-size:12px">https://scikit-learn.org/stable/modules/cross_validation.html</p>
+
+
+## Confusion matrix
+
+```{r, echo=FALSE, out.width="100%"}
+include_graphics("img/page 881.png")
+```
+
+\newpage
+
+## Accuracy
+
+- What proportion of instances is correctly classified? <br>
+ 	<center>TP + TN / TP + FP + FN + TN </center>
+
+- Accuracy is a valid choice of evaluation for classification problems which are well balanced and not skewed. 
+
+- Let us say that our target class is very sparse. Do we want accuracy as a metric of our model performance? What if we are predicting if an asteroid will hit the earth? Just say “No” all the time. And you will be 99% accurate. The model can be reasonably accurate, but not at all valuable.
+
+\newpage
+
+## Precision and recall
+
+- <b>Precision</b>: % of selected items that are correct <br> <b>Recall</b>: % of correct items that are selected
+
+- Precision is a valid choice of evaluation metric when we want to be very sure of our prediction.
+
+- Recall is a valid choice of evaluation metric when we want to capture as many positives as possible.
+
+\newpage
+
+## A combined measure: F
+
+A combined measure that assesses the P/R tradeoff is F measure (weighted harmonic mean):
+
+$$F = \frac{1}{\alpha\frac{1}{P}+(1-\alpha)\frac{1}{R}}=\frac{(\beta^2+1)PR}{\beta^2P + R}$$
+
+The harmonic mean is a very conservative average;
+
+Balanced F1 measure
+  -   i.e., with $\beta = 1$ (that is, $\alpha = 1/2$): $F = 2PR/(P+R)$
+  
+
 # Summary
 
 ## Summary
