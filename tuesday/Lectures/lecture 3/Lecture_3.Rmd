@@ -140,15 +140,15 @@ Why we need FS:
 
 # Feature Selection Methods
 
-## Feature selection methods
+<!-- ## Feature selection methods -->
 
-<ul>
-<li><span style="color:blue; font-weight:bold">Thousands to millions of features</span>: select the most relevant one to build <span style="color:blue; font-weight:bold">better, faster, and easier to understand</span> learning machines.</li>
-</ul>
+<!-- <ul> -->
+<!-- <li><span style="color:blue; font-weight:bold">Thousands to millions of features</span>: select the most relevant one to build <span style="color:blue; font-weight:bold">better, faster, and easier to understand</span> learning machines.</li> -->
+<!-- </ul> -->
 
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 16_1.png")
-```
+<!-- ```{r, echo=FALSE, out.width="60%", fig.align='center'} -->
+<!-- include_graphics("img/page 16_1.png") -->
+<!-- ``` -->
 
 ## Feature selection methods
 
@@ -195,15 +195,15 @@ include_graphics("img/page 16_2.png")
 <!--     <li><u>the available data</u> (number of examples and number of variables, noise in data)</li> -->
 <!-- </ul> -->
 
-## Some criteria
+<!-- ## Some criteria -->
 
-<center>A choice of feature selection ranking methods           depending on the nature of:</center>
+<!-- <center>A choice of feature selection ranking methods           depending on the nature of:</center> -->
 
-<ul>
-    <li><u>The variables and the target</u> (binary, categorical, continuous)
-</li>
-    <li><u>The problem</u> (dependencies between variables, linear/non-linear relationships between variables and target)</li>
-    <li><u>The available data</u> (number of examples and number of variables, noise in data)</li>
+<!-- <ul> -->
+<!--     <li><u>The variables and the target</u> (binary, categorical, continuous) -->
+<!-- </li> -->
+<!--     <li><u>The problem</u> (dependencies between variables, linear/non-linear relationships between variables and target)</li> -->
+<!--     <li><u>The available data</u> (number of examples and number of variables, noise in data)</li> -->
     
 ## Filters, Wrappers, Embedded, and Hybrid
 
@@ -234,18 +234,18 @@ include_graphics("img/page 21.png")
 - Basic approach is simple
 - Variations are based on how to select the feature subsets, since there are an exponential number of subsets
 
-## Feature selection: Wrappers
+<!-- ## Feature selection: Wrappers -->
 
-- Exhaustive Search - Exhausting
-- Forward Search – $O(n^2 \cdot \text{learning/testing time})$ - Greedy
-    1. Score each feature by itself and add the best feature to the initially empty set FS (FS will be our final Feature Set)
-    2. Try each subset consisting of the current FS plus one remaining feature and add the best feature to FS
-    3. Continue until stop getting significant improvement (over a window)
-- Backward Search – $O(n^2 \cdot \text{learning/testing time})$ - Greedy
-    1. Score the initial complete FS 
-    2. Try each subset consisting of the current FS minus one feature in FS and drop the feature from FS causing least decrease in accuracy
-    3. Continue until begin to get significant decreases in accuracy
-- Branch and Bound and other heuristic approaches available
+<!-- - Exhaustive Search - Exhausting -->
+<!-- - Forward Search – $O(n^2 \cdot \text{learning/testing time})$ - Greedy -->
+<!--     1. Score each feature by itself and add the best feature to the initially empty set FS (FS will be our final Feature Set) -->
+<!--     2. Try each subset consisting of the current FS plus one remaining feature and add the best feature to FS -->
+<!--     3. Continue until stop getting significant improvement (over a window) -->
+<!-- - Backward Search – $O(n^2 \cdot \text{learning/testing time})$ - Greedy -->
+<!--     1. Score the initial complete FS  -->
+<!--     2. Try each subset consisting of the current FS minus one feature in FS and drop the feature from FS causing least decrease in accuracy -->
+<!--     3. Continue until begin to get significant decreases in accuracy -->
+<!-- - Branch and Bound and other heuristic approaches available -->
 
 <!-- ## Wrapper method -->
 
@@ -274,10 +274,12 @@ include_graphics("img/page 26.png")
 
 ## Search strategies
 
-- **Exhaustive search**.
-- **Simulated annealing, genetic algorithms**.
+- **Exhaustive search**
+- **Greedy search**: forward selection or backward elimination
+- **Simulated annealing** 
+- **Genetic algorithms**
 <!-- - **Beam search**: keep k best path at each step.  -->
-- **Greedy search**: forward selection or backward elimination.
+
 <!-- - **PTA(l,r)**: plus l , take away r – at each step, run SFS l times then SBS r times. -->
 <!-- - **Floating search** (SFFS and SBFS): One step of SFS (resp. SBS), then SBS (resp. SFS) as long as we find better subsets than those of the same size obtained so far. Any time, if a better subset of the same size was already found, switch abruptly. -->
 
@@ -783,7 +785,7 @@ https://towardsdatascience.com/
 <!-- </ol> -->
 <!-- </div> -->
 
-# Evaluation| Supervised learning
+# Evaluation| Supervised learning | Which method to use?
 
 ## Data Splitting
 
