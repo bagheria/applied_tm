@@ -143,7 +143,7 @@ Why we need FS:
 ## Feature selection methods
 
 <ul>
-<li><span style="color:blue; font-weight:bold">Thousands to millions of low level features</span>: select the most relevant one to build <span style="color:blue; font-weight:bold">better, faster, and easier to understand</span> learning machines.</li>
+<li><span style="color:blue; font-weight:bold">Thousands to millions of features</span>: select the most relevant one to build <span style="color:blue; font-weight:bold">better, faster, and easier to understand</span> learning machines.</li>
 </ul>
 
 ```{r, echo=FALSE, out.width="60%", fig.align='center'}
@@ -153,7 +153,7 @@ include_graphics("img/page 16_1.png")
 ## Feature selection methods
 
 <ul>
-<li><span style="color:blue; font-weight:bold">Thousands to millions of low level features</span>: select the most relevant one to build <span style="color:blue; font-weight:bold">better, faster, and easier to understand</span> learning machines.</li>
+<li><span style="color:blue; font-weight:bold">Thousands to millions of features</span>: select the most relevant one to build <span style="color:blue; font-weight:bold">better, faster, and easier to understand</span> learning machines.</li>
 </ul>
 
 ```{r, echo=FALSE, out.width="60%", fig.align='center'}
@@ -200,13 +200,12 @@ include_graphics("img/page 16_2.png")
 <center>A choice of feature selection ranking methods           depending on the nature of:</center>
 
 <ul>
-    <li><u>the variables and the target</u> (binary, categorical, continuous)
+    <li><u>The variables and the target</u> (binary, categorical, continuous)
 </li>
-    <li><u>the problem</u> (dependencies between variables, linear/non-linear relationships between variables and target)</li>
-    <li><u>the available data</u>(number of examples and number of variables, noise in data)</li>
-    <li><u>the available tabulated statistics</u></li>
+    <li><u>The problem</u> (dependencies between variables, linear/non-linear relationships between variables and target)</li>
+    <li><u>The available data</u> (number of examples and number of variables, noise in data)</li>
     
-## Filters, Wrappers, and Embedded methods
+## Filters, Wrappers, Embedded, and Hybrid
 
 ```{r, echo=FALSE, out.width="80%", fig.align='center'}
 include_graphics("img/page 18.png")
@@ -248,15 +247,15 @@ include_graphics("img/page 21.png")
     3. Continue until begin to get significant decreases in accuracy
 - Branch and Bound and other heuristic approaches available
 
-## Wrapper method
+<!-- ## Wrapper method -->
 
-- Wrapper method
-    - Search in the whole space of feature groups
-        - Sequential forward selection or genetic search to speed up the search
-        
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 24.png")
-```
+<!-- - Wrapper method -->
+<!--     - Search in the whole space of feature groups -->
+<!--         - Sequential forward selection or genetic search to speed up the search -->
+
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 24.png") -->
+<!-- ``` -->
 
 ## Wrapper method
 
@@ -277,10 +276,10 @@ include_graphics("img/page 26.png")
 
 - **Exhaustive search**.
 - **Simulated annealing, genetic algorithms**.
-- **Beam search**: keep k best path at each step. 
+<!-- - **Beam search**: keep k best path at each step.  -->
 - **Greedy search**: forward selection or backward elimination.
-- **PTA(l,r)**: plus l , take away r – at each step, run SFS l times then SBS r times.
-- **Floating search** (SFFS and SBFS): One step of SFS (resp. SBS), then SBS (resp. SFS) as long as we find better subsets than those of the same size obtained so far. Any time, if a better subset of the same size was already found, switch abruptly.
+<!-- - **PTA(l,r)**: plus l , take away r – at each step, run SFS l times then SBS r times. -->
+<!-- - **Floating search** (SFFS and SBFS): One step of SFS (resp. SBS), then SBS (resp. SFS) as long as we find better subsets than those of the same size obtained so far. Any time, if a better subset of the same size was already found, switch abruptly. -->
 
 <!-- ## Forward Selection (wrapper) -->
 
@@ -545,6 +544,11 @@ include_graphics("img/lassoridge.png")
   3. Set $\sigma = |w^*| \circ \sigma$
   4. back to 2
 
+## Comparing methods
+
+```{r, echo=FALSE, out.width="70%", fig.align='center'}
+include_graphics("img/diff.png")
+```
 
 # PCA
 
@@ -585,95 +589,103 @@ include_graphics("img/lassoridge.png")
 include_graphics("img/page 53.png")
 ```
 
-## Variance and covariance
-
-- Variance is a measure of data spread in one dimension (feature)
-- Covariance measures how two dimensions (features) vary with respect to each other
-
-$$var(X) = \frac{\sum_{i = 1}^n{(X_i - \bar X)(X_i - \bar X)}}{(n - 1)}$$
-$$cov(X,Y) = \frac{\sum_{i = 1}^n{(X_i - \bar X)(Y_i - \bar Y)}}{(n - 1)}$$
-
-## Covariance and the covariance matrix
-
-- Considering the sign (rather than exact value) of covariance:
-    - Positive value means that as one feature increases or decreases the other does also (positively correlated)
-    - Negative value means that as one feature increases the other decreases and vice versa (negatively correlated)
-    - A value close to zero means the features are independent
-    - If highly covariant, are both features necessary?
-- Covariance matrix is an $n \times n$ matrix containing the covariance values for all pairs of features in a data set with $n$ features (dimensions)
-- The diagonal contains the covariance of a feature with itself which is the variance (which is the square of the standard deviation)
-- The matrix is symmetric
-
-## PCA example
-
-- First step is to center the original data around 0 by subtracting the mean in each dimension
+## PCA overview
 
 ```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 56.png")
+include_graphics("img/pca.jpeg")
 ```
 
-## PCA example
+https://towardsdatascience.com/
 
-- Second: Calculate the covariance matrix of the centered data
-- Only $2 \times 2$ for this case
+<!-- ## Variance and covariance -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 57.png")
-```
+<!-- - Variance is a measure of data spread in one dimension (feature) -->
+<!-- - Covariance measures how two dimensions (features) vary with respect to each other -->
 
-## PCA example
+<!-- $$var(X) = \frac{\sum_{i = 1}^n{(X_i - \bar X)(X_i - \bar X)}}{(n - 1)}$$ -->
+<!-- $$cov(X,Y) = \frac{\sum_{i = 1}^n{(X_i - \bar X)(Y_i - \bar Y)}}{(n - 1)}$$ -->
 
-- Third: Calculate the unit eigenvectors and eigenvalues of the covariance matrix (remember linear algebra)
-    - Covariance matrix is always square $n \times n$ and positive semi-definite, thus n non-negative eigenvalues will exist
-    - All eigenvectors (principal components) are orthogonal to each other and form the new set of bases/dimensions for the data (columns)
-    - The magnitude of each eigenvalue corresponds to the variance along that new dimension – Just what we wanted!
-    - We can sort the principal components according to their eigenvalues
-    - Just keep those dimensions with the largest eigenvalues
-    
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 58.png")
-```
+<!-- ## Covariance and the covariance matrix -->
 
-## PCA example
+<!-- - Considering the sign (rather than exact value) of covariance: -->
+<!--     - Positive value means that as one feature increases or decreases the other does also (positively correlated) -->
+<!--     - Negative value means that as one feature increases the other decreases and vice versa (negatively correlated) -->
+<!--     - A value close to zero means the features are independent -->
+<!--     - If highly covariant, are both features necessary? -->
+<!-- - Covariance matrix is an $n \times n$ matrix containing the covariance values for all pairs of features in a data set with $n$ features (dimensions) -->
+<!-- - The diagonal contains the covariance of a feature with itself which is the variance (which is the square of the standard deviation) -->
+<!-- - The matrix is symmetric -->
 
-- Below are the two eigenvectors overlaying the centered data
-- Which eigenvector has the largest eigenvalue?
-- Fourth Step:  Just keep the $p$ eigenvectors with the largest eigenvalues
-    - Do lose some information, but if we just drop dimensions with small eigenvalues then we lose only a little information, hopefully noise
-    - We can then have $p$ input features rather than $n$
-    - The $p$ features contain the most pertinent *combined* information from all $n$ original features
-    - How many dimensions $p$ should we keep?
-    
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 59.png")
-```
+<!-- ## PCA example -->
 
-## PCA example
+<!-- - First step is to center the original data around 0 by subtracting the mean in each dimension -->
 
-- Last Step:  Transform the $n$ features to the $p$ ($< n$) chosen bases (Eigenvectors)
-- Transformed data (m instances) is a matrix multiply $T =  A \times B$
-    - $A$ is a $p \times n$ matrix with the $p$ principal components in the rows, component one on top
-    - $B$ is a $n \times m$ matrix containing the transposed centered original data set
-    - $T^T$ is a $m \times p$ matrix containing the transformed data set  
-- Now we have the new transformed data set with dimensionality $p$
-- Keep matrix $A$ to transform future centered data instances
-- Below is shown the transform of both dimensions. Would if we just kept the $1^{st}$ component?
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 56.png") -->
+<!-- ``` -->
 
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
-include_graphics("img/page 60.png")
-```
+<!-- ## PCA example -->
 
-## PCA algorithm summary
+<!-- - Second: Calculate the covariance matrix of the centered data -->
+<!-- - Only $2 \times 2$ for this case -->
 
-1. Center the $n$ normalized TS features (subtract the n means)
-2. Calculate the covariance matrix of the centered TS
-3. Calculate the unit eigenvectors and eigenvalues of the covariance matrix
-4. Keep the $p$ ($< n$) eigenvectors with the largest eigenvalues
-5. Matrix multiply the p eigenvectors with the centered TS to get a new TS with only $p$ features
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 57.png") -->
+<!-- ``` -->
 
-- Given a novel instance during execution
-    1. Center the normalized instance (subtract the $n$ means)
-    2. Do the matrix multiply (step 5 above) to change the new instance from $n$ to $p$ features
+<!-- ## PCA example -->
+
+<!-- - Third: Calculate the unit eigenvectors and eigenvalues of the covariance matrix (remember linear algebra) -->
+<!--     - Covariance matrix is always square $n \times n$ and positive semi-definite, thus n non-negative eigenvalues will exist -->
+<!--     - All eigenvectors (principal components) are orthogonal to each other and form the new set of bases/dimensions for the data (columns) -->
+<!--     - The magnitude of each eigenvalue corresponds to the variance along that new dimension – Just what we wanted! -->
+<!--     - We can sort the principal components according to their eigenvalues -->
+<!--     - Just keep those dimensions with the largest eigenvalues -->
+
+<!-- ```{r, echo=FALSE, out.width="70%", fig.align='center'} -->
+<!-- include_graphics("img/page 58.png") -->
+<!-- ``` -->
+
+<!-- ## PCA example -->
+
+<!-- - Below are the two eigenvectors overlaying the centered data -->
+<!-- - Which eigenvector has the largest eigenvalue? -->
+<!-- - Fourth Step:  Just keep the $p$ eigenvectors with the largest eigenvalues -->
+<!--     - Do lose some information, but if we just drop dimensions with small eigenvalues then we lose only a little information, hopefully noise -->
+<!--     - We can then have $p$ input features rather than $n$ -->
+<!--     - The $p$ features contain the most pertinent *combined* information from all $n$ original features -->
+<!--     - How many dimensions $p$ should we keep? -->
+
+<!-- ```{r, echo=FALSE, out.width="60%", fig.align='center'} -->
+<!-- include_graphics("img/page 59.png") -->
+<!-- ``` -->
+
+<!-- ## PCA example -->
+
+<!-- - Last Step:  Transform the $n$ features to the $p$ ($< n$) chosen bases (Eigenvectors) -->
+<!-- - Transformed data (m instances) is a matrix multiply $T =  A \times B$ -->
+<!--     - $A$ is a $p \times n$ matrix with the $p$ principal components in the rows, component one on top -->
+<!--     - $B$ is a $n \times m$ matrix containing the transposed centered original data set -->
+<!--     - $T^T$ is a $m \times p$ matrix containing the transformed data set   -->
+<!-- - Now we have the new transformed data set with dimensionality $p$ -->
+<!-- - Keep matrix $A$ to transform future centered data instances -->
+<!-- - Below is shown the transform of both dimensions. Would if we just kept the $1^{st}$ component? -->
+
+<!-- ```{r, echo=FALSE, out.width="50%", fig.align='center'} -->
+<!-- include_graphics("img/page 60.png") -->
+<!-- ``` -->
+
+<!-- ## PCA algorithm summary -->
+
+<!-- 1. Center the $n$ normalized TS features (subtract the n means) -->
+<!-- 2. Calculate the covariance matrix of the centered TS -->
+<!-- 3. Calculate the unit eigenvectors and eigenvalues of the covariance matrix -->
+<!-- 4. Keep the $p$ ($< n$) eigenvectors with the largest eigenvalues -->
+<!-- 5. Matrix multiply the p eigenvectors with the centered TS to get a new TS with only $p$ features -->
+
+<!-- - Given a novel instance during execution -->
+<!--     1. Center the normalized instance (subtract the $n$ means) -->
+<!--     2. Do the matrix multiply (step 5 above) to change the new instance from $n$ to $p$ features -->
 
 <!-- ## PCA for text data -->
 
