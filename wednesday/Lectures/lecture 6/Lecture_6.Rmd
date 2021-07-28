@@ -662,6 +662,8 @@ include_graphics("img/page 26.png")
 
 - Use internal cross-validation to empirically determine an optimal number of hidden units.
 
+- Hyperparameter tuning
+
 # Recurrent Neural Networks
 
 ## Recurrent Neural Network (RNN)
@@ -852,20 +854,20 @@ include_graphics("img/page 47.png")
 include_graphics("img/page 48.png")
 ```  
 
-## Successful applications of LSTM
+<!-- ## Successful applications of LSTM -->
 
-- Speech recognition: Language and acoustic modeling
-- Sequence labeling
-  - POS Tagging 
-    
-    https://www.aclweb.org/aclwiki/index.php?title=POS_Tagging_(State_of_the_art)
-  - NER
-  - Phrase Chunking 
-- Neural syntactic and semantic parsing
-- Image captioning: CNN output vector to sequence
-- Sequence to Sequence
-  - Machine Translation (Sustkever, Vinyals, & Le, 2014)
-  - Video Captioning (input sequence of CNN frame outputs)
+<!-- - Speech recognition: Language and acoustic modeling -->
+<!-- - Sequence labeling -->
+<!--   - POS Tagging  -->
+
+<!--     https://www.aclweb.org/aclwiki/index.php?title=POS_Tagging_(State_of_the_art) -->
+<!--   - NER -->
+<!--   - Phrase Chunking  -->
+<!-- - Neural syntactic and semantic parsing -->
+<!-- - Image captioning: CNN output vector to sequence -->
+<!-- - Sequence to Sequence -->
+<!--   - Machine Translation (Sustkever, Vinyals, & Le, 2014) -->
+<!--   - Video Captioning (input sequence of CNN frame outputs) -->
 
 ## Bi-directional LSTM (Bi-LSTM)
 
