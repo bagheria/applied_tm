@@ -213,6 +213,7 @@ Here you will find the materials for Wednesday:
 
 - Part 6: Deep learning for text 1
     - [Lecture 6](wednesday/Lectures/lecture 6/Lecture_6.html)
+    - [Lecture 6 Handout](wednesday/Lectures/lecture 6/Lecture_6_Handout.pdf)
     - [Impractical 6](wednesday/Practicals/Practical 6/Impractical 6.html)
     - [Practical 6](wednesday/Practicals/Practical 6/Practical 6.html) 
 
