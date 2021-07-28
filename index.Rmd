@@ -207,6 +207,7 @@ Here you will find the materials for Wednesday:
 
 - Part 5: Word embedding
     - [Lecture 5](wednesday/Lectures/lecture 5/Lecture_5.pdf)
+    - [Lecture 5 Handout](wednesday/Lectures/lecture 5/Lecture_5_Handout.pdf)
     - [Impractical 5](wednesday/Practicals/Practical 5/Impractical 5.html)
     - [Practical 5](wednesday/Practicals/Practical 5/Practical 5.html)
 
