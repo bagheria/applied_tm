@@ -14,89 +14,81 @@ library(knitr)
 library(kableExtra)
 ```
 
+## RNN: Recap
+
+```{r, echo=FALSE, out.width="90%", fig.align='center'}
+include_graphics("img/rnn.png")
+```
+
 ## Lecture’s plan
 
-1. Convolutional Neural Network (CNN)
-2. Encoder-Decoder
-3. Transformers
+1. Convolutional Neural Networks
+2. Transformers
+3. BERT
 
-# Convolutional Neural Network
+<!-- # Convolutional Neural Network -->
 
 ## Convolutional Neural Network (CNN)
-
-- Convolutional Neural Networks, or Convolutional Networks, or CNNs, or ConvNets
-- For processing data with a **grid-like** or array topology
-    - 1-D grid: time-series data, sensor signal data
-    - 2-D grid: image data
-    - 3-D grid: video data
-
-- CNNs include four key ideas related to natural signals: 
-    - **Local connections**
-    - **Shared weights**
-    - **Pooling**
-    - **Use of many layers**
-    
-## CNN architecture
 
 - Intuition: Neural network with specialized connectivity structure
     - Stacking multiple layers of feature extractors, low-level layers extract local features, and high-level layers extract learn global patterns.
 - There are a few distinct types of layers:
-    - **Convolutional Layer**: detecting local features through filters (discrete convolution)
-    - **Non-linear Layer**: normalization via Rectified Linear Unit (ReLU)
+    - **Convolution Layer**: detecting local features through filters (discrete convolution)
+    <!-- - **Non-linear Layer**: normalization via Rectified Linear Unit (ReLU) -->
     - **Pooling Layer**: merging similar features
     
-## Building-blocks for CNNs
+<!-- ## Building-blocks for CNNs -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 6.png")
-```
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 6.png") -->
+<!-- ``` -->
 
-## (1) Convolutional layer
+## Convolution layer
 
 - The core layer of CNNs
-- Convolutional layer consists of a set of filters, $W_{kl}$
-- Each filter covers a spatially small portion of the input data, $Z_{i,j}$
+- Convolutional layer consists of a set of filters
+- Each filter covers a spatially small portion of the input data
 - Each filter is convolved across the dimensions of the input data, producing a multidimensional **feature map**.
 - As we convolve the filter, we are computing the dot product between the parameters of the filter and the input.
-- **Deep Learning algorithm**: During training, the network corrects errors and filters are **learned**, e.g., in Keras, by adjusting weights based on **Stochastic Gradient Descent**, **SGD** (stochastic approximation of GD using a randomly selected subset of the data).
+- **Deep Learning algorithm**: During training, the network corrects errors and filters are **learned**, e.g., in Keras, by adjusting weights based on **Stochastic Gradient Descent**, **SGD**.
 - The key architectural characteristics of the convolutional layer is **local connectivity** and **shared weights**.
 
-```{r, echo=FALSE, out.width="30%", fig.align='center'}
-include_graphics("img/page 7.png")
-```
+<!-- ```{r, echo=FALSE, out.width="30%", fig.align='center'} -->
+<!-- include_graphics("img/page 7.png") -->
+<!-- ``` -->
 
-## Convolutional layer: Local connectivity
+<!-- ## Convolutional layer: Local connectivity -->
 
-<div style="float:left; width:60%">
-  <ul>
-      <li>Neurons in layer m are only connected to 3 adjacent neurons in the m-1 layer.</li>
-      <li>Neurons in layer m+1 have a similar connectivity with the layer below.</li>
-      <li>Each neuron is unresponsive to variations outside of its <em>receptive field</em> with respect to the input. </li>
-      <ul><li>Receptive field: small neuron collections which process portions of the input data.</li></ul>
-      <li>The architecture thus ensures that the learnt feature extractors produce the strongest response to a spatially local input pattern.</li>
-  </ul>
-</div>
-<div style="float:left; width:40%">
-```{r, echo=FALSE, out.width="90%", fig.align='center'}
-include_graphics("img/page 8.png")
-```
-</div>
+<!-- <div style="float:left; width:60%"> -->
+<!--   <ul> -->
+<!--       <li>Neurons in layer m are only connected to 3 adjacent neurons in the m-1 layer.</li> -->
+<!--       <li>Neurons in layer m+1 have a similar connectivity with the layer below.</li> -->
+<!--       <li>Each neuron is unresponsive to variations outside of its <em>receptive field</em> with respect to the input. </li> -->
+<!--       <ul><li>Receptive field: small neuron collections which process portions of the input data.</li></ul> -->
+<!--       <li>The architecture thus ensures that the learnt feature extractors produce the strongest response to a spatially local input pattern.</li> -->
+<!--   </ul> -->
+<!-- </div> -->
+<!-- <div style="float:left; width:40%"> -->
+<!-- ```{r, echo=FALSE, out.width="90%", fig.align='center'} -->
+<!-- include_graphics("img/page 8.png") -->
+<!-- ``` -->
+<!-- </div> -->
 
-## Convolutional layer: Shared weights
+<!-- ## Convolutional layer: Shared weights -->
 
-<div style="float:left; width:60%">
-  <ul>
-      <li>We show 3 hidden neurons belonging to the same feature map (the layer right above the input layer).</li>
-      <li>Weights of the same color are shared—constrained to be identical.</li>
-      <li>Replicating neurons in this way allows for features to be detected regardless of their position in the input. </li>
-      <li>Additionally, <b>weight sharing increases learning efficiency</b> by greatly reducing the number of free parameters being learnt.</li>
-  </ul>
-</div>
-<div style="float:left; width:40%">
-```{r, echo=FALSE, out.width="90%", fig.align='center'}
-include_graphics("img/page 9.png")
-```
-</div>
+<!-- <div style="float:left; width:60%"> -->
+<!--   <ul> -->
+<!--       <li>We show 3 hidden neurons belonging to the same feature map (the layer right above the input layer).</li> -->
+<!--       <li>Weights of the same color are shared—constrained to be identical.</li> -->
+<!--       <li>Replicating neurons in this way allows for features to be detected regardless of their position in the input. </li> -->
+<!--       <li>Additionally, <b>weight sharing increases learning efficiency</b> by greatly reducing the number of free parameters being learnt.</li> -->
+<!--   </ul> -->
+<!-- </div> -->
+<!-- <div style="float:left; width:40%"> -->
+<!-- ```{r, echo=FALSE, out.width="90%", fig.align='center'} -->
+<!-- include_graphics("img/page 9.png") -->
+<!-- ``` -->
+<!-- </div> -->
 
 ## Convolution without padding
 
@@ -111,7 +103,7 @@ include_graphics("img/page 10.png")
 
 ## Convolution with padding
 
-<center>Animation source: https://github.com/vdumoulin/conv_arithmetic</center>
+<center>
 
 <div style="float:left;width:50%">
 ```{r, echo=FALSE, out.width="70%", fig.align='center'}
@@ -129,36 +121,37 @@ include_graphics("img/page 11_2.gif")
 5x5 output.</center>
 </div>
 
+https://github.com/vdumoulin/conv_arithmetic</center>
 
-## (2) Non-linear layer 
+<!-- ## (2) Non-linear layer  -->
 
-```{r, echo=FALSE, out.width="40%", fig.align='center'}
-include_graphics("img/page 12_1.png")
-```
+<!-- ```{r, echo=FALSE, out.width="40%", fig.align='center'} -->
+<!-- include_graphics("img/page 12_1.png") -->
+<!-- ``` -->
 
-- Intuition: Increase the nonlinearity of the entire architecture without affecting the receptive fields of the convolution layer
-- A layer of neurons that applies the non-linear activation function, such as,
-    - **$f(x)=maxa(0,x)$** - Rectified Linear Unit (ReLU); 
-    
-    fast and most widely used in CNN
-    - $f(x)=\text{tanh}x$
-    - $f(x)=|\text{tanh}a𝑥|$
-    - $f(x)=(1+𝑒^{−𝑥})^{−1}$ - sigmoid
+<!-- - Intuition: Increase the nonlinearity of the entire architecture without affecting the receptive fields of the convolution layer -->
+<!-- - A layer of neurons that applies the non-linear activation function, such as, -->
+<!--     - **$f(x)=maxa(0,x)$** - Rectified Linear Unit (ReLU);  -->
 
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
-include_graphics("img/page 12_2.png")
-```
+<!--     fast and most widely used in CNN -->
+<!--     - $f(x)=\text{tanh}x$ -->
+<!--     - $f(x)=|\text{tanh}a𝑥|$ -->
+<!--     - $f(x)=(1+𝑒^{−𝑥})^{−1}$ - sigmoid -->
 
-## (3) Pooling layer
+<!-- ```{r, echo=FALSE, out.width="50%", fig.align='center'} -->
+<!-- include_graphics("img/page 12_2.png") -->
+<!-- ``` -->
 
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
-include_graphics("img/page 13_1.png")
-```
+## Pooling layer
+
+<!-- ```{r, echo=FALSE, out.width="50%", fig.align='center'} -->
+<!-- include_graphics("img/page 13_1.png") -->
+<!-- ``` -->
 
 - Intuition: to progressively reduce the spatial size of the representation to reduce the amount of parameters and computation in the network, and hence to also control overfitting
-- Pooling partitions the input image into a set of non-overlapping rectangles and, for each such sub-region, outputs the maximum value of the features in that region.
+- Pooling partitions the input image (or documents) into a set of non-overlapping rectangles (n-grams) and, for each such sub-region, outputs the maximum value of the features in that region.
 
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
 include_graphics("img/page 13_2.png")
 ```
 
@@ -168,11 +161,28 @@ include_graphics("img/page 13_2.png")
 include_graphics("img/page 14.png")
 ```
 
+## Convolutional neural network
+
+<!-- - Convolutional Neural Networks, or Convolutional Networks, or CNNs, or ConvNets -->
+For processing data with a **grid-like** or array topology:
+
+  - 1-D convolution: time-series data, sensor signal data
+  
+  - 2-D convolution: image data
+  
+  - 3-D convolution: video data
+
+<!-- - CNNs include four key ideas related to natural signals:  -->
+<!--     - **Local connections** -->
+<!--     - **Shared weights** -->
+<!--     - **Pooling** -->
+<!--     - **Use of many layers** -->
+
 ## Other layers
 
-- The convolution, non-linear, and pooling layers are typically used as a set. Multiple sets of the above three layers can appear in a CNN design.
-    - Input &rarr; <span style="color:green">Conv. &rarr; Non-linear &rarr; Pooling</span> &rarr;  <span style="color:green">Conv. &rarr; Non-linear &rarr; Pooling</span> &rarr; … &rarr; Output
-- Recent CNN architectures have 10-20 such layers.
+- The convolution, and pooling layers are typically used as a set. Multiple sets of the above layers can appear in a CNN design.
+    <!-- - Input &rarr; <span style="color:green">Conv. &rarr; Non-linear &rarr; Pooling</span> &rarr;  <span style="color:green">Conv. &rarr; Non-linear &rarr; Pooling</span> &rarr; … &rarr; Output -->
+<!-- - Recent CNN architectures have 10-20 such layers. -->
 - After a few sets, the output is typically sent to one or two **fully connected layers**.
     - A fully connected layer is a ordinary neural network layer as in other neural networks.
     - Typical activation function is the sigmoid function.
@@ -191,6 +201,8 @@ $$P(y=j|\boldsymbol{x}) = \frac{e^{w_j \cdot x}}{\sum_{k=1}^K{e^{w_k \cdot x}}}$
 - Regression: Linear Layer
 $$f(\boldsymbol{x}) = \boldsymbol{w} \cdot \boldsymbol{x}$$
     - The output is a real number.
+
+<span style="color:blue;font-weight:bold">What hyperparameters do we have in a CNN model?</span>
 
 # CNN for Text 
 
@@ -213,16 +225,65 @@ This takes, takes too, too long, this takes too, takes too long, this takes too 
   <img src="img/page 18.gif" width="360">
 </div>
 
-## CNN for text classification
+<!-- ## CNN for text classification -->
 
-```{r, echo=FALSE, out.width="90%", fig.align='center'}
-include_graphics("img/page 19.png")
-```
+<!-- ```{r, echo=FALSE, out.width="90%", fig.align='center'} -->
+<!-- include_graphics("img/page 19.png") -->
+<!-- ``` -->
 
-## CNN with multiple filters
+## CNNs for sentence classification
 
 ```{r, echo=FALSE, out.width="90%", fig.align='center'}
 include_graphics("img/page 20.png")
+```
+
+https://arxiv.org/pdf/1408.5882.pdf
+
+## Data sets (1)
+
+- **MR**: Movie reviews with one sentence per review. Classification involves detecting positive/negative reviews (Pang and Lee, 2005).
+url: https://www.cs.cornell.edu/people/pabo/movie-review-data/
+
+- **SST-1**: Stanford Sentiment Treebank—an extension of MR but with train/dev/test splits provided and fine-grained labels (very positive, positive, neutral, negative, very negative), re-labeled by Socher et al. (2013).
+url: https://nlp.stanford.edu/sentiment/
+
+- **SST-2**: Same as SST-1 but with neutral reviews removed and binary labels.
+
+- **Subj**: Subjectivity dataset where the task is to classify a sentence as being subjective or objective (Pang and Lee, 2004).
+
+## Data sets (2)
+
+- **TREC**: TREC question dataset—task involves classifying a question into 6 question types (whether the question is about person, location, numeric information, etc.) (Li and Roth, 2002).
+url: https://cogcomp.seas.upenn.edu/Data/QA/QC/
+
+- **CR**: Customer reviews of various products (cameras, MP3s etc.). Task is to predict positive/negative reviews (Hu and Liu, 2004).
+url: https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html
+
+- **MPQA**: Opinion polarity detection subtask of the MPQA dataset (Wiebe et al., 2005).
+url: https://mpqa.cs.pitt.edu/corpora/mpqa_corpus/
+
+## Data sets statistics
+
+```{r, echo=FALSE, out.width="65%", fig.align='center'}
+include_graphics("img/datasetsCNN.png")
+```
+
+## CNN variations
+
+```{r, echo=FALSE, out.width="60%", fig.align='center'}
+include_graphics("img/CNN_var.png")
+```
+
+## Similar words
+
+```{r, echo=FALSE, out.width="50%", fig.align='center'}
+include_graphics("img/CNN_sim.png")
+```
+
+## Results
+
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
+include_graphics("img/results.png")
 ```
 
 <!-- ## Python CNN Implementation -->
@@ -242,37 +303,42 @@ include_graphics("img/page 20.png")
 <!-- include_graphics("img/page 21.png") -->
 <!-- ``` -->
 
-## Build a CNN in Keras
+## CNN in Keras
 
-<div style="float: left; width:60%">
-- The `Sequential` model is used to build a linear stack of layers.
-- The following code shows how a typical CNN is built in Keras.
-
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+include_graphics("img/cnn.png")
 ```
-import numpy as np
-import keras
-from keras.models import Sequential
-from keras.layers import Dense, Flatten
-from keras.layers import Conv2D, MaxPooling2D
-from keras.optimizers import SGD
-![image.png](attachment:image.png)
-```
-</div>
-<div style="float: right; width:40%">
-Note:
 
-**Dense is the fully connected layer;**
 
-**Flatten is used after all CNN layers **
+<!-- <div style="float: left; width:60%"> -->
+<!-- - The `Sequential` model is used to build a linear stack of layers. -->
+<!-- - The following code shows how a typical CNN is built in Keras. -->
 
-and before fully connected layer;
+<!-- ``` -->
+<!-- import numpy as np -->
+<!-- import keras -->
+<!-- from keras.models import Sequential -->
+<!-- from keras.layers import Dense, Flatten -->
+<!-- from keras.layers import Conv2D, MaxPooling2D -->
+<!-- from keras.optimizers import SGD -->
+<!-- ![image.png](attachment:image.png) -->
+<!-- ``` -->
+<!-- </div> -->
+<!-- <div style="float: right; width:40%"> -->
+<!-- Note: -->
 
-**Conv2D is the 2D convolution layer;**
+<!-- **Dense is the fully connected layer;** -->
 
-**MaxPooling2D is the 2D max pooling layer;**
+<!-- **Flatten is used after all CNN layers ** -->
 
-**SGD is stochastic gradient descent algorithm.**
-</div>
+<!-- and before fully connected layer; -->
+
+<!-- **Conv2D is the 2D convolution layer;** -->
+
+<!-- **MaxPooling2D is the 2D max pooling layer;** -->
+
+<!-- **SGD is stochastic gradient descent algorithm.** -->
+<!-- </div> -->
 
 <!-- ## Build a CNN in Keras -->
 
@@ -292,38 +358,38 @@ and before fully connected layer;
 <!-- include_graphics("img/page 25.png") -->
 <!-- ``` -->
 
-# Encoder-Decoder
- 
-## Encoder-Decoder
+<!-- # Encoder-Decoder -->
 
-- **RNN**: input sequence is transformed into output sequence in a one-to-one fashion.
-- **Goal**: Develop an architecture capable of generating contextually appropriate, arbitrary length, output sequences
-- **Applications**: 
-    - Machine translation, 
-    - Summarization, 
-    - Question answering,
-    - Dialogue modeling.
+<!-- ## Encoder-Decoder -->
 
-```{r, echo=FALSE, out.width="50%", fig.align='center'}
-include_graphics("img/page 27.png")
-```
+<!-- - **RNN**: input sequence is transformed into output sequence in a one-to-one fashion. -->
+<!-- - **Goal**: Develop an architecture capable of generating contextually appropriate, arbitrary length, output sequences -->
+<!-- - **Applications**:  -->
+<!--     - Machine translation,  -->
+<!--     - Summarization,  -->
+<!--     - Question answering, -->
+<!--     - Dialogue modeling. -->
 
-## Simple recurrent neural network illustrated as a feed-forward network
-&nbsp;
+<!-- ```{r, echo=FALSE, out.width="50%", fig.align='center'} -->
+<!-- include_graphics("img/page 27.png") -->
+<!-- ``` -->
 
-**Most significant change: new set of weights, U**
-- connect the hidden layer from the previous time step to the current hidden layer. 
-- determine how the network should make use of past context in calculating the output for the current input.
+<!-- ## Simple recurrent neural network illustrated as a feed-forward network -->
+<!-- &nbsp; -->
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 28.png")
-```
+<!-- **Most significant change: new set of weights, U** -->
+<!-- - connect the hidden layer from the previous time step to the current hidden layer.  -->
+<!-- - determine how the network should make use of past context in calculating the output for the current input. -->
 
-## Simple-RNN abstraction
+<!-- ```{r, echo=FALSE, out.width="70%", fig.align='center'} -->
+<!-- include_graphics("img/page 28.png") -->
+<!-- ``` -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 29.png")
-```
+<!-- ## Simple-RNN abstraction -->
+
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 29.png") -->
+<!-- ``` -->
 
 <!-- ## RNN Applications -->
 
@@ -354,65 +420,65 @@ include_graphics("img/page 29.png")
 <!-- include_graphics("img/page 33.png") -->
 <!-- ``` -->
 
-## (Simple) Encoder decoder networks
-&nbsp;
+<!-- ## (Simple) Encoder decoder networks -->
+<!-- &nbsp; -->
 
-```{r, echo=FALSE, out.width="90%", fig.align='center'}
-include_graphics("img/page 34.png")
-```
+<!-- ```{r, echo=FALSE, out.width="90%", fig.align='center'} -->
+<!-- include_graphics("img/page 34.png") -->
+<!-- ``` -->
 
-- Encoder generates a contextualized representation of the input (last state).
-- Decoder takes that state and autoregressively generates a sequence of outputs
+<!-- - Encoder generates a contextualized representation of the input (last state). -->
+<!-- - Decoder takes that state and autoregressively generates a sequence of outputs -->
 
-## General encoder decoder networks 
+<!-- ## General encoder decoder networks  -->
 
-Abstracting away from these choices
+<!-- Abstracting away from these choices -->
 
-1. Encoder: accepts an input sequence, $x_{1:n}$ and generates a corresponding sequence of contextualized representations, $h_{1:n}$
-2. Context vector $c$:  function of $h_{1:n}$ and conveys the essence of the input to the decoder.
-3. Decoder: accepts $c$ as input and generates an arbitrary length sequence of hidden states $h_{1:m}$ from which a corresponding sequence of output states $y_{1:m}$ can be obtained.
+<!-- 1. Encoder: accepts an input sequence, $x_{1:n}$ and generates a corresponding sequence of contextualized representations, $h_{1:n}$ -->
+<!-- 2. Context vector $c$:  function of $h_{1:n}$ and conveys the essence of the input to the decoder. -->
+<!-- 3. Decoder: accepts $c$ as input and generates an arbitrary length sequence of hidden states $h_{1:m}$ from which a corresponding sequence of output states $y_{1:m}$ can be obtained. -->
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 35.png")
-```
+<!-- ```{r, echo=FALSE, out.width="70%", fig.align='center'} -->
+<!-- include_graphics("img/page 35.png") -->
+<!-- ``` -->
 
-## Popular architectural choices: Encoder
+<!-- ## Popular architectural choices: Encoder -->
 
-Widely used encoder design: **stacked Bi-LSTMs** 
-- Contextualized representations for each time step: **hidden states from top layers** from the forward and backward passes
+<!-- Widely used encoder design: **stacked Bi-LSTMs**  -->
+<!-- - Contextualized representations for each time step: **hidden states from top layers** from the forward and backward passes -->
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 36.png")
-```
+<!-- ```{r, echo=FALSE, out.width="70%", fig.align='center'} -->
+<!-- include_graphics("img/page 36.png") -->
+<!-- ``` -->
 
-## Decoder basic design
+<!-- ## Decoder basic design -->
 
-- produce an output sequence an element at a time
+<!-- - produce an output sequence an element at a time -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 37.png")
-```
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 37.png") -->
+<!-- ``` -->
 
-## Decoder design <br> enhancement
+<!-- ## Decoder design <br> enhancement -->
 
-```{r, echo=FALSE, out.width="90%", fig.align='center'}
-include_graphics("img/page 38.png")
-```
+<!-- ```{r, echo=FALSE, out.width="90%", fig.align='center'} -->
+<!-- include_graphics("img/page 38.png") -->
+<!-- ``` -->
 
-## Decoder: How output y is chosen
+<!-- ## Decoder: How output y is chosen -->
 
-- **Sample soft-max** distribution (OK for generating novel output, not OK for e.g. MT or Summ)
-- **Most likely output** (doesn’t guarantee individual choices being made make sense together)
+<!-- - **Sample soft-max** distribution (OK for generating novel output, not OK for e.g. MT or Summ) -->
+<!-- - **Most likely output** (doesn’t guarantee individual choices being made make sense together) -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 39.png")
-```
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 39.png") -->
+<!-- ``` -->
 
-##
+<!-- ## -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 40.png")
-```
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 40.png") -->
+<!-- ``` -->
 
 <!-- # Attention -->
 
@@ -501,20 +567,43 @@ include_graphics("img/page 40.png")
 <!-- include_graphics("img/page 48.png") -->
 <!-- ``` -->
 
-# Transformers
+# Contextual Word Embeddings <br> & <br> Transformers
 
-## Transformers | (Attention is all you need!)
+## Contextual Word Embeddings
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
+include_graphics("img/cwe.png")
+```
+
+
+## Transformers
 
 - A transformer adopts an encoder-decoder architecture.
 
 - Transformers were developed to solve the problem of sequence transduction, or neural machine translation. That means any task that transforms an input sequence to an output sequence. 
 
-- These are two valuable resources to learn more details on the architecture and implementation
+- More details on the architecture and implementation:
 
-- http://nlp.seas.harvard.edu/2018/04/03/attention.html
+  - https://arxiv.org/abs/1810.04805
 
-- https://jalammar.github.io/illustrated-transformer/ (slides come from this source)
+  - http://nlp.seas.harvard.edu/2018/04/03/attention.html
 
+  - https://jalammar.github.io/illustrated-transformer/
+
+
+## The Transformer Encoder-Decoder
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
+include_graphics("img/trans1.png")
+```
+
+## The Transformer Encoder-Decoder
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
+include_graphics("img/trans2.png")
+```
+
+## The Transformer Encoder-Decoder
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
+include_graphics("img/trans3.png")
+```
 
 ## Transformers
 
@@ -522,6 +611,73 @@ include_graphics("img/page 40.png")
 include_graphics("img/bertelmogpt.png")
 ```
 
+## BERT: Bidirectional Encoder Representations from Tranformers
+<div align="center">
+<img src="img/bert1.png" width=750>
+</div>
+
+## BERT: Bidirectional Encoder Representations from Tranformers
+<div align="center">
+<img src="img/bert2.png" width=750>
+</div>
+
+## What kinds of things does pretraining learn?
+There’s increasing evidence that pretrained models learn a wide variety of things about the statistical properties of language:
+
+- **Trivia:** Utrecht University is located in ...
+
+## Transformers
+
+<div align="center">
+<img src="img/talk0.png" width=450>
+</div>
+
+## Transformers
+
+<div align="center">
+<img src="img/talk01.png" width=450>
+</div>
+
+## Transformers
+
+<div align="center">
+<img src="img/talk02.png" width=450>
+</div>
+
+## What kinds of things does pretraining learn?
+There’s increasing evidence that pretrained models learn a wide variety of things about the statistical properties of language:
+
+- **Basic arithmetic:** I was thinking about the sequence that goes 1, 1, 2, 3, 5, 8, 13, 21, ...
+
+## Transformers
+
+<div align="center">
+<img src="img/talk2.png" width=450>
+</div>
+
+## What kinds of things does pretraining learn?
+There’s increasing evidence that pretrained models learn a wide variety of things about the statistical properties of language:
+
+- **Reasoning:** Garry went into the kitchen to make some tea. Standing next to Garry, Carrie pondered her destiny. Carrie left the ...
+
+
+## Transformers
+
+<div align="center">
+<img src="img/talk3.png" width=450>
+</div>
+
+## Transformers
+
+<div align="center">
+<img src="img/talk4.png" width=450>
+</div>
+
+## Transformers
+
+<div align="center">
+<img src="img/talk5.png" width=450>
+</div>
 ## Transformers
 
 - Write with Transformer: https://transformer.huggingface.co/
@@ -529,6 +685,8 @@ include_graphics("img/bertelmogpt.png")
 - Talk to Transformer: https://app.inferkit.com/demo
 
 - Transformer model for language understanding: https://www.tensorflow.org/text/tutorials/transformer
+
+- Pretrained models: https://huggingface.co/transformers/pretrained_models.html
 
 <!-- ## High-level architecture -->
 
@@ -638,9 +796,12 @@ include_graphics("img/bertelmogpt.png")
 # Summary
 
 ## Summary
-- Convolutional Neural Network (CNN)
-- Encoder-Decoder
-- Transformers
+- Convolutional Neural Networks
 
+- Transformers
+  - “Small” models like BERT have become general tools in a wide range of settings
+  - GPT-3 has 175 billion parameters
+
+- These models are still not well-understood
 
 # Time for Practical 7!
