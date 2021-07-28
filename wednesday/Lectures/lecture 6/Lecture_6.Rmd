@@ -594,6 +594,8 @@ include_graphics("img/page 21_2.png")
 ```
 </div>
 
+<span style="color:blue;font-weight:bold">How to avoid overfitting?</span>
+
 ## Overfitting prevention
 
 - Running too many epochs can result in over-fitting.
