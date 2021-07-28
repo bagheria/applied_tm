@@ -58,35 +58,35 @@ include_graphics("img/page 5_1.png")
   <span style="color:green">$$y = \sigma(W_2h + b_2)$$</span>
 </div>
 
-## Introduction
+<!-- ## Introduction -->
 
-<div style="float:left;width:50%">
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 5_1.png")
-```
-</div>
-<div style="float:right;width:50%">
-  <span style="color:blue">$$h = \sigma(W_1x + b_1)$$</span>
-  <span style="color:green">$$y = \sigma(W_2h + b_2)$$</span>
-  <br> <br> <br> <br>
-    
-4 + 2 = 6 neurons (not counting inputs)
-<br>
-    
-[3 x 4] + [4 x 2] = 20 weights 
-<br>
-    
-4 + 2 = 6 biases
-<br>
-    
-<span style="color:orange">26 learnable <b>parameters</b></span>
-</div>
+<!-- <div style="float:left;width:50%"> -->
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 5_1.png") -->
+<!-- ``` -->
+<!-- </div> -->
+<!-- <div style="float:right;width:50%"> -->
+<!--   <span style="color:blue">$$h = \sigma(W_1x + b_1)$$</span> -->
+<!--   <span style="color:green">$$y = \sigma(W_2h + b_2)$$</span> -->
+<!--   <br> <br> <br> <br> -->
 
-## Introduction
+<!-- 4 + 2 = 6 neurons (not counting inputs) -->
+<!-- <br> -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 5_2.png")
-```
+<!-- [3 x 4] + [4 x 2] = 20 weights  -->
+<!-- <br> -->
+
+<!-- 4 + 2 = 6 biases -->
+<!-- <br> -->
+
+<!-- <span style="color:orange">26 learnable <b>parameters</b></span> -->
+<!-- </div> -->
+
+<!-- ## Introduction -->
+
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 5_2.png") -->
+<!-- ``` -->
 
 ## Introduction
 
@@ -94,11 +94,18 @@ include_graphics("img/page 5_2.png")
 include_graphics("img/page 5_3.png")
 ```
 
-## Introduction
+<!-- ## Introduction -->
+
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 5_4.png") -->
+<!-- ``` -->
+
+## One forward pass
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 5_4.png")
+include_graphics("img/page 16.png")
 ```
+
 
 ## Training
 
@@ -155,7 +162,7 @@ $$\delta_j = o_j(1 - o_j)\sum_k{\delta_k w_{kj}} \ \ \ \text{if } j \text{ is a 
     
     $\delta_j$ is the error measure for unit $j$
 
-## Gradient descent
+## Updating weights
 
 <span style="color:orange;font-weight:bold">objective/cost function <b>$J$</b>$(\theta)$</span>
 
@@ -495,11 +502,6 @@ Recursively apply <span style="color:orange;font-weight:bold">chain rule</span> 
 - On many real domains, hidden units can be interpreted as representing meaningful features such as vowel detectors or edge detectors, etc..
 - However, the hidden layer can also become a distributed representation of the input in which each individual unit is not easily interpretable as a meaningful feature.
 
-## One forward pass
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 16.png")
-```
 
 <!-- ## Activation functions -->
 
@@ -696,19 +698,32 @@ include_graphics("img/page 31.png")
 
 # LSTM
 
-## Vanishing/Exploding gradient problem
+## Vanishing gradient problem
 
 - Backpropagated errors multiply at each layer, resulting in exponential decay (if derivative is small) or growth (if derivative is large).
 - Makes it very difficult train deep networks, or simple recurrent networks over many time steps.
 
-## Long distance dependencies
 
-- It is very difficult to train SRNs to retain information over many time steps
-- This make is very difficult to learn SRNs that handle long-distance dependencies, such as subject-verb agreement.
+Suppose we had the following scenario:
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 34.png")
-```  
+Day 1: Lift Weights
+
+Day 2: Swimming
+
+Day 3: At this point, our model must decide whether we should take a rest day or yoga. Unfortunately, it only has access to the previous day. In other words, it knows we swam yesterday but it doesn’t know whether had taken a break the day before.Therefore, it can end up predicting yoga.
+
+- LSTMs were invented, to get around this problem.
+
+<font size="2"> https://towardsdatascience.com/ </font>
+
+<!-- ## Long distance dependencies -->
+
+<!-- - It is very difficult to train SRNs to retain information over many time steps -->
+<!-- - This make is very difficult to learn SRNs that handle long-distance dependencies, such as subject-verb agreement. -->
+
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 34.png") -->
+<!-- ```   -->
 
 ## Long Short Term Memory
 
@@ -798,13 +813,13 @@ $$h_t = o_t * tanh(C_t)$$
 
 \newpage
 
-## Overall network architecture
+<!-- ## Overall network architecture -->
 
-- Single or multilayer networks can compute LSTM inputs from problem inputs and problem outputs from LSTM outputs.
+<!-- - Single or multilayer networks can compute LSTM inputs from problem inputs and problem outputs from LSTM outputs. -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 44.png")
-```  
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 44.png") -->
+<!-- ```   -->
 
 ## LSTM training
 
@@ -892,11 +907,11 @@ $$h_t = (1 - z_t) * h_{t-1} + z_t * \tilde(h)_t$$
 - Used in image captioning to focus on different parts of an image when generating different parts of the output sentence.
 - In MT, allows focusing attention on different parts of the source sentence when generating different parts of the translation.
 
-## Attention mechanism
+<!-- ## Attention mechanism -->
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 55.png")
-```  
+<!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
+<!-- include_graphics("img/page 55.png") -->
+<!-- ```   -->
 
 <!-- ## Attention: Scoring -->
 
