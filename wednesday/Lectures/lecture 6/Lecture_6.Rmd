@@ -29,24 +29,21 @@ A machine learning subfield of learning <span style="color:orange;">representati
 
 Deep learning algorithms attempt to learn (multiple levels of) representation by using a <span style="color:orange;">hierarchy of multiple layers</span>.
 
-If you provide the system <span style="color:orange;">tons of information</span>, it begins to understand it and respond in useful ways.
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
 include_graphics("img/page 3.png")
 ```
 
 ## Feed-forward neural networks
-
-- Multi-layer networks can represent arbitrary functions, but an effective learning algorithm for such networks was thought to be difficult.
 - A typical multi-layer network consists of an input, hidden and output layer, each fully connected to the next, with activation feeding forward.
 
 ```{r, echo=FALSE, out.width="70%", fig.align='center'}
 include_graphics("img/page 4.png")
 ```
 
-- The weights determine the function computed. Given an arbitrary number of hidden units, any boolean function can be computed with a single hidden layer.
+- The weights determine the function computed.
 
-## Introduction
+## Feed-forward neural networks
 
 <div style="float:left;width:50%">
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
@@ -88,7 +85,7 @@ include_graphics("img/page 5_1.png")
 <!-- include_graphics("img/page 5_2.png") -->
 <!-- ``` -->
 
-## Introduction
+## Feed-forward neural networks
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 5_3.png")
@@ -114,7 +111,7 @@ include_graphics("img/page 16.png")
 <center><img src="img/page 6_1.png" width="500"></center>
 
 <div style="float:left;width:75%">
-Optimize (min. or max.) <span style="color:orange;font-weight:bold">objective/cost function <b>$J$</b>$(\theta)$</span>
+Optimize <span style="color:orange;font-weight:bold">objective/cost function <b>$J$</b>$(\theta)$</span>
 <br>
 
 Generate <span style="color:orange;font-weight:bold">error signal</span> that measures difference between predictions and target values
@@ -138,29 +135,29 @@ Use error signal to change the <span style="color:orange;font-weight:bold">weigh
 Subtracting a fraction of the <span style="color:orange;font-weight:bold">gradient</span> moves you towards the <span style="color:orange;font-weight:bold">(local) minimum of the cost function</span>
 </div>
 
-## Gradient descent
+<!-- ## Gradient descent -->
 
-- Define objective to minimize error:
-$$E(W) = \sum_{d \in D} \sum_{k \in K} (t_{kd} - O_{kd})^2$$
+<!-- - Define objective to minimize error: -->
+<!-- $$E(W) = \sum_{d \in D} \sum_{k \in K} (t_{kd} - O_{kd})^2$$ -->
 
-    where $D$ is the set of training examples, $K$ is the set of output units, $t_{kd}$ and $o_{kd}$ are, respectively, the teacher and current output for unit $k$ for example $d$.
-- The derivative of a sigmoid unit with respect to net input is:
-$$\frac{\partial{o_j}}{\partial{net_j}} = o_j(1-o_j)$$    
-- Learning rule to change weights to minimize 
-$$\Delta w_{ji} = - \eta \frac{\partial{E}}{\partial{w_{ji}}}$$
+<!--     where $D$ is the set of training examples, $K$ is the set of output units, $t_{kd}$ and $o_{kd}$ are, respectively, the teacher and current output for unit $k$ for example $d$. -->
+<!-- - The derivative of a sigmoid unit with respect to net input is: -->
+<!-- $$\frac{\partial{o_j}}{\partial{net_j}} = o_j(1-o_j)$$     -->
+<!-- - Learning rule to change weights to minimize  -->
+<!-- $$\Delta w_{ji} = - \eta \frac{\partial{E}}{\partial{w_{ji}}}$$ -->
 
-## Backpropagation learning rule
+<!-- ## Backpropagation learning rule -->
 
-- Each weight changed by:
-$$\Delta w_{ji} = \eta \delta_j o_i $$
-$$\delta_j = o_j(1 - o_j)(t_j - o_j) \ \ \ \text{if } j \text{ is an output unit}$$
-$$\delta_j = o_j(1 - o_j)\sum_k{\delta_k w_{kj}} \ \ \ \text{if } j \text{ is a hidden unit}$$
-    
-    where $\eta$ is a constant called the learning rate
-    
-    $t_j$ is the correct teacher output for unit $j$
-    
-    $\delta_j$ is the error measure for unit $j$
+<!-- - Each weight changed by: -->
+<!-- $$\Delta w_{ji} = \eta \delta_j o_i $$ -->
+<!-- $$\delta_j = o_j(1 - o_j)(t_j - o_j) \ \ \ \text{if } j \text{ is an output unit}$$ -->
+<!-- $$\delta_j = o_j(1 - o_j)\sum_k{\delta_k w_{kj}} \ \ \ \text{if } j \text{ is a hidden unit}$$ -->
+
+<!--     where $\eta$ is a constant called the learning rate -->
+
+<!--     $t_j$ is the correct teacher output for unit $j$ -->
+
+<!--     $\delta_j$ is the error measure for unit $j$ -->
 
 ## Updating weights
 
@@ -607,7 +604,7 @@ include_graphics("img/page 22.png")
 
 - Keep a hold-out validation set and test accuracy on it after every epoch. Stop training when additional epochs actually increase validation error.
 - To avoid losing training data for validation:
-    - Use internal 10-fold CV on the training set to compute the average number of epochs that maximizes generalization accuracy.
+    - Use internal K-fold CV on the training set to compute the average number of epochs that maximizes generalization accuracy.
     - Train final network on complete training set for this many epochs.
     
 ## Regularization
@@ -640,11 +637,11 @@ include_graphics("img/page 23.png")
     <li>$n$ is called patience</li>
 </ul>
 
-## Tuning hyperparameters {.smaller}
+<!-- ## Tuning hyperparameters {.smaller} -->
 
-```{r, echo=FALSE, out.width="90%", fig.align='center'}
-include_graphics("img/page 24.png")
-```  
+<!-- ```{r, echo=FALSE, out.width="90%", fig.align='center'} -->
+<!-- include_graphics("img/page 24.png") -->
+<!-- ```   -->
 
 ## Loss functions and output
 
@@ -700,18 +697,16 @@ include_graphics("img/page 31.png")
 
 ## Vanishing gradient problem
 
-- Backpropagated errors multiply at each layer, resulting in exponential decay (if derivative is small) or growth (if derivative is large).
-- Makes it very difficult train deep networks, or simple recurrent networks over many time steps.
-
-
 Suppose we had the following scenario:
 
 Day 1: Lift Weights
 
 Day 2: Swimming
 
-Day 3: At this point, our model must decide whether we should take a rest day or yoga. Unfortunately, it only has access to the previous day. In other words, it knows we swam yesterday but it doesn’t know whether had taken a break the day before.Therefore, it can end up predicting yoga.
+Day 3: At this point, our model must decide whether we should take a rest day or yoga. Unfortunately, it only has access to the previous day. In other words, it knows we swam yesterday but it doesn’t know whether had taken a break the day before. Therefore, it can end up predicting yoga.
 
+- Backpropagated errors multiply at each layer, resulting in exponential decay (if derivative is small) or growth (if derivative is large).
+- Makes it very difficult train deep networks, or simple recurrent networks over many time steps.
 - LSTMs were invented, to get around this problem.
 
 <font size="2"> https://towardsdatascience.com/ </font>
@@ -821,14 +816,14 @@ $$h_t = o_t * tanh(C_t)$$
 <!-- include_graphics("img/page 44.png") -->
 <!-- ```   -->
 
-## LSTM training
+<!-- ## LSTM training -->
 
-- Trainable with backprop derivatives such as:
-    - Stochastic gradient descent (randomize order of examples in each epoch) with momentum (bias weight changes to continue in same direction as last update).
-    - ADAM optimizer (Kingma & Ma, 2015)
-- Each cell has many parameters ($W_f$, $W_i$, $W_C$, $W_o$)
-    - Generally requires lots of training data.
-    - Requires lots of compute time that exploits GPU clusters.
+<!-- - Trainable with backprop derivatives such as: -->
+<!--     - Stochastic gradient descent (randomize order of examples in each epoch) with momentum (bias weight changes to continue in same direction as last update). -->
+<!--     - ADAM optimizer (Kingma & Ma, 2015) -->
+<!-- - Each cell has many parameters ($W_f$, $W_i$, $W_C$, $W_o$) -->
+<!--     - Generally requires lots of training data. -->
+<!--     - Requires lots of compute time that exploits GPU clusters. -->
 
 ## General problems solved with LSTM
 
@@ -849,7 +844,7 @@ include_graphics("img/page 47.png")
 
 - Train model "end to end" on I/O pairs of sequences.
 
-## Summary of <br> LSTM application architectures
+## LSTM application architectures
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 48.png")
@@ -894,10 +889,10 @@ $$\tilde{h}_t = tanh(W \cdot [r_t * h_{t-1}, x_t])$$
 $$h_t = (1 - z_t) * h_{t-1} + z_t * \tilde(h)_t$$
 \newpage
 
-## GRU versus LSTM
+<!-- ## GRU versus LSTM -->
 
-- GRU has significantly fewer parameters and trains faster.
-- Experimental results comparing the two are still inconclusive, many problems they perform the same, but each has problems on which they work better.
+<!-- - GRU has significantly fewer parameters and trains faster. -->
+<!-- - Experimental results comparing the two are still inconclusive, many problems they perform the same, but each has problems on which they work better. -->
 
 
 ## Attention
