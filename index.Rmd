@@ -254,4 +254,10 @@ Here you will find the materials for Thursday:
 - Ref 2: Chapters 6, 14
 
 # Archive
-On the last day of the course, all the course materials will be availabe to download in a compact file.
+All of the course materials are availabe in a compact file for download:
+
+[Download the Materials](materials/Applied_TM_all_materials.zip)
+
+Special thanks to [Zhenwei Yang](https://www.linkedin.com/in/zhenweiyang/?originalSubdomain=nl), my master student who is now a PhD candidate, for helping me out with the materials.
+
+I wish all the participants success with their Text Mining projects!
