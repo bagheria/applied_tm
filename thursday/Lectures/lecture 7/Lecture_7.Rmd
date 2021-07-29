@@ -166,7 +166,7 @@ include_graphics("img/page 14.png")
 <!-- - Convolutional Neural Networks, or Convolutional Networks, or CNNs, or ConvNets -->
 For processing data with a **grid-like** or array topology:
 
-  - 1-D convolution: time-series data, sensor signal data
+  - 1-D convolution: text data, sequence data, time-series data, sensor signal data
   
   - 2-D convolution: image data
   
@@ -214,9 +214,9 @@ Main CNN idea for text:
 
 <br> <br>
 
-Example: “this takes too long” compute vectors for: 
+Example: “Utrecht summer school is in Utrecht” compute vectors for: 
 
-This takes, takes too, too long, this takes too, takes too long, this takes too long
+Utrecht summer, summer school, school is, is in, in Utrecht, Utrecht summer school, summer school is, school is in, is in Utrecht, Utrecht summer school is, summer school is in, school is in Utrecht, Utrecht summer school is in, summer school is in Utrecht, Utrecht summer school is in Utrecht
 
 <div style="float:left;width:60%">
   <img src="img/page 18.png" width="360">
