@@ -1,0 +1,20 @@
+Monday:
+- Intro
+- text classification
+
+Tuesday:
+- feature selection
+- text clustering
+
+Wednesday:
+- word embedding
+- deep 1
+
+Thursday:
+- deep2
+- text summarization + machine translation
+
+Friday:
+- sentiment analysis (begining to advanced)
+- responsible text mining
+
