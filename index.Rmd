@@ -18,10 +18,10 @@ This dashboard covers the course materials for the course [S42: Data Science: Ap
 <!-- </center> -->
 
 ---
-ADD COURSE INFO
-Instructor: FILL   
-Study load: FILL   
-Assessment: FILL   
+<!-- ADD COURSE INFO -->
+<!-- Instructor: FILL    -->
+<!-- Study load: FILL    -->
+<!-- Assessment: FILL    -->
 
 
 ---
@@ -32,16 +32,17 @@ Course director: [Ayoub Bagheri](https://ayoubbagheri.nl/)
 Instructors:
 
 * [Ayoub Bagheri](https://ayoubbagheri.nl/)\
-+ [Dong Nguyen](https://dongnguyen.nl/)\
-* [Berit Janssen](https://www.uu.nl/staff/BDJanssen)\
 - [Anastasia Giachanou](http://giachanou.com/)
-- [Nikos Bentis](https://www.linkedin.com/in/nikos-bentis-704187119/?originalSubdomain=nl)
-- [Jelle Teijema](https://teije.ma/)
+- [Janke Coetzee](https://www.linkedin.com/in/janke-coetzee-239868b2/?originalSubdomain=nl)
+- [Luka van der Plas](https://www.uu.nl/medewerkers/LPvanderPlas)
+* [Berit Janssen](https://www.uu.nl/staff/BDJanssen)\
++ [Dong Nguyen](https://dongnguyen.nl/)\
+- [Javier Garcia Bernardo](https://javier.science/)
 
 
 Study load: 1.5 ECTS
 
-Location: [Buys Ballot building, room 023](https://www.uu.nl/en/buys-ballot-building)
+Location: [Koningsberger Building, lecture hall Atlas](https://www.uu.nl/en/victor-j-koningsberger-building)
 
 ---
 
@@ -154,7 +155,7 @@ Here you will find the materials for Monday:
     - [Practical 1](monday/Practicals/Practical 1/Practical 1.html)
     - [Data for practical 1](monday/Practicals/Practical 1/data.zip)
 
-- Part 2: Text classification and sentiment analysis
+- Part 2: Text classification
     - [Lecture 2](monday/Lectures/lecture 2/Lecture_2.pdf)
     - [Lecture 2 Handout](monday/Lectures/lecture 2/Lecture_2_Handout.pdf)
     - [Impractical 2](monday/Practicals/Practical 2/Impractical 2.html)
@@ -183,7 +184,7 @@ Here you will find the materials for Tuesday:
     - [Practical 3](tuesday/Practicals/Practical 3/Practical 3.html)
     - [Data for practical 3](tuesday/Practicals/Practical 3/data.zip)
 
-- Part 4: Text clustering
+- Part 4: Text clustering & topic modeling
     - [Lecture 4](tuesday/Lectures/lecture 4/Lecture_4.html)
     - [Lecture 4 Handout](tuesday/Lectures/lecture 4/Lecture_4_Handout.pdf)
     - [Impractical 4](tuesday/Practicals/Practical 4/Impractical 4.html)
@@ -239,7 +240,36 @@ Here you will find the materials for Thursday:
     - [Impractical 7](thursday/Practicals/Practical 7/Impractical 7.html)
     - [Practical 7](thursday/Practicals/Practical 7/Practical 7.html)
 
-- Part 8: Responsible text mining
+- Part 8: Text mining applications
+    - [Lecture 8]()
+    - [Lecture 8 Handout]()
+    - [Impractical 8]()
+    - [Practical 8]()
+    - [Data for practical 8]()
+
+
+## Column 2
+
+### Additional references
+- Ref 1: Chapters 6, 7, 9
+- Ref 2: Chapters 6, 14
+
+# Friday
+## Column 1
+
+### Materials
+
+We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online. All lectures are in html format. Impractical files contain the exercises, without walkthrough, explanations and solutions. Practicals are walkthrough files that guide you through the exercises.
+
+Here you will find the materials for Thursday:
+
+- Part 9: Sentiment analysis
+    - [Lecture 7]()
+    - [Lecture 7 Handout]()
+    - [Impractical 7]()
+    - [Practical 7]()
+
+- Part 10: Responsible text mining
     - [Lecture 8](thursday/Lectures/lecture 8/Lecture_8.pdf)
     - [Lecture 8 Handout](thursday/Lectures/lecture 8/Lecture_8_Handout.pdf)
     - [Impractical 8](thursday/Practicals/Practical 8/Impractical 8.html)
@@ -254,10 +284,10 @@ Here you will find the materials for Thursday:
 - Ref 2: Chapters 6, 14
 
 # Archive
-All of the course materials are availabe in a compact file for download:
+On the last day of the course, all the materials will be available in a compact file for download:
 
-[Download the Materials](materials/Applied_TM_all_materials.zip)
+[Download the Materials]()
 
-Special thanks to [Zhenwei Yang](https://www.linkedin.com/in/zhenweiyang/?originalSubdomain=nl), my master student who is now a PhD candidate, for helping me out with the materials.
+<!-- Special thanks to [Zhenwei Yang](https://www.linkedin.com/in/zhenweiyang/?originalSubdomain=nl), my master student who is now a PhD candidate, for helping me out with the materials. -->
 
-I wish all the participants success with their Text Mining projects!
+We wish all the participants success with their Text Mining projects!
