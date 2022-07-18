@@ -118,7 +118,7 @@ _The Applied Text Mining team_
 
 ### System requirements
 
-Bring a laptop computer to the course and make sure that you have an Internet connection to be able to use Python in Google Colab. If you are using PyCharm or Jupyte Notebook, also check that you have full write access and administrator rights to the machine. We will explore programming and compiling in this course. Some corporate laptops come with limited access for their users, we therefore advice you to bring a personal laptop computer, if you have one.
+Bring a laptop computer to the course and make sure that you have an Internet connection to be able to use Python in Google Colab. If you are using PyCharm or Jupyte Notebook, also check that you have full write access and administrator rights to the machine. We will explore programming and compiling in this course. Some corporate laptops come with limited access for their users, we therefore advise you to bring a personal laptop computer, if you have one.
 
 ### Python in Google Colab
 Python is a general-purpose interpreted, interactive, object-oriented, and high-level programming language. It is a powerful environment for scientific computing.
@@ -144,22 +144,22 @@ I prefer to use Jupyter Notebook or PyCharm when I am not using Google Colab.
 
 ### Materials
 
-We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online. All lectures are in html format. Impractical files contain the exercises, without walkthrough, explanations and solutions. Practicals are walkthrough files that guide you through the exercises.
+We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advise all course participants to access the materials online. Lectures are provided in html and pdf formats. Practical files contain the exercises, in two versions, with and without solutions.
 
 Here you will find the materials for Monday:
 
 - Part 1: Introduction
     - [Lecture 1](monday/Lectures/lecture 1/Lecture_1.html)
-    - [Lecture 1 Handout](monday/Lectures/lecture 1/Lecture_1---Handout.pdf)
-    - [Impractical 1](monday/Practicals/Practical 1/Impractical 1.html)
-    - [Practical 1](monday/Practicals/Practical 1/Practical 1.html)
+    - [Lecture handout 1](monday/Lectures/lecture 1/Lecture_1---Handout.pdf)
+    - [Practical 1](monday/Practicals/Practical 1/Impractical 1.html)
+    - [Answers practical 1](monday/Practicals/Practical 1/Practical 1.html)
     - [Data for practical 1](monday/Practicals/Practical 1/data.zip)
 
 - Part 2: Text classification
     - [Lecture 2](monday/Lectures/lecture 2/Lecture_2.pdf)
-    - [Lecture 2 Handout](monday/Lectures/lecture 2/Lecture_2_Handout.pdf)
-    - [Impractical 2](monday/Practicals/Practical 2/Impractical 2.html)
-    - [Practical 2](monday/Practicals/Practical 2/Practical 2.html)
+    - [Lecture handout 2](monday/Lectures/lecture 2/Lecture_2_Handout.pdf)
+    - [Practical 2](monday/Practicals/Practical 2/Impractical 2.html)
+    - [Answers practical 2](monday/Practicals/Practical 2/Practical 2.html)
     - [Data for practical 2](monday/Practicals/Practical 2/data.zip)
 
 ## Column 2
@@ -173,22 +173,22 @@ Here you will find the materials for Monday:
 
 ### Materials
 
-We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online. All lectures are in html format. Impractical files contain the exercises, without walkthrough, explanations and solutions. Practicals are walkthrough files that guide you through the exercises.
+We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advise all course participants to access the materials online. Lectures are provided in html and pdf formats. Practical files contain the exercises, in two versions, with and without solutions.
 
 Here you will find the materials for Tuesday:
 
 - Part 3: Feature selection
     - [Lecture 3](tuesday/Lectures/lecture 3/Lecture_3.html)
-    - [Lecture 3 Handout](tuesday/Lectures/lecture 3/Lecture_3_Handout.pdf)
-    - [Impractical 3](tuesday/Practicals/Practical 3/Impractical 3.html)
-    - [Practical 3](tuesday/Practicals/Practical 3/Practical 3.html)
+    - [Lecture handout 3](tuesday/Lectures/lecture 3/Lecture_3_Handout.pdf)
+    - [Practical 3](tuesday/Practicals/Practical 3/Impractical 3.html)
+    - [Answers practical 3](tuesday/Practicals/Practical 3/Practical 3.html)
     - [Data for practical 3](tuesday/Practicals/Practical 3/data.zip)
 
 - Part 4: Text clustering & topic modeling
     - [Lecture 4](tuesday/Lectures/lecture 4/Lecture_4.html)
-    - [Lecture 4 Handout](tuesday/Lectures/lecture 4/Lecture_4_Handout.pdf)
-    - [Impractical 4](tuesday/Practicals/Practical 4/Impractical 4.html)
-    - [Practical 4](tuesday/Practicals/Practical 4/Practical 4.html)
+    - [Lecture handout 4](tuesday/Lectures/lecture 4/Lecture_4_Handout.pdf)
+    - [Practical 4](tuesday/Practicals/Practical 4/Impractical 4.html)
+    - [Answers practical 4](tuesday/Practicals/Practical 4/Practical 4.html)
     - [Data for practical 4](tuesday/Practicals/Practical 4/bbcsport-fulltext.zip)
 
 
@@ -202,21 +202,21 @@ Here you will find the materials for Tuesday:
 
 ### Materials
 
-We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online. All lectures are in html format. Impractical files contain the exercises, without walkthrough, explanations and solutions. Practicals are walkthrough files that guide you through the exercises.
+We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advise all course participants to access the materials online. Lectures are provided in html and pdf formats. Practical files contain the exercises, in two versions, with and without solutions.
 
 Here you will find the materials for Wednesday:
 
 - Part 5: Word embedding
     - [Lecture 5](wednesday/Lectures/lecture 5/Lecture_5.pdf)
-    - [Lecture 5 Handout](wednesday/Lectures/lecture 5/Lecture_5_Handout.pdf)
-    - [Impractical 5](wednesday/Practicals/Practical 5/Impractical 5.html)
-    - [Practical 5](wednesday/Practicals/Practical 5/Practical 5.html)
+    - [Lecture handout 5](wednesday/Lectures/lecture 5/Lecture_5_Handout.pdf)
+    - [Practical 5](wednesday/Practicals/Practical 5/Impractical 5.html)
+    - [Answers practical 5](wednesday/Practicals/Practical 5/Practical 5.html)
 
 - Part 6: Deep learning for text 1
     - [Lecture 6](wednesday/Lectures/lecture 6/Lecture_6.html)
-    - [Lecture 6 Handout](wednesday/Lectures/lecture 6/Lecture_6_Handout.pdf)
-    - [Impractical 6](wednesday/Practicals/Practical 6/Impractical 6.html)
-    - [Practical 6](wednesday/Practicals/Practical 6/Practical 6.html) 
+    - [Lecture handout 6](wednesday/Lectures/lecture 6/Lecture_6_Handout.pdf)
+    - [Practical 6](wednesday/Practicals/Practical 6/Impractical 6.html)
+    - [Answers practical 6](wednesday/Practicals/Practical 6/Practical 6.html) 
 
 
 ## Column 2
@@ -230,21 +230,21 @@ Here you will find the materials for Wednesday:
 
 ### Materials
 
-We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online. All lectures are in html format. Impractical files contain the exercises, without walkthrough, explanations and solutions. Practicals are walkthrough files that guide you through the exercises.
+We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advise all course participants to access the materials online. Lectures are provided in html and pdf formats. Practical files contain the exercises, in two versions, with and without solutions.
 
 Here you will find the materials for Thursday:
 
 - Part 7: Deep learning for text 2
     - [Lecture 7](thursday/Lectures/lecture 7/Lecture_7.html)
-    - [Lecture 7 Handout](thursday/Lectures/lecture 7/Lecture_7_Handout.pdf)
-    - [Impractical 7](thursday/Practicals/Practical 7/Impractical 7.html)
-    - [Practical 7](thursday/Practicals/Practical 7/Practical 7.html)
+    - [Lecture handout 7](thursday/Lectures/lecture 7/Lecture_7_Handout.pdf)
+    - [Practical 7](thursday/Practicals/Practical 7/Impractical 7.html)
+    - [Answers practical 7](thursday/Practicals/Practical 7/Practical 7.html)
 
 - Part 8: Text mining applications
     - [Lecture 8]()
-    - [Lecture 8 Handout]()
-    - [Impractical 8]()
+    - [Lecture handout 8]()
     - [Practical 8]()
+    - [Answers practical 8]()
     - [Data for practical 8]()
 
 
@@ -259,22 +259,23 @@ Here you will find the materials for Thursday:
 
 ### Materials
 
-We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advice all course participants to access the materials online. All lectures are in html format. Impractical files contain the exercises, without walkthrough, explanations and solutions. Practicals are walkthrough files that guide you through the exercises.
+We adapt the course as we go. To ensure that you work with the latest iteration of the course materials, we advise all course participants to access the materials online. Lectures are provided in html and pdf formats. Practical files contain the exercises, in two versions, with and without solutions.
 
 Here you will find the materials for Thursday:
 
 - Part 9: Sentiment analysis
-    - [Lecture 7]()
-    - [Lecture 7 Handout]()
-    - [Impractical 7]()
-    - [Practical 7]()
+    - [Lecture 9]()
+    - [Lecture handout 9]()
+    - [Practical 9]()
+    - [Answers practical 9]()
+    - [Practical 9]()
 
 - Part 10: Responsible text mining
-    - [Lecture 8](thursday/Lectures/lecture 8/Lecture_8.pdf)
-    - [Lecture 8 Handout](thursday/Lectures/lecture 8/Lecture_8_Handout.pdf)
-    - [Impractical 8](thursday/Practicals/Practical 8/Impractical 8.html)
-    - [Practical 8](thursday/Practicals/Practical 8/Practical 8.html)
-    - [Data for practical 8](thursday/Practicals/Practical 8/nld-eng.zip)
+    - [Lecture 10](thursday/Lectures/lecture 8/Lecture_8.pdf)
+    - [Lecture handout 10](thursday/Lectures/lecture 8/Lecture_8_Handout.pdf)
+    - [Practical 10](thursday/Practicals/Practical 8/Impractical 8.html)
+    - [Answers practical 10](thursday/Practicals/Practical 8/Practical 8.html)
+    - [Data for practical 10](thursday/Practicals/Practical 8/nld-eng.zip)
 
 
 ## Column 2
@@ -288,6 +289,5 @@ On the last day of the course, all the materials will be available in a compact 
 
 [Download the Materials]()
 
-<!-- Special thanks to [Zhenwei Yang](https://www.linkedin.com/in/zhenweiyang/?originalSubdomain=nl), my master student who is now a PhD candidate, for helping me out with the materials. -->
 
 We wish all the participants success with their Text Mining projects!
