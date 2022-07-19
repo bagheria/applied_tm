@@ -1,8 +1,9 @@
 ---
 title: "Introduction"
 author: "Ayoub Bagheri"
-subtitle: "Applied Text Mining"
+subtitle: Applied Text Mining
 output:
+  beamer_presentation: default
   ioslides_presentation:
     logo: logo.png
     smaller: yes
@@ -100,7 +101,7 @@ include_graphics("img/javier.jpg")
 
 
 ## Program {.smaller}
-```{r, echo = FALSE}
+```{r, echo = FALSE, warning=FALSE}
 time <- c("9:00 - 10:30", "", "10:45 – 11:45", "11:45 – 12:15", "", "13:45 – 15:15", "", "15:30 – 16:30", "16:30 – 17:00")
 monday <- c("Lecture 1", "Break", "Practical 1", "Discussion 1", "Lunch", "Lecture 2", "Break", "Practical 2", "Discussion 2")
 tuesday <- c("Lecture 3", "Break", "Practical 3", "Discussion 3", "Lunch", "Lecture 4", "Break", "Practical 4", "Discussion 4")
@@ -114,7 +115,7 @@ program %>%
   kbl() %>% 
   kable_paper("hover", html_font = "Arial", full_width = T) %>% 
   row_spec(c(1,6), bold = T, color = "#E60B60") %>% 
-  row_spec(c(2,7), color = "grey", font_size = 12) %>% 
+  row_spec(c(2,7), color = "gray", font_size = 12) %>% 
   row_spec(c(3,8), color = "blue") %>% 
   row_spec(c(4,9), color = "green")
 ```
