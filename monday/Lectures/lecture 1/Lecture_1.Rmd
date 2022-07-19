@@ -14,68 +14,90 @@ library(knitr)
 library(kableExtra)
 ```
 
-## Very useful
+## 
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="100%"}
+include_graphics("img/ex1.jpg")
+```
+</div>
+
+
+## 
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="100%"}
+include_graphics("img/ex2.jpg")
+```
+</div>
+
+
+##
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="100%"}
+include_graphics("img/ex3.jpg")
+```
+</div>
+
+# Course Logistics
+
+## Course materials
 
 You can access the course materials quickly from
 
 https://ayoubbagheri.nl/applied_tm/
 
-Some guidelines
 
-1- Please keep your microphone off
-
-2- If you have a question, raise your hand or type your question in the chat
-
-3- You may always interrupt me
-
-4- We will introduce frequent question breaks
-
-## Lecturers and assistants
-<div style="float:right; width:50%">
-```{r, echo=FALSE, fig.align='center', out.width="35%"}
-include_graphics("img/page17dong.png")
-```
-  <div class="centered">
-  **Dong Nguyen**
-  </div>
-</div>
+## Teachers
 
 <div style="float:left; width:50%">
-```{r, echo=FALSE, fig.align='center', out.width="35%"}
-include_graphics("img/berit.jpg")
-```
-  <div class="centered">
-  **Berit Janssen**
-  </div>
-</div>
-
-
-<div style="float:left; width:50%">
-```{r, echo=FALSE, fig.align='center', out.width="35%"}
+```{r, echo=FALSE, fig.align='center', out.width="30%"}
 include_graphics("img/anastasia.png")
 ```
   <div class="centered">
-  **Anastasia Giachanou**
+  **Anastasia**
+  </div>
+  
+  <br/>
+```{r, echo=FALSE, fig.align='center', out.width="30%"}
+include_graphics("img/janke.jpg")
+```
+  <div class="centered">
+  **Janke**
+  </div>
+  
+  <br/>
+```{r, echo=FALSE, fig.align='center', out.width="30%"}
+include_graphics("img/luka.jpg")
+```
+  <div class="centered">
+  **Luka**
   </div>
 </div>
 
 <div style="float:right; width:50%">
-```{r, echo=FALSE, fig.align='center', out.width="40%"}
-include_graphics("img/profile.jpeg")
+```{r, echo=FALSE, fig.align='center', out.width="30%"}
+include_graphics("img/berit.jpg")
 ```
   <div class="centered">
-  **Nikos Bentis**
+  **Berit**
+  </div>
+
+  <br/>
+```{r, echo=FALSE, fig.align='center', out.width="30%"}
+include_graphics("img/page17dong.png")
+```
+  <div class="centered">
+  **Dong**
+  </div>
+  
+  <br/>
+```{r, echo=FALSE, fig.align='center', out.width="30%"}
+include_graphics("img/javier.jpg")
+```
+  <div class="centered">
+  **Javier**
   </div>
 </div>
 
-<div style="float:right; width:50%">
-```{r, echo=FALSE, fig.align='center', out.width="40%"}
-include_graphics("img/Jelle.jpg")
-```
-  <div class="centered">
-  **Jelle Teijema**
-  </div>
-</div>
 
 ## Program {.smaller}
 ```{r, echo = FALSE}
@@ -84,8 +106,9 @@ monday <- c("Lecture 1", "Break", "Practical 1", "Discussion 1", "Lunch", "Lectu
 tuesday <- c("Lecture 3", "Break", "Practical 3", "Discussion 3", "Lunch", "Lecture 4", "Break", "Practical 4", "Discussion 4")
 wednesday <- c("Lecture 5", "Break", "Practical 5", "Discussion 5", "Lunch", "Lecture 6", "Break", "Practical 6", "Discussion 6")
 thursday <- c("Lecture 7", "Break", "Practical 7", "Discussion 7", "Lunch", "Lecture 8", "Break", "Practical 8", "Discussion 8")
+friday <- c("Lecture 9", "Break", "Practical 9", "Discussion 9", "Lunch", "Lecture 10", "Break", "Practical 10", "Discussion 10")
 
-program <- data.frame(Time = time, Monday = monday, Tuesday = tuesday, Wednesday = wednesday, Thursday = thursday)
+program <- data.frame(Time = time, Monday = monday, Tuesday = tuesday, Wednesday = wednesday, Thursday = thursday, Friday = friday)
 
 program %>% 
   kbl() %>% 
@@ -98,9 +121,9 @@ program %>%
 
 
 ## Goal of the course
-- Text data is everywhere!
-- A lot of world’s data is in unstructured text format
-- The course teaches 
+- Text data are everywhere!
+- A lot of world’s data are in the format of unstructured text
+- This course teaches 
   - text mining techniques 
   - using Python 
   - on a variety of applications 
@@ -199,71 +222,16 @@ include_graphics("img/page5_person3.png")
 
 ## Challenges?
 
-- Can you guess what are the challenges Garry, Larry, and Harry encounter in doing their job, when working with text data?
+- What are the challenges they encounter in working with text?
 
-  - Go to [www.menti.com](https://www.menti.com/) and use the code 7338 2184
-
-# Challenges with Text Data
-
-## Challenges with text data
-
-- Huge amount of data
-
-- High dimensional but sparse
-
-  - all possible word and phrase types in the language!!
-
-## Challenges with text data
-<div style="float: left; width: 60%">
-- Ambiguity
-</div>
-
-<div style="float: left; width: 40%">
-```{r, echo=FALSE, out.width="70%"}
-include_graphics("img/page 8.png")
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="90%"}
+include_graphics("img/q1.jpg")
 ```
 </div>
 
-## Challenges with text data
-- Noisy data
-  
-  - Examples: Abbreviations, spelling errors, short text
 
-- Complex relationships between words
-  
-  - “Hema merges with Intertoys”
-  
-  - “Intertoys is bought by Hema”
-
-## Example {.smaller}
-<div style="float: left; width: 20%">
-```{r, echo=FALSE}
-include_graphics("img/page2_example.png")
-```
-
-```{r,echo = FALSE, out.width="90%"}
-include_graphics("img/page 11.png")
-```
-</div>
-
-<div style="float: right; width: 80%">
-  - During one of the coffee moments at the company, **Garry** was talking about their situation at the dep of Customer relationship management.
-
-  - When **Carrie**, her colleague from the **Data Science department**, hears the situation, she offers Garry to use Text Mining!!
-
-  - She says: “<span style="color:blue">Text mining is your friend; it can help you to make the process way faster than Excel by filtering words and recommending labels.</span>”
-
-  - She continues : “Text mining is a subfield of AI and NLP and is related to data science, data mining and machine learning.”
-
-  - After consulting with Larry and Harry, they decide to give text mining a try!
-</div>
-
-## Example
-```{r, echo=FALSE, out.width="90%", fig.align='center'}
-include_graphics("img/page 12.png")
-```
-
-## Language is hard
+## Language is hard!
 
 - Different things can mean more or less the same ("data science" vs. "statistics")
 - Context dependency ("You have very nice shoes");
@@ -274,96 +242,19 @@ include_graphics("img/page 12.png")
 - Negation ("not good" vs. "good"), spelling variations, jargon, abbreviations
 - All the above are different over languages, 99\% of work is on English!
 
-## Language is hard
+# Text Mining to the Rescue!
 
-- We won't solve linguistics ...
-- In spite of the problems, text mining can be quite effective!
-
-## Text mining definition?
-
-- Which can be a part of Text Mining definition?
-  - The discovery by computer of new, previously unknown information from textual data
-  - Automatically extracting information from text
-  - Text mining is about looking for patterns in text
-  - Text mining describes a set of techniques that model and structure the information content of textual sources
-
-<br>
-
-<span style="color:green">(You can choose multiple answers)</span>
-
-Go to [www.menti.com](https://www.menti.com/) and use the code 7338 2184
-
-## Text mining definition
+## Text mining
 - “the discovery by computer of <span style="color:blue">new</span>, <span style="color:blue">previously unknown</span> information, by <span style="color:blue">automatically extracting</span> information from <span style="color:blue">different</span> written resources” Hearst (1999)
 
 - Text mining is about looking for <span style="color:red">patterns in text</span>, in a similar way that <span style="color:red">data mining</span> can be loosely described as looking for patterns in data.
 
 - Text mining describes a set of <span style="color:green">linguistic</span>, <span style="color:green">statistical</span>, and <span style="color:green">machine learning</span> techniques that model and structure the information content of textual sources. (Wikipedia)
 
-## Another TM definition
+## Language is hard!
 
-```{r, echo=FALSE, out.width="90%", fig.align='center'}
-include_graphics("img/page 22.png")
-```
-
-# Examples & Applications
-
-## Who wrote the Wilhelmus?
-
-<img src="img/probabilities_kl.jpg" height="400"/>
-
-https://dh2017.adho.org/abstracts/079/079.pdf
-
-## Text classification
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 26.png")
-```
-
-## Which ICD-10 codes should I give this doctor's note?
-<div style="font-size:4pt; border:1px solid;">
-
-Bovengenoemde patiënt was opgenomen op <DATUM-1> op de <PERSOON-1> voor het specialisme **Cardiologie.** 
-
-**Cardiovasculaire risicofactoren**: Roken(-) Diabetes(-) Hypertensie(?) Hypercholesterolemie (?)
-
-**Anamnese**. Om 18.30 pijn op de borst met uitstraling naar de linkerarm, zweten, misselijk. Ambulance gebeld en bij aansluiten monitor beeld van acuut onderwandinfarct.
-AMBU overdracht:.500mg aspegic iv, ticagrelor 180mg oraal, heparine, zofran eenmalig, 3x NTG spray. HD stabiel gebleven. . .Medicatie bij presentatie.Geen..
-
-**Lichamelijk onderzoek**. Grauw, vegetatief, Halsvenen niet gestuwd. Cor s1 s2 geen souffles.Pulm schoon. Extr warm en slank .
-
-**Aanvullend onderzoek**. AMBU ECG: Sinusritme, STEMI inferior III)II C/vermoedelijk RCA.
-Coronair angiografie. (...) .Conclusie angio: 1-vatslijden..PCI 
-
-**Conclusie en beleid**
-Bovengenoemde <LEEFTIJD-1> jarige man, blanco cardiale voorgeschiedenis, werd gepresenteerd vanwege een  STEMI inferior waarvoor een spoed PCI werd verricht van de mid-RCA. Er bestaan geen relevante nevenletsels. Hij kon na de procedure worden overgeplaatst naar de CCU van het <INSTELLING-2>. ..Dank voor de snelle overname. ..Medicatie bij overplaatsing. Acetylsalicylzuur dispertablet 80mg ; oraal; 1 x per dag 80 milligram ; <DATUM-1> .Ticagrelor tablet 90mg ; oraal; 2 x per dag 90 milligram ; <DATUM-1> .Metoprolol tablet   50mg ; oraal; 2 x per dag 25 milligram ; <DATUM-1> .Atorvastatine tablet 40mg (als ca-zout-3-water) ; oraal; 1 x per dag 40 milligram ; <DATUM-1> 
-**Samenvatting**
-Hoofddiagnose: STEMI inferior wv PCI RCA. Geen nevenletsels. Nevendiagnoses: geen.
-Complicaties: geen Ontslag naar: CCU <INSTELLING-2>.
-</div>
-
-## Which ICD-10 codes should I give this doctor's note?
-<img src="img/bagheri-coefficients-horizontal.png" height="370"/>
-
-## Sentiment analysis / Opinion mining
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 27.png")
-```
-
-## Statistical machine translation
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 28.png")
-```
-
-## Which studies go in my systematic review?
-
-<img src="img/5.1_start_reviewing.png" height="380"/>
-
-##
-```{r, echo=FALSE, out.width="100%"}
-include_graphics("img/page 37.png")
-
-```
-https://asreview.nl/
+- We won't solve linguistics ...
+- In spite of the problems, text mining can be quite effective!
 
 # Process & Tasks
 
@@ -378,8 +269,6 @@ include_graphics("img/page 23.png")
 - Sentiment analysis
 - Feature selection
 - Topic modelling
-- Word embedding
-- Deep learning models
 - Responsible text mining
 - Text summarization
 
@@ -396,6 +285,61 @@ source: https://nlp.stanford.edu/~wcmac/papers/20140716-UNLU.pdf
 
 
 # Text Preprocessing
+
+## Text preprocessing
+- is an approach for cleaning and noise removal of text data.
+- brings your text into a form that is analyzable for your task.
+- transforms text into a more digestible form so that machine learning algorithms can perform better.
+
+## Typical steps
+- Tokenization (“text”, “ming”, “is”, “the”, “best” , “!”)
+- Stemming (“lungs”→“lung”) or Lemmatization (“were”→“is”)
+- Lowercasing (“Disease”→“disease”)
+- Stopword removal (“text ming is best!”)
+- Punctuation removal (“text ming is the best”)
+- Number removal (“I42”→“I”)
+- Spell correction (“hart”→“heart”)
+
+**Not all of these are appropriate at all times!**
+
+## Tokenization/Segmentation
+
+- Split text into words and sentences
+    
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+include_graphics("img/page 46_2.png")
+```
+
+## N-grams
+
+- N-grams: a contiguous sequence of N tokens from a given piece of text
+  
+  - E.g., *‘Text mining is to identify useful information.’*
+  
+  - Bigrams: *‘text_mining’, ‘mining_is’, ‘is_to’, ‘to_identify’, ‘identify_useful’, ‘useful_information’, ‘information_.’*
+
+>- Pros: capture local dependency and order
+
+>- Cons: increase the vocabulary size
+
+## Part Of Speech (POS) tagging
+
+- Annotate each word in a sentence with a part-of-speech.
+
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+include_graphics("img/page 50.png")
+```
+
+- Useful for subsequent syntactic parsing and word sense disambiguation.
+
+# Vector Space Model
+
+## Basic idea
+- Text is “unstructured data”
+- How do we get to something structured that we can compute with?
+- **Text must be represented somehow**
+- Represent the text as something that makes sense to a computer
+
 
 ## How to represent a document
 
@@ -452,248 +396,48 @@ $$d = (w_1, ..., w_n)$$
 include_graphics("img/page 38.png")
 ```
 
-## Tokenization/Segmentation
-
-- Split text into words and sentences
-    
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 46_2.png")
-```
-
-## N-grams
-
-- N-grams: a contiguous sequence of N tokens from a given piece of text
-  
-  - E.g., *‘Text mining is to identify useful information.’*
-  
-  - Bigrams: *‘text_mining’, ‘mining_is’, ‘is_to’, ‘to_identify’, ‘identify_useful’, ‘useful_information’, ‘information_.’*
-
->- Pros: capture local dependency and order
-
->- Cons: a purely statistical view, increase the vocabulary size $O(V^N)$
-
-
-## Preprocessing
-
-Typical steps:
-
-- Stemming ("running"$\to$"run") or Lemmatization ("were"$\to$"is")
-- Lowercasing ("And"$\to$"and")
-- Stopword removal ("evning morning is third day.")
-- Punctuation removal ("evning morning is third day")
-- Number removal ("day 3"$\to$"day")
-- Spell correction ("evning"$\to$"evening")
-- Tokenization ("evening", "morning", "is", "third", "day")
-
-**Not all of these are appropriate at all times!**
-
-## Stemming
-
-- Unifies variations in the text data:
-    - e.g., ’walking’, ‘walks’, ‘walked’ $\to$ walk
-- Inflectional stemming:
-    - Remove plurals
-    - Normalize verb tenses
-    - Remove other affixes
-- Stemming to root:
-    - Reduce word to most basic element
-    - More aggressive than inflictional
-    - e.g., ‘denormalization’ $\to$ norm;
-    - e.g., ‘Apply’, ‘applications’, ‘reapplied’ $\to$ apply
-
-<!-- ## Constructing a VSM representation -->
-
-<!-- <center>D1: <em>‘Text mining is to identify useful information.’</em> -->
-<!-- </center> -->
-
-<!-- ## Constructing a VSM representation -->
-
-<!-- <center>D1: <em>‘Text mining is to identify useful information.’</em> -->
-<!-- </center> -->
-
-<!-- <ol> -->
-<!-- <li><span style="color:red;font-weight:bold">Tokenization:</span></li> -->
-<!-- </ol> -->
-
-<!-- ## Constructing a VSM representation -->
-
-<!-- <center>D1: <em>‘Text mining is to identify useful information.’</em> -->
-<!-- </center> -->
-
-<!-- <ol> -->
-<!-- <li><span style="color:red;font-weight:bold">Tokenization:</span></li> -->
-
-<!-- D1: <em>‘Text’, ‘mining’, ‘is’, ‘to’, ‘identify’, ‘useful’, ‘information’, ‘.’</em> -->
-<!-- </ol> -->
-
-<!-- ## Constructing a VSM representation -->
-
-<!-- <center>D1: <em>‘Text mining is to identify useful information.’</em> -->
-<!-- </center> -->
-
-<!-- <ol> -->
-<!-- <li><span style="color:red;font-weight:bold">Tokenization:</span></li> -->
-
-<!-- D1: <em>‘Text’, ‘mining’, ‘is’, ‘to’, ‘identify’, ‘useful’, ‘information’, ‘.’</em> -->
-
-<!-- <li><span style="color:red;font-weight:bold">Stemming/normalization:</span></li> -->
-<!-- </ol> -->
-
-<!-- ## Constructing a VSM representation -->
-
-<!-- <center>D1: <em>‘Text mining is to identify useful information.’</em> -->
-<!-- </center> -->
-
-<!-- <ol> -->
-<!-- <li><span style="color:red;font-weight:bold">Tokenization:</span></li> -->
-
-<!-- D1: <em>‘Text’, ‘mining’, ‘is’, ‘to’, ‘identify’, ‘useful’, ‘information’, ‘.’</em> -->
-
-<!-- <li><span style="color:red;font-weight:bold">Stemming/normalization:</span></li> -->
-
-<!-- D1: <em>‘text’, ‘mine’, ‘is’, ‘to’, ‘identify’, ‘use’, ‘inform’, ‘.’</em> -->
-
-<!-- </ol> -->
-
-<!-- ## Constructing a VSM representation -->
-
-<!-- <center>D1: <em>‘Text mining is to identify useful information.’</em> -->
-<!-- </center> -->
-
-<!-- <ol> -->
-<!-- <li><span style="color:red;font-weight:bold">Tokenization:</span></li> -->
-
-<!-- D1: *‘Text’, ‘mining’, ‘is’, ‘to’, ‘identify’, ‘useful’, ‘information’, ‘.’* -->
-
-<!-- <li><span style="color:red;font-weight:bold">Stemming/normalization:</span></li> -->
-
-<!-- D1: *‘text’, ‘mine’, ‘is’, ‘to’, ‘identify’, ‘use’, ‘inform’, ‘.’* -->
-
-<!-- <li><span style="color:red;font-weight:bold">N-gram construction:</span></li> -->
-
-<!-- </ol> -->
-
-<!-- ## Constructing a VSM representation -->
-
-<!-- <center>D1: <em>‘Text mining is to identify useful information.’</em> -->
-<!-- </center> -->
-
-<!-- <ol> -->
-<!-- <li><span style="color:red;font-weight:bold">Tokenization:</span></li> -->
-
-<!-- D1: <em>‘Text’, ‘mining’, ‘is’, ‘to’, ‘identify’, ‘useful’, ‘information’, ‘.’</em> -->
-
-<!-- <li><span style="color:red;font-weight:bold">Stemming/normalization:</span></li> -->
-
-<!-- D1: <em>‘text’, ‘mine’, ‘is’, ‘to’, ‘identify’, ‘use’, ‘inform’, ‘.’</em> -->
-
-<!-- <li><span style="color:red;font-weight:bold">N-gram construction:</span></li> -->
-
-<!-- D1: <em>‘text-mine’, ‘mine-is’, ‘is-to’, ‘to-identify’, ‘identify-use’, ‘use-inform’, ‘inform-.’</em> -->
-
-<!-- </ol> -->
-
-<!-- ## Constructing a VSM representation -->
-
-<!-- <center>D1: <em>‘Text mining is to identify useful information.’</em> -->
-<!-- </center> -->
-
-<!-- <ol> -->
-<!-- <li><span style="color:red;font-weight:bold">Tokenization:</span></li> -->
-
-<!-- D1: <em>‘Text’, ‘mining’, ‘is’, ‘to’, ‘identify’, ‘useful’, ‘information’, ‘.’</em> -->
-
-<!-- <li><span style="color:red;font-weight:bold">Stemming/normalization:</span></li> -->
-
-<!-- D1: <em>‘text’, ‘mine’, ‘is’, ‘to’, ‘identify’, ‘use’, ‘inform’, ‘.’</em> -->
-
-<!-- <li><span style="color:red;font-weight:bold">N-gram construction:</span></li> -->
-
-<!-- D1: <em>‘text-mine’, ‘mine-is’, ‘is-to’, ‘to-identify’, ‘identify-use’, ‘use-inform’, ‘inform-.’</em> -->
-
-<!-- <li><span style="color:red;font-weight:bold">Stopword/controlled vocabulary filtering::</span></li> -->
-
-<!-- </ol> -->
-
-## Constructing a VSM representation
-
-<center>D1: <em>‘Text mining is to identify useful information.’</em>
-</center>
-
-<ol>
-<li><span style="color:red;font-weight:bold">Tokenization:</span></li>
-
-D1: <em>‘Text’, ‘mining’, ‘is’, ‘to’, ‘identify’, ‘useful’, ‘information’, ‘.’</em>
-
-<li><span style="color:red;font-weight:bold">Stemming/normalization:</span></li>
-
-D1: <em>‘text’, ‘mine’, ‘is’, ‘to’, ‘identify’, ‘use’, ‘inform’, ‘.’</em>
-
-<li><span style="color:red;font-weight:bold">N-gram construction:</span></li>
-
-D1: <em>‘text-mine’, ‘mine-is’, ‘is-to’, ‘to-identify’, ‘identify-use’, ‘use-inform’, ‘inform-.’</em>
-
-<li><span style="color:red;font-weight:bold">Stopword/controlled vocabulary filtering::</span></li>
-
-D1: <em>‘text-mine’, ‘to-identify’, ‘identify-use’, ‘use-inform’</em>
-</ol>
-
 ## VSM: How do we represent vectors?
 
-After tokenization and pre-processing, we have three options:
-
-- Bag of Words
-
-- Topics
-
-- Word Embeddings
+```{r,echo=FALSE, out.width="90%"}
+include_graphics("img/vsm.jpg")
+```
 
 ## Bag of Words (BOW)
 
-- With Bag of Words (BOW), we refer to a Vector Space Model where:
-  
-  - Terms: words (more generally we may use n-grams, etc.)
-  
-  - Weights: number of occurrences of the terms in the document
+- *Terms* are words (more generally we can use n-grams) 
+- *Weights* are number of occurrences of the terms in the document
+  - Binary
+  - Term Frequency (TF)
+  - Term Frequency inverse Document Frequency (TFiDF)
 
-## BOW representation
+## Binary
 
-- Term as the basis for vector space
+- Doc1: Text mining is to identify useful information.
 
-  - Doc1: Text mining is to identify useful information.
-  
-  - Doc2: Useful information is mined from text.
-  
-  - Doc3: Apple is delicious.
+- Doc2: Useful information is mined from text.
 
-
-## BOW weights: Binary
-
-- <b><span style="font-size:20px">Binary</span></b>
-
-  - with 1 indicating that a term occurred in the document, and 0 indicating that it did not
+- Doc3: Apple is delicious.
   
 ```{r, echo= FALSE, out.width="100%"}
 include_graphics("img/page 122.png")
 ```
 
-
-## BOW weights: Term frequency
+## Term Frequency
 
 - Idea: a term is more important if it occurs more frequently in a document
 
-- TF Formulas
+- TF formulas
   
   - Let $t(c,d)$ be the frequency count of term $t$ in doc $d$
 
   - Raw TF: $tf(t,d) = c(t,d)$
   
-## TF: Document - Term matrix (DTM)
+## TF: Document - Term Matrix (DTM)
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/tf.png")
 ```
 
-## BOW weights: TFiDF
+## TFiDF
 - Idea: a term is more discriminative if it occurs a lot but only in fewer documents
 
 Let $n_{d,t}$ denote the number of times the $t$-th term appears in the $d$-th document.
@@ -720,22 +464,6 @@ $$w_{d,t} = TF_{d,t} \cdot IDF_t$$
 include_graphics("img/tfidf.png")
 ```
 
-## Why document frequency
-
-- How about total term frequency?
-    - $ttf(t) = \sum_d{c(t,d)}$
-
-## Why document frequency
-
-- How about total term frequency?
-  - $ttf(t) = \sum_d{c(t,d)}$
-    
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 73.png")
-```
-
-  - Cannot recognize words frequently occurring in a subset of documents
-
 ## How to define a good similarity metric?
 
 ```{r, echo=FALSE, out.width="70%", fig.align='center'}
@@ -760,72 +488,55 @@ include_graphics("img/page 75_2.png")
   
   - Documents are normalized by length
     
-## More pre-processing: Named entity recognition
-&nbsp;
 
-- Determine text mapping to proper names
+## Next
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 48_1.png")
-```
-
-## NER
-
-- Determine text mapping to proper names
-
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 48_2.png")
-```
-
-## Part Of Speech (POS) tagging
-
-- Annotate each word in a sentence with a part-of-speech.
-
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 50.png")
-```
-
-- Useful for subsequent syntactic parsing and word sense disambiguation.
+- Text classification
 
 
-## Preprocessing demo
+<!-- ## Preprocessing demo -->
 
-- CogComp: https://cogcomp.seas.upenn.edu/vsa8080/curator
+<!-- - CogComp: https://cogcomp.seas.upenn.edu/vsa8080/curator -->
 
-- CCG Demos: https://cogcomp.seas.upenn.edu/page/demos/
+<!-- - CCG Demos: https://cogcomp.seas.upenn.edu/page/demos/ -->
 
-- Stanford parser: http://nlp.stanford.edu:8080/parser/index.jsp
+<!-- - Stanford parser: http://nlp.stanford.edu:8080/parser/index.jsp -->
 
-# Python | before starting the first practical
+# Python Questionnare
 
 ## How familiar are you with Python?
 
 - What is your experience level with Python?
 
-  - I don't know anything about Python.
-  - I know a bit about Python and/or I have worked with Python years ago.
-  - I am familiar with Python, but I use another programming language for my work.
-  - I use Python for my daily work, but I don't know it very well.
-  - I use Python for my daily work and I know it very well, but I am not an expert.
-  - I am an expert with Python.
-
-  - Go to <a hre="www.menti.com">www.menti.com</a> and use the code 7338 2184
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="90%"}
+include_graphics("img/q1.jpg")
+```
+</div>
   
 ## Python IDE?
 
 - Which Python IDE do you mostly use? If you use more than one environment fill in the other text boxes.
 
-  - Go to <a href="www.menti.com">www.menti.com</a> and use the code 7338 2184
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="90%"}
+include_graphics("img/q1.jpg")
+```
+</div>
 
 ## Google Colab?
 
-- From 0 (none) to 5 (expert), how familiar are you with Google Colab?
+- How familiar are you with Google Colab? (1: limited to 5: expert)
   
-  - Go to <a href="www.menti.com">www.menti.com</a> and use the code 7338 2184
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="90%"}
+include_graphics("img/q1.jpg")
+```
+</div>
 
 ## Python
 
-- Latest: <a href="https://www.python.org/downloads/release/python-391/">Python 3.9.1</a>
+- Latest: <a href="https://www.python.org/downloads/release/python-3105/">Python 3.10</a>
 
 - Follow the tutorial on Python in Google Colab for the Applied Text Mining course: [link](https://ayoubbagheri.nl/applied_tm/Python_in_Google_Colab_Applied_Text_Mining.html)
 
@@ -857,14 +568,9 @@ include_graphics("img/colab.png")
 # Summary
 
 ## Summary
-- Text data is everywhere!
+- Text data are everywhere!
 - Language is hard!
 - The basic problem of text mining is that text is not a neat data set
 - Solution: text pre-processing & VSM
 
-## Practical 1
-In a few moments:
-
-- You will be automatically added to a practical session.
-- There will be a practical instructor present.
-- At the end of the practical, you will be automatically returned to the main meeting.
+# Practical 1
