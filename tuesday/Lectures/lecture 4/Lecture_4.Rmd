@@ -1,12 +1,14 @@
 ---
 title: "Text Clustering"
 author: "Ayoub Bagheri"
-subtitle: "Applied Text Mining"
+subtitle: Applied Text Mining
 output:
+  word_document: default
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
+  beamer_presentation: default
 ---
 
 ```{r, include=FALSE}
@@ -17,7 +19,7 @@ library(magick)
 library(magrittr)
 ```
 
-## Lecture’s plan
+## Lecture plan
 1. What is text clustering?
 
 2. What are the applications?
@@ -49,14 +51,20 @@ include_graphics("img/page 5.png")
 
 ## Question
 
-Which one is not a text clustering task?
+Which one is NOT a text clustering task?
 
-- Grouping Trump's tweets and finding the main topics
-- Finding similar patterns (demands) in customer reviews
+- Finding similar patterns in customer reviews
+- Grouping political tweets and finding their hidden topics
+- Detection of heart failure (yes or no) using discharge letters
 - Grouping scientific articles
-- Detection of heart failure (0 or 1) using discharge summaries
 
-Please go to <a href="www.menti.com">www.menti.com</a> and use the code 7338 2184
+## Question
+
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="90%"}
+include_graphics("img/q1.jpg")
+```
+</div>
 
 ## Clustering
   
@@ -70,148 +78,16 @@ Please go to <a href="www.menti.com">www.menti.com</a> and use the code 7338 218
 
 - Need similarity/distance as guidance to form clusters
 
-## Applications of text clustering
-<div style="float:left; width:50%">
-- Organize document collections
-  
-  - Automatically identify hierarchical/topical relation among documents
-</div>
-<div style="float:right; width:60%">
-```{r, echo=FALSE, out.width="100%"}
-include_graphics("img/page 7.png")
-```
-</div>
-
-<!-- ## Applications of text clustering -->
-<!-- <div style="float:left; width:50%"> -->
-<!-- - Grouping search results -->
-
-<!--   - Organize documents by topics -->
-
-<!--   - Facilitate user browsing -->
-<!-- </div> -->
-<!-- <div style="float:right; width:50%"> -->
-<!-- ```{r, echo=FALSE, out.width="100%"} -->
-<!-- include_graphics("img/page 8.png") -->
-<!-- ``` -->
-<!-- </div> -->
-
-## Applications of text clustering
-- Topic modeling
-  - Grouping words into topics
-  
-```{r, echo=FALSE, out.width="100%"}
-include_graphics("img/page 9.png")
-```
-
-<!-- # Distance metric -->
-
-<!-- ## Distance metric -->
-<!-- - Basic properties -->
-
-<!--   - Positive separation -->
-<!--     - $𝐷(x,y)>0, \forall x \neq y$ -->
-<!--     - $𝐷(x,y)=0, \mathrm{i.f.f.}, x=y$ -->
-
-<!--   - Symmetry  -->
-<!--     - $𝐷(x,y)=𝐷(y,x)$ -->
-
-<!--   - Triangle inequality -->
-<!--     - $𝐷(x,y)≤𝐷(x,z)+𝐷(z,y)$ -->
-
-<!-- ## Typical distance metric -->
-<!-- - Minkowski metric -->
-
-<!--   - $d(x,y) = \sqrt[p]{\sum^V_{i=1}{(x_i-y_i)^p}}$ -->
-
-<!--     - When $p=2$, it is <span style="color:red">Euclidean distance</span> -->
-
-<!-- - Cosine metric -->
-
-<!--   - $𝑑(x,y)=1−cosine(x,y)$ -->
-
-<!--     - when $|x|^2=|y|^2=1$, $1−cosine(x,y)=\frac{r^2}{2}$ -->
-
-<!-- ## Typical distance metric -->
-<!-- - Edit distance -->
-
-<!--   - Count the minimum number of operations required to transform one string into the other -->
-
-<!--     - Possible operations: insertion, deletion and replacement -->
-
-<!-- <div style="float:left; width:70%"> -->
-<!-- ```{r, echo=FALSE, out.width="70%", fig.align='right'} -->
-<!-- include_graphics("img/page 13.png") -->
-<!-- ``` -->
-<!-- </div> -->
-<!-- <div style="float:right; width:30%"> -->
-<!-- <br> <br> <br> <br>  -->
-<!-- <p style="color:red">&larr; Can be efficiently solved by dynamic programming -->
-<!-- </p> -->
-<!-- </div> -->
-
-<!-- ## Typical distance metric -->
-<!-- - Edit distance -->
-
-<!--   - Count the minimum number of operations required to transform one string into the other -->
-
-<!--     - Possible operations: insertion, deletion and replacement -->
-
-<!--   - Extent to distance between sentences -->
-
-<!--     - Word similarity as cost of replacement -->
-
-<!--       - “terrible” -> “bad”: low cost <span style="color:red">&rarr; Lexicon or distributional semantics</span> -->
-
-<!--       - “terrible” -> “terrific”: high cost <span style="color:red">&rarr; Lexicon or distributional semantics</span> -->
-
-<!--     - Preserving word order in distance computation -->
-
 # Clustering algorithms
 
-## Clustering algorithms
+## Categories
+- Hard versus soft clustering
 
 - Partitional clustering
 
 - Hierarchical clustering
 
 - Topic modeling
-
-<!-- <ol> -->
-<!--   <li>Partitional clustering algorithms</li> -->
-<!--   <ul> -->
-<!--     <li>Partition the instances into different groups</li> -->
-<!--     <li>Flat structure</li> -->
-<!--     <ul> -->
-<!--       <li>Need to specify the number of classes in advance</li> -->
-<!--     </ul> -->
-<!--   </ul> -->
-<!-- </ol> -->
-
-<!-- ## Clustering algorithms -->
-<!-- <ol start="2"> -->
-<!--   <li>Hierarchical clustering algorithms</li> -->
-<!--   <ul> -->
-<!--     <li>Create a hierarchical decomposition of objects</li> -->
-<!--     <li>Rich internal structure</li> -->
-<!--     <ul> -->
-<!--       <li>No need to specify the number of clusters</li> -->
-<!--       <li>Can be used to organize objects</li> -->
-<!--     </ul> -->
-<!--   </ul> -->
-<!-- </ol> -->
-
-<!-- ## Clustering algorithms -->
-<!-- <ol start="3"> -->
-<!--   <li>Topic modeling</li> -->
-<!--   <ul> -->
-<!--     <li>Topic models are a suite of algorithms that uncover the hidden thematic structure in document collections. These algorithms help us develop new ways to search, browse and summarize large archives of texts.</li> -->
-<!--     <li>We want to find themes (or topics) in documents</li> -->
-<!--     <li>We don’t want to do supervised topic classification – rather not fix topics in advance nor do manual annotation </li> -->
-<!--     <li>Need an approach which automatically teases out the topics</li> -->
-<!--     <li>This is essentially a clustering problem - can think of both words and documents as being clustered</li> -->
-<!--   </ul> -->
-<!-- </ol> -->
 
 ## Hard versus soft clustering
 - Hard clustering: Each document belongs to exactly one cluster
@@ -221,7 +97,7 @@ include_graphics("img/page 9.png")
 - Soft clustering: A document can belong to more than one cluster.
   
 
-# Partitional clustering
+# Partitional Clustering
 
 ## Partitional clustering algorithms
 - Partitional clustering method: Construct a partition of <span style="color:lightgreen">$n$</span> documents into a set of <span style="color:lightgreen">$K$</span> clusters
@@ -245,24 +121,6 @@ include_graphics("img/page 9.png")
 include_graphics("img/page 22.png")
 ```
 
-<!-- ## Partitional clustering algorithms -->
-<!-- <div style="float:left;width:70%"> -->
-<!-- - Typical partitional clustering algorithms -->
-
-<!--   - <em>k</em>-means clustering -->
-
-<!--     - Partition data by its closest mean -->
-
-<!--   - Gaussian Mixture Model -->
-
-<!--     - Consider variance within the cluster as well -->
-<!-- </div> -->
-<!-- <div style="float:right;width:30%"> -->
-<!-- ```{r, echo=FALSE,out.width="100%"} -->
-<!-- include_graphics("img/page 23.png") -->
-<!-- ``` -->
-<!-- </div> -->
-
 ## K-Means algorithm
 - Assumes documents are real-valued vectors.
 
@@ -277,7 +135,7 @@ $$\vec \mu(c)=\frac{1}{|c|}\sum_{\vec a \in c}{\vec x}$$
 - Select $K$ random docs $\{s_1, s_2,… s_K\}$ as seeds.
 - Until clustering converges (or other stopping criterion):
   
-  - For each doc $d_i$: <br>
+  - For each document $d_i$: <br>
    
     - Assign $d_i$ to the cluster $c_j$ such that $dist(x_i, s_j)$ is minimal.
   
@@ -287,61 +145,15 @@ $$\vec \mu(c)=\frac{1}{|c|}\sum_{\vec a \in c}{\vec x}$$
     - $s_j = \mu(c_j)$
     
 ## K-Means example (K=2)
-```{r, out.width="100%", cache=TRUE}
-list.files(path = 'img/', pattern = 'page 26', full.names = TRUE) %>% 
+```{r, echo=FALSE, out.width="100%", cache=TRUE}
+list.files(path='img/', pattern = 'page 26', full.names = TRUE) %>% 
         image_read() %>% # reads each path file
         image_join() %>% # joins image
-        image_animate(delay = 1000) %>% # animates, can opt for number of loops
+        image_animate(fps=0.25) %>% # animates, can opt for number of loops
         image_write("img/kmeans.gif") # write to current dir
 
 include_graphics("img/kmeans.gif")
 ```
-
-<!-- ## Termination conditions -->
-<!-- - Several possibilities, e.g., -->
-
-<!--   - A fixed number of iterations. -->
-
-<!--   - Doc partition unchanged. -->
-
-<!--   - Centroid positions don’t change. -->
-
-<!-- ## Convergence -->
-<!-- - Why should the <em>K</em>-means algorithm ever reach a <em>fixed point</em>? -->
-
-<!--   - A state in which clusters don’t change. -->
-
-<!-- - <em>K</em>-means is a special case of a general procedure known as the <em>Expectation Maximization (EM) algorithm</em>. -->
-
-<!--   - EM is known to converge. -->
-
-<!--   - Number of iterations could be large. -->
-
-<!--     - But in practice usually isn’t -->
-
-<!-- ## Seed Choice -->
-<!-- - Results can vary based on random seed selection. -->
-
-<!-- - Some seeds can result in poor convergence rate, or convergence to sub-optimal clusterings. -->
-
-<!--   - Select good seeds using a heuristic (e.g., doc least similar to any existing mean) -->
-
-<!--   - <span style="color:blue">Try out multiple starting points</em> -->
-
-<!--   - Initialize with the results of another method. -->
-
-<!-- ## <em>K</em>-means issues, variations, etc. -->
-<!-- - Recomputing the centroid after every assignment (rather than after all points are re-assigned) can improve speed of convergence of <em>K</em>-means -->
-
-<!-- - Assumes clusters are spherical in vector space -->
-
-<!--   - Sensitive to coordinate changes, weighting etc.  -->
-
-<!-- - Disjoint and exhaustive -->
-
-<!--   - Doesn’t have a notion of “outliers” by default -->
-
-<!--   - But can add outlier filtering -->
 
 # Hierarchical Clustering
 
@@ -352,7 +164,7 @@ include_graphics("img/kmeans.gif")
 - Clustering obtained by cutting the dendrogram at a desired level: each <b>connected</b> component forms a cluster.
 </div>
 <div style="float:right;width:50%">
-```{r, out.width="100%"}
+```{r, echo=FALSE, out.width="100%"}
 include_graphics("img/page 33.png")
 ```
 </div>
@@ -365,7 +177,7 @@ include_graphics("img/page 33.png")
     - Start with individual objects as separated clusters
     - Repeatedly merge closest pair of clusters
 
-```{r, out.width="100%"}
+```{r, echo=FALSE, out.width="100%"}
 include_graphics("img/page 34.png")
 ```
 
@@ -378,12 +190,12 @@ include_graphics("img/page 34.png")
     
     - Repeatedly splitting the remaining clusters into two
 
-```{r, out.width="60%", fig.align='right'}
+```{r, echo=FALSE, out.width="60%", fig.align='right'}
 include_graphics("img/page 35.png")
 ```
 
 ## Hierarchical Agglomerative Clustering (HAC)
-- Starts with each doc in a separate cluster
+- Starts with each document in a separate cluster
   
   - then repeatedly joins the <em><u>closest pair</u></em> of clusters, until there is only one cluster.
 
@@ -408,33 +220,14 @@ include_graphics("img/page 35.png")
     - Ward's minimum variance method, much in common with analysis of variance (ANOVA)
     - The distance between two clusters is computed as the increase in the "error sum of squares" (ESS) after fusing two clusters into a single cluster.
 
-<!-- ## Single Link Agglomerative Clustering -->
-<!-- - Use maximum similarity of pairs: -->
-
-<!-- $$sim(c_i, c_j) = \max_{x \in c_i, y\in c_j}{sim(x,y)}$$ -->
-
-<!-- - Can result in “straggly” (long and thin) clusters due to chaining effect. -->
-
-<!-- - After merging $c_i$ and $c_j$, the similarity of the resulting cluster to another cluster, $c_k$, is: -->
-
-<!-- $$sim((c_i \cup c_j), c_k) = max(sim(c_i, c_k), sim(c_j, c_k))$$ -->
-<!-- \newpage -->
-
-<!-- ## Complete Link -->
-<!-- - Use minimum similarity of pairs: -->
-
-<!-- $$sim(c_i, c_j) = \min_{x \in c_i, y\in c_j}{sim(x,y)}$$ -->
-
-<!-- - Makes “tighter,” spherical clusters that are typically preferable. -->
-
-<!-- - After merging $c_i$ and $c_j$, the similarity of the resulting cluster to another cluster, $c_k$, is: -->
-
-<!-- $$sim((c_i \cup c_j), c_k) = min(sim(c_i, c_k), sim(c_j, c_k))$$ -->
-<!-- ```{r, out.width="100%"} -->
-<!-- include_graphics("img/page 39.png") -->
-<!-- ``` -->
-
 # Topic Modeling
+
+## Topic modeling
+```{r,out.width="90%"}
+include_graphics("img/topicmodel1.png")
+```
+
+<font size="2"> https://thinkinfi.com/</font> 
 
 ## Topic models
 <div style="float:left;width:60%">
@@ -452,7 +245,6 @@ include_graphics("img/page 35.png")
 ```{r,out.width="100%"}
 include_graphics("img/page 41.png")
 ```
-
 </div>
 
 ## Topic models | Reality: Documents observed, infer  topics
@@ -460,9 +252,19 @@ include_graphics("img/page 41.png")
 include_graphics("img/page 42.png")
 ```
 
+## Topic models
+```{r,out.width="90%"}
+include_graphics("img/topicmodel2.png")
+```
+
 ## LDA graphical model
 ```{r, out.width="100%"}
 include_graphics("img/page 46.png")
+```
+
+## LDA
+```{r,out.width="90%"}
+include_graphics("img/topicmodel3.png")
 ```
 
 ## Probabilistic modeling
@@ -472,120 +274,60 @@ include_graphics("img/page 46.png")
 
 3. Situate new data into the estimated model: How does this query or new document fit into the estimated topic structure?
 
+## Example
+What is latent Dirichlet allocation? It’s a way of automatically discovering topics that these sentences contain.
+
+Suppose you have the following set of sentences:
+
+- I like to eat broccoli and bananas.
+- I ate a banana and spinach smoothie for breakfast.
+- Chinchillas and kittens are cute.
+- My sister adopted a kitten yesterday.
+- Look at this cute hamster munching on a piece of broccoli.
+
+
+## Example
+Given these sentences and asked for 2 topics, LDA might produce something like:
+
+- Sentences 1 and 2: 100% Topic A
+- Sentences 3 and 4: 100% Topic B
+- Sentence 5: 60% Topic A, 40% Topic B
+- Topic A: 30% broccoli, 15% bananas, 10% breakfast, 10% munching, … (at which point, you could interpret topic A to be about food)
+- Topic B: 20% chinchillas, 20% kittens, 20% cute, 15% hamster, … (at which point, you could interpret topic B to be about cute animals)
+
+How does LDA perform this discovery?
+
+## LDA training
+- Go through each document, and randomly assign each word in the document to one of the K topics.
+- Notice that this random assignment already gives you both topic representations of all the documents and word distributions of all the topics (albeit not very good ones).
+- So to improve on them, for each document d…
+- Go through each word w in d…
+
+## LDA training
+- And for each topic t, compute two things: 
+
+  - p(topic t | document d) = the proportion of words in document d that are currently assigned to topic t, and
+  
+  - p(word w | topic t) = the proportion of assignments to topic t over all documents that come from this word w. 
+
+- Reassign w a new topic, where we choose topic t with probability p(topic t | document d) * p(word w | topic t) 
+
+- In other words, in this step, we’re assuming that all topic assignments except for the current word in question are correct, and then updating the assignment of the current word using our model of how documents are generated.
+
+## LDA training
+- After repeating the previous step a large number of times, you’ll eventually reach a roughly steady state where your assignments are pretty good. 
+
+- Use these assignments to estimate the topic mixtures of each document (by counting the proportion of words assigned to each topic within that document) and the words associated to each topic (by counting the proportion of words assigned to each topic overall).
+
 ## LDA: Identifying structure in text
 ```{r, out.width="100%"}
 include_graphics("img/lda.png")
 ```
 
-<!-- ##  -->
-<!-- ```{r,out.width="100%"} -->
-<!-- include_graphics("img/page 44.png") -->
-<!-- ``` -->
-
-<!-- ## Latent Dirichlet Allocation -->
-<!-- ```{r} -->
-<!-- question <- c("What is Latent Dirichlet Allocation (LDA)?", "What is used for?", "How is it related to text mining and other machine learning techniques?") -->
-
-<!-- answers <- c("A generative probabilistic model for collections of discrete data such as text corpora. LDA is a three-level hierarchical Bayesian model, in which each item of a collection is modeled as a finite mixture over an underlying set of latent topics. Each observed word originates from a topic that we do not directly observe. Each topic is, in turn, modeled as an infinite mixture over an underlying set of topic probabilities.", -->
-<!-- "The fitted model can be used to estimate the similarity between documents as well as between a set of specified keywords using an additional layer of latent variables which are referred to as topics. -->
-<!-- ", -->
-<!-- "Topic models can be seen as classical text mining or natural language processing tools. Fitting topic models based on data structures from the text mining usually done by considering the problem of modeling text corpora and other collections of discrete data. One of the advantages of LDA over related latent variable models is that it provides well-defined inference procedures for previously unseen documents (LSI uses a singular value decomposition)") -->
-<!-- lda <- data.frame(q = question, a = answers) -->
-<!-- lda[1] <- cell_spec(lda[[1]],bold = T,font_size = 24) -->
-<!-- colnames(lda) <- c("", "") -->
-<!-- lda %>%  -->
-<!--   kbl(booktabs = T, escape = F, align = "l") %>%  -->
-<!--   kable_styling(fixed_thead = T) %>% -->
-<!--   kable_paper("hover", full_width=T) %>%  -->
-<!--   column_spec(1, width = "18em") -->
-<!-- ``` -->
-
-<!-- ## Topic Matrix -->
-<!-- ```{r, out.width="100%"} -->
-<!-- include_graphics("img/page 47.png") -->
-<!-- ``` -->
-
-<!-- ## The Dirichlet Distribution -->
-<!-- <div style="float:left; width:40%"> -->
-<!-- ```{r, out.width="100%"} -->
-<!-- include_graphics("img/page 48.png") -->
-<!-- ``` -->
-<!-- </div> -->
-
-<!-- <div style="float:right; width:60%"> -->
-<!-- 1. The Dirichlet distribution is an exponential family distribution over the simplex, i.e., positive vectors that sum to one -->
-
-<!-- $$p(\theta|\vec a) = \frac{\Gamma(\sum_i{a_i})}{\prod_i{\Gamma(\alpha_i)}}\prod_i{\theta_i^{\alpha_i - 1}}$$ -->
-
-<!-- 2. The Dirichlet is <u>conjugate</u> to the multinomial. Given a multinomial -->
-<!-- observation, the posterior distribution of $\theta$ is a Dirichlet. -->
-
-<!-- 3. The parameter $\alpha$ controls the mean shape and sparsity of $\theta$. Parameter $\alpha$ is a k-vector with components $\alpha_i$ >0   -->
-
-<!-- 4. The topic proportions are a K dimensional Dirichlet. The topics are a V dimensional Dirichlet. -->
-
-<!-- </div> -->
-
-<!-- ## Geometric Interpretation of LDA -->
-<!-- <div style="float:left; width:45%"> -->
-<!-- ```{r, out.width="100%"} -->
-<!-- include_graphics("img/page 49_1.png") -->
-<!-- ``` -->
-<!-- </div> -->
-
-<!-- <div style="float:right; width:55%"> -->
-<!-- as we draw random variables from theta, I’m going to get distributions over 3 elements.  -->
-
-<!-- $\theta$ ~ Dirichlet(1,1,1) = $\alpha_1$ = $\alpha_2$ = $\alpha_3$ = 1, uniform distribution as an example -->
-
-<!-- ```{r,out.width="80%"} -->
-<!-- include_graphics("img/page 49_2.png") -->
-<!-- ``` -->
-
-<!-- Dirichlet is parameterized by $\alpha$, so as $\alpha$ increases the chart gets more peaky. -->
-<!-- </div> -->
-
-<!-- ## Density Example -->
-<!-- <div style="float:left;width:40%"> -->
-<!-- ```{r,out.width="100%"} -->
-<!-- include_graphics("img/page 50_1.png") -->
-<!-- ``` -->
-
-<!-- When $\alpha < 1 (s < k)$, you get sparsity and on the 3 simplex you get a figure with increased probability at the corners. -->
-<!-- </div> -->
-<!-- <div style="float:right;width:60%"> -->
-<!-- <span style="font-size:20px">Important piece of info:</span><br> -->
-<!-- <ol>  -->
-<!--   <li>The expectations of the posterior (sometimes called M for mean)</li> -->
-<!--   <li>The sum of the alphas, which determines the peaky-ness of the Dirichlet </li> -->
-<!--   <ul> -->
-<!--     <li>If this sum is small, the Dirichlet will be more spread out</li> -->
-<!--     <li>If large, the Dirichlet will have more peaks at its expectation (sometimes called S for scaling)</li> -->
-<!--   </ul> -->
-<!-- </ol> -->
-<!-- ```{r,out.width="50%", fig.align='center'} -->
-<!-- include_graphics("img/page 50_2.png") -->
-<!-- ``` -->
-<!-- </div> -->
-
-<!-- ## LDA Inferences -->
-<!-- ```{r, out.width="100%"} -->
-<!-- include_graphics("img/page 51.png") -->
-<!-- ``` -->
-
-<!-- ## Posterior distribution & model estimation for LDA -->
-<!-- ```{r, out.width="100%"} -->
-<!-- include_graphics("img/page 52.png") -->
-<!-- ``` -->
-
-<!-- ## Maximum likelihood (Ml) estimation -->
-<!-- ```{r, out.width="100%"} -->
-<!-- include_graphics("img/page 53.png") -->
-<!-- ``` -->
 
 # Cluster Validation
 
-## Desirable properties of clustering algorithms 
+## Desirable properties of clustering 
 - Scalability
   
   - Both in time and space
@@ -601,9 +343,9 @@ include_graphics("img/lda.png")
 ## What is a good clustering?
 - Internal criterion: A good clustering will produce high quality clusters in which:
 
-  - the <u>intra-class</u> (that is, intra-cluster) similarity is high
+  - The <u>intra-class</u> (that is, intra-cluster) similarity is high
   
-  - the <u>inter-class</u> similarity is low
+  - The <u>inter-class</u> similarity is low
 
   - The measured quality of a clustering depends on both the document representation and the similarity measure used
 
