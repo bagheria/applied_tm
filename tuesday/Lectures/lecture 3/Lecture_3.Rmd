@@ -1,12 +1,14 @@
 ---
 title: "Feature Selection in Text"
 author: "Ayoub Bagheri"
-subtitle: "Applied Text Mining"
+subtitle: Applied Text Mining
 output:
+  word_document: default
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
+  beamer_presentation: default
 ---
 
 ```{r, include=FALSE}
