@@ -14573,8 +14573,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Practical-2:-Genre-classification-with-sklearn">Practical 2: Genre classification with sklearn<a class="anchor-link" href="#Practical-2:-Genre-classification-with-sklearn">&#182;</a></h1><h4 id="Berit-Janssen">Berit Janssen<a class="anchor-link" href="#Berit-Janssen">&#182;</a></h4><p><img src="img/uu_logo.png" alt="logo" align="right" title="UU" width="50" height="20" /></p>
-<h4 id="Applied-Text-Mining---Utrecht-Summer-School">Applied Text Mining - Utrecht Summer School<a class="anchor-link" href="#Applied-Text-Mining---Utrecht-Summer-School">&#182;</a></h4>
+<h1 id="Genre-classification-with-sklearn">Genre classification with sklearn<a class="anchor-link" href="#Genre-classification-with-sklearn">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14585,7 +14584,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1. Upload the "book_reviews.csv" from your machine, following the <a href="https://colab.research.google.com/notebooks/io.ipynb">Colab documentation</a> This file contains 10000 English language book reviews from Goodreads, with genre, age and star rating labels. Uploading may take a minute or so. Read the</p>
+<p>1. <strong>Upload the "book_reviews.csv" from your machine, following the <a href="https://colab.research.google.com/notebooks/io.ipynb">Colab documentation</a>. This file contains 10000 English language book reviews from Goodreads, with genre, age and star rating labels. Uploading may take a minute or so.</strong></p>
 
 </div>
 </div>
@@ -14623,9 +14622,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output " data-mime-type="text/html">
 
-     <input type="file" id="files-c90277f1-8ff1-49b9-85fb-385dc069bbe9" name="files[]" multiple disabled
+     <input type="file" id="files-65f3acbe-4e25-4d33-9099-53b67601a6cf" name="files[]" multiple disabled
         style="border:none" />
-     <output id="result-c90277f1-8ff1-49b9-85fb-385dc069bbe9">
+     <output id="result-65f3acbe-4e25-4d33-9099-53b67601a6cf">
       Upload widget is only available when the cell has been executed in the
       current browser session. Please rerun this cell to enable.
       </output>
@@ -14657,7 +14656,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>2. Load the .csv file into a <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html?highlight=read_csv#pandas.read_csv">Pandas dataframe</a>. This makes it easy to acess and filter data.</p>
+<p>2. <strong>Load the .csv file into a <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html?highlight=read_csv#pandas.read_csv">Pandas dataframe</a>. This makes it easy to acess and filter data.</strong></p>
 
 </div>
 </div>
@@ -14696,7 +14695,10 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
+
+  <div id="df-70eaeecd-b050-4362-844b-c487e0c09663">
+    <div class="colab-df-container">
+      <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -14783,6 +14785,82 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   </tbody>
 </table>
 </div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-70eaeecd-b050-4362-844b-c487e0c09663')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-70eaeecd-b050-4362-844b-c487e0c09663 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-70eaeecd-b050-4362-844b-c487e0c09663');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
 </div>
 
 </div>
@@ -14798,7 +14876,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>3. Now you can construct the document-term matrix. The <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">CountVectorizer</a> class counts how often each word occurs in each document. Optionally, you can also pass ngram_range as a parameter, to see if combinations of multiple words are better predictors for ratings. Define the output of the <code>fit_transform</code> function on 'tokenised_text' as your feature matrix X, and the star ratings ('rating_no') as the variable y you're trying to predict.</p>
+<p>3. <strong>Now you can construct the document-term matrix. The <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">CountVectorizer</a> class counts how often each word occurs in each document. Optionally, you can also pass ngram_range as a parameter, to see if combinations of multiple words are better predictors for ratings. Define the output of the <code>fit_transform</code> function on 'tokenised_text' as your feature matrix X, and the star ratings ('rating_no') as the variable y you're trying to predict.</strong></p>
 
 </div>
 </div>
@@ -14815,7 +14893,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="n">vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">()</span>
 <span class="c1"># vectorizer = CountVectorizer(ngram_range=(1,2))</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tokenised_text&#39;</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;rating_no&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;book_genre&#39;</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -14871,6 +14949,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>/usr/local/lib/python3.7/dist-packages/sklearn/utils/deprecation.py:87: FutureWarning: Function get_feature_names is deprecated; get_feature_names is deprecated in 1.0 and will be removed in 1.2. Please use get_feature_names_out instead.
+  warnings.warn(msg, category=FutureWarning)
+</pre>
+</div>
+</div>
+
 </div>
 
 </div>
@@ -14898,7 +14989,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
 <span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;tokenised_text&#39;</span><span class="p">])</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;rating_no&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;book_genre&#39;</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -14913,7 +15004,64 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>4. After defining your document-term matrix, you can split the data into train- and test sets. Note that <code>random_state</code> is used so that the split will be the same for everyone in the group, such that different random selections don't cause slightly different results.</p>
+<p>4. <strong>Now we can define a baseline model: use the DummyClassifier to always predict the most frequent genre in the dataset.</strong></p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.dummy</span> <span class="kn">import</span> <span class="n">DummyClassifier</span>
+
+<span class="n">dummy_clf</span> <span class="o">=</span> <span class="n">DummyClassifier</span><span class="p">(</span><span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;most_frequent&quot;</span><span class="p">)</span>
+<span class="n">dummy_clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">dummy_clf</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0.4991</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>5. <strong>After defining your document-term matrix, you can split the data into train- and test sets. Note that <code>random_state</code> is used so that the split will be the same for everyone in the group, such that different random selections don't cause slightly different results.</strong></p>
 
 </div>
 </div>
@@ -14942,13 +15090,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>5. Now pick one of the following classifiers:</p>
-
-<pre><code>- [K-Nearest Neighbor classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier)
-- [Multionimal Naive Bayes](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB)
-- [Support Vector Machine](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC)
-- [Decision Tree Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier)
-- [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier)</code></pre>
+<p>6. <strong>Now pick one of the following classifiers:</strong></p>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier">K-Nearest Neighbor classifier</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB">Multionimal Naive Bayes</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC">Support Vector Machine</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier">Decision Tree Classifier</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier">Random Forest Classifier</a></li>
+</ul>
 
 </div>
 </div>
@@ -14994,9 +15143,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>accuracy with 3 neighbours: 0.2318181818181818 
-accuracy with 10 neighbours: 0.21575757575757576 
-accuracy with 100 neighbours: 0.22484848484848485
+<pre>accuracy with 3 neighbours: 0.4596969696969697 
+accuracy with 10 neighbours: 0.49757575757575756 
+accuracy with 100 neighbours: 0.5251515151515151
 </pre>
 </div>
 </div>
@@ -15042,8 +15191,8 @@ accuracy with 100 neighbours: 0.22484848484848485
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>accuracy with alpha=1: 0.3990909090909091 
-accuracy with alpha=10: 0.3809090909090909
+<pre>accuracy with alpha=1: 0.6618181818181819 
+accuracy with alpha=10: 0.5196969696969697
 </pre>
 </div>
 </div>
@@ -15089,8 +15238,8 @@ accuracy with alpha=10: 0.3809090909090909
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>/usr/local/lib/python3.7/dist-packages/sklearn/svm/_base.py:947: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
-  &#34;the number of iterations.&#34;, ConvergenceWarning)
+<pre>/usr/local/lib/python3.7/dist-packages/sklearn/svm/_base.py:1208: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  ConvergenceWarning,
 </pre>
 </div>
 </div>
@@ -15102,8 +15251,8 @@ accuracy with alpha=10: 0.3809090909090909
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>accuracy with default regularization: 0.3624242424242424 
-accuracy with more regularization: 0.38272727272727275
+<pre>accuracy with default regularization: 0.6433333333333333 
+accuracy with more regularization: 0.6993939393939393
 </pre>
 </div>
 </div>
@@ -15149,8 +15298,8 @@ accuracy with more regularization: 0.38272727272727275
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>accuracy with maximum tree depth 5: 0.2681818181818182 
-accuracy with unlimited tree depth: 0.3015151515151515
+<pre>accuracy with maximum tree depth 5: 0.5890909090909091 
+accuracy with unlimited tree depth: 0.5327272727272727
 </pre>
 </div>
 </div>
@@ -15196,8 +15345,8 @@ accuracy with unlimited tree depth: 0.3015151515151515
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>accuracy with 3 trees: 0.2584848484848485 
-accuracy with 20 trees: 0.32151515151515153
+<pre>accuracy with 3 trees: 0.5366666666666666 
+accuracy with 20 trees: 0.6139393939393939
 </pre>
 </div>
 </div>
@@ -15213,7 +15362,7 @@ accuracy with 20 trees: 0.32151515151515153
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>6. Find the parameters which lead to best results. You can also automatate this with <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html">GridSearch</a>, as shown below.</p>
+<p>7. <strong>Find the parameters which lead to best results. You can also automatate this with <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html">GridSearch</a>, as shown below.</strong></p>
 
 </div>
 </div>
@@ -15256,8 +15405,21 @@ accuracy with 20 trees: 0.32151515151515153
     <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>/usr/local/lib/python3.7/dist-packages/sklearn/model_selection/_split.py:680: UserWarning: The least populated class in y has only 1 members, which is less than n_splits=5.
+  UserWarning,
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.2833333333333333
+<pre>0.509090909090909
 </pre>
 </div>
 </div>
@@ -15273,9 +15435,7 @@ accuracy with 20 trees: 0.32151515151515153
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
 <pre>{&#39;cv&#39;: None,
  &#39;error_score&#39;: nan,
- &#39;estimator&#39;: KNeighborsClassifier(algorithm=&#39;auto&#39;, leaf_size=30, metric=&#39;minkowski&#39;,
-                      metric_params=None, n_jobs=None, n_neighbors=5, p=2,
-                      weights=&#39;uniform&#39;),
+ &#39;estimator&#39;: KNeighborsClassifier(),
  &#39;estimator__algorithm&#39;: &#39;auto&#39;,
  &#39;estimator__leaf_size&#39;: 30,
  &#39;estimator__metric&#39;: &#39;minkowski&#39;,
@@ -15284,7 +15444,6 @@ accuracy with 20 trees: 0.32151515151515153
  &#39;estimator__n_neighbors&#39;: 5,
  &#39;estimator__p&#39;: 2,
  &#39;estimator__weights&#39;: &#39;uniform&#39;,
- &#39;iid&#39;: &#39;deprecated&#39;,
  &#39;n_jobs&#39;: None,
  &#39;param_grid&#39;: {&#39;n_neighbors&#39;: [2, 20]},
  &#39;pre_dispatch&#39;: &#39;2*n_jobs&#39;,
@@ -15307,7 +15466,7 @@ accuracy with 20 trees: 0.32151515151515153
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>7. Try combining multiple classifiers, for instance with a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html#sklearn.ensemble.VotingClassifier">Voting Classifier</a> Can you get a better result?</p>
+<p>8. <strong>Try combining multiple classifiers, for instance with a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html#sklearn.ensemble.VotingClassifier">Voting Classifier</a> Can you get a better result?</strong></p>
 
 </div>
 </div>
@@ -15348,7 +15507,7 @@ accuracy with 20 trees: 0.32151515151515153
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>0.3812121212121212</pre>
+<pre>0.5815151515151515</pre>
 </div>
 
 </div>

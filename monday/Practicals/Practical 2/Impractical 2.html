@@ -14573,8 +14573,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Impractical-2:-Genre-classification-with-sklearn">Impractical 2: Genre classification with sklearn<a class="anchor-link" href="#Impractical-2:-Genre-classification-with-sklearn">&#182;</a></h1><h4 id="Berit-Janssen">Berit Janssen<a class="anchor-link" href="#Berit-Janssen">&#182;</a></h4><p><img src="img/uu_logo.png" alt="logo" align="right" title="UU" width="50" height="20" /></p>
-<h4 id="Applied-Text-Mining---Utrecht-Summer-School">Applied Text Mining - Utrecht Summer School<a class="anchor-link" href="#Applied-Text-Mining---Utrecht-Summer-School">&#182;</a></h4>
+<h1 id="Genre-classification-with-sklearn">Genre classification with sklearn<a class="anchor-link" href="#Genre-classification-with-sklearn">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14585,7 +14584,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1. Upload the "book_reviews.csv" from your machine, following the <a href="https://colab.research.google.com/notebooks/io.ipynb">Colab documentation</a> This file contains 10000 English language book reviews from Goodreads, with genre, age and star rating labels. Uploading may take a minute or so. Read the</p>
+<p>1. <strong>Upload the "book_reviews.csv" from your machine, following the <a href="https://colab.research.google.com/notebooks/io.ipynb">Colab documentation</a>. This file contains 10000 English language book reviews from Goodreads, with genre, age and star rating labels. Uploading may take a minute or so.</strong></p>
 
 </div>
 </div>
@@ -14597,7 +14596,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>2. Load the .csv file into a <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html?highlight=read_csv#pandas.read_csv">Pandas dataframe</a>. This makes it easy to acess and filter data.</p>
+<p>2. <strong>Load the .csv file into a <a href="https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html?highlight=read_csv#pandas.read_csv">Pandas dataframe</a>. This makes it easy to acess and filter data.</strong></p>
 
 </div>
 </div>
@@ -14609,7 +14608,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>3. Now you can construct the document-term matrix. The <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">CountVectorizer</a> class counts how often each word occurs in each document. Optionally, you can also pass ngram_range as a parameter, to see if combinations of multiple words are better predictors for ratings. Define the output of the <code>fit_transform</code> function on 'tokenised_text' as your feature matrix X, and the star ratings ('rating_no') as the variable y you're trying to predict.</p>
+<p>3. <strong>Now you can construct the document-term matrix. The <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">CountVectorizer</a> class counts how often each word occurs in each document. Optionally, you can also pass ngram_range as a parameter, to see if combinations of multiple words are better predictors for ratings. Define the output of the <code>fit_transform</code> function on 'tokenised_text' as your feature matrix X, and the star ratings ('rating_no') as the variable y you're trying to predict.</strong></p>
 
 </div>
 </div>
@@ -14621,7 +14620,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>To inspect the words in the document-term matrix, you can call <code>get_feature_names()</code> on the vectorizer.</p>
+<p>4. <strong>Now we can define a baseline model: use the DummyClassifier to always predict the most frequent genre in the dataset.</strong></p>
 
 </div>
 </div>
@@ -14633,7 +14632,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Alternatively, you could also use a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer">TfidfVectorizer</a>: this class counts how often a word occurs in a document and weighs it against how often the word occurs in the whole corpus. This is a way to eliminate words that are frequent but not very meaningful. You can play around with different vectorizers to see how they affect your results.</p>
+<p>5. <strong>After defining your document-term matrix, you can split the data into train- and test sets. Note that <code>random_state</code> is used so that the split will be the same for everyone in the group, such that different random selections don't cause slightly different results.</strong></p>
 
 </div>
 </div>
@@ -14645,7 +14644,14 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>4. After defining your document-term matrix, you can split the data into train- and test sets. Note that <code>random_state</code> is used so that the split will be the same for everyone in the group, such that different random selections don't cause slightly different results.</p>
+<p>6. <strong>Now pick one of the following classifiers:</strong></p>
+<ul>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier">K-Nearest Neighbor classifier</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB">Multionimal Naive Bayes</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC">Support Vector Machine</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier">Decision Tree Classifier</a></li>
+<li><a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier">Random Forest Classifier</a></li>
+</ul>
 
 </div>
 </div>
@@ -14657,13 +14663,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>5. Now pick one of the following classifiers:</p>
-
-<pre><code>- [K-Nearest Neighbor classifier](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html#sklearn.neighbors.KNeighborsClassifier)
-- [Multionimal Naive Bayes](https://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.MultinomialNB.html#sklearn.naive_bayes.MultinomialNB)
-- [Support Vector Machine](https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC)
-- [Decision Tree Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier)
-- [Random Forest Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier)</code></pre>
+<p>7. <strong>Find the parameters which lead to best results. You can also automatate this with <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html">GridSearch</a>, as shown below.</strong></p>
 
 </div>
 </div>
@@ -14675,19 +14675,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>6. Find the parameters which lead to best results. You can also automatate this with <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.GridSearchCV.html">GridSearch</a>, as shown below.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>7. Try combining multiple classifiers, for instance with a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html#sklearn.ensemble.VotingClassifier">Voting Classifier</a> Can you get a better result?</p>
+<p>8. <strong>Try combining multiple classifiers, for instance with a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html#sklearn.ensemble.VotingClassifier">Voting Classifier</a> Can you get a better result?</strong></p>
 
 </div>
 </div>
