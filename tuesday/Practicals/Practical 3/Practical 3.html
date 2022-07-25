@@ -14653,7 +14653,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1. <strong>Here we are going to use a news article data set, originating from BBC News (<a href="http://mlg.ucd.ie/datasets/bbc.html">http://mlg.ucd.ie/datasets/bbc.html</a>). This data set provided for use as benchmarks for machine learning research. The BBC data set consists of 2225 documents and 5 categories: business, entertainment, politics, sport, and tech. Your first task is to load the dataset so that you can proceed. Do not forget to import the necessary dependencies, you are going to need. You can import the other ones as you go along.</strong></p>
+<p>1. <strong>Here we are going to use a news article data set, originating from BBC news website. This dataset provided for use as benchmarks for machine learning research. The BBC data set consists of 2225 documents and 5 categories: business, entertainment, politics, sport, and tech. Load the dataset and convert it to a dataframe.</strong></p>
 
 </div>
 </div>
@@ -14790,47 +14790,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">target_names</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>[&#39;business&#39;, &#39;entertainment&#39;, &#39;politics&#39;, &#39;sport&#39;, &#39;tech&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">target_names</span><span class="p">,</span> <span class="n">counts</span><span class="p">)))</span>
 </pre></div>
 
@@ -14867,7 +14826,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;label&quot;</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random_state</span><span class="p">)</span>
@@ -14895,7 +14854,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#tokenizer to remove unwanted elements from out data like symbols</span>
@@ -14979,7 +14938,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">importance</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">bbc_dtm</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">ravel</span><span class="p">())[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">feature_names</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">())</span>
+<span class="n">feature_names</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span>
 <span class="n">feature_names</span><span class="p">[</span><span class="n">importance</span><span class="p">[:</span><span class="mi">20</span><span class="p">]]</span>
 </pre></div>
 
@@ -15004,350 +14963,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([&#39;said&#39;, &#39;mr&#39;, &#39;year&#39;, &#39;people&#39;, &#39;new&#39;, &#39;time&#39;, &#39;world&#39;,
+<pre>array([&#39;s&#39;, &#39;said&#39;, &#39;mr&#39;, &#39;year&#39;, &#39;people&#39;, &#39;new&#39;, &#39;t&#39;, &#39;time&#39;, &#39;world&#39;,
        &#39;government&#39;, &#39;uk&#39;, &#39;years&#39;, &#39;best&#39;, &#39;just&#39;, &#39;told&#39;, &#39;film&#39;,
-       &#39;make&#39;, &#39;game&#39;, &#39;like&#39;, &#39;music&#39;, &#39;labour&#39;, &#39;000&#39;], dtype=&#39;&lt;U27&#39;)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>You can also sort the counts based on a document:</p>
-
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">counts</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">bbc_dtm</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span>
-                      <span class="n">columns</span><span class="o">=</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">())</span>
-
-<span class="c1"># Show us the top 10 most common words in document 2</span>
-<span class="n">counts</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>...</th>
-      <th>1770</th>
-      <th>1771</th>
-      <th>1772</th>
-      <th>1773</th>
-      <th>1774</th>
-      <th>1775</th>
-      <th>1776</th>
-      <th>1777</th>
-      <th>1778</th>
-      <th>1779</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>retailers</th>
-      <td>0</td>
-      <td>0</td>
-      <td>7</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>figures</th>
-      <td>0</td>
-      <td>0</td>
-      <td>7</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>sales</th>
-      <td>0</td>
-      <td>0</td>
-      <td>6</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>retail</th>
-      <td>0</td>
-      <td>0</td>
-      <td>6</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>december</th>
-      <td>0</td>
-      <td>0</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>christmas</th>
-      <td>0</td>
-      <td>0</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>ons</th>
-      <td>0</td>
-      <td>0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>worst</th>
-      <td>0</td>
-      <td>0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>said</th>
-      <td>6</td>
-      <td>3</td>
-      <td>4</td>
-      <td>2</td>
-      <td>0</td>
-      <td>8</td>
-      <td>2</td>
-      <td>2</td>
-      <td>0</td>
-      <td>4</td>
-      <td>...</td>
-      <td>3</td>
-      <td>6</td>
-      <td>0</td>
-      <td>5</td>
-      <td>5</td>
-      <td>3</td>
-      <td>2</td>
-      <td>4</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>bank england</th>
-      <td>0</td>
-      <td>0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-<p>10 rows × 1780 columns</p>
-</div>
+       &#39;make&#39;, &#39;1&#39;, &#39;game&#39;, &#39;like&#39;], dtype=object)</pre>
 </div>
 
 </div>
@@ -15384,7 +15002,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_test_vectorized</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -15400,7 +15018,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ch2</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">chi2</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
@@ -15422,7 +15040,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
 
 
 
@@ -15443,7 +15061,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_names_chi</span> <span class="o">=</span> <span class="p">[</span><span class="n">feature_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span>
@@ -15460,7 +15078,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_names_chi</span>
@@ -15481,7 +15099,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
 
 
@@ -15522,7 +15140,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>6. <strong>Extract the 20 top features according to the mutual information feature selection method. Do you get the same list of words as compared to the chi-squared method?</strong></p>
+<p>6. <strong>Repeat the analysis in question 5 with the mutual information feature selection method. Do you get the same list of words as compared to the chi-squared method?</strong></p>
 
 </div>
 </div>
@@ -15532,7 +15150,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mutual_info</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">mutual_info_classif</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
@@ -15554,7 +15172,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
 
 
@@ -15575,7 +15193,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_names_mutual_info</span> <span class="o">=</span> <span class="p">[</span><span class="n">feature_names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span>
@@ -15598,7 +15216,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
 
@@ -15649,7 +15267,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># X_train = mutual_info.fit_transform(bbc_dtm, y_train)</span>
@@ -15689,7 +15307,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;shape of the matrix before applying the embedded feature selection:&quot;</span><span class="p">,</span> <span class="n">bbc_dtm</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -15719,10 +15337,51 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>shape of the matrix before applying the embedded feature selection: (1780, 23908)
-shape of the matrix before applying the embedded feature selection: (1780, 156)
+<pre>shape of the matrix before applying the embedded feature selection: (1780, 25223)
+shape of the matrix before applying the embedded feature selection: (1780, 154)
 </pre>
 </div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>SelectFromModel(estimator=LinearSVC(C=0.01, dual=False, penalty=&#39;l1&#39;))</pre>
+</div>
+
 </div>
 
 </div>
@@ -15737,7 +15396,8 @@ shape of the matrix before applying the embedded feature selection: (1780, 156)
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you can also check the coefficient values</span>
+<span class="n">model</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">coef_</span>
 </pre></div>
 
      </div>
@@ -15761,63 +15421,11 @@ shape of the matrix before applying the embedded feature selection: (1780, 156)
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>SelectFromModel(estimator=LinearSVC(C=0.01, class_weight=None, dual=False,
-                                    fit_intercept=True, intercept_scaling=1,
-                                    loss=&#39;squared_hinge&#39;, max_iter=1000,
-                                    multi_class=&#39;ovr&#39;, penalty=&#39;l1&#39;,
-                                    random_state=None, tol=0.0001, verbose=0),
-                max_features=None, norm_order=1, prefit=False, threshold=None)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># you can also check the coefficient values</span>
-<span class="n">model</span><span class="o">.</span><span class="n">estimator_</span><span class="o">.</span><span class="n">coef_</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([[ 0.        ,  0.        ,  0.        , ...,  0.        ,
-         0.        ,  0.        ],
-       [ 0.        ,  0.        ,  0.        , ...,  0.        ,
-         0.        ,  0.        ],
-       [ 0.        ,  0.        ,  0.        , ...,  0.        ,
-         0.        ,  0.        ],
-       [ 0.        , -0.08074181,  0.        , ...,  0.        ,
-         0.        ,  0.        ],
-       [ 0.        ,  0.        ,  0.        , ...,  0.        ,
-         0.        ,  0.        ]])</pre>
+<pre>array([[0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.],
+       [0., 0., 0., ..., 0., 0., 0.]])</pre>
 </div>
 
 </div>
@@ -15843,7 +15451,7 @@ shape of the matrix before applying the embedded feature selection: (1780, 156)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">get_support</span><span class="p">()</span>
@@ -15864,13 +15472,13 @@ shape of the matrix before applying the embedded feature selection: (1780, 156)
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>array([False,  True, False, ..., False, False, False])</pre>
+<pre>array([False, False, False, ..., False, False, False])</pre>
 </div>
 
 </div>
@@ -15884,7 +15492,7 @@ shape of the matrix before applying the embedded feature selection: (1780, 156)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Features selected by SelectFromModel: &quot;</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">get_support</span><span class="p">()])</span>
@@ -15909,25 +15517,25 @@ shape of the matrix before applying the embedded feature selection: (1780, 156)
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Features selected by SelectFromModel:  [&#39;000&#39; &#39;2004&#39; &#39;airlines&#39; &#39;album&#39; &#39;analysts&#39; &#39;apple&#39; &#39;arsenal&#39; &#39;athens&#39;
+<pre>Features selected by SelectFromModel:  [&#39;000&#39; &#39;1&#39; &#39;2&#39; &#39;2004&#39; &#39;6&#39; &#39;airlines&#39; &#39;album&#39; &#39;analysts&#39; &#39;apple&#39; &#39;athens&#39;
  &#39;athletics&#39; &#39;award&#39; &#39;ballet&#39; &#39;ban&#39; &#39;band&#39; &#39;bank&#39; &#39;bbc&#39; &#39;best&#39; &#39;bid&#39;
- &#39;blair&#39; &#39;blog&#39; &#39;book&#39; &#39;britain&#39; &#39;british&#39; &#39;broadband&#39; &#39;brown&#39; &#39;business&#39;
- &#39;champion&#39; &#39;chart&#39; &#39;chelsea&#39; &#39;chief&#39; &#39;children&#39; &#39;china&#39; &#39;club&#39; &#39;coach&#39;
- &#39;comedy&#39; &#39;committee&#39; &#39;companies&#39; &#39;company&#39; &#39;computer&#39; &#39;content&#39; &#39;council&#39;
- &#39;countries&#39; &#39;cup&#39; &#39;data&#39; &#39;deal&#39; &#39;deutsche&#39; &#39;digital&#39; &#39;dollar&#39; &#39;doping&#39;
- &#39;drugs&#39; &#39;economic&#39; &#39;economy&#39; &#39;education&#39; &#39;election&#39; &#39;england&#39; &#39;european&#39;
- &#39;euros&#39; &#39;film&#39; &#39;final&#39; &#39;financial&#39; &#39;firm&#39; &#39;firms&#39; &#39;fraud&#39; &#39;game&#39; &#39;games&#39;
- &#39;gaming&#39; &#39;glazer&#39; &#39;good&#39; &#39;government&#39; &#39;great&#39; &#39;group&#39; &#39;growth&#39; &#39;half&#39;
- &#39;high&#39; &#39;home&#39; &#39;howard&#39; &#39;hunting&#39; &#39;iaaf&#39; &#39;including&#39; &#39;information&#39;
- &#39;injury&#39; &#39;internet&#39; &#39;ireland&#39; &#39;jones&#39; &#39;just&#39; &#39;labour&#39; &#39;like&#39; &#39;liverpool&#39;
- &#39;lord&#39; &#39;mail&#39; &#39;make&#39; &#39;market&#39; &#39;match&#39; &#39;microsoft&#39; &#39;million&#39; &#39;minister&#39;
- &#39;mobile&#39; &#39;mps&#39; &#39;mr&#39; &#39;music&#39; &#39;musical&#39; &#39;net&#39; &#39;new&#39; &#39;nintendo&#39; &#39;number&#39;
- &#39;oil&#39; &#39;old&#39; &#39;olympic&#39; &#39;online&#39; &#39;party&#39; &#39;people&#39; &#39;plans&#39; &#39;play&#39; &#39;players&#39;
- &#39;police&#39; &#39;president&#39; &#39;prices&#39; &#39;public&#39; &#39;rights&#39; &#39;roddick&#39; &#39;rugby&#39; &#39;said&#39;
+ &#39;blair&#39; &#39;blog&#39; &#39;book&#39; &#39;britain&#39; &#39;broadband&#39; &#39;brown&#39; &#39;business&#39; &#39;champion&#39;
+ &#39;chart&#39; &#39;chelsea&#39; &#39;chief&#39; &#39;children&#39; &#39;china&#39; &#39;club&#39; &#39;coach&#39; &#39;comedy&#39;
+ &#39;companies&#39; &#39;company&#39; &#39;computer&#39; &#39;conte&#39; &#39;content&#39; &#39;council&#39; &#39;cup&#39; &#39;data&#39;
+ &#39;deal&#39; &#39;digital&#39; &#39;dollar&#39; &#39;doping&#39; &#39;drugs&#39; &#39;e&#39; &#39;economic&#39; &#39;economy&#39;
+ &#39;education&#39; &#39;election&#39; &#39;england&#39; &#39;eu&#39; &#39;european&#39; &#39;euros&#39; &#39;film&#39;
+ &#39;financial&#39; &#39;firm&#39; &#39;firms&#39; &#39;fraud&#39; &#39;game&#39; &#39;games&#39; &#39;gaming&#39; &#39;glazer&#39;
+ &#39;good&#39; &#39;government&#39; &#39;group&#39; &#39;growth&#39; &#39;high&#39; &#39;home&#39; &#39;howard&#39; &#39;iaaf&#39;
+ &#39;information&#39; &#39;injury&#39; &#39;just&#39; &#39;labour&#39; &#39;league&#39; &#39;like&#39; &#39;liverpool&#39; &#39;lord&#39;
+ &#39;m&#39; &#39;make&#39; &#39;market&#39; &#39;match&#39; &#39;microsoft&#39; &#39;million&#39; &#39;minister&#39; &#39;mobile&#39;
+ &#39;mps&#39; &#39;mr&#39; &#39;music&#39; &#39;musical&#39; &#39;net&#39; &#39;new&#39; &#39;nintendo&#39; &#39;number&#39; &#39;o&#39; &#39;oil&#39;
+ &#39;old&#39; &#39;olympic&#39; &#39;online&#39; &#39;party&#39; &#39;people&#39; &#39;plans&#39; &#39;play&#39; &#39;players&#39;
+ &#39;police&#39; &#39;president&#39; &#39;prices&#39; &#39;public&#39; &#39;rights&#39; &#39;rugby&#39; &#39;s&#39; &#39;said&#39;
  &#39;sales&#39; &#39;says&#39; &#39;season&#39; &#39;secretary&#39; &#39;series&#39; &#39;service&#39; &#39;services&#39; &#39;set&#39;
  &#39;shares&#39; &#39;singer&#39; &#39;site&#39; &#39;software&#39; &#39;sony&#39; &#39;spam&#39; &#39;star&#39; &#39;stars&#39; &#39;state&#39;
- &#39;team&#39; &#39;technology&#39; &#39;time&#39; &#39;trade&#39; &#39;tv&#39; &#39;uk&#39; &#39;united&#39; &#39;use&#39; &#39;users&#39;
- &#39;using&#39; &#39;video&#39; &#39;virus&#39; &#39;web&#39; &#39;win&#39; &#39;won&#39; &#39;world&#39; &#39;year&#39; &#39;year old&#39;]
+ &#39;t&#39; &#39;team&#39; &#39;technology&#39; &#39;time&#39; &#39;trade&#39; &#39;tv&#39; &#39;uk&#39; &#39;united&#39; &#39;use&#39; &#39;used&#39;
+ &#39;users&#39; &#39;using&#39; &#39;video&#39; &#39;virus&#39; &#39;web&#39; &#39;website&#39; &#39;win&#39; &#39;won&#39; &#39;world&#39;
+ &#39;year&#39; &#39;year old&#39;]
 </pre>
 </div>
 </div>
@@ -15964,7 +15572,7 @@ shape of the matrix before applying the embedded feature selection: (1780, 156)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf1</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
@@ -15996,11 +15604,10 @@ shape of the matrix before applying the embedded feature selection: (1780, 156)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">clf1</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16018,87 +15625,15 @@ shape of the matrix before applying the embedded feature selection: (1780, 156)
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;memory&#39;: None,
- &#39;steps&#39;: [(&#39;vectorizer&#39;,
-   CountVectorizer(analyzer=&#39;word&#39;, binary=False, decode_error=&#39;strict&#39;,
-                   dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;, input=&#39;content&#39;,
-                   lowercase=True, max_df=1.0, max_features=None, min_df=1,
-                   ngram_range=(1, 1), preprocessor=None, stop_words=None,
-                   strip_accents=None, token_pattern=&#39;(?u)\\b\\w\\w+\\b&#39;,
-                   tokenizer=None, vocabulary=None)),
-  (&#39;feature_extraction&#39;,
-   TfidfTransformer(norm=&#39;l2&#39;, smooth_idf=True, sublinear_tf=False, use_idf=True)),
-  (&#39;classification&#39;,
-   RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
-                          criterion=&#39;gini&#39;, max_depth=None, max_features=&#39;auto&#39;,
-                          max_leaf_nodes=None, max_samples=None,
-                          min_impurity_decrease=0.0, min_impurity_split=None,
-                          min_samples_leaf=1, min_samples_split=2,
-                          min_weight_fraction_leaf=0.0, n_estimators=100,
-                          n_jobs=None, oob_score=False, random_state=None,
-                          verbose=0, warm_start=False))],
- &#39;verbose&#39;: False,
- &#39;vectorizer&#39;: CountVectorizer(analyzer=&#39;word&#39;, binary=False, decode_error=&#39;strict&#39;,
-                 dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;, input=&#39;content&#39;,
-                 lowercase=True, max_df=1.0, max_features=None, min_df=1,
-                 ngram_range=(1, 1), preprocessor=None, stop_words=None,
-                 strip_accents=None, token_pattern=&#39;(?u)\\b\\w\\w+\\b&#39;,
-                 tokenizer=None, vocabulary=None),
- &#39;feature_extraction&#39;: TfidfTransformer(norm=&#39;l2&#39;, smooth_idf=True, sublinear_tf=False, use_idf=True),
- &#39;classification&#39;: RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
-                        criterion=&#39;gini&#39;, max_depth=None, max_features=&#39;auto&#39;,
-                        max_leaf_nodes=None, max_samples=None,
-                        min_impurity_decrease=0.0, min_impurity_split=None,
-                        min_samples_leaf=1, min_samples_split=2,
-                        min_weight_fraction_leaf=0.0, n_estimators=100,
-                        n_jobs=None, oob_score=False, random_state=None,
-                        verbose=0, warm_start=False),
- &#39;vectorizer__analyzer&#39;: &#39;word&#39;,
- &#39;vectorizer__binary&#39;: False,
- &#39;vectorizer__decode_error&#39;: &#39;strict&#39;,
- &#39;vectorizer__dtype&#39;: numpy.int64,
- &#39;vectorizer__encoding&#39;: &#39;utf-8&#39;,
- &#39;vectorizer__input&#39;: &#39;content&#39;,
- &#39;vectorizer__lowercase&#39;: True,
- &#39;vectorizer__max_df&#39;: 1.0,
- &#39;vectorizer__max_features&#39;: None,
- &#39;vectorizer__min_df&#39;: 1,
- &#39;vectorizer__ngram_range&#39;: (1, 1),
- &#39;vectorizer__preprocessor&#39;: None,
- &#39;vectorizer__stop_words&#39;: None,
- &#39;vectorizer__strip_accents&#39;: None,
- &#39;vectorizer__token_pattern&#39;: &#39;(?u)\\b\\w\\w+\\b&#39;,
- &#39;vectorizer__tokenizer&#39;: None,
- &#39;vectorizer__vocabulary&#39;: None,
- &#39;feature_extraction__norm&#39;: &#39;l2&#39;,
- &#39;feature_extraction__smooth_idf&#39;: True,
- &#39;feature_extraction__sublinear_tf&#39;: False,
- &#39;feature_extraction__use_idf&#39;: True,
- &#39;classification__bootstrap&#39;: True,
- &#39;classification__ccp_alpha&#39;: 0.0,
- &#39;classification__class_weight&#39;: None,
- &#39;classification__criterion&#39;: &#39;gini&#39;,
- &#39;classification__max_depth&#39;: None,
- &#39;classification__max_features&#39;: &#39;auto&#39;,
- &#39;classification__max_leaf_nodes&#39;: None,
- &#39;classification__max_samples&#39;: None,
- &#39;classification__min_impurity_decrease&#39;: 0.0,
- &#39;classification__min_impurity_split&#39;: None,
- &#39;classification__min_samples_leaf&#39;: 1,
- &#39;classification__min_samples_split&#39;: 2,
- &#39;classification__min_weight_fraction_leaf&#39;: 0.0,
- &#39;classification__n_estimators&#39;: 100,
- &#39;classification__n_jobs&#39;: None,
- &#39;classification__oob_score&#39;: False,
- &#39;classification__random_state&#39;: None,
- &#39;classification__verbose&#39;: 0,
- &#39;classification__warm_start&#39;: False}</pre>
+<pre>Pipeline(steps=[(&#39;vectorizer&#39;, CountVectorizer()),
+                (&#39;feature_extraction&#39;, TfidfTransformer()),
+                (&#39;classification&#39;, RandomForestClassifier())])</pre>
 </div>
 
 </div>
@@ -16124,7 +15659,7 @@ shape of the matrix before applying the embedded feature selection: (1780, 156)
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pred1</span> <span class="o">=</span> <span class="n">clf1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -16152,15 +15687,15 @@ shape of the matrix before applying the embedded feature selection: (1780, 156)
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>               precision    recall  f1-score   support
 
-     business       0.94      0.95      0.94        92
-entertainment       1.00      0.90      0.95        84
-     politics       0.90      0.96      0.93        77
-        sport       0.99      0.99      0.99       111
-         tech       0.94      0.96      0.95        81
+     business       0.87      0.96      0.91        92
+entertainment       0.99      0.89      0.94        84
+     politics       0.96      0.91      0.93        77
+        sport       0.97      1.00      0.99       111
+         tech       0.98      0.98      0.98        81
 
-     accuracy                           0.96       445
+     accuracy                           0.95       445
     macro avg       0.95      0.95      0.95       445
- weighted avg       0.96      0.96      0.96       445
+ weighted avg       0.95      0.95      0.95       445
 
 </pre>
 </div>
@@ -16187,7 +15722,7 @@ entertainment       1.00      0.90      0.95        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf2</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
@@ -16208,7 +15743,7 @@ entertainment       1.00      0.90      0.95        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -16229,183 +15764,18 @@ entertainment       1.00      0.90      0.95        84
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Pipeline(memory=None,
-         steps=[(&#39;vectorizer&#39;,
-                 CountVectorizer(analyzer=&#39;word&#39;, binary=False,
-                                 decode_error=&#39;strict&#39;,
-                                 dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;,
-                                 input=&#39;content&#39;, lowercase=True, max_df=1.0,
-                                 max_features=None, min_df=1,
-                                 ngram_range=(1, 1), preprocessor=None,
-                                 stop_words=None, strip_accents=None,
-                                 token_pattern=&#39;(?u)\\b\\w\\w+\\b&#39;,
-                                 tokenizer=None, vocabula...
-                 RandomForestClassifier(bootstrap=True, ccp_alpha=0.0,
-                                        class_weight=None, criterion=&#39;gini&#39;,
-                                        max_depth=None, max_features=&#39;auto&#39;,
-                                        max_leaf_nodes=None, max_samples=None,
-                                        min_impurity_decrease=0.0,
-                                        min_impurity_split=None,
-                                        min_samples_leaf=1, min_samples_split=2,
-                                        min_weight_fraction_leaf=0.0,
-                                        n_estimators=100, n_jobs=None,
-                                        oob_score=False, random_state=None,
-                                        verbose=0, warm_start=False))],
-         verbose=False)</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf2</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;memory&#39;: None,
- &#39;steps&#39;: [(&#39;vectorizer&#39;,
-   CountVectorizer(analyzer=&#39;word&#39;, binary=False, decode_error=&#39;strict&#39;,
-                   dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;, input=&#39;content&#39;,
-                   lowercase=True, max_df=1.0, max_features=None, min_df=1,
-                   ngram_range=(1, 1), preprocessor=None, stop_words=None,
-                   strip_accents=None, token_pattern=&#39;(?u)\\b\\w\\w+\\b&#39;,
-                   tokenizer=None, vocabulary=None)),
-  (&#39;feature_extraction&#39;,
-   TfidfTransformer(norm=&#39;l2&#39;, smooth_idf=True, sublinear_tf=False, use_idf=True)),
-  (&#39;feature_selection&#39;,
-   SelectFromModel(estimator=LinearSVC(C=1.0, class_weight=None, dual=False,
-                                       fit_intercept=True, intercept_scaling=1,
-                                       loss=&#39;squared_hinge&#39;, max_iter=1000,
-                                       multi_class=&#39;ovr&#39;, penalty=&#39;l1&#39;,
-                                       random_state=None, tol=0.0001, verbose=0),
-                   max_features=None, norm_order=1, prefit=False, threshold=None)),
-  (&#39;classification&#39;,
-   RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
-                          criterion=&#39;gini&#39;, max_depth=None, max_features=&#39;auto&#39;,
-                          max_leaf_nodes=None, max_samples=None,
-                          min_impurity_decrease=0.0, min_impurity_split=None,
-                          min_samples_leaf=1, min_samples_split=2,
-                          min_weight_fraction_leaf=0.0, n_estimators=100,
-                          n_jobs=None, oob_score=False, random_state=None,
-                          verbose=0, warm_start=False))],
- &#39;verbose&#39;: False,
- &#39;vectorizer&#39;: CountVectorizer(analyzer=&#39;word&#39;, binary=False, decode_error=&#39;strict&#39;,
-                 dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;, input=&#39;content&#39;,
-                 lowercase=True, max_df=1.0, max_features=None, min_df=1,
-                 ngram_range=(1, 1), preprocessor=None, stop_words=None,
-                 strip_accents=None, token_pattern=&#39;(?u)\\b\\w\\w+\\b&#39;,
-                 tokenizer=None, vocabulary=None),
- &#39;feature_extraction&#39;: TfidfTransformer(norm=&#39;l2&#39;, smooth_idf=True, sublinear_tf=False, use_idf=True),
- &#39;feature_selection&#39;: SelectFromModel(estimator=LinearSVC(C=1.0, class_weight=None, dual=False,
-                                     fit_intercept=True, intercept_scaling=1,
-                                     loss=&#39;squared_hinge&#39;, max_iter=1000,
-                                     multi_class=&#39;ovr&#39;, penalty=&#39;l1&#39;,
-                                     random_state=None, tol=0.0001, verbose=0),
-                 max_features=None, norm_order=1, prefit=False, threshold=None),
- &#39;classification&#39;: RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
-                        criterion=&#39;gini&#39;, max_depth=None, max_features=&#39;auto&#39;,
-                        max_leaf_nodes=None, max_samples=None,
-                        min_impurity_decrease=0.0, min_impurity_split=None,
-                        min_samples_leaf=1, min_samples_split=2,
-                        min_weight_fraction_leaf=0.0, n_estimators=100,
-                        n_jobs=None, oob_score=False, random_state=None,
-                        verbose=0, warm_start=False),
- &#39;vectorizer__analyzer&#39;: &#39;word&#39;,
- &#39;vectorizer__binary&#39;: False,
- &#39;vectorizer__decode_error&#39;: &#39;strict&#39;,
- &#39;vectorizer__dtype&#39;: numpy.int64,
- &#39;vectorizer__encoding&#39;: &#39;utf-8&#39;,
- &#39;vectorizer__input&#39;: &#39;content&#39;,
- &#39;vectorizer__lowercase&#39;: True,
- &#39;vectorizer__max_df&#39;: 1.0,
- &#39;vectorizer__max_features&#39;: None,
- &#39;vectorizer__min_df&#39;: 1,
- &#39;vectorizer__ngram_range&#39;: (1, 1),
- &#39;vectorizer__preprocessor&#39;: None,
- &#39;vectorizer__stop_words&#39;: None,
- &#39;vectorizer__strip_accents&#39;: None,
- &#39;vectorizer__token_pattern&#39;: &#39;(?u)\\b\\w\\w+\\b&#39;,
- &#39;vectorizer__tokenizer&#39;: None,
- &#39;vectorizer__vocabulary&#39;: None,
- &#39;feature_extraction__norm&#39;: &#39;l2&#39;,
- &#39;feature_extraction__smooth_idf&#39;: True,
- &#39;feature_extraction__sublinear_tf&#39;: False,
- &#39;feature_extraction__use_idf&#39;: True,
- &#39;feature_selection__estimator__C&#39;: 1.0,
- &#39;feature_selection__estimator__class_weight&#39;: None,
- &#39;feature_selection__estimator__dual&#39;: False,
- &#39;feature_selection__estimator__fit_intercept&#39;: True,
- &#39;feature_selection__estimator__intercept_scaling&#39;: 1,
- &#39;feature_selection__estimator__loss&#39;: &#39;squared_hinge&#39;,
- &#39;feature_selection__estimator__max_iter&#39;: 1000,
- &#39;feature_selection__estimator__multi_class&#39;: &#39;ovr&#39;,
- &#39;feature_selection__estimator__penalty&#39;: &#39;l1&#39;,
- &#39;feature_selection__estimator__random_state&#39;: None,
- &#39;feature_selection__estimator__tol&#39;: 0.0001,
- &#39;feature_selection__estimator__verbose&#39;: 0,
- &#39;feature_selection__estimator&#39;: LinearSVC(C=1.0, class_weight=None, dual=False, fit_intercept=True,
-           intercept_scaling=1, loss=&#39;squared_hinge&#39;, max_iter=1000,
-           multi_class=&#39;ovr&#39;, penalty=&#39;l1&#39;, random_state=None, tol=0.0001,
-           verbose=0),
- &#39;feature_selection__max_features&#39;: None,
- &#39;feature_selection__norm_order&#39;: 1,
- &#39;feature_selection__prefit&#39;: False,
- &#39;feature_selection__threshold&#39;: None,
- &#39;classification__bootstrap&#39;: True,
- &#39;classification__ccp_alpha&#39;: 0.0,
- &#39;classification__class_weight&#39;: None,
- &#39;classification__criterion&#39;: &#39;gini&#39;,
- &#39;classification__max_depth&#39;: None,
- &#39;classification__max_features&#39;: &#39;auto&#39;,
- &#39;classification__max_leaf_nodes&#39;: None,
- &#39;classification__max_samples&#39;: None,
- &#39;classification__min_impurity_decrease&#39;: 0.0,
- &#39;classification__min_impurity_split&#39;: None,
- &#39;classification__min_samples_leaf&#39;: 1,
- &#39;classification__min_samples_split&#39;: 2,
- &#39;classification__min_weight_fraction_leaf&#39;: 0.0,
- &#39;classification__n_estimators&#39;: 100,
- &#39;classification__n_jobs&#39;: None,
- &#39;classification__oob_score&#39;: False,
- &#39;classification__random_state&#39;: None,
- &#39;classification__verbose&#39;: 0,
- &#39;classification__warm_start&#39;: False}</pre>
+<pre>Pipeline(steps=[(&#39;vectorizer&#39;, CountVectorizer()),
+                (&#39;feature_extraction&#39;, TfidfTransformer()),
+                (&#39;feature_selection&#39;,
+                 SelectFromModel(estimator=LinearSVC(dual=False,
+                                                     penalty=&#39;l1&#39;))),
+                (&#39;classification&#39;, RandomForestClassifier())])</pre>
 </div>
 
 </div>
@@ -16419,7 +15789,7 @@ entertainment       1.00      0.90      0.95        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pred2</span> <span class="o">=</span> <span class="n">clf2</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -16435,7 +15805,7 @@ entertainment       1.00      0.90      0.95        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred2</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">target_names</span><span class="p">))</span>
@@ -16462,15 +15832,15 @@ entertainment       1.00      0.90      0.95        84
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>               precision    recall  f1-score   support
 
-     business       0.90      0.93      0.91        92
-entertainment       0.97      0.93      0.95        84
-     politics       0.93      0.88      0.91        77
-        sport       0.97      0.98      0.98       111
-         tech       0.93      0.96      0.95        81
+     business       0.92      0.93      0.93        92
+entertainment       0.99      0.93      0.96        84
+     politics       0.91      0.91      0.91        77
+        sport       0.98      0.97      0.98       111
+         tech       0.93      0.99      0.96        81
 
-     accuracy                           0.94       445
-    macro avg       0.94      0.94      0.94       445
- weighted avg       0.94      0.94      0.94       445
+     accuracy                           0.95       445
+    macro avg       0.95      0.95      0.95       445
+ weighted avg       0.95      0.95      0.95       445
 
 </pre>
 </div>
@@ -16497,7 +15867,7 @@ entertainment       0.97      0.93      0.95        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf3</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
@@ -16518,11 +15888,10 @@ entertainment       0.97      0.93      0.95        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf3</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">clf3</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16540,92 +15909,18 @@ entertainment       0.97      0.93      0.95        84
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;memory&#39;: None,
- &#39;steps&#39;: [(&#39;vectorizer&#39;,
-   CountVectorizer(analyzer=&#39;word&#39;, binary=False, decode_error=&#39;strict&#39;,
-                   dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;, input=&#39;content&#39;,
-                   lowercase=True, max_df=1.0, max_features=None, min_df=1,
-                   ngram_range=(1, 1), preprocessor=None, stop_words=None,
-                   strip_accents=None, token_pattern=&#39;(?u)\\b\\w\\w+\\b&#39;,
-                   tokenizer=None, vocabulary=None)),
-  (&#39;feature_extraction&#39;,
-   TfidfTransformer(norm=&#39;l2&#39;, smooth_idf=True, sublinear_tf=False, use_idf=True)),
-  (&#39;feature_selection&#39;,
-   SelectKBest(k=20, score_func=&lt;function chi2 at 0x0000017C21589798&gt;)),
-  (&#39;classification&#39;,
-   RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
-                          criterion=&#39;gini&#39;, max_depth=None, max_features=&#39;auto&#39;,
-                          max_leaf_nodes=None, max_samples=None,
-                          min_impurity_decrease=0.0, min_impurity_split=None,
-                          min_samples_leaf=1, min_samples_split=2,
-                          min_weight_fraction_leaf=0.0, n_estimators=100,
-                          n_jobs=None, oob_score=False, random_state=None,
-                          verbose=0, warm_start=False))],
- &#39;verbose&#39;: False,
- &#39;vectorizer&#39;: CountVectorizer(analyzer=&#39;word&#39;, binary=False, decode_error=&#39;strict&#39;,
-                 dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;, input=&#39;content&#39;,
-                 lowercase=True, max_df=1.0, max_features=None, min_df=1,
-                 ngram_range=(1, 1), preprocessor=None, stop_words=None,
-                 strip_accents=None, token_pattern=&#39;(?u)\\b\\w\\w+\\b&#39;,
-                 tokenizer=None, vocabulary=None),
- &#39;feature_extraction&#39;: TfidfTransformer(norm=&#39;l2&#39;, smooth_idf=True, sublinear_tf=False, use_idf=True),
- &#39;feature_selection&#39;: SelectKBest(k=20, score_func=&lt;function chi2 at 0x0000017C21589798&gt;),
- &#39;classification&#39;: RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
-                        criterion=&#39;gini&#39;, max_depth=None, max_features=&#39;auto&#39;,
-                        max_leaf_nodes=None, max_samples=None,
-                        min_impurity_decrease=0.0, min_impurity_split=None,
-                        min_samples_leaf=1, min_samples_split=2,
-                        min_weight_fraction_leaf=0.0, n_estimators=100,
-                        n_jobs=None, oob_score=False, random_state=None,
-                        verbose=0, warm_start=False),
- &#39;vectorizer__analyzer&#39;: &#39;word&#39;,
- &#39;vectorizer__binary&#39;: False,
- &#39;vectorizer__decode_error&#39;: &#39;strict&#39;,
- &#39;vectorizer__dtype&#39;: numpy.int64,
- &#39;vectorizer__encoding&#39;: &#39;utf-8&#39;,
- &#39;vectorizer__input&#39;: &#39;content&#39;,
- &#39;vectorizer__lowercase&#39;: True,
- &#39;vectorizer__max_df&#39;: 1.0,
- &#39;vectorizer__max_features&#39;: None,
- &#39;vectorizer__min_df&#39;: 1,
- &#39;vectorizer__ngram_range&#39;: (1, 1),
- &#39;vectorizer__preprocessor&#39;: None,
- &#39;vectorizer__stop_words&#39;: None,
- &#39;vectorizer__strip_accents&#39;: None,
- &#39;vectorizer__token_pattern&#39;: &#39;(?u)\\b\\w\\w+\\b&#39;,
- &#39;vectorizer__tokenizer&#39;: None,
- &#39;vectorizer__vocabulary&#39;: None,
- &#39;feature_extraction__norm&#39;: &#39;l2&#39;,
- &#39;feature_extraction__smooth_idf&#39;: True,
- &#39;feature_extraction__sublinear_tf&#39;: False,
- &#39;feature_extraction__use_idf&#39;: True,
- &#39;feature_selection__k&#39;: 20,
- &#39;feature_selection__score_func&#39;: &lt;function sklearn.feature_selection._univariate_selection.chi2(X, y)&gt;,
- &#39;classification__bootstrap&#39;: True,
- &#39;classification__ccp_alpha&#39;: 0.0,
- &#39;classification__class_weight&#39;: None,
- &#39;classification__criterion&#39;: &#39;gini&#39;,
- &#39;classification__max_depth&#39;: None,
- &#39;classification__max_features&#39;: &#39;auto&#39;,
- &#39;classification__max_leaf_nodes&#39;: None,
- &#39;classification__max_samples&#39;: None,
- &#39;classification__min_impurity_decrease&#39;: 0.0,
- &#39;classification__min_impurity_split&#39;: None,
- &#39;classification__min_samples_leaf&#39;: 1,
- &#39;classification__min_samples_split&#39;: 2,
- &#39;classification__min_weight_fraction_leaf&#39;: 0.0,
- &#39;classification__n_estimators&#39;: 100,
- &#39;classification__n_jobs&#39;: None,
- &#39;classification__oob_score&#39;: False,
- &#39;classification__random_state&#39;: None,
- &#39;classification__verbose&#39;: 0,
- &#39;classification__warm_start&#39;: False}</pre>
+<pre>Pipeline(steps=[(&#39;vectorizer&#39;, CountVectorizer()),
+                (&#39;feature_extraction&#39;, TfidfTransformer()),
+                (&#39;feature_selection&#39;,
+                 SelectKBest(k=20,
+                             score_func=&lt;function chi2 at 0x0000017DCE3A8B80&gt;)),
+                (&#39;classification&#39;, RandomForestClassifier())])</pre>
 </div>
 
 </div>
@@ -16639,7 +15934,7 @@ entertainment       0.97      0.93      0.95        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pred3</span> <span class="o">=</span> <span class="n">clf3</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -16667,15 +15962,15 @@ entertainment       0.97      0.93      0.95        84
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>               precision    recall  f1-score   support
 
-     business       0.64      0.47      0.54        92
-entertainment       0.80      0.57      0.67        84
-     politics       0.78      0.73      0.75        77
-        sport       0.63      0.98      0.76       111
-         tech       0.90      0.80      0.85        81
+     business       0.64      0.45      0.53        92
+entertainment       0.81      0.56      0.66        84
+     politics       0.77      0.73      0.75        77
+        sport       0.63      0.99      0.77       111
+         tech       0.87      0.80      0.83        81
 
      accuracy                           0.72       445
-    macro avg       0.75      0.71      0.71       445
- weighted avg       0.74      0.72      0.71       445
+    macro avg       0.74      0.71      0.71       445
+ weighted avg       0.73      0.72      0.71       445
 
 </pre>
 </div>
@@ -16690,7 +15985,7 @@ entertainment       0.80      0.57      0.67        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf4</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
@@ -16711,11 +16006,10 @@ entertainment       0.80      0.57      0.67        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf4</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">clf4</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16733,92 +16027,18 @@ entertainment       0.80      0.57      0.67        84
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;memory&#39;: None,
- &#39;steps&#39;: [(&#39;vectorizer&#39;,
-   CountVectorizer(analyzer=&#39;word&#39;, binary=False, decode_error=&#39;strict&#39;,
-                   dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;, input=&#39;content&#39;,
-                   lowercase=True, max_df=1.0, max_features=None, min_df=1,
-                   ngram_range=(1, 1), preprocessor=None, stop_words=None,
-                   strip_accents=None, token_pattern=&#39;(?u)\\b\\w\\w+\\b&#39;,
-                   tokenizer=None, vocabulary=None)),
-  (&#39;feature_extraction&#39;,
-   TfidfTransformer(norm=&#39;l2&#39;, smooth_idf=True, sublinear_tf=False, use_idf=True)),
-  (&#39;feature_selection&#39;,
-   SelectKBest(k=200, score_func=&lt;function chi2 at 0x0000017C21589798&gt;)),
-  (&#39;classification&#39;,
-   RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
-                          criterion=&#39;gini&#39;, max_depth=None, max_features=&#39;auto&#39;,
-                          max_leaf_nodes=None, max_samples=None,
-                          min_impurity_decrease=0.0, min_impurity_split=None,
-                          min_samples_leaf=1, min_samples_split=2,
-                          min_weight_fraction_leaf=0.0, n_estimators=100,
-                          n_jobs=None, oob_score=False, random_state=None,
-                          verbose=0, warm_start=False))],
- &#39;verbose&#39;: False,
- &#39;vectorizer&#39;: CountVectorizer(analyzer=&#39;word&#39;, binary=False, decode_error=&#39;strict&#39;,
-                 dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;, input=&#39;content&#39;,
-                 lowercase=True, max_df=1.0, max_features=None, min_df=1,
-                 ngram_range=(1, 1), preprocessor=None, stop_words=None,
-                 strip_accents=None, token_pattern=&#39;(?u)\\b\\w\\w+\\b&#39;,
-                 tokenizer=None, vocabulary=None),
- &#39;feature_extraction&#39;: TfidfTransformer(norm=&#39;l2&#39;, smooth_idf=True, sublinear_tf=False, use_idf=True),
- &#39;feature_selection&#39;: SelectKBest(k=200, score_func=&lt;function chi2 at 0x0000017C21589798&gt;),
- &#39;classification&#39;: RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
-                        criterion=&#39;gini&#39;, max_depth=None, max_features=&#39;auto&#39;,
-                        max_leaf_nodes=None, max_samples=None,
-                        min_impurity_decrease=0.0, min_impurity_split=None,
-                        min_samples_leaf=1, min_samples_split=2,
-                        min_weight_fraction_leaf=0.0, n_estimators=100,
-                        n_jobs=None, oob_score=False, random_state=None,
-                        verbose=0, warm_start=False),
- &#39;vectorizer__analyzer&#39;: &#39;word&#39;,
- &#39;vectorizer__binary&#39;: False,
- &#39;vectorizer__decode_error&#39;: &#39;strict&#39;,
- &#39;vectorizer__dtype&#39;: numpy.int64,
- &#39;vectorizer__encoding&#39;: &#39;utf-8&#39;,
- &#39;vectorizer__input&#39;: &#39;content&#39;,
- &#39;vectorizer__lowercase&#39;: True,
- &#39;vectorizer__max_df&#39;: 1.0,
- &#39;vectorizer__max_features&#39;: None,
- &#39;vectorizer__min_df&#39;: 1,
- &#39;vectorizer__ngram_range&#39;: (1, 1),
- &#39;vectorizer__preprocessor&#39;: None,
- &#39;vectorizer__stop_words&#39;: None,
- &#39;vectorizer__strip_accents&#39;: None,
- &#39;vectorizer__token_pattern&#39;: &#39;(?u)\\b\\w\\w+\\b&#39;,
- &#39;vectorizer__tokenizer&#39;: None,
- &#39;vectorizer__vocabulary&#39;: None,
- &#39;feature_extraction__norm&#39;: &#39;l2&#39;,
- &#39;feature_extraction__smooth_idf&#39;: True,
- &#39;feature_extraction__sublinear_tf&#39;: False,
- &#39;feature_extraction__use_idf&#39;: True,
- &#39;feature_selection__k&#39;: 200,
- &#39;feature_selection__score_func&#39;: &lt;function sklearn.feature_selection._univariate_selection.chi2(X, y)&gt;,
- &#39;classification__bootstrap&#39;: True,
- &#39;classification__ccp_alpha&#39;: 0.0,
- &#39;classification__class_weight&#39;: None,
- &#39;classification__criterion&#39;: &#39;gini&#39;,
- &#39;classification__max_depth&#39;: None,
- &#39;classification__max_features&#39;: &#39;auto&#39;,
- &#39;classification__max_leaf_nodes&#39;: None,
- &#39;classification__max_samples&#39;: None,
- &#39;classification__min_impurity_decrease&#39;: 0.0,
- &#39;classification__min_impurity_split&#39;: None,
- &#39;classification__min_samples_leaf&#39;: 1,
- &#39;classification__min_samples_split&#39;: 2,
- &#39;classification__min_weight_fraction_leaf&#39;: 0.0,
- &#39;classification__n_estimators&#39;: 100,
- &#39;classification__n_jobs&#39;: None,
- &#39;classification__oob_score&#39;: False,
- &#39;classification__random_state&#39;: None,
- &#39;classification__verbose&#39;: 0,
- &#39;classification__warm_start&#39;: False}</pre>
+<pre>Pipeline(steps=[(&#39;vectorizer&#39;, CountVectorizer()),
+                (&#39;feature_extraction&#39;, TfidfTransformer()),
+                (&#39;feature_selection&#39;,
+                 SelectKBest(k=200,
+                             score_func=&lt;function chi2 at 0x0000017DCE3A8B80&gt;)),
+                (&#39;classification&#39;, RandomForestClassifier())])</pre>
 </div>
 
 </div>
@@ -16832,7 +16052,7 @@ entertainment       0.80      0.57      0.67        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pred4</span> <span class="o">=</span> <span class="n">clf4</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -16860,15 +16080,15 @@ entertainment       0.80      0.57      0.67        84
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>               precision    recall  f1-score   support
 
-     business       0.87      0.91      0.89        92
-entertainment       0.97      0.89      0.93        84
-     politics       0.93      0.88      0.91        77
-        sport       0.97      0.99      0.98       111
-         tech       0.93      0.98      0.95        81
+     business       0.85      0.91      0.88        92
+entertainment       0.97      0.93      0.95        84
+     politics       0.90      0.86      0.88        77
+        sport       0.99      0.97      0.98       111
+         tech       0.94      0.98      0.96        81
 
      accuracy                           0.93       445
     macro avg       0.93      0.93      0.93       445
- weighted avg       0.94      0.93      0.93       445
+ weighted avg       0.93      0.93      0.93       445
 
 </pre>
 </div>
@@ -16895,7 +16115,7 @@ entertainment       0.97      0.89      0.93        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf5</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
@@ -16916,11 +16136,10 @@ entertainment       0.97      0.89      0.93        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf5</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">clf5</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -16938,90 +16157,18 @@ entertainment       0.97      0.89      0.93        84
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;memory&#39;: None,
- &#39;steps&#39;: [(&#39;vectorizer&#39;,
-   CountVectorizer(analyzer=&#39;word&#39;, binary=False, decode_error=&#39;strict&#39;,
-                   dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;, input=&#39;content&#39;,
-                   lowercase=True, max_df=1.0, max_features=None, min_df=1,
-                   ngram_range=(1, 1), preprocessor=None, stop_words=None,
-                   strip_accents=None, token_pattern=&#39;(?u)\\b\\w\\w+\\b&#39;,
-                   tokenizer=None, vocabulary=None)),
-  (&#39;feature_extraction&#39;,
-   TfidfTransformer(norm=&#39;l2&#39;, smooth_idf=True, sublinear_tf=False, use_idf=True)),
-  (&#39;feature_selection&#39;,
-   SelectFromModel(estimator=LinearSVC(C=1.0, class_weight=None, dual=False,
-                                       fit_intercept=True, intercept_scaling=1,
-                                       loss=&#39;squared_hinge&#39;, max_iter=1000,
-                                       multi_class=&#39;ovr&#39;, penalty=&#39;l1&#39;,
-                                       random_state=None, tol=0.0001, verbose=0),
-                   max_features=None, norm_order=1, prefit=False, threshold=None)),
-  (&#39;classification&#39;,
-   MultinomialNB(alpha=0.01, class_prior=None, fit_prior=True))],
- &#39;verbose&#39;: False,
- &#39;vectorizer&#39;: CountVectorizer(analyzer=&#39;word&#39;, binary=False, decode_error=&#39;strict&#39;,
-                 dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;, input=&#39;content&#39;,
-                 lowercase=True, max_df=1.0, max_features=None, min_df=1,
-                 ngram_range=(1, 1), preprocessor=None, stop_words=None,
-                 strip_accents=None, token_pattern=&#39;(?u)\\b\\w\\w+\\b&#39;,
-                 tokenizer=None, vocabulary=None),
- &#39;feature_extraction&#39;: TfidfTransformer(norm=&#39;l2&#39;, smooth_idf=True, sublinear_tf=False, use_idf=True),
- &#39;feature_selection&#39;: SelectFromModel(estimator=LinearSVC(C=1.0, class_weight=None, dual=False,
-                                     fit_intercept=True, intercept_scaling=1,
-                                     loss=&#39;squared_hinge&#39;, max_iter=1000,
-                                     multi_class=&#39;ovr&#39;, penalty=&#39;l1&#39;,
-                                     random_state=None, tol=0.0001, verbose=0),
-                 max_features=None, norm_order=1, prefit=False, threshold=None),
- &#39;classification&#39;: MultinomialNB(alpha=0.01, class_prior=None, fit_prior=True),
- &#39;vectorizer__analyzer&#39;: &#39;word&#39;,
- &#39;vectorizer__binary&#39;: False,
- &#39;vectorizer__decode_error&#39;: &#39;strict&#39;,
- &#39;vectorizer__dtype&#39;: numpy.int64,
- &#39;vectorizer__encoding&#39;: &#39;utf-8&#39;,
- &#39;vectorizer__input&#39;: &#39;content&#39;,
- &#39;vectorizer__lowercase&#39;: True,
- &#39;vectorizer__max_df&#39;: 1.0,
- &#39;vectorizer__max_features&#39;: None,
- &#39;vectorizer__min_df&#39;: 1,
- &#39;vectorizer__ngram_range&#39;: (1, 1),
- &#39;vectorizer__preprocessor&#39;: None,
- &#39;vectorizer__stop_words&#39;: None,
- &#39;vectorizer__strip_accents&#39;: None,
- &#39;vectorizer__token_pattern&#39;: &#39;(?u)\\b\\w\\w+\\b&#39;,
- &#39;vectorizer__tokenizer&#39;: None,
- &#39;vectorizer__vocabulary&#39;: None,
- &#39;feature_extraction__norm&#39;: &#39;l2&#39;,
- &#39;feature_extraction__smooth_idf&#39;: True,
- &#39;feature_extraction__sublinear_tf&#39;: False,
- &#39;feature_extraction__use_idf&#39;: True,
- &#39;feature_selection__estimator__C&#39;: 1.0,
- &#39;feature_selection__estimator__class_weight&#39;: None,
- &#39;feature_selection__estimator__dual&#39;: False,
- &#39;feature_selection__estimator__fit_intercept&#39;: True,
- &#39;feature_selection__estimator__intercept_scaling&#39;: 1,
- &#39;feature_selection__estimator__loss&#39;: &#39;squared_hinge&#39;,
- &#39;feature_selection__estimator__max_iter&#39;: 1000,
- &#39;feature_selection__estimator__multi_class&#39;: &#39;ovr&#39;,
- &#39;feature_selection__estimator__penalty&#39;: &#39;l1&#39;,
- &#39;feature_selection__estimator__random_state&#39;: None,
- &#39;feature_selection__estimator__tol&#39;: 0.0001,
- &#39;feature_selection__estimator__verbose&#39;: 0,
- &#39;feature_selection__estimator&#39;: LinearSVC(C=1.0, class_weight=None, dual=False, fit_intercept=True,
-           intercept_scaling=1, loss=&#39;squared_hinge&#39;, max_iter=1000,
-           multi_class=&#39;ovr&#39;, penalty=&#39;l1&#39;, random_state=None, tol=0.0001,
-           verbose=0),
- &#39;feature_selection__max_features&#39;: None,
- &#39;feature_selection__norm_order&#39;: 1,
- &#39;feature_selection__prefit&#39;: False,
- &#39;feature_selection__threshold&#39;: None,
- &#39;classification__alpha&#39;: 0.01,
- &#39;classification__class_prior&#39;: None,
- &#39;classification__fit_prior&#39;: True}</pre>
+<pre>Pipeline(steps=[(&#39;vectorizer&#39;, CountVectorizer()),
+                (&#39;feature_extraction&#39;, TfidfTransformer()),
+                (&#39;feature_selection&#39;,
+                 SelectFromModel(estimator=LinearSVC(dual=False,
+                                                     penalty=&#39;l1&#39;))),
+                (&#39;classification&#39;, MultinomialNB(alpha=0.01))])</pre>
 </div>
 
 </div>
@@ -17035,7 +16182,7 @@ entertainment       0.97      0.89      0.93        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pred5</span> <span class="o">=</span> <span class="n">clf5</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -17088,7 +16235,7 @@ entertainment       1.00      0.94      0.97        84
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Dimension-reduction">Dimension reduction<a class="anchor-link" href="#Dimension-reduction">&#182;</a></h3>
+<h3 id="Optional:-Dimension-reduction">Optional: Dimension reduction<a class="anchor-link" href="#Optional:-Dimension-reduction">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -17109,7 +16256,7 @@ entertainment       1.00      0.94      0.97        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">tfidf_vect</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
@@ -17152,7 +16299,7 @@ entertainment       1.00      0.94      0.97        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Xc</span><span class="o">.</span><span class="n">todense</span><span class="p">())</span> <span class="c1"># print out matrix in dense format</span>
@@ -17192,1047 +16339,6 @@ entertainment       1.00      0.94      0.97        84
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tfidf_vect</span><span class="o">.</span><span class="n">vocabulary_</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>{&#39;moya&#39;: 16209,
- &#39;emotional&#39;: 8651,
- &#39;at&#39;: 2701,
- &#39;davis&#39;: 6926,
- &#39;cup&#39;: 6713,
- &#39;win&#39;: 26258,
- &#39;carlos&#39;: 4732,
- &#39;described&#39;: 7350,
- &#39;spain&#39;: 22477,
- &#39;victory&#39;: 25605,
- &#39;as&#39;: 2586,
- &#39;the&#39;: 24062,
- &#39;highlight&#39;: 11819,
- &#39;of&#39;: 17001,
- &#39;his&#39;: 11872,
- &#39;career&#39;: 4712,
- &#39;after&#39;: 1753,
- &#39;he&#39;: 11591,
- &#39;beat&#39;: 3292,
- &#39;andy&#39;: 2196,
- &#39;roddick&#39;: 20643,
- &#39;to&#39;: 24311,
- &#39;end&#39;: 8715,
- &#39;usa&#39;: 25352,
- &#39;challenge&#39;: 5012,
- &#39;in&#39;: 12538,
- &#39;seville&#39;: 21583,
- &#39;made&#39;: 14933,
- &#39;up&#39;: 25285,
- &#39;for&#39;: 10089,
- &#39;missing&#39;: 15914,
- &#39;2000&#39;: 428,
- &#39;through&#39;: 24179,
- &#39;injury&#39;: 12794,
- &#39;by&#39;: 4484,
- &#39;beating&#39;: 3295,
- &#39;give&#39;: 10798,
- &#39;hosts&#39;: 12081,
- &#39;an&#39;: 2147,
- &#39;unassailable&#39;: 24929,
- &#39;lead&#39;: 14223,
- &#39;have&#39;: 11560,
- &#39;woken&#39;: 26365,
- &#39;so&#39;: 22302,
- &#39;many&#39;: 15140,
- &#39;nights&#39;: 16676,
- &#39;dreaming&#39;: 8137,
- &#39;this&#39;: 24124,
- &#39;day&#39;: 6934,
- &#39;said&#39;: 20934,
- &#39;all&#39;: 1955,
- &#39;my&#39;: 16350,
- &#39;energy&#39;: 8752,
- &#39;has&#39;: 11525,
- &#39;been&#39;: 3342,
- &#39;focused&#39;: 10027,
- &#39;on&#39;: 17097,
- &#39;today&#39;: 24317,
- &#39;what&#39;: 26113,
- &#39;lived&#39;: 14610,
- &#39;do&#39;: 7916,
- &#39;not&#39;: 16800,
- &#39;think&#39;: 24111,
- &#39;will&#39;: 26230,
- &#39;live&#39;: 14608,
- &#39;again&#39;: 1760,
- &#39;only&#39;: 17111,
- &#39;other&#39;: 17277,
- &#39;title&#39;: 24300,
- &#39;came&#39;: 4575,
- &#39;two&#39;: 24844,
- &#39;years&#39;: 26599,
- &#39;ago&#39;: 1797,
- &#39;valencia&#39;: 25425,
- &#39;when&#39;: 26127,
- &#39;they&#39;: 24099,
- &#39;australia&#39;: 2816,
- &#39;and&#39;: 2180,
- &#39;nicknamed&#39;: 16649,
- &#39;charly&#39;: 5091,
- &#39;admitted&#39;: 1643,
- &#39;is&#39;: 13176,
- &#39;dream&#39;: 8135,
- &#39;was&#39;: 25919,
- &#39;bit&#39;: 3648,
- &#39;nervous&#39;: 16561,
- &#39;outset&#39;: 17350,
- &#39;some&#39;: 22373,
- &#39;people&#39;: 17913,
- &#39;that&#39;: 24054,
- &#39;am&#39;: 2046,
- &#39;obsessed&#39;: 16950,
- &#39;but&#39;: 4452,
- &#39;it&#39;: 13220,
- &#39;better&#39;: 3533,
- &#39;way&#39;: 25965,
- &#39;helps&#39;: 11711,
- &#39;me&#39;: 15467,
- &#39;reach&#39;: 19543,
- &#39;goals&#39;: 10896,
- &#39;if&#39;: 12350,
- &#39;really&#39;: 19578,
- &#39;incredible&#39;: 12608,
- &#39;get&#39;: 10709,
- &#39;winning&#39;: 26291,
- &#39;point&#39;: 18391,
- &#39;something&#39;: 22380,
- &#39;spanish&#39;: 22488,
- &#39;captain&#39;: 4680,
- &#39;jordi&#39;: 13487,
- &#39;arrese&#39;: 2538,
- &#39;played&#39;: 18300,
- &#39;great&#39;: 11085,
- &#39;game&#39;: 10498,
- &#39;opportunity&#39;: 17167,
- &#39;hasn&#39;: 11529,
- &#39;let&#39;: 14373,
- &#39;us&#39;: 25351,
- &#39;down&#39;: 8069,
- &#39;had&#39;: 11313,
- &#39;lost&#39;: 14750,
- &#39;three&#39;: 24158,
- &#39;times&#39;: 24259,
- &#39;him&#39;: 11839,
- &#39;waiting&#39;: 25820,
- &#39;be&#39;: 3266,
- &#39;position&#39;: 18525,
- &#39;also&#39;: 2021,
- &#39;remarkable&#39;: 20007,
- &#39;performance&#39;: 17946,
- &#39;rafael&#39;: 19368,
- &#39;nadal&#39;: 16373,
- &#39;who&#39;: 26173,
- &#39;opening&#39;: 17137,
- &#39;singles&#39;: 22020,
- &#39;aged&#39;: 1765,
- &#39;18&#39;: 273,
- &#39;185&#39;: 290,
- &#39;days&#39;: 6938,
- &#39;mallorcan&#39;: 15052,
- &#39;became&#39;: 3314,
- &#39;youngest&#39;: 26642,
- &#39;player&#39;: 18301,
- &#39;finish&#39;: 9808,
- &#39;year&#39;: 26595,
- &#39;afterwards&#39;: 1757,
- &#39;coach&#39;: 5541,
- &#39;patrick&#39;: 17763,
- &#39;mcenroe&#39;: 15416,
- &#39;wants&#39;: 25871,
- &#39;rest&#39;: 20254,
- &#39;team&#39;: 23835,
- &#39;play&#39;: 18294,
- &#39;more&#39;: 16105,
- &#39;tennis&#39;: 23954,
- &#39;clay&#39;: 5410,
- &#39;hone&#39;: 11992,
- &#39;their&#39;: 24071,
- &#39;skills&#39;: 22086,
- &#39;surface&#39;: 23428,
- &#39;help&#39;: 11705,
- &#39;these&#39;: 24098,
- &#39;guys&#39;: 11285,
- &#39;even&#39;: 9083,
- &#39;slow&#39;: 22183,
- &#39;hard&#39;: 11459,
- &#39;courts&#39;: 6453,
- &#39;learn&#39;: 14258,
- &#39;how&#39;: 12124,
- &#39;mix&#39;: 15944,
- &#39;things&#39;: 24110,
- &#39;little&#39;: 14603,
- &#39;smarter&#39;: 22214,
- &#39;tactically&#39;: 23661,
- &#39;obviously&#39;: 16963,
- &#39;unrealistic&#39;: 25202,
- &#39;say&#39;: 21091,
- &#39;we&#39;: 25974,
- &#39;re&#39;: 19541,
- &#39;going&#39;: 10915,
- &#39;just&#39;: 13586,
- &#39;start&#39;: 22840,
- &#39;playing&#39;: 18304,
- &#39;constantly&#39;: 6090,
- &#39;with&#39;: 26325,
- &#39;schedule&#39;: 21155,
- &#39;certainly&#39;: 4972,
- &#39;can&#39;: 4602,
- &#39;put&#39;: 19204,
- &#39;work&#39;: 26420,
- &#39;appropriate&#39;: 2415,
- &#39;time&#39;: 24253,
- &#39;couple&#39;: 6433,
- &#39;events&#39;: 9088,
- &#39;against&#39;: 1761,
- &#39;are&#39;: 2471,
- &#39;best&#39;: 3513,
- &#39;stuff&#39;: 23180,
- &#39;left&#39;: 14290,
- &#39;frustrated&#39;: 10358,
- &#39;losing&#39;: 14746,
- &#39;both&#39;: 3970,
- &#39;olympic&#39;: 17085,
- &#39;stadium&#39;: 22755,
- &#39;tough&#39;: 24434,
- &#39;because&#39;: 3315,
- &#39;felt&#39;: 9634,
- &#39;like&#39;: 14494,
- &#39;whole&#39;: 26176,
- &#39;one&#39;: 17101,
- &#39;top&#39;: 24372,
- &#39;courters&#39;: 6446,
- &#39;world&#39;: 26443,
- &#39;american&#39;: 2093,
- &#39;chances&#39;: 5034,
- &#39;didn&#39;: 7525,
- &#39;convert&#39;: 6237,
- &#39;them&#39;: 24074,
- &#39;bottom&#39;: 3980,
- &#39;line&#39;: 14538,
- &#39;were&#39;: 26082,
- &#39;than&#39;: 24045,
- &#39;weekend&#39;: 26030,
- &#39;out&#39;: 17291,
- &#39;took&#39;: 24362,
- &#39;care&#39;: 4710,
- &#39;business&#39;: 4443,
- &#39;simple&#39;: 21979,
- &#39;bryan&#39;: 4294,
- &#39;twins&#39;: 24837,
- &#39;keep&#39;: 13697,
- &#39;hopes&#39;: 12031,
- &#39;alive&#39;: 1954,
- &#39;united&#39;: 25136,
- &#39;states&#39;: 22857,
- &#39;kept&#39;: 13737,
- &#39;final&#39;: 9767,
- &#39;saturday&#39;: 21060,
- &#39;doubles&#39;: 8052,
- &#39;rubber&#39;: 20789,
- &#39;leaving&#39;: 14271,
- &#39;ahead&#39;: 1816,
- &#39;into&#39;: 13020,
- &#39;masters&#39;: 15295,
- &#39;champions&#39;: 5026,
- &#39;mike&#39;: 15763,
- &#39;bob&#39;: 3819,
- &#39;thrashed&#39;: 24148,
- &#39;juan&#39;: 13520,
- &#39;ferrero&#39;: 9661,
- &#39;tommy&#39;: 24345,
- &#39;robredo&#39;: 20617,
- &#39;front&#39;: 10335,
- &#39;partisan&#39;: 17694,
- &#39;crowd&#39;: 6627,
- &#39;would&#39;: 26467,
- &#39;given&#39;: 10801,
- &#39;outclassed&#39;: 17297,
- &#39;sunday&#39;: 23345,
- &#39;reverse&#39;: 20377,
- &#39;takes&#39;: 23690,
- &#39;before&#39;: 3349,
- &#39;faces&#39;: 9388,
- &#39;mardy&#39;: 15169,
- &#39;fish&#39;: 9863,
- &#39;feels&#39;: 9613,
- &#39;good&#39;: 10942,
- &#39;don&#39;: 7990,
- &#39;tomorrow&#39;: 24346,
- &#39;those&#39;: 24139,
- &#39;another&#39;: 2284,
- &#39;shot&#39;: 21827,
- &#39;go&#39;: 10889,
- &#39;sleep&#39;: 22141,
- &#39;added&#39;: 1586,
- &#39;confident&#39;: 5959,
- &#39;first&#39;: 9854,
- &#39;match&#39;: 15301,
- &#39;then&#39;: 24079,
- &#39;anything&#39;: 2330,
- &#39;happen&#39;: 11443,
- &#39;chose&#39;: 5247,
- &#39;old&#39;: 17063,
- &#39;epic&#39;: 8890,
- &#39;over&#39;: 17372,
- &#39;friday&#39;: 10310,
- &#39;replaced&#39;: 20115,
- &#39;former&#39;: 10147,
- &#39;number&#39;: 16872,
- &#39;pair&#39;: 17541,
- &#39;depth&#39;: 7320,
- &#39;teams&#39;: 23838,
- &#39;26&#39;: 544,
- &#39;won&#39;: 26382,
- &#39;four&#39;: 10196,
- &#39;matches&#39;: 15304,
- &#39;quickly&#39;: 19286,
- &#39;silenced&#39;: 21952,
- &#39;huge&#39;: 12154,
- &#39;racing&#39;: 19335,
- &#39;set&#39;: 21552,
- &#39;love&#39;: 14767,
- &#39;spaniards&#39;: 22487,
- &#39;twice&#39;: 24831,
- &#39;surrendered&#39;: 23457,
- &#39;breaks&#39;: 4110,
- &#39;serve&#39;: 21540,
- &#39;second&#39;: 21363,
- &#39;bryans&#39;: 4295,
- &#39;broke&#39;: 4230,
- &#39;served&#39;: 21541,
- &#39;dropped&#39;: 8178,
- &#39;third&#39;: 24117,
- &#39;unflappable&#39;: 25085,
- &#39;brothers&#39;: 4256,
- &#39;powered&#39;: 18590,
- &#39;impressive&#39;: 12516,
- &#39;upset&#39;: 25322,
- &#39;hinted&#39;: 11857,
- &#39;further&#39;: 10431,
- &#39;dissatisfaction&#39;: 7813,
- &#39;defeat&#39;: 7086,
- &#39;difficult&#39;: 7548,
- &#39;players&#39;: 18302,
- &#39;everything&#39;: 9103,
- &#39;calculated&#39;: 4534,
- &#39;very&#39;: 25557,
- &#39;surprised&#39;: 23450,
- &#39;named&#39;: 16392,
- &#39;hardly&#39;: 11472,
- &#39;badly&#39;: 2989,
- &#39;right&#39;: 20505,
- &#39;christmas&#39;: 5259,
- &#39;sales&#39;: 20955,
- &#39;worst&#39;: 26460,
- &#39;since&#39;: 22004,
- &#39;1981&#39;: 395,
- &#39;uk&#39;: 24885,
- &#39;retail&#39;: 20299,
- &#39;fell&#39;: 9626,
- &#39;december&#39;: 7011,
- &#39;failing&#39;: 9417,
- &#39;meet&#39;: 15522,
- &#39;expectations&#39;: 9245,
- &#39;making&#39;: 15020,
- &#39;counts&#39;: 6429,
- &#39;month&#39;: 16078,
- &#39;rise&#39;: 20551,
- &#39;november&#39;: 16846,
- &#39;office&#39;: 17021,
- &#39;national&#39;: 16450,
- &#39;statistics&#39;: 22866,
- &#39;ons&#39;: 17113,
- &#39;revised&#39;: 20391,
- &#39;annual&#39;: 2270,
- &#39;2004&#39;: 434,
- &#39;rate&#39;: 19496,
- &#39;growth&#39;: 11187,
- &#39;from&#39;: 10333,
- &#39;estimated&#39;: 9008,
- &#39;retailers&#39;: 20301,
- &#39;already&#39;: 2019,
- &#39;reported&#39;: 20129,
- &#39;poor&#39;: 18464,
- &#39;figures&#39;: 9739,
- &#39;clothing&#39;: 5508,
- &#39;non&#39;: 16751,
- &#39;specialist&#39;: 22528,
- &#39;stores&#39;: 23031,
- &#39;hit&#39;: 11883,
- &#39;internet&#39;: 12982,
- &#39;showing&#39;: 21851,
- &#39;any&#39;: 2325,
- &#39;significant&#39;: 21943,
- &#39;according&#39;: 1473,
- &#39;last&#39;: 14144,
- &#39;endured&#39;: 8741,
- &#39;tougher&#39;: 24436,
- &#39;23&#39;: 502,
- &#39;previously&#39;: 18780,
- &#39;plunged&#39;: 18359,
- &#39;echoed&#39;: 8379,
- &#39;earlier&#39;: 8318,
- &#39;caution&#39;: 4873,
- &#39;bank&#39;: 3095,
- &#39;england&#39;: 8778,
- &#39;governor&#39;: 10998,
- &#39;mervyn&#39;: 15649,
- &#39;king&#39;: 13820,
- &#39;read&#39;: 19553,
- &#39;too&#39;: 24361,
- &#39;much&#39;: 16240,
- &#39;analysts&#39;: 2160,
- &#39;positive&#39;: 18530,
- &#39;gloss&#39;: 10864,
- &#39;pointing&#39;: 18395,
- &#39;seasonally&#39;: 21345,
- &#39;adjusted&#39;: 1620,
- &#39;showed&#39;: 21847,
- &#39;comparable&#39;: 5784,
- &#39;2003&#39;: 433,
- &#39;jump&#39;: 13560,
- &#39;roughly&#39;: 20738,
- &#39;recent&#39;: 19643,
- &#39;averages&#39;: 2874,
- &#39;although&#39;: 2032,
- &#39;below&#39;: 3423,
- &#39;serious&#39;: 21530,
- &#39;booms&#39;: 3916,
- &#39;seen&#39;: 21408,
- &#39;1990s&#39;: 406,
- &#39;volume&#39;: 25755,
- &#39;outperformed&#39;: 17338,
- &#39;measures&#39;: 15486,
- &#39;actual&#39;: 1562,
- &#39;spending&#39;: 22577,
- &#39;indication&#39;: 12640,
- &#39;consumers&#39;: 6120,
- &#39;looking&#39;: 14718,
- &#39;bargains&#39;: 3139,
- &#39;cutting&#39;: 6771,
- &#39;prices&#39;: 18784,
- &#39;however&#39;: 12131,
- &#39;reports&#39;: 20134,
- &#39;high&#39;: 11807,
- &#39;street&#39;: 23094,
- &#39;weakness&#39;: 25981,
- &#39;sector&#39;: 21380,
- &#39;morrisons&#39;: 16126,
- &#39;woolworths&#39;: 26412,
- &#39;house&#39;: 12107,
- &#39;fraser&#39;: 10249,
- &#39;marks&#39;: 15209,
- &#39;spencer&#39;: 22575,
- &#39;big&#39;: 3578,
- &#39;food&#39;: 10067,
- &#39;festive&#39;: 9676,
- &#39;period&#39;: 17957,
- &#39;disappointing&#39;: 7647,
- &#39;british&#39;: 4195,
- &#39;consortium&#39;: 6081,
- &#39;survey&#39;: 23468,
- &#39;found&#39;: 10188,
- &#39;10&#39;: 55,
- &#39;yet&#39;: 26614,
- &#39;including&#39;: 12582,
- &#39;hmv&#39;: 11903,
- &#39;monsoon&#39;: 16067,
- &#39;jessops&#39;: 13387,
- &#39;body&#39;: 3832,
- &#39;shop&#39;: 21803,
- &#39;tesco&#39;: 23995,
- &#39;well&#39;: 26064,
- &#39;investec&#39;: 13068,
- &#39;chief&#39;: 5182,
- &#39;economist&#39;: 8393,
- &#39;philip&#39;: 18088,
- &#39;shaw&#39;: 21688,
- &#39;did&#39;: 7521,
- &#39;expect&#39;: 9242,
- &#39;immediate&#39;: 12433,
- &#39;effect&#39;: 8447,
- &#39;interest&#39;: 12958,
- &#39;rates&#39;: 19498,
- &#39;weak&#39;: 25975,
- &#39;indicated&#39;: 12637,
- &#39;night&#39;: 16671,
- &#39;you&#39;: 26638,
- &#39;accurate&#39;: 1498,
- &#39;impression&#39;: 12513,
- &#39;trading&#39;: 24502,
- &#39;until&#39;: 25255,
- &#39;about&#39;: 1381,
- &#39;easter&#39;: 8349,
- &#39;mr&#39;: 16225,
- &#39;our&#39;: 17285,
- &#39;view&#39;: 25618,
- &#39;its&#39;: 13233,
- &#39;powder&#39;: 18585,
- &#39;dry&#39;: 8200,
- &#39;wait&#39;: 25816,
- &#39;see&#39;: 21393,
- &#39;picture&#39;: 18146,
- &#39;jones&#39;: 13479,
- &#39;medals&#39;: 15499,
- &#39;must&#39;: 16332,
- &#39;guilty&#39;: 11239,
- &#39;anti&#39;: 2302,
- &#39;doping&#39;: 8028,
- &#39;agency&#39;: 1771,
- &#39;wada&#39;: 25800,
- &#39;dick&#39;: 7509,
- &#39;pound&#39;: 18576,
- &#39;says&#39;: 21095,
- &#39;marion&#39;: 15191,
- &#39;should&#39;: 21829,
- &#39;stripped&#39;: 23135,
- &#39;her&#39;: 11735,
- &#39;taking&#39;: 23691,
- &#39;banned&#39;: 3108,
- &#39;substances&#39;: 23243,
- &#39;victor&#39;: 25599,
- &#39;conte&#39;: 6136,
- &#39;balco&#39;: 3030,
- &#39;laboratories&#39;: 14012,
- &#39;claims&#39;: 5350,
- &#39;sprinter&#39;: 22686,
- &#39;regularly&#39;: 19872,
- &#39;used&#39;: 25362,
- &#39;drugs&#39;: 8189,
- &#39;enhance&#39;: 8782,
- &#39;she&#39;: 21692,
- &#39;asked&#39;: 2618,
- &#39;there&#39;: 24089,
- &#39;timescale&#39;: 24260,
- &#39;could&#39;: 6399,
- &#39;taken&#39;: 23686,
- &#39;issue&#39;: 13212,
- &#39;under&#39;: 24987,
- &#39;international&#39;: 12977,
- &#39;committee&#39;: 5754,
- &#39;ioc&#39;: 13106,
- &#39;rules&#39;: 20826,
- &#39;athletes&#39;: 2706,
- &#39;caught&#39;: 4865,
- &#39;within&#39;: 26336,
- &#39;event&#39;: 9087,
- &#39;five&#39;: 9879,
- &#39;olympics&#39;: 17086,
- &#39;denies&#39;: 7251,
- &#39;using&#39;: 25373,
- &#39;take&#39;: 23684,
- &#39;legal&#39;: 14295,
- &#39;action&#39;: 1546,
- &#39;allegations&#39;: 1965,
- &#39;firm&#39;: 9849,
- &#39;centre&#39;: 4952,
- &#39;wide&#39;: 26189,
- &#39;reaching&#39;: 19546,
- &#39;investigation&#39;: 13074,
- &#39;continued&#39;: 6171,
- &#39;indeed&#39;: 12619,
- &#39;disappointment&#39;: 7649,
- &#39;lot&#39;: 14752,
- &#39;eminem&#39;: 8639,
- &#39;secret&#39;: 21369,
- &#39;gig&#39;: 10750,
- &#39;venue&#39;: 25525,
- &#39;revealed&#39;: 20359,
- &#39;rapper&#39;: 19473,
- &#39;intimate&#39;: 13013,
- &#39;london&#39;: 14696,
- &#39;following&#39;: 10054,
- &#39;show&#39;: 21839,
- &#39;river&#39;: 20570,
- &#39;thames&#39;: 24044,
- &#39;star&#39;: 22822,
- &#39;songs&#39;: 22388,
- &#39;showcasing&#39;: 21845,
- &#39;label&#39;: 14007,
- &#39;shady&#39;: 21618,
- &#39;records&#39;: 19697,
- &#39;islington&#39;: 13197,
- &#39;academy&#39;: 1422,
- &#39;performed&#39;: 17948,
- &#39;hms&#39;: 11902,
- &#39;belfast&#39;: 3385,
- &#39;which&#39;: 26135,
- &#39;docked&#39;: 7922,
- &#39;where&#39;: 26129,
- &#39;filmed&#39;: 9753,
- &#39;bbc&#39;: 3259,
- &#39;pops&#39;: 18473,
- &#39;arrived&#39;: 2547,
- &#39;appearance&#39;: 2366,
- &#39;mtv&#39;: 16237,
- &#39;europe&#39;: 9046,
- &#39;music&#39;: 16318,
- &#39;awards&#39;: 2900,
- &#39;rome&#39;: 20675,
- &#39;rap&#39;: 19467,
- &#39;acts&#39;: 1561,
- &#39;may&#39;: 15365,
- &#39;appear&#39;: 2365,
- &#39;include&#39;: 12579,
- &#39;stat&#39;: 22850,
- &#39;quo&#39;: 19309,
- &#39;proof&#39;: 18980,
- &#39;dj&#39;: 7905,
- &#39;green&#39;: 11097,
- &#39;lantern&#39;: 14115,
- &#39;swift&#39;: 23568,
- &#39;obie&#39;: 16918,
- &#39;trice&#39;: 24646,
- &#39;latest&#39;: 14152,
- &#39;album&#39;: 1901,
- &#39;soared&#39;: 22307,
- &#39;chart&#39;: 5095,
- &#39;sale&#39;: 20954,
- &#39;record&#39;: 19690,
- &#39;shops&#39;: 21808,
- &#39;encore&#39;: 8701,
- &#39;now&#39;: 16851,
- &#39;topper&#39;: 24377,
- &#39;sides&#39;: 21910,
- &#39;atlantic&#39;: 2717,
- &#39;debut&#39;: 6993,
- &#39;fourth&#39;: 10200,
- &#39;outsold&#39;: 17356,
- &#39;rivals&#39;: 20569,
- &#39;released&#39;: 19958,
- &#39;early&#39;: 8321,
- &#39;effort&#39;: 8457,
- &#39;combat&#39;: 5681,
- &#39;physical&#39;: 18119,
- &#39;online&#39;: 17110,
- &#39;piracy&#39;: 18210,
- &#39;includes&#39;: 12581,
- &#39;track&#39;: 24483,
- &#39;mosh&#39;: 16135,
- &#39;tirade&#39;: 24286,
- &#39;president&#39;: 18734,
- &#39;bush&#39;: 4439,
- &#39;presence&#39;: 18716,
- &#39;troops&#39;: 24701,
- &#39;iraq&#39;: 13130,
- &#39;criticised&#39;: 6591,
- &#39;april&#39;: 2426,
- &#39;led&#39;: 14282,
- &#39;12&#39;: 119,
- &#39;viewers&#39;: 25621,
- &#39;complain&#39;: 5825,
- &#39;lewd&#39;: 14395,
- &#39;offensive&#39;: 17014,
- &#39;complaints&#39;: 5830,
- &#39;grabbing&#39;: 11009,
- &#39;crotch&#39;: 6623,
- &#39;upheld&#39;: 25301,
- &#39;performer&#39;: 17949,
- &#39;tone&#39;: 24348,
- &#39;act&#39;: 1543,
- &#39;rehearsal&#39;: 19885,
- &#39;ignored&#39;: 12368,
- &#39;request&#39;: 20160,
- &#39;during&#39;: 8269,
- &#39;broadcast&#39;: 4212,
- &#39;statement&#39;: 22854,
- &#39;gestures&#39;: 10708,
- &#39;part&#39;: 17678,
- &#39;culture&#39;: 6699,
- &#39;gone&#39;: 10933,
- &#39;beyond&#39;: 3550,
- &#39;expected&#39;: 9246,
- &#39;loses&#39;: 14745,
- &#39;customer&#39;: 6757,
- &#39;details&#39;: 7414,
- &#39;america&#39;: 2092,
- &#39;computer&#39;: 5878,
- &#39;tapes&#39;: 23751,
- &#39;containing&#39;: 6134,
- &#39;account&#39;: 1476,
- &#39;million&#39;: 15790,
- &#39;customers&#39;: 6758,
- &#39;federal&#39;: 9596,
- &#39;employees&#39;: 8670,
- &#39;several&#39;: 21577,
- &#39;members&#39;: 15569,
- &#39;senate&#39;: 21457,
- &#39;among&#39;: 2118,
- &#39;affected&#39;: 1725,
- &#39;vulnerable&#39;: 25791,
- &#39;identity&#39;: 12324,
- &#39;theft&#39;: 24070,
- &#39;sources&#39;: 22442,
- &#39;stolen&#39;: 23009,
- &#39;plane&#39;: 18261,
- &#39;baggage&#39;: 2999,
- &#39;handlers&#39;: 11410,
- &#39;gave&#39;: 10581,
- &#39;no&#39;: 16718,
- &#39;disappeared&#39;: 7643,
- &#39;probably&#39;: 18851,
- &#39;misused&#39;: 15933,
- &#39;accounts&#39;: 1484,
- &#39;being&#39;: 3375,
- &#39;monitoring&#39;: 16055,
- &#39;holders&#39;: 11942,
- &#39;notified&#39;: 16821,
- &#39;unusual&#39;: 25263,
- &#39;activity&#39;: 1556,
- &#39;detected&#39;: 7421,
- &#39;officials&#39;: 17027,
- &#39;went&#39;: 26079,
- &#39;while&#39;: 26138,
- &#39;shipped&#39;: 21765,
- &#39;back&#39;: 2945,
- &#39;data&#39;: 6905,
- &#39;law&#39;: 14191,
- &#39;authorities&#39;: 2837,
- &#39;done&#39;: 7999,
- &#39;robust&#39;: 20620,
- &#39;thorough&#39;: 24134,
- &#39;neither&#39;: 16547,
- &#39;nor&#39;: 16761,
- &#39;make&#39;: 15012,
- &#39;lightly&#39;: 14489,
- &#39;believe&#39;: 3395,
- &#39;alexandra&#39;: 1923,
- &#39;tower&#39;: 24460,
- &#39;spokeswoman&#39;: 22635,
- &#39;north&#39;: 16780,
- &#39;carolina&#39;: 4747,
- &#39;based&#39;: 3194,
- &#39;told&#39;: 24329,
- &#39;magazine&#39;: 14950,
- &#39;evidence&#39;: 9110,
- &#39;criminal&#39;: 6569,
- &#39;service&#39;: 21545,
- &#39;whose&#39;: 26185,
- &#39;brief&#39;: 4159,
- &#39;investigations&#39;: 13075,
- &#39;financial&#39;: 9779,
- &#39;crime&#39;: 6567,
- &#39;loss&#39;: 14747,
- &#39;new&#39;: 16598,
- &#39;york&#39;: 26633,
- &#39;senator&#39;: 21458,
- &#39;charles&#39;: 5086,
- &#39;schumer&#39;: 21200,
- &#39;commercial&#39;: 5735,
- &#39;whether&#39;: 26134,
- &#39;terrorism&#39;: 23990,
- &#39;or&#39;: 17193,
- &#39;complicated&#39;: 5845,
- &#39;background&#39;: 2960,
- &#39;checks&#39;: 5132,
- &#39;hired&#39;: 11866,
- &#39;increasingly&#39;: 12607,
- &#39;sensitive&#39;: 21480,
- &#39;positions&#39;: 18529,
- &#39;democrat&#39;: 7218,
- &#39;vermont&#39;: 25544,
- &#39;colleague&#39;: 5632,
- &#39;pat&#39;: 17737,
- &#39;leahy&#39;: 14237,
- &#39;credit&#39;: 6540,
- &#39;card&#39;: 4701,
- &#39;tracy&#39;: 24493,
- &#39;schmaler&#39;: 21171,
- &#39;900&#39;: 1245,
- &#39;000&#39;: 1,
- &#39;military&#39;: 15781,
- &#39;civilian&#39;: 5336,
- &#39;staff&#39;: 22757,
- &#39;defence&#39;: 7096,
- &#39;department&#39;: 7273,
- &#39;pentagon&#39;: 17910,
- &#39;spokesman&#39;: 22632,
- &#39;bollywood&#39;: 3860,
- &#39;dvd&#39;: 8281,
- &#39;fraudster&#39;: 10256,
- &#39;jailed&#39;: 13279,
- &#39;major&#39;: 15005,
- &#39;distributor&#39;: 7854,
- &#39;pirated&#39;: 18212,
- &#39;dvds&#39;: 8282,
- &#39;films&#39;: 9760,
- &#39;sent&#39;: 21485,
- &#39;prison&#39;: 18826,
- &#39;jayanti&#39;: 13336,
- &#39;amarishi&#39;: 2054,
- &#39;buhecha&#39;: 4339,
- &#39;cambridge&#39;: 4572,
- &#39;trademark&#39;: 24496,
- &#39;offences&#39;: 17008,
- &#39;sentenced&#39;: 21488,
- &#39;harrow&#39;: 11510,
- &#39;crown&#39;: 6632,
- &#39;court&#39;: 6442,
- &#39;tuesday&#39;: 24763,
- &#39;per&#39;: 17925,
- &#39;illegal&#39;: 12381,
- &#39;trade&#39;: 24494,
- &#39;called&#39;: 4552,
- &#39;biggest&#39;: 3580,
- &#39;pirates&#39;: 18213,
- &#39;sentencing&#39;: 21491,
- &#39;judge&#39;: 13528,
- &#39;phonographic&#39;: 18106,
- &#39;industry&#39;: 12685,
- &#39;bpi&#39;: 4037,
- &#39;worked&#39;: 26422,
- &#39;case&#39;: 4796,
- &#39;operation&#39;: 17149,
- &#39;launched&#39;: 14171,
- &#39;2002&#39;: 432,
- &#39;received&#39;: 19638,
- &#39;activities&#39;: 1555,
- &#39;lasted&#39;: 14145,
- &#39;seven&#39;: 21571,
- &#39;heavy&#39;: 11652,
- &#39;penalty&#39;: 17887,
- &#39;enormous&#39;: 8805,
- &#39;damage&#39;: 6834,
- &#39;caused&#39;: 4868,
- &#39;legitimate&#39;: 14310,
- &#39;fake&#39;: 9439,
- &#39;manufactured&#39;: 15134,
- &#39;pakistan&#39;: 17549,
- &#39;malaysia&#39;: 15027,
- &#39;sold&#39;: 22347,
- &#39;wholesale&#39;: 26179,
- &#39;traded&#39;: 24495,
- &#39;conterfeit&#39;: 6154,
- &#39;stopped&#39;: 23023,
- &#39;car&#39;: 4693,
- &#39;standards&#39;: 22802,
- &#39;officers&#39;: 17023,
- &#39;uncovered&#39;: 24976,
- &#39;faked&#39;: 9440,
- &#39;inlay&#39;: 12804,
- &#39;cards&#39;: 4708,
- &#39;printed&#39;: 18814,
- &#39;registered&#39;: 19856,
- &#39;trademarks&#39;: 24497,
- &#39;despite&#39;: 7392,
- &#39;arrested&#39;: 2540,
- &#39;bailed&#39;: 3012,
- &#39;home&#39;: 11973,
- &#39;lock&#39;: 14665,
- &#39;contain&#39;: 6131,
- &#39;counterfeit&#39;: 6414,
- &#39;suspended&#39;: 23489,
- &#39;sued&#39;: 23289,
- &#39;employers&#39;: 8672,
- &#39;dealing&#39;: 6964,
- &#39;copies&#39;: 6284,
- &#39;classic&#39;: 5390,
- &#39;mohabbatein&#39;: 16009,
- &#39;film&#39;: 9752,
- &#39;distributors&#39;: 7855,
- &#39;hailed&#39;: 11322,
- &#39;conviction&#39;: 6247,
- &#39;boost&#39;: 3921,
- &#39;suffers&#39;: 23297,
- &#39;40&#39;: 771,
- &#39;suffered&#39;: 23294,
- &#39;mainstream&#39;: 14997,
- &#39;productions&#39;: 18892,
- &#39;welcomed&#39;: 26060,
- &#39;news&#39;: 16613,
- &#39;sentence&#39;: 21487,
- &#39;warned&#39;: 25899,
- &#39;plenty&#39;: 18332,
- &#39;active&#39;: 1551,
- &#39;counterfeiters&#39;: 6415,
- &#39;organisation&#39;: 17220,
- &#39;director&#39;: 7616,
- &#39;david&#39;: 6923,
- &#39;martin&#39;: 15244,
- &#39;problem&#39;: 18858,
- &#39;simply&#39;: 21988,
- &#39;disappear&#39;: 7641,
- &#39;others&#39;: 17278,
- &#39;place&#39;: 18245,
- &#39;vital&#39;: 25710,
- &#39;efforts&#39;: 8459,
- &#39;field&#39;: 9712,
- &#39;german&#39;: 10696,
- &#39;goes&#39;: 10912,
- &#39;germany&#39;: 10699,
- &#39;economy&#39;: 8395,
- &#39;shrank&#39;: 21858,
- &#39;months&#39;: 16080,
- &#39;upsetting&#39;: 25324,
- &#39;sustained&#39;: 23503,
- &#39;recovery&#39;: 19707,
- &#39;confounded&#39;: 5978,
- &#39;expansion&#39;: 9237,
- &#39;quarter&#39;: 19252,
- &#39;contraction&#39;: 6184,
- &#39;estimate&#39;: 9007,
- &#39;zero&#39;: 26706,
- &#39;putting&#39;: 19208,
- &#39;standstill&#39;: 22810,
- &#39;july&#39;: 13557,
- &#39;onward&#39;: 17123,
- &#39;reliant&#39;: 19970,
- &#39;exports&#39;: 9311,
- &#39;unemployment&#39;: 25065,
- &#39;impending&#39;: 12465,
- &#39;cuts&#39;: 6768,
- &#39;welfare&#39;: 26063,
- &#39;mean&#39;: 15472,
- &#39;money&#39;: 16044,
- &#39;themselves&#39;: 24078,
- &#39;companies&#39;: 5780,
- &#39;volkswagen&#39;: 25752,
- &#39;daimlerchrysler&#39;: 6818,
- &#39;siemens&#39;: 21922,
- &#39;spent&#39;: 22579,
- &#39;talks&#39;: 23707,
- &#39;unions&#39;: 25129,
- &#39;trimming&#39;: 24669,
- &#39;jobs&#39;: 13431,
- &#39;costs&#39;: 6383,
- &#39;destatis&#39;: 7397,
- &#39;rising&#39;: 20555,
- &#39;outweighed&#39;: 17369,
- &#39;continuing&#39;: 6173,
- &#39;domestic&#39;: 7973,
- &#39;demand&#39;: 7202,
- &#39;relentless&#39;: 19964,
- &#39;value&#39;: 25441,
- &#39;euro&#39;: 9040,
- &#39;competitiveness&#39;: 5814,
- &#39;products&#39;: 18895,
- &#39;overseas&#39;: 17424,
- &#39;depress&#39;: 7312,
- &#39;prospects&#39;: 19018,
- &#39;nation&#39;: 16449,
- &#39;eurozone&#39;: 9056,
- &#39;senior&#39;: 21469,
- &#39;setting&#39;: 21560,
- &#39;european&#39;: 9047,
- &#39;central&#39;: 4946,
- &#39;beginning&#39;: 3356,
- &#39;talk&#39;: 23702,
- &#39;threat&#39;: 24151,
- &#39;inflation&#39;: 12729,
- &#39;prompting&#39;: 18972,
- &#39;fears&#39;: 9582,
- &#39;ecb&#39;: 8373,
- &#39;mandate&#39;: 15082,
- &#39;fight&#39;: 9729,
- &#39;boosting&#39;: 3923,
- &#39;threaten&#39;: 24152,
- &#39;tautou&#39;: 23806,
- &#39;da&#39;: 6800,
- &#39;vinci&#39;: 25655,
- &#39;french&#39;: 10293,
- &#39;actress&#39;: 1559,
- &#39;audrey&#39;: 2802,
- &#39;amelie&#39;: 2083,
- &#39;female&#39;: 9635,
- &#39;adaptation&#39;: 1574,
- &#39;code&#39;: 5577,
- &#39;movie&#39;: 16203,
- &#39;version&#39;: 25551,
- &#39;dan&#39;: 6852,
- &#39;brown&#39;: 4259,
- &#39;selling&#39;: 21442,
- &#39;novel&#39;: 16841,
- &#39;directed&#39;: 7609,
- &#39;ron&#39;: 20681,
- &#39;howard&#39;: 12125,
- &#39;stars&#39;: 22837,
- &#39;tom&#39;: 24337,
- &#39;hanks&#39;: 11427,
- &#39;cracking&#39;: 6487,
- &#39;partner&#39;: 17698,
- &#39;various&#39;: 25471,
- &#39;newspapers&#39;: 16618,
- &#39;currently&#39;: 6734,
- &#39;starring&#39;: 22836,
- &#39;long&#39;: 14704,
- &#39;engagement&#39;: 8764,
- &#39;jean&#39;: 13345,
- &#39;pierre&#39;: 18160,
- &#39;jeunet&#39;: 13393,
- &#39;responsible&#39;: 20251,
- &#39;directing&#39;: 7610,
- &#39;2001&#39;: 429,
- &#39;starred&#39;: 22835,
- &#39;role&#39;: 20656,
- &#39;critically&#39;: 6589,
- &#39;acclaimed&#39;: 1452,
- &#39;dirty&#39;: 7625,
- &#39;pretty&#39;: 18763,
- &#39;oscar&#39;: 17263,
- &#39;preferring&#39;: 18674,
- &#39;name&#39;: 16391,
- &#39;hollywood&#39;: 11965,
- &#39;kate&#39;: 13661,
- &#39;beckinsale&#39;: 3320,
- &#39;widely&#39;: 26191,
- &#39;tipped&#39;: 24282,
- &#39;possibility&#39;: 18538,
- &#39;alongside&#39;: 2012,
- &#39;vanessa&#39;: 25453,
- &#39;paradis&#39;: 17622,
- &#39;juliette&#39;: 13556,
- &#39;binoche&#39;: 3611,
- &#39;thriller&#39;: 24165,
- &#39;upon&#39;: 25313,
- &#39;17&#39;: 249,
- &#39;centred&#39;: 4953,
- &#39;global&#39;: 10846,
- &#39;conspiracy&#39;: 6083,
- &#39;surrounding&#39;: 23464,
- ...}</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -18250,7 +16356,7 @@ entertainment       1.00      0.94      0.97        84
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_comp</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">]</span> <span class="c1"># list containing different values of components</span>
@@ -18287,15 +16393,15 @@ entertainment       1.00      0.94      0.97        84
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Number of components = 1 and explained variance = 0.8302335701200921
-Number of components = 2 and explained variance = 0.91650936322083
-Number of components = 4 and explained variance = 0.9291569440678302
-Number of components = 5 and explained variance = 0.934486055411578
-Number of components = 10 and explained variance = 0.9477460316797044
-Number of components = 15 and explained variance = 0.9529730120135838
-Number of components = 20 and explained variance = 0.9560370191126871
-Number of components = 50 and explained variance = 0.9645716958622763
-Number of components = 100 and explained variance = 0.9711054139797352
+<pre>Number of components = 1 and explained variance = 0.8302335701200985
+Number of components = 2 and explained variance = 0.9165093632208284
+Number of components = 4 and explained variance = 0.9291569440571864
+Number of components = 5 and explained variance = 0.9344860553539854
+Number of components = 10 and explained variance = 0.9477460365510291
+Number of components = 15 and explained variance = 0.9529731073724195
+Number of components = 20 and explained variance = 0.9560375991471993
+Number of components = 50 and explained variance = 0.9645814066708002
+Number of components = 100 and explained variance = 0.9711191624492502
 </pre>
 </div>
 </div>
@@ -18309,7 +16415,7 @@ Number of components = 100 and explained variance = 0.9711054139797352
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 class="
 jp-needs-light-background
@@ -18364,7 +16470,7 @@ jp-needs-light-background
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf6</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
@@ -18385,7 +16491,7 @@ jp-needs-light-background
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf6</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
@@ -18406,34 +16512,17 @@ jp-needs-light-background
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>Pipeline(memory=None,
-         steps=[(&#39;vectorizer&#39;,
-                 CountVectorizer(analyzer=&#39;word&#39;, binary=False,
-                                 decode_error=&#39;strict&#39;,
-                                 dtype=&lt;class &#39;numpy.int64&#39;&gt;, encoding=&#39;utf-8&#39;,
-                                 input=&#39;content&#39;, lowercase=True, max_df=1.0,
-                                 max_features=None, min_df=1,
-                                 ngram_range=(1, 1), preprocessor=None,
-                                 stop_words=None, strip_accents=None,
-                                 token_pattern=&#39;(?u)\\b\\w\\w+\\b&#39;,
-                                 tokenizer=None, vocabula...
-                                  sublinear_tf=False, use_idf=True)),
+<pre>Pipeline(steps=[(&#39;vectorizer&#39;, CountVectorizer()),
+                (&#39;feature_extraction&#39;, TfidfTransformer()),
                 (&#39;feature_selection&#39;,
-                 TruncatedSVD(algorithm=&#39;randomized&#39;, n_components=15, n_iter=5,
-                              random_state=321, tol=0.0)),
-                (&#39;classification&#39;,
-                 LinearSVC(C=1.0, class_weight=None, dual=True,
-                           fit_intercept=True, intercept_scaling=1,
-                           loss=&#39;squared_hinge&#39;, max_iter=1000,
-                           multi_class=&#39;ovr&#39;, penalty=&#39;l2&#39;, random_state=None,
-                           tol=0.0001, verbose=0))],
-         verbose=False)</pre>
+                 TruncatedSVD(n_components=15, random_state=321)),
+                (&#39;classification&#39;, LinearSVC())])</pre>
 </div>
 
 </div>
@@ -18447,7 +16536,7 @@ jp-needs-light-background
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pred6</span> <span class="o">=</span> <span class="n">clf6</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
