@@ -14,9 +14,9 @@ library(knitr)
 library(kableExtra)
 ```
 
-## Lecture’s plan
+## Lecture plan
 
-1. How to do feature selection for text data?
+1. How to do feature selection (FS) for text data?
 
 2. Is PCA a FS method for text?
 
@@ -115,7 +115,7 @@ Why we need FS:
 
     3. To reduce dimensionality and remove noise.
 
-*Feature Selection* is a process that chooses an optimal subset of features according to a certain criterion.
+
 
 <!-- ## Feature selection -->
 
@@ -128,9 +128,10 @@ Why we need FS:
 
 ## Feature selection for text
 
+*Feature Selection* is a process that chooses an optimal subset of features according to a certain criterion.
+
 *Feature selection* is the process of selecting a specific subset of the terms of the training set and using only them in the classification algorithm.
 
-- high dimensionality of text features
 - Select the most informative features for model training
     - Reduce noise in feature representation
     - Improve final classification performance
@@ -138,7 +139,7 @@ Why we need FS:
         - Less time complexity
         - Fewer training data
 
-# Feature Selection Methods
+# Methods
 
 <!-- ## Feature selection methods -->
 
@@ -150,15 +151,15 @@ Why we need FS:
 <!-- include_graphics("img/page 16_1.png") -->
 <!-- ``` -->
 
-## Feature selection methods
+<!-- ## Feature selection methods -->
 
-<ul>
-<li><span style="color:blue; font-weight:bold">Thousands to millions of features</span>: select the most relevant one to build <span style="color:blue; font-weight:bold">better, faster, and easier to understand</span> learning machines.</li>
-</ul>
+<!-- <ul> -->
+<!-- <li><span style="color:blue; font-weight:bold">Thousands to millions of features</span>: select the most relevant one to build <span style="color:blue; font-weight:bold">better, faster, and easier to understand</span> learning machines.</li> -->
+<!-- </ul> -->
 
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 16_2.png")
-```
+<!-- ```{r, echo=FALSE, out.width="60%", fig.align='center'} -->
+<!-- include_graphics("img/page 16_2.png") -->
+<!-- ``` -->
 
 <!-- ## Other criteria -->
 
@@ -213,24 +214,25 @@ include_graphics("img/page 18.png")
 
 # Wrapper Methods
 
-## Feature selection methods
+## Wrapper method
 
-- Wrapper method
-    - Find the best subset of features for a particular classification method
+- Find the best subset of features for a particular classification method
     
 ```{r, echo=FALSE, out.width="80%", fig.align='center'}
 include_graphics("img/page 21.png")
 ```
 
-## Feature selection: Wrappers
+## Wrapper method
 
 - Optimizes for a specific learning algorithm
 - The feature subset selection algorithm is a "wrapper" around the learning algorithm
-    1. Pick a feature subset and pass it in to learning algorithm
-    2. Create training/test set based on the feature subset
+    1. Pick a feature subset and pass it in to a learning algorithm
+    2. Create training / test set based on the feature subset
     3. Train the learning algorithm with the training set
     4. Find accuracy (objective) with validation set
     5. Repeat for all feature subsets and pick the feature subset which led to the highest predictive accuracy (or other objective)
+
+
 - Basic approach is simple
 - Variations are based on how to select the feature subsets, since there are an exponential number of subsets
 
@@ -261,7 +263,7 @@ include_graphics("img/page 21.png")
 
 - Wrapper method
     - Consider all possible dependencies among the features
-    - Impractical for text categorization
+    - Impractical for text classification
         - Cannot deal with large feature set
         - A NP-complete problem
             - No direct relation between feature subset selection and evaluation
@@ -326,11 +328,10 @@ include_graphics("img/page 26.png")
 
 ## Filter method
 
-- Filter method
-    - Evaluate the features <u>independently</u> from the classifier and other features
-        - No indication of a classifier’s performance on the selected features
-        - No dependency among the features
-    - Feasible for very large feature set
+- Evaluate the features <u>independently</u> from the classifier and other features
+    - No indication of a classifier’s performance on the selected features
+    - No dependency among the features
+- Feasible for very large feature set
 <br>
 
 ```{r, echo=FALSE, out.width="60%", fig.align='center'}
@@ -360,13 +361,6 @@ include_graphics("img/page 36.png")
 <!-- \end{align} -->
 <!-- $$ -->
 
-## Information gain
-
-- Decrease in entropy of categorical prediction when the feature is present or absent
-
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 37.png")
-```
 
 ## Gini index
 
@@ -384,9 +378,9 @@ $$G(t) = \sum^k_{c=1}{p(c | t)^2}$$
 
 - Higher values of the gini-index indicate a greater discriminative power of the term $t$. 
 
-- If the global class distribution is skewed, the gini-index may not accurately reflect the discriminative power of the underlying attributes.
+<!-- - If the global class distribution is skewed, the gini-index may not accurately reflect the discriminative power of the underlying attributes. -->
 
-- &#10132; normalized gini-index
+<!-- - &#10132; normalized gini-index -->
 
 <!-- ## Normalized Gini Index  -->
 
@@ -463,8 +457,17 @@ $$G(t) = \sum^k_{c=1}{p(c | t)^2}$$
 <!--     - Significance level: $\alpha$, i.e., $p\mbox{-}value<\alpha$  -->
 
 <!--     - For the features passing the threshold, rank them by descending order of ${\chi}^2$ values and choose the top $k$ features -->
-    
-## Feature scoring metrics
+
+## Information gain
+
+- Decrease in entropy of categorical prediction when the feature is present or absent
+
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+include_graphics("img/page 37.png")
+```
+
+
+## Other metrics
 
 - ${\chi}^2$ statistics with multiple categories
 
@@ -533,18 +536,18 @@ include_graphics("img/lassoridge.png")
     - Some weights will be drawn to zero (tend to remove redundant features)
     - Difference from the regular SVM where redundant features are included
 
-## The $l_0$ SVM
+<!-- ## The $l_0$ SVM -->
 
-- Replace the regularizer $||w||^2$ by the $l_0$ norm $\sum_{i=1}^n{1_{w_i \neq 0}}$
+<!-- - Replace the regularizer $||w||^2$ by the $l_0$ norm $\sum_{i=1}^n{1_{w_i \neq 0}}$ -->
 
-- Further replace $\sum_{i=1}^n{1_{w_i \neq 0}}$ by $\sum_i{log{(\epsilon + |w_i|)}}$
+<!-- - Further replace $\sum_{i=1}^n{1_{w_i \neq 0}}$ by $\sum_i{log{(\epsilon + |w_i|)}}$ -->
 
-- Boils down to the following multiplicative update algorithm:
-  
-  1. Set $\sigma = (1, ..., 1)$
-  2. Get $w^*$ solution of an SVM on data set where each input is scaled by $\sigma$
-  3. Set $\sigma = |w^*| \circ \sigma$
-  4. back to 2
+<!-- - Boils down to the following multiplicative update algorithm: -->
+
+<!--   1. Set $\sigma = (1, ..., 1)$ -->
+<!--   2. Get $w^*$ solution of an SVM on data set where each input is scaled by $\sigma$ -->
+<!--   3. Set $\sigma = |w^*| \circ \sigma$ -->
+<!--   4. back to 2 -->
 
 ## Comparing methods
 
@@ -561,8 +564,8 @@ include_graphics("img/diff.png")
 <!--     - and/or Can make the learning process more computationally and algorithmically manageable by working with less features -->
 <!--     - Curse of dimensionality requires an exponential increase in data set size in relation to the number of features to learn without overfit – thus decreasing features can be critical -->
 - *Feature Selection* seeks a *subset* of the $n$ original features which retains most of the relevant information
-    - Wrappers (e.g. forward selection), Filters (e.g. PMI), Embedded (e.g. Lasso, Regularized SVN)
-- *Feature Reduction <u>combines/fuses</u>* the $n$ original features into a smaller set of newly created features which hopefully retains most of the relevant information from *all* the original features - Data fusion (e.g. LDA, PCA, etc.)
+    - Wrappers (e.g. forward selection), Filters (e.g. PMI), Embedded (e.g. Lasso, Regularized SVM)
+- *Feature Reduction <u>combines/fuses</u>* the $n$ original features into a smaller set of newly created features which hopefully retains most of the relevant information from *all* the original features (e.g. LDA, PCA, etc.)
 
 ## PCA: Principal Component Analysis
 
@@ -572,7 +575,7 @@ include_graphics("img/diff.png")
 
 - Allows us to combine much of the information contained in $n$ features into $p$ features where $p < n$
 
-- PCA is *unsupervised* in that it does not consider the output class/value of an instance – There are other algorithms which do (e.g. Linear Discriminant Analysis)
+- PCA is *unsupervised* in that it does not consider the output class / value of an instance – There are other algorithms which do (e.g. LDA: Linear Discriminant Analysis)
 
 - PCA works well in many cases where data have mostly linear correlations
 
@@ -816,7 +819,7 @@ include_graphics("img/page 881.png")
 ## Accuracy
 
 - What proportion of instances is correctly classified? <br>
- 	<center>TP + TN / TP + FP + FN + TN </center>
+ 	<center> (TP + TN) / (TP + FP + FN + TN) </center>
 
 - Accuracy is a valid choice of evaluation for classification problems which are well balanced and not skewed. 
 
@@ -854,4 +857,4 @@ Balanced F1 measure
 - Different methods
 - Can be quite effective!
 
-# Time for Practical 3!
+# Practical 3
