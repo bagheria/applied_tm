@@ -1,8 +1,9 @@
 ---
 title: "Deep Learning for Text 1"
 author: "Ayoub Bagheri"
-subtitle: "Applied Text Mining"
+subtitle: Applied Text Mining
 output:
+  beamer_presentation: default
   ioslides_presentation:
     logo: logo.png
     smaller: yes
@@ -14,7 +15,7 @@ library(knitr)
 library(kableExtra)
 ```
 
-## Lecture’s plan
+## Lecture plan
 
 1. Feed-forward neural networks
 2. Recurrent neural networks
@@ -639,18 +640,6 @@ include_graphics("img/page 23.png")
     <li>$n$ is called patience</li>
 </ul>
 
-<!-- ## Tuning hyperparameters {.smaller} -->
-
-<!-- ```{r, echo=FALSE, out.width="90%", fig.align='center'} -->
-<!-- include_graphics("img/page 24.png") -->
-<!-- ```   -->
-
-## Loss functions and output
-
-```{r, echo=FALSE, out.width="90%", fig.align='center'}
-include_graphics("img/page 25.png")
-```  
-
 ## Determining the best <br> number of hidden units
 
 - Too few hidden units prevents the network from adequately fitting the data.
@@ -738,136 +727,136 @@ Day 3: At this point, our model must decide whether we should take a rest day or
 include_graphics("img/page 36.png")
 ```  
 
-## Cell state
+<!-- ## Cell state -->
 
-- Maintains a vector $C_t$ that is the same dimensionality as the hidden state, $h_t$
-- Information can be added or deleted from this state vector via the forget and input gates.
-
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 37.png")
-```  
-
-<!-- ## Cell state example -->
-
-<!-- - Want to remember person & number of a subject noun so that it can be checked to agree with the person & number of verb when it is eventually encountered. -->
-<!-- - Forget gate will remove existing information of a prior subject when a new one is encountered. -->
-<!-- - Input gate "adds" in the information for the new subject -->
-
-## Forget gate
-
-- Forget gate computes a 0-1 value using a logistic sigmoid output function from the input, $x_t$, and the current hidden state, $h_t$:
-- Multiplicatively combined with cell state, "forgetting" information where the gate outputs something close to 0.
-
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 39.png")
-```  
-
-$$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$$
-\newpage
-
-<!-- ## Hyperbolic Tangent units -->
-
-<!-- - Tanh can be used as an alternative nonlinear function to the sigmoid logistic (0-1) output function. -->
-<!-- - Used to produce thresholded output between –1 and 1. -->
+<!-- - Maintains a vector $C_t$ that is the same dimensionality as the hidden state, $h_t$ -->
+<!-- - Information can be added or deleted from this state vector via the forget and input gates. -->
 
 <!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
-<!-- include_graphics("img/page 40.png") -->
+<!-- include_graphics("img/page 37.png") -->
 <!-- ```   -->
 
-## Input gate
+<!-- <!-- ## Cell state example --> -->
 
-- First, determine which entries in the cell state to update by computing 0-1 sigmoid output.
-- Then determine what amount to add/subtract from these entries by computing a tanh output (valued –1 to 1) function of the input and hidden state.
+<!-- <!-- - Want to remember person & number of a subject noun so that it can be checked to agree with the person & number of verb when it is eventually encountered. --> -->
+<!-- <!-- - Forget gate will remove existing information of a prior subject when a new one is encountered. --> -->
+<!-- <!-- - Input gate "adds" in the information for the new subject --> -->
 
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 41.png")
-```  
+<!-- ## Forget gate -->
 
-$$i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)$$
-$$\tilde{C}_t = tanh(W_C \cdot [h_{t-1}, x_t] + b_C)$$
-\newpage
+<!-- - Forget gate computes a 0-1 value using a logistic sigmoid output function from the input, $x_t$, and the current hidden state, $h_t$: -->
+<!-- - Multiplicatively combined with cell state, "forgetting" information where the gate outputs something close to 0. -->
 
-## Updating the cell state
+<!-- ```{r, echo=FALSE, out.width="70%", fig.align='center'} -->
+<!-- include_graphics("img/page 39.png") -->
+<!-- ```   -->
 
-- Cell state is updated by using component-wise vector multiply to "forget" and vector addition to "input" new information.
+<!-- $$f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)$$ -->
+<!-- \newpage -->
 
-```{r, echo=FALSE, out.width="70%", fig.align='center'}
-include_graphics("img/page 42.png")
-```  
+<!-- <!-- ## Hyperbolic Tangent units --> -->
 
-$$C_t = f_t * C_{t-1} + i_t * \tilde{C}_t$$
-\newpage
+<!-- <!-- - Tanh can be used as an alternative nonlinear function to the sigmoid logistic (0-1) output function. --> -->
+<!-- <!-- - Used to produce thresholded output between –1 and 1. --> -->
 
-## Output gate
+<!-- <!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} --> -->
+<!-- <!-- include_graphics("img/page 40.png") --> -->
+<!-- <!-- ```   --> -->
 
-- Hidden state is updated based on a "filtered" version of the cell state, scaled to –1 to 1 using tanh.
-- Output gate computes a sigmoid function of the input and current hidden state to determine which elements of the cell state to "output".
+<!-- ## Input gate -->
 
-```{r, echo=FALSE, out.width="60%", fig.align='center'}
-include_graphics("img/page 43.png")
-```  
+<!-- - First, determine which entries in the cell state to update by computing 0-1 sigmoid output. -->
+<!-- - Then determine what amount to add/subtract from these entries by computing a tanh output (valued –1 to 1) function of the input and hidden state. -->
 
-$$o_t = \sigma(W_o[h_{t-1}, x_t] + b_o)$$
-$$h_t = o_t * tanh(C_t)$$
+<!-- ```{r, echo=FALSE, out.width="60%", fig.align='center'} -->
+<!-- include_graphics("img/page 41.png") -->
+<!-- ```   -->
 
-\newpage
+<!-- $$i_t = \sigma(W_i \cdot [h_{t-1}, x_t] + b_i)$$ -->
+<!-- $$\tilde{C}_t = tanh(W_C \cdot [h_{t-1}, x_t] + b_C)$$ -->
+<!-- \newpage -->
 
-<!-- ## Overall network architecture -->
+<!-- ## Updating the cell state -->
 
-<!-- - Single or multilayer networks can compute LSTM inputs from problem inputs and problem outputs from LSTM outputs. -->
+<!-- - Cell state is updated by using component-wise vector multiply to "forget" and vector addition to "input" new information. -->
+
+<!-- ```{r, echo=FALSE, out.width="70%", fig.align='center'} -->
+<!-- include_graphics("img/page 42.png") -->
+<!-- ```   -->
+
+<!-- $$C_t = f_t * C_{t-1} + i_t * \tilde{C}_t$$ -->
+<!-- \newpage -->
+
+<!-- ## Output gate -->
+
+<!-- - Hidden state is updated based on a "filtered" version of the cell state, scaled to –1 to 1 using tanh. -->
+<!-- - Output gate computes a sigmoid function of the input and current hidden state to determine which elements of the cell state to "output". -->
+
+<!-- ```{r, echo=FALSE, out.width="60%", fig.align='center'} -->
+<!-- include_graphics("img/page 43.png") -->
+<!-- ```   -->
+
+<!-- $$o_t = \sigma(W_o[h_{t-1}, x_t] + b_o)$$ -->
+<!-- $$h_t = o_t * tanh(C_t)$$ -->
+
+<!-- \newpage -->
+
+<!-- <!-- ## Overall network architecture --> -->
+
+<!-- <!-- - Single or multilayer networks can compute LSTM inputs from problem inputs and problem outputs from LSTM outputs. --> -->
+
+<!-- <!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} --> -->
+<!-- <!-- include_graphics("img/page 44.png") --> -->
+<!-- <!-- ```   --> -->
+
+<!-- <!-- ## LSTM training --> -->
+
+<!-- <!-- - Trainable with backprop derivatives such as: --> -->
+<!-- <!--     - Stochastic gradient descent (randomize order of examples in each epoch) with momentum (bias weight changes to continue in same direction as last update). --> -->
+<!-- <!--     - ADAM optimizer (Kingma & Ma, 2015) --> -->
+<!-- <!-- - Each cell has many parameters ($W_f$, $W_i$, $W_C$, $W_o$) --> -->
+<!-- <!--     - Generally requires lots of training data. --> -->
+<!-- <!--     - Requires lots of compute time that exploits GPU clusters. --> -->
+
+<!-- ## General problems solved with LSTM -->
+
+<!-- - Sequence labeling  -->
+<!--     - Train with supervised output at each time step computed using a single or multilayer network that maps the hidden state ($h_t$) to an output vector ($O_t$). -->
+<!-- - Language modeling -->
+<!--     - Train to predict next input ($O_t =I_{t+1}$) -->
+<!-- - Sequence (e.g. text) classification -->
+<!--     - Train a single or multilayer network that maps the final hidden state ($h_n$) to an output vector ($O$). -->
+
+<!-- ## Sequence to sequence <br> transduction (mapping) -->
+
+<!-- - Encoder/Decoder framework maps one sequence to a "deep vector" then another LSTM maps this vector to an output sequence. -->
 
 <!-- ```{r, echo=FALSE, out.width="80%", fig.align='center'} -->
-<!-- include_graphics("img/page 44.png") -->
+<!-- include_graphics("img/page 47.png") -->
 <!-- ```   -->
 
-<!-- ## LSTM training -->
+<!-- - Train model "end to end" on I/O pairs of sequences. -->
 
-<!-- - Trainable with backprop derivatives such as: -->
-<!--     - Stochastic gradient descent (randomize order of examples in each epoch) with momentum (bias weight changes to continue in same direction as last update). -->
-<!--     - ADAM optimizer (Kingma & Ma, 2015) -->
-<!-- - Each cell has many parameters ($W_f$, $W_i$, $W_C$, $W_o$) -->
-<!--     - Generally requires lots of training data. -->
-<!--     - Requires lots of compute time that exploits GPU clusters. -->
+<!-- ## LSTM application architectures -->
 
-## General problems solved with LSTM
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/page 48.png") -->
+<!-- ```   -->
 
-- Sequence labeling 
-    - Train with supervised output at each time step computed using a single or multilayer network that maps the hidden state ($h_t$) to an output vector ($O_t$).
-- Language modeling
-    - Train to predict next input ($O_t =I_{t+1}$)
-- Sequence (e.g. text) classification
-    - Train a single or multilayer network that maps the final hidden state ($h_n$) to an output vector ($O$).
+<!-- <!-- ## Successful applications of LSTM --> -->
 
-## Sequence to sequence <br> transduction (mapping)
+<!-- <!-- - Speech recognition: Language and acoustic modeling --> -->
+<!-- <!-- - Sequence labeling --> -->
+<!-- <!--   - POS Tagging  --> -->
 
-- Encoder/Decoder framework maps one sequence to a "deep vector" then another LSTM maps this vector to an output sequence.
-
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 47.png")
-```  
-
-- Train model "end to end" on I/O pairs of sequences.
-
-## LSTM application architectures
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/page 48.png")
-```  
-
-<!-- ## Successful applications of LSTM -->
-
-<!-- - Speech recognition: Language and acoustic modeling -->
-<!-- - Sequence labeling -->
-<!--   - POS Tagging  -->
-
-<!--     https://www.aclweb.org/aclwiki/index.php?title=POS_Tagging_(State_of_the_art) -->
-<!--   - NER -->
-<!--   - Phrase Chunking  -->
-<!-- - Neural syntactic and semantic parsing -->
-<!-- - Image captioning: CNN output vector to sequence -->
-<!-- - Sequence to Sequence -->
-<!--   - Machine Translation (Sustkever, Vinyals, & Le, 2014) -->
-<!--   - Video Captioning (input sequence of CNN frame outputs) -->
+<!-- <!--     https://www.aclweb.org/aclwiki/index.php?title=POS_Tagging_(State_of_the_art) --> -->
+<!-- <!--   - NER --> -->
+<!-- <!--   - Phrase Chunking  --> -->
+<!-- <!-- - Neural syntactic and semantic parsing --> -->
+<!-- <!-- - Image captioning: CNN output vector to sequence --> -->
+<!-- <!-- - Sequence to Sequence --> -->
+<!-- <!--   - Machine Translation (Sustkever, Vinyals, & Le, 2014) --> -->
+<!-- <!--   - Video Captioning (input sequence of CNN frame outputs) --> -->
 
 ## Bi-directional LSTM (Bi-LSTM)
 
@@ -966,12 +955,7 @@ $$h_t = (1 - z_t) * h_{t-1} + z_t * \tilde(h)_t$$
 
 ## Summary
 
-- Feed-forward neural networks
-- Backpropagation
-- Recurrent neural networks
-- SRN
-- LSTM
-- Bi-LSTM
-- GRU
+- Deep learning can be applied for automatic feature engineering
+- Recurrent neural networks are are ideal for sequential data such as text
 
-# Time for Practical 6!
+# Practical 6
