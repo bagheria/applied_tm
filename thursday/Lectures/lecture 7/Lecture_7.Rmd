@@ -1,12 +1,14 @@
 ---
 title: "Deep Learning for Text 2"
 author: "Ayoub Bagheri"
-subtitle: "Applied Text Mining"
+subtitle: Applied Text Mining
 output:
+  beamer_presentation: default
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
+  word_document: default
 ---
 
 ```{r, include=FALSE}
@@ -14,13 +16,13 @@ library(knitr)
 library(kableExtra)
 ```
 
-## RNN: Recap
+## Recap: RNN in Python
 
 ```{r, echo=FALSE, out.width="90%", fig.align='center'}
 include_graphics("img/rnn.png")
 ```
 
-## Lecture’s plan
+## Lecture plan
 
 1. Convolutional Neural Networks
 2. Transformers
@@ -262,7 +264,7 @@ url: https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html
 - **MPQA**: Opinion polarity detection subtask of the MPQA dataset (Wiebe et al., 2005).
 url: https://mpqa.cs.pitt.edu/corpora/mpqa_corpus/
 
-## Data sets statistics
+## Datasets' statistics
 
 ```{r, echo=FALSE, out.width="65%", fig.align='center'}
 include_graphics("img/datasetsCNN.png")
@@ -303,7 +305,7 @@ include_graphics("img/results.png")
 <!-- include_graphics("img/page 21.png") -->
 <!-- ``` -->
 
-## CNN in Keras
+## CNN with Keras in Python
 
 ```{r, echo=FALSE, out.width="80%", fig.align='center'}
 include_graphics("img/cnn.png")
@@ -624,7 +626,10 @@ include_graphics("img/bertelmogpt.png")
 ## What kinds of things does pretraining learn?
 There’s increasing evidence that pretrained models learn a wide variety of things about the statistical properties of language:
 
-- **Trivia:** Utrecht University is located in ...
+*Talk to Transformer:* https://app.inferkit.com/demo
+
+- Utrecht University is located in ...
+
 
 ## Transformers
 
@@ -804,4 +809,4 @@ There’s increasing evidence that pretrained models learn a wide variety of thi
 
 - These models are still not well-understood
 
-# Time for Practical 7!
+# Practical 7
