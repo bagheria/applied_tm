@@ -285,7 +285,7 @@ Here you will find the materials for Friday:
 # Archive
 On the last day of the course, all the materials will be available in a compact file for download:
 
-[Download the Materials]()
+[Download the Materials](materials/Applied_TM_all_materials.zip)
 
 
 We wish all the participants success with their Text Mining projects!
