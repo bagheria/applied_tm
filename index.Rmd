@@ -265,8 +265,8 @@ Here you will find the materials for Friday:
 - Part 9: Sentiment analysis
     - [Lecture 9](friday/Lectures/lecture 9/Lecture_9.html)
     - [Lecture handout 9](friday/Lectures/lecture 9/Lecture handout_9.pdf)
-    - [Practical 9]()
-    - [Answers practical 9]()
+    - [Practical 9](friday/Practicals/Practical 9/Impractical 9.html)
+    - [Answers practical 9](friday/Practicals/Practical 9/Practical 9.html)
 
 - Part 10: Responsible text mining
     - [Lecture 10](friday/Lectures/lecture 10/Lecture_10.pdf)
