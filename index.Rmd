@@ -241,7 +241,7 @@ Here you will find the materials for Thursday:
     - [Answers practical 7](thursday/Practicals/Practical 7/Practical 7.html)
 
 - Part 8: Applications of text mining & NLP
-    - [Lecture 8](thursday/Lectures/lecture 8/Lecture_8.html)
+    - [Lecture 8](thursday/Lectures/lecture 8/Lecture_8.pdf)
     - [Lecture handout 8](thursday/Lectures/lecture 8/Lecture handout_8.pdf)
     - [Practical 8](thursday/Practicals/Practical 8/Impractical 8.html)
     - [Answers practical 8](thursday/Practicals/Practical 8/Practical 8.html)
