@@ -14585,11 +14585,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Welcome to the last practical of the course “Applied Text Mining”.</p>
-<p>In this practical, we will create models for neural machine translation. Today we are curious to see how a simple deep learning based model translates a sentence into its counterpart. See these examples:</p>
-<p><img src="translation_example.png"></p>
-<p><img src="translation_example2.png"></p>
-<p>The objective from this practical is to convert a Dutch sentence to its English counterpart using a Neural Machine Translation (NMT) system. We will implement this task by building a simple Sequence-to-Sequence model with the help of Keras library.</p>
+<p>You made it! It is the last practical of the Applied Text Mining course.</p>
+<p>In this practical, we will create models for neural machine translation. Today we are curious to see how a simple deep learning-based model translates a sentence into its counterpart. See these examples:</p>
+<p><img src="translation_example.png" /></p>
+<p><img src="translation_example2.png" /></p>
+<p>The aim of this practical is to convert a Dutch sentence to its English counterpart using a Neural Machine Translation (NMT) system. We will implement this task by building a simple Sequence-to-Sequence model (a special class of Recurrent Neural Network architectures) with the help of Keras library.</p>
 
 </div>
 </div>
@@ -14726,68 +14726,6 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Here you see an example on how to use the maketrans() function ###</span>
-<span class="c1"># specify the list of characters that need to be replaced</span>
-<span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;mtex&quot;</span>
-
-<span class="c1"># specify the list of characters with which the characters need to be replaced</span>
-<span class="n">str2</span> <span class="o">=</span> <span class="s2">&quot;dwoo&quot;</span>
-
-<span class="c1"># specify the list of characters that needs to be deleted</span>
-<span class="n">str3</span> <span class="o">=</span> <span class="s2">&quot;u&quot;</span>
-
-<span class="c1"># target string </span>
-<span class="n">temp_str</span> <span class="o">=</span> <span class="s2">&quot;text mining&quot;</span>
-
-<span class="c1"># using maketrans() to construct a translate table</span>
-<span class="n">table</span> <span class="o">=</span> <span class="n">temp_str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="n">str1</span><span class="p">,</span> <span class="n">str2</span><span class="p">,</span> <span class="n">str3</span><span class="p">)</span>
-  
-<span class="c1"># Printing original string </span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;The string before translating is : &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">temp_str</span><span class="p">)</span>
-  
-<span class="c1"># using translate() to make translations.</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;The string after translating is : &quot;</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">temp_str</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="n">table</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>The string before translating is : text mining
-The string after translating is : woow dining
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14901,7 +14839,7 @@ The string after translating is : woow dining
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>10. <strong>Defince a Seq2Seq model architecture using an Embedding layer as the input layer, an LSTM layer as our encoder and another LSTM layer followed by a Dense layer as the decoder. Make this a function and name it build_model(). Define different input arguments for your function including the embedding_size and the number of LSTM units.</strong></p>
+<p>10. <strong>Define a Sequence-to-Sequence (Seq2Seq) model architecture using an embedding layer as input layer, an LSTM layer as  encoder and another LSTM layer followed by a Dense layer as decoder. Make this a function and name it build_model(). Define different input arguments for your function including the embedding_size and the number of LSTM units.</strong></p>
 
 </div>
 </div>
@@ -14997,7 +14935,7 @@ The string after translating is : woow dining
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>18. <strong>Tatoeba.org (<a href="https://tatoeba.org/en/downloads">https://tatoeba.org/en/downloads</a>) has a large database of example sentences translated into many languages by volunteers. To have a better data for your neural machine translator you can use this tool to generate and download customized sentence pairs. For example it has more than one million sentence pairs translated from Dutch to English. This time, try to tune the hyperparameters and add an attention layer after the dense layer.</strong></p>
+<p><strong>Tatoeba.org (<a href="https://tatoeba.org/en/downloads">https://tatoeba.org/en/downloads</a>) has a large database of example sentences translated into many languages by volunteers. To have a better data for your neural machine translator you can use this tool to generate and download customized sentence pairs. For example it has more than one million sentence pairs translated from Dutch to English. This time, try to tune the hyperparameters and add an attention layer after the dense layer.</strong></p>
 
 </div>
 </div>
