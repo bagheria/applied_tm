@@ -2,14 +2,14 @@
 title: "Sentiment Analysis"
 author: "Ayoub Bagheri & Anastasia Giachanou"
 output:
-  beamer_presentation: default
-  pdf_document:
-    toc: no
-    toc_depth: '5'
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
+  pdf_document:
+    toc: no
+    toc_depth: '5'
+  beamer_presentation: default
 ---
 ```{r, include=FALSE}
 library(knitr)
@@ -41,6 +41,76 @@ Nice story for older children.
 include_graphics("img/page3_littleprince.png")
 ```
 
+## Conceptual challenges
+
+Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
+
+## Conceptual challenges
+
+Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
+
+- There was an earthquake in Japan
+
+## Conceptual challenges
+
+Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
+
+- There was an earthquake in Japan
+
+- They said it would be a great experience
+
+## Conceptual challenges
+
+Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
+
+- There was an earthquake in Japan
+
+- They said it would be a great experience
+
+  - They said it would be a great experience. And yes it was!
+
+## Conceptual challenges
+
+Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
+
+- There was an earthquake in Japan
+
+- They said it would be a great experience
+
+  - They said it would be a great experience. And yes it was!
+
+  - They said it would be a great experience. However, I didn't have fun.
+
+## Conceptual challenges
+
+Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
+
+- There was an earthquake in Japan
+
+- They said it would be a great experience
+
+  - They said it would be a great experience. And yes it was!
+  
+  - They said it would be a great experience. However, I didn't have fun.
+
+- Go read the book
+
+## Conceptual challenges
+
+Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
+
+- There was an earthquake in Japan
+
+- They said it would be a great experience
+
+  - They said it would be a great experience. And yes it was!
+  
+  - They said it would be a great experience. However, I didn't have fun.
+
+- Go read the book
+
+- Yeah, sure!
+
 ## Sentiment
 
 - Sentiment = 
@@ -61,8 +131,9 @@ include_graphics("img/page 8.png")
 include_graphics("img/page 9.png")
 ```
 
+
 ## Scherer typology of affective states
-- <b>Emotion</b>: brief organically synchronized … evaluation of a major event 
+- <b>Emotion</b>: brief organically synchronized, based on evaluation of a major event 
   - angry, sad, joyful, fearful, ashamed, proud, elated
 
 - <b>Mood</b>: diffuse non-caused low-intensity long-duration change in subjective feeling
@@ -77,32 +148,44 @@ include_graphics("img/page 9.png")
 - <b>Personality traits</b>: stable personality dispositions and typical behavior tendencies
   - nervous, anxious, reckless, morose, hostile, jealous
 
+## Plutchik wheel of emotions
+```{r, echo=FALSE, out.width="70%", fig.align='center'}
+include_graphics("img/Plutchik-wheel.png")
+```
+
 ## Sentiment analysis
 - Use of natural language processing (NLP) and computational techniques to automate the extraction or classification of sentiment from unstructured text
 
 - Other terms
   - Opinion mining
   - Sentiment mining
-  - Subjectivity analysis
+  <!-- - Subjectivity analysis -->
 
-## Sentiment analysis | can be applied in every topic & domain
-- <em>Book</em>: is this review positive or negative?
+## Related tasks
 
-- <em>Humanities</em>:sentiment analysis for German historic plays.
+- Subjectivity (neutral vs sentimental text)
+- Opinion retrieval (opinion for a given query)
+- Comparative opinion analysis
+- Emotion detection (e.g., happiness, anger, sadness)
+- Stance detection  (in favor or against)
+- Reputation analysis
+- Sarcasm/Irony detection
+- Hate-speech 
+- Bias detection
 
-- <em>Products</em>: what do people think about the new iPhone?
+## Sentiment analysis 
 
-- <em>Blog</em>: how are people thinking about immigrants?
+- Can be applied in every topic & domain (non exhaustive list):
 
-- <em>Politics</em>: who is going to win the election?
-
-- <em>Twitter</em>: what is the trend today? 
-
-- <em>Movie</em>:  is this review positive or negative (IMDB, Netflix)?
-
-- <em>Marketing</em>: how is consumer confidence? Consumer attitudes?
-
-- <em>Healthcare</em>: are patients happy with the hospital environment?
+  - <em>Book</em>: is this review positive or negative?
+  - <em>Humanities</em>: sentiment analysis for German historic plays.
+  - <em>Products</em>: what do people think about the new iPhone?
+  - <em>Blog</em>: how are people thinking about immigrants?
+  - <em>Politics</em>: who is going to win the election?
+  - <em>Twitter</em>: what is the trend today? 
+  - <em>Movie</em>:  is this review positive or negative (IMDB, Netflix)?
+  - <em>Marketing</em>: how is consumer confidence? Consumer attitudes?
+  - <em>Healthcare</em>: are patients happy with the hospital environment?
 
 ## Opinion types
 - <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
@@ -126,9 +209,9 @@ include_graphics("img/page 9.png")
   
   - <span style="color:red; font-weight:bold; font-style:italic">entity</span>: target entity (or object).
   
-  - <span style="color:red; font-weight:bold; font-style:italic">Aspect</span>: aspect (or feature) of the entity.
+  - <span style="color:red; font-weight:bold; font-style:italic">aspect</span>: aspect (or feature) of the entity.
   
-  - <span style="color:blue; font-weight:bold; font-style:italic">Sentiment</span>: +, -, or neu, a rating, or an emotion. 
+  - <span style="color:blue; font-weight:bold; font-style:italic">sentiment</span>: +, -, or neu, a rating, or an emotion. 
   
   - <span style="color:green; font-weight:bold; font-style:italic">holder</span>: opinion holder. 
   
@@ -146,15 +229,37 @@ include_graphics("img/page 9.png")
   - Is the attitude of this text positive or negative?
 
 - More complex:
-  
-  - Rank the attitude of this text from 1 to 5
+  - Is the attitude of this text positive, negative or neutral?
+  - Label the attitude of this text from 1 to 5
 
 - Advanced:
-
   - Detect the target, source, or complex opinion types
   - Implicit opinions or aspects
 
-## Simple task: Opinion summary 
+
+## Document sentiment analysis
+- <span style="color:red">Classify a document</span> (e.g., a review) based on the overall sentiment of the opinion holder <span style="font-size:16px"></span>
+  - <span style="font-size:18px"><span style="color:blue">Classes</span>: Positive, negative (possibly neutral)</span>
+    - <b>Neutral</b> means no sentiment expressed
+    - "I believe he went home yesterday."
+    - "I bought a iPhone yesterday"
+    
+- <span style="color:blue">An example review</span>: 
+  -  <span style="font-size:18px;font-style:italic">“I bought an iPhone a few days ago. It is such a nice phone, although a little large. The touch screen is cool. The voice quality is great too. I simply love it!”</span>
+  -  <span style="font-size:18px"><span style="color:blue">Classification</span>: positive or negative?</span>
+- <span style="color:red">It is basically a text classification problem</span>
+
+## Sentence sentiment analysis
+- <span style="color:red; font-size: 22px">Classify the sentiment expressed in a sentence </span>
+  - <span style="color:blue">Classes</span>: positive, negative (possibly neutral) 
+
+- <span style="color:red; font-size:22px">But bear in mind</span>
+  - <span style="color:blue">Explicit opinion</span>: “I like this car.” 
+  - <span style="color:blue">Fact-implied opinion</span>: “I bought this car yesterday and it broke today.”
+  - <span style="color:blue;font-weight:bold">Mixed opinion</span>: “Apple is doing well in this poor economy”
+
+
+## Aspect based sentiment analysis
 <div style="float:left;width:50%">
 <center><span style="color:blue; font-weight:bold; font-size:24px">Aspect/feature Based Summary of opinions about iPhone:
 </span></center>
@@ -178,20 +283,20 @@ include_graphics("img/page 17.png")
 
 </div>
 
-## Problem
-- Which features to use?
-  
-  - Words (unigrams)
-  - Phrases/n-grams
-  - Sentences
+<!-- ## Problem -->
+<!-- - Which features to use? -->
 
-- How to interpret features for sentiment detection?
+<!--   - Words (unigrams) -->
+<!--   - Phrases/n-grams -->
+<!--   - Sentences -->
 
-  - Bag-of-words
-  - Annotated lexicons (WordNet, SentiWordNet)
-  - Syntactic patterns
-  - Paragraph structure
-  - Word embedding
+<!-- - How to interpret features for sentiment detection? -->
+
+<!--   - Bag-of-words -->
+<!--   - Annotated lexicons (WordNet, SentiWordNet) -->
+<!--   - Syntactic patterns -->
+<!--   - Paragraph structure -->
+<!--   - Word embedding -->
 
 ## Challenges
 - Harder than topical classification, with which bag of words features perform well
@@ -206,17 +311,100 @@ include_graphics("img/page 17.png")
   
   - Effect of syntax on semantics
 
-## Approaches for sentiment analysis
-- **Lexicon-based (dictionary-based) methods**
-  - Using sentiment words and phrases: good, wonderful, awesome, troublesome, cost an arm and leg
+## Some interesting sentences 
+- <span style="color:red">Trying out Chrome because Firefox keeps crashing</span>.
   
-  - <span style="color:red">Not completely unsupervised!</span>
+  - Firefox - negative; no opinion about chrome. 
+  
+  - <span style="color:blue">We need to segment the sentence into clauses</span> to decide that “crashing” only applies to Firefox(?). 
+
+- But how about these
+  - <span style="color:red">I changed to Audi because BMW is so expensive</span>.
+  
+  - <span style="color:red">I did not buy BMW because of the high price</span>.
+  
+  - <span style="color:red">I am so happy that my iPhone is nothing like my old ugly phone</span>.
+
+<!-- ## Some interesting sentences (contd) -->
+<!-- - These two sentences are from paint reviews. -->
+
+<!--   - <span style="color:blue">For paintX, one coat can cover the wood color</span>. -->
+
+<!--   - <span style="color:blue">For paintY, we need three coats to cover the wood color </span> -->
+
+<!--   - We know that paintX is good and paintY is not, but how, by a system. -->
+
+<!-- - “My goal is to get a tv with good picture quality”  -->
+
+<!-- - “The top of the picture was brighter than the bottom.” -->
+
+<!-- - “When I first got the airbed a couple of weeks ago it was wonderful as all new things are, however as the weeks progressed I liked it less and less.” -->
+
+## Some interesting sentences (contd)
+- Conditional sentences are hard to deal with (Narayanan et al. 2009)
+  
+  - <span style="color:red">If I can find a good camera, I will buy it</span>.
+  
+  - But conditional sentences can have opinions
+  
+    - <span style="color:red">If you are looking for a good phone, buy Nokia</span>
+
+- Questions are also hard to handle
+  
+  - <span style="color:red">Are there any great perks for employees</span>?
+  
+  - <span style="color:red">Any idea how to fix this lousy Sony camera</span>?
+
+## Some interesting sentences (contd)
+- Sarcastic sentences
+  
+  - <span style="color:red">What a great car, it stopped working in the second day</span>.
+
+- Sarcastic sentences are common in political blogs, comments and discussions. 
+  
+  - They make political opinions difficult to handle
+
+## Explicit and implicit aspects
+- <span style="color:red">Explicit aspects</span>: Aspects explicitly mentioned as nouns or noun phrases in a sentence
+  
+  - <span style="font-size:18px">“The <span style="color:blue">picture quality</span> is of this phone is great.”</span> 
+
+- <span style="color:red">Implicit aspects</span>: Aspects not explicitly mentioned in a sentence but are implied
+  - <span style="font-size:18px">“This car is so <span style="color:blue">expensive</span>.”</span> 
+  - <span style="font-size:18px">“This phone will not easily fit <span style="color:blue">in a pocket</span>.”</span> 
+  - <span style="font-size:18px">“Included <span style="color:blue">16MB</span> is stingy.” </span> 
+
+## Implicit aspects | Bagheri et al. 2013
+An implicit aspect should satisfy the following conditions:
+
+- The related aspect word does not occur in the review sentence explicitly.
+
+- The aspect can be discovered by its surrounding words (e.g. opinion words) in the review sentence.
+
+<div style="float:right; width:50%">
+```{r, echo=FALSE,out.width="100%"}
+include_graphics("img/implicit.png")
+```
+</div>
+
+<div style="float:right; width:50%">
+```{r, echo=FALSE,out.width="100%"}
+include_graphics("img/implicit2.png")
+```
+</div>
+
+## Methods for sentiment analysis
+
+- **Lexicon-based methods**
+  - Dictionary based: Using sentiment words and phrases (e.g., good, wonderful, awesome, troublesome, cost an arm and leg)
+  - Corpus-based: Using co-occurrence statistics or syntactic patterns embedded in text corpora
+  <!-- - <span style="color:red">Not completely unsupervised!</span> -->
 
 - **Supervised learning methods**: to classify reviews into positive and negative. 
   - Naïve Bayes
-  - Maximum Entropy
   - Support Vector Machine
   - Deep learning
+  - ...
 
 # Lexicon-based Methods
 
@@ -238,10 +426,22 @@ include_graphics("img/page 17.png")
 <!-- <br> -->
 <!-- <span style="font-size:16px">Philip J. Stone, Dexter C Dunphy, Marshall S. Smith, Daniel M. Ogilvie. 1966. The General Inquirer: A Computer Approach to Content Analysis. MIT Press </span> -->
 
-## LIWC (Linguistic Inquiry and Word Count)
+## Sentiment and other lexicons
 
+- Lists of words that are associated with sentiment scores
+- Can have binary scores (1, -1) or intensity scores (from 0 to 1)
+- Positive/negative polarity, emotions, affective states, negation lists
+- Manually annotated or created from our corpus
+
+<div>
+```{r, echo=FALSE}
+knitr::include_graphics(c("img/NRC-Emotion-Lexicon.png", "img/AFINN.png"))
+```
+
+</div>
+## LIWC (Linguistic Inquiry and Word Count) | Tausczik and Pennebaker (2011)
 - Home page: http://liwc.wpengine.com/
-- 2300 words, >70 classes
+- 2,300 words, >70 classes
 
 - <b>Affective Processes</b>
   - negative emotion (bad, weird, hate, problem, tough)
@@ -252,6 +452,45 @@ include_graphics("img/page 17.png")
 
 - <b>Pronouns, Negation</b> (<em>no, never</em>), <b>Quantifiers</b> (<em>few, many</em>)
 
+## VADER Sentiment Analysis | Hutto and Gilbert (2014)
+
+- VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis tool
+- Five generalizable heuristics based on grammatical and syntactical cues:
+
+  - <em>Punctuation</em>: “The food here is good<span style="color:red">!!!</span>” vs “The food here is good.”
+  - <em>Capitalization</em>: “The food here is <span style="color:red">GREAT</span>!” vs “The food here is great!”
+  - <em>Degree modifiers</em>: “The service here is <span style="color:red">extremely</span> good” vs “The service here is good”
+  - <em>The conjunction “but”</em>: “The food here is great, <span style="color:red">but</span> the service is horrible” has mixed sentiment
+  - <em>For negation</em> examine the tri-gram preceding a sentiment lexical feature: “<span style="color:red">The food here isn’t</span> really all that great”
+  
+## Using WordNet to build lexicons
+- WordNet: A lexical database of semantic relations between words including synonyms, antonyms, hyponyms
+- The synonyms are grouped into synsets with short definitions and usage examples
+  
+- Create positive (“good”) and negative seed-words (“terrible”)
+- Find synonyms and antonyms
+  - Positive set:  Add  synonyms of positive words (“well”) and antonyms of negative words 
+  - Negative set: Add synonyms of negative words (“awful”)  and antonyms of positive words (”evil”)
+
+
+## Bing Liu opinion lexicon | Hu and Liu (2004)
+- <a href="https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">Bing Liu's Page on Opinion Mining</a>
+- http://www.cs.uic.edu/~liub/FBS/opinion-lexicon-English.rar
+
+- 6,786 words
+  - 2,006 positive
+  - 4,783 negative
+
+## Bing Liu opinion lexicon | Hu and Liu (2004)
+- Start with 30 adjectives that you know the semantic orientation (positive adjectives:
+great, fantastic, nice, cool and negative adjectives: bad, dull)
+
+- Use WordNet to predict the orientations of all the adjectives in the opinion word list
+
+<div style="float:right;width:60%">
+```{r, echo=FALSE, out.width="100%"}
+include_graphics("img/wordnet.png")
+```
 
 <!-- ## MPQA Subjectivity Cues Lexicon -->
 <!-- - Home page: https://mpqa.cs.pitt.edu/lexicons/subj_lexicon/ -->
@@ -272,16 +511,7 @@ include_graphics("img/page 17.png")
 <!-- <br> -->
 <!-- Riloff and Wiebe (2003). Learning extraction patterns for subjective expressions. EMNLP-2003.</span> -->
 
-## Bing Liu opinion lexicon
-- <a href="https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">Bing Liu's Page on Opinion Mining</a>
-- http://www.cs.uic.edu/~liub/FBS/opinion-lexicon-English.rar
-
-- 6786 words
-  - 2006 positive
-  - 4783 negative
-
-
-## SentiWordNet
+## SentiWordNet | Esuli and Sebastiani (2006)
 - https://github.com/aesuli/SentiWordNet
 
 - All WordNet synsets automatically annotated for degrees of positivity, negativity, and neutrality/objectiveness
@@ -385,18 +615,19 @@ include_graphics("img/page 17.png")
 <!-- - Negative -->
 <!--   - <span style="font-size:18px">ambiguous cautious cynical evasive harmful hypocritical inefficient insecure irrational irresponsible minor outspoken pleasant reckless risky selfish tedious unsupported vulnerable wasteful…</spann> -->
 
-## Turney algorithm
+## Turney algorithm | Turney (2002)
 1. Extract a phrasal lexicon from reviews
 2. Learn polarity of each phrase
 3. Rate a review by the average polarity of its phrases
 
 
-https://arxiv.org/abs/cs/0212032
+<!--   https://arxiv.org/abs/cs/0212032 -->
 
 ## Extract two-word phrases with adjectives
 ```{r, echo=FALSE, out.width="100%"}
 include_graphics("img/page 40.png")
 ```
+The JJ tags indicate adjectives, the NN tags are nouns, the RB tags are adverbs, and the VB tags are verbs
 
 ## How to measure polarity of a phrase?
 - Positive phrases co-occur more with “excellent”
@@ -488,80 +719,54 @@ data.frame(Phrase = phrase,
   row_spec(10, italic = T)
 ```
 
-## Results of Turney algorithm
-- 410 reviews from Epinions
-  - 170 (41%) negative
-  - 240 (59%) positive
+<!-- ## Results of Turney algorithm -->
+<!-- - 410 reviews from Epinions -->
+<!--   - 170 (41%) negative -->
+<!--   - 240 (59%) positive -->
 
-- Majority class baseline: 59%
-- Turney algorithm: 74%
-<br> <br>
-- Phrases rather than words
-- Learns domain-specific information
+<!-- - Majority class baseline: 59% -->
+<!-- - Turney algorithm: 74% -->
+<!-- <br> <br> -->
+<!-- - Phrases rather than words -->
+<!-- - Learns domain-specific information -->
 
-## Using WordNet to learn polarity
-- WordNet: online thesaurus
-- Create positive (“good”) and negative seed-words (“terrible”)
-- Find Synonyms and Antonyms
-  - Positive Set:  Add  synonyms of positive words (“well”) and antonyms of negative words 
-  - Negative Set: Add synonyms of negative words (“awful”)  and antonyms of positive words (”evil”)
+## Lexicon-based methods in summary 
 
-## Learning lexicons in summary
-- Advantages:
-  - Can be domain-specific
-  - Can be more robust (more words)
 - Intuition
-  - Start with a seed set of words (‘good’, ‘poor’)
+  - Start with a seed set of words (“good”, “poor”)
   - Find other words that have similar polarity:
     - Using “and” and “but”
     - Using words that occur nearby in the same document
     - Using WordNet synonyms and antonyms
+  - Using rules based on punctuation, emoticons
+
+## Lexicon-based methods in summary (contd)
+- Advantages:
+  - Can be domain-independent with general purpose lexicons
+  - Can become domain-dependent
+  - Can be easy to rationalise prediction output
+  - Can be applied when no training data is available
+- Disadvantages:
+  - Compared to a well-trained, in-domain ML model they typically underperform
+  - Sensitive to affective dictionary coverage
 
 # Supervised Methods
 
-## Document sentiment classification
-- <span style="color:red">Classify a document</span> (e.g., a review) based on the overall sentiment of the opinion holder <span style="font-size:16px"></span>
-  - <span style="font-size:18px"><span style="color:blue">Classes</span>: Positive, negative (possibly neutral)</span>
-- <span style="color:blue">An example review</span>: 
-  -  <span style="font-size:18px;font-style:italic">“I bought an iPhone a few days ago. It is such a nice phone, although a little large. The touch screen is cool. The voice quality is great too. I simply love it!”</span>
-  -  <span style="font-size:18px"><span style="color:blue">Classification</span>: positive or negative?</span>
-- <span style="color:red">It is basically a text classification problem</span>
-
-## Sentence sentiment analysis
-- <span style="color:red; font-size: 22px">Classify the sentiment expressed in a sentence </span>
-  - <span style="color:blue">Classes</span>: positive, negative, neutral 
-  - <b>Neutral</b> means no sentiment expressed
-    - "I believe he went home yesterday."
-    - "I bought a iPhone yesterday"
-
-- <span style="color:red; font-size:22px">But bear in mind</span>
-  - <span style="color:blue">Explicit opinion</span>: “I like this car.” 
-  - <span style="color:blue">Fact-implied opinion</span>: “I bought this car yesterday and it broke today.”
-  - <span style="color:blue;font-weight:bold">Mixed opinion</span>: “Apple is doing well in this poor economy”
-
-## Features for supervised learning
-- The problem has been studied by numerous researchers.
-
-- <span style="color:red">Key</span>: feature engineering. A large set of features have been tried by researchers. E.g., 
-  - <span style="color:blue">Terms frequency and different IR weighting schemes</span>
-  - <span style="color:blue">Part of speech (POS) tags</span>
-  - <span style="color:blue">Opinion words and phrases</span>
-  - <span style="color:blue">Negations</span>
-  - <span style="color:blue">Syntactic dependency</span>
-
-
-## Sentiment classification in movie reviews
-- Polarity detection:
-  - Is an IMDB movie review positive or negative?
-
-- Data: <em>Polarity Data 2.0</em>: 
-  - http://www.cs.cornell.edu/people/pabo/movie-review-data
-
 ## Basic steps
+
 - Pre-processing and tokenization
-- Feature representation (DTM)
+- Feature representation
 - Feature selection
 - Classification
+- Evaluation
+
+
+<!-- ## Sentiment classification in movie reviews -->
+<!-- - Polarity detection: -->
+<!--   - Is an IMDB movie review positive or negative? -->
+
+<!-- - Data: <em>Polarity Data 2.0</em>:  -->
+<!--   - http://www.cs.cornell.edu/people/pabo/movie-review-data -->
 
 ## Sentiment tokenization issues
 <div style="float:left;width:55%">
@@ -577,7 +782,7 @@ data.frame(Phrase = phrase,
 
 - Useful code:
   - <a href="http://sentiment.christopherpotts.net/code-data/happyfuntokenizing.py">Christopher Potts sentiment tokenizer</a>
-  - <a href="http://sentiment.christopherpotts.net/code-data/happyfuntokenizing.py">Brendan O’Connor twitter tokenizer</a>
+  - <a href="https://github.com/brendano/tweetmotif">Brendan O’Connor twitter tokenizer</a>
 </div>
 
 <div style="float:right;width:45%">
@@ -588,21 +793,37 @@ include_graphics("img/pagee 58.png")
 ```
 </div>
 
-## Extracting features for sentiment classification
-- How to handle negation
+## The danger of stemming
 
-  - I didn’t like this movie
-   <br>vs<br>
-  - I really like this movie
+- The Porter stemmer identifies word suffixes and strips them off. 
 
-- Which words to use?
+- But:
+
+  - objective (pos) and objection (neg) -> object
+
+  - competence (pos) and compete (neg) -> compet
   
-  - Only adjectives
+## Features for supervised learning
+- The problem has been studied by numerous researchers.
 
-  - All words
+- <span style="color:red">Key</span>: feature engineering. A large set of features have been tried by researchers. E.g., 
+  - <span style="color:blue">Terms frequency and different IR weighting schemes</span>
+  - <span style="color:blue">Part of speech (POS) tags</span>
+  - <span style="color:blue">Opinion words and phrases</span>
+  - <span style="color:blue">Negations</span>
+  - <span style="color:blue">Stylistic</span>
+  - <span style="color:blue">Syntactic dependency</span>
+
+<!-- ## Extracting features for sentiment classification -->
+<!-- - How to handle negation -->
+
+<!--   - I didn’t like this movie -->
+<!--    <br>vs<br> -->
+<!--   - I really like this movie -->
+
+<!-- - Which features to use? -->
+
     
-    - All words turns out to work better, at least on this data
-
 ## Negation
 Add NOT_ to every word between negation and following punctuation:
 <br> <br>
@@ -610,119 +831,197 @@ Add NOT_ to every word between negation and following punctuation:
 include_graphics("img/page 60.png")
 ```
 
-## Cross-Validation
-<div style="float:left; width:50%">
-- Break up data into 10 folds
-  
-  - (Equal positive and negative inside each fold?)
+<!-- ## Cross-Validation -->
+<!-- <div style="float:left; width:50%"> -->
+<!-- - Break up data into 10 folds -->
 
-- For each fold
-  
-  - Choose the fold as a temporary test set
-  
-  - Train on 9 folds, compute performance on the test fold
+<!--   - (Equal positive and negative inside each fold?) -->
 
-- Report average performance of the 10 runs
-</div>
-<div style="float:right; width:50%">
-```{r, echo=FALSE,out.width="100%"}
-include_graphics("img/page 62.png")
+<!-- - For each fold -->
+
+<!--   - Choose the fold as a temporary test set -->
+
+<!--   - Train on 9 folds, compute performance on the test fold -->
+
+<!-- - Report average performance of the 10 runs -->
+<!-- </div> -->
+<!-- <div style="float:right; width:50%"> -->
+<!-- ```{r, echo=FALSE,out.width="100%"} -->
+<!-- include_graphics("img/page 62.png") -->
+<!-- ``` -->
+<!-- </div> -->
+
+## Challenges of negation
+
+- "terrible" vs "wasn’t terrible" 
+  - The movie was terrible
+  - The movie was bad but wasn't that terrible as they said
+
+- The degree of the intensity shift varies from term to term for both positive and negative terms
+
+## Supervised sentiment analysis | Kiritchenko et al. (2014)
+
+- A supervised statistical text classification approach based on surface, semantic, and sentiment features. 
+- For negation: estimate sentiment scores of individual terms in the presence of negation
+- One lexicon for words in negated contexts and one for words in affirmative 
+
+## Supervised sentiment analysis | Kiritchenko et al. (2014)
+
+- Features: 
+  - ngrams 
+  - character ngrams
+  - all-caps: the number of tokens with all characters in upper case
+  - POS
+  - the number of negated contexts
+  - sentiment lexicons
+  - the number of hashtags, punctuation, emoticons,  elongated words
+
+- Classifier: linear-kernel SVM
+
+## Supervised sentiment analysis | Kiritchenko et al. (2014)
+
+```{r, echo=FALSE, out.width="90%"}
+include_graphics("img/Kiritchenko2014.png")
 ```
-</div>
 
 ## Supervised sentiment analysis
-- Using all words works well for some tasks
 
-- Finding subsets of words may help in other tasks
-  - Hand-built polarity lexicons
-  - Use seeds and semi-supervised learning to induce lexicons
+- Advantages
+  - Lead to better performance compared to lexicon based approaches
+  - The output can be explained (most of the times) 
+- Disadvantages
+  - They need training data (distant supervision comes with limitations)
+  - They can't capture the context
+  - Based on feature engineering that is a tedious task
+  - Not good performance in multiclass classification
   
-- Negation is important
+# Deep Learning  
 
-# Other Challenges in SA
+## Sentiment-specific word embedding | Tang et al. (2014)
 
-## Explicit and implicit aspects | (Hu and Liu, 2004)
-- <span style="color:red">Explicit aspects</span>: Aspects explicitly mentioned as nouns or noun phrases in a sentence
-  
-  - <span style="font-size:18px">“The <span style="color:blue">picture quality</span> is of this phone is great.”</span> 
+- Continuous word representations model the syntactic context of words but ignore the sentiment of text
 
-- <span style="color:red">Implicit aspects</span>: Aspects not explicitly mentioned in a sentence but are implied
-  - <span style="font-size:18px">“This car is so <span style="color:blue">expensive</span>.”</span> 
-  - <span style="font-size:18px">“This phone will not easily fit <span style="color:blue">in a pocket</span>.”</span> 
-  - <span style="font-size:18px">“Included <span style="color:blue">16MB</span> is stingy.” </span> 
+- Good vs bad: They will be represented as neighboring word vectors
 
-## Implicit aspects | Bagheri et al. 2013
-An implicit aspect should satisfy the following conditions:
+- Solution: Learn sentiment specific word embedding, which encodes sentiment information in the continuous representation of words
 
-- The related aspect word does not occur in the review sentence explicitly.
+## Sentiment-specific word embedding | Tang et al. (2014)
 
-- The aspect can be discovered by its surrounding words (e.g. opinion words) in the review sentence.
+- Three neural networks to effectively incorporate the supervision from sentiment polarity of text in their loss functions
 
-<div style="float:right; width:50%">
-```{r, echo=FALSE,out.width="100%"}
-include_graphics("img/implicit.png")
+- Distant-supervised tweets 
+
+```{r, echo=FALSE, out.width="80%"}
+include_graphics("img/sswe.png")
+```
+
+## Word vector refinement | Yu et al. (2017)
+- Start with a set of pre-trained word vectors and a sentiment lexicon
+- Calculate the semantic similarity between each sentiment word and the other words in the     lexicon based on the cosine distance of their pre-trained vectors
+- Select top-k most similar words as the nearest neighbors and re-rank according to sentiment scores
+
+<div width:80%">
+```{r, echo=FALSE, fig.align='center'}
+include_graphics("img/refineNN.png")
 ```
 </div>
 
-<div style="float:right; width:50%">
-```{r, echo=FALSE,out.width="100%"}
-include_graphics("img/implicit2.png")
+## Word vector refinement | Yu et al. (2017)
+
+- Refine the pre-trained vector of the target word to be:
+  - closer to its sentimentally similar neighbors,
+  - further away from its dissimilar neighbors, and
+  - not too far away from the original vector.
+
+
+```{r, echo=FALSE, out.width="40%", fig.align='center'}
+include_graphics("img/refineWE.png")
+```
+
+<!-- ## HUAPA | Wu et al. -->
+
+<!-- - For different users, same word might express different emotional intensity -->
+<!--   - A lenient user may use “good” to evaluate an ordinary product while a critical user might use “good” to express an excellent attitude -->
+
+<!-- - Product’s characteristic also have an effect on review ratings -->
+<!--   - Reviews of high-quality products tend to receive higher ratings compared to those of low-quality products. -->
+
+<!-- https://dl.acm.org/doi/10.5555/3504035.3504770 -->
+
+## Sentiment analysis with BERT | Devlin et al. 2019
+
+- Sentiment analysis was one of the tasks in the BERT paper
+
+```{r, echo=FALSE, out.width="80%", fig.align='center'}
+include_graphics("img/BERT.png")
+```
+
+<!-- ## Sentiment analysis with BERT models -->
+
+<!-- - Twitter-roberta-base-sentiment is a roBERTa model trained on ~58M tweets and fine-tuned for sentiment analysis (Barbieri et al. 2020) -->
+
+<!-- - Bert-base-multilingual-uncased-sentiment is a model fine-tuned for sentiment analysis on product reviews in six languages: English, Dutch, German, French, Spanish and Italian (https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment) -->
+
+<!-- - Distilbert-base-uncased-emotion is a model fine-tuned for detecting emotions in texts, including sadness, joy, love, anger, fear and surprise (Sanh et al., 2019) -->
+
+<!-- https://huggingface.co/blog/sentiment-analysis-python -->
+
+# Interesting Aspects
+
+## Sentiment and fake news | Vosoughi et al. (2018)
+- Analyzed around 126,000 tweets
+- Annotated with NRC lexicon
+ 
+```{r, echo=FALSE, out.width="50%", fig.align='center'}
+include_graphics("img/vosughi.png")
+```
+
+## Emotional analysis of false information | Ghanem et al. (2018)
+
+```{r, echo=FALSE, out.width="49%", out.height="20%",fig.show='hold'}
+knitr::include_graphics(c("img/Picture.png","img/Bilal.png"))
+``` 
+
+## Leveraging emotional signals for credibility detection | Giachanou et al. (2019)
+
+- Three different approaches for calculating the emotional signals of the claims:
+  - emoLexi
+  - emoInt 
+  - emoReact
+  
+
+```{r, echo=FALSE, fig.align="center", out.width='35%'}
+include_graphics("img/emocred.png")
+```
+
+
+## Bias in sentiment analysis | Kiritchenko and Saif (2018)
+
+- Are systems that detect sentiment biased?
+
+- Hypothesis: a system should equally rate the intensity of the emotion expressed by two sentences that differ in the gender/race
+
+<div width:40%">
+```{r, echo=FALSE, fig.align="center", out.width="40%"}
+include_graphics("img/Bias_Sentiment.png")
 ```
 </div>
 
-## Some interesting sentences 
-- <span style="color:red">Trying out Chrome because Firefox keeps crashing</span>.
-  
-  - Firefox - negative; no opinion about chrome. 
-  
-  - <span style="color:blue">We need to segment the sentence into clauses</span> to decide that “crashing” only applies to Firefox(?). 
+## Bias in sentiment analysis | Kiritchenko and Saif (2018)
 
-- But how about these
-  - <span style="color:red">I changed to Audi because BMW is so expensive</span>.
-  
-  - <span style="color:red">I did not buy BMW because of the high price</span>.
-  
-  - <span style="color:red">I am so happy that my iPhone is nothing like my old ugly phone</span>.
+```{r, echo=FALSE, fig.align="center"}
+include_graphics("img/gender.png")
+```
 
-<!-- ## Some interesting sentences (contd) -->
-<!-- - These two sentences are from paint reviews. -->
+```{r, echo=FALSE, fig.align="center"}
+include_graphics("img/race.png")
+```
 
-<!--   - <span style="color:blue">For paintX, one coat can cover the wood color</span>. -->
+## Bias in sentiment analysis | Kiritchenko and Saif (2018)
 
-<!--   - <span style="color:blue">For paintY, we need three coats to cover the wood color </span> -->
-
-<!--   - We know that paintX is good and paintY is not, but how, by a system. -->
-
-<!-- - “My goal is to get a tv with good picture quality”  -->
-
-<!-- - “The top of the picture was brighter than the bottom.” -->
-
-<!-- - “When I first got the airbed a couple of weeks ago it was wonderful as all new things are, however as the weeks progressed I liked it less and less.” -->
-
-## Some interesting sentences (contd)
-- Conditional sentences are hard to deal with (Narayanan et al. 2009)
-  
-  - <span style="color:red">If I can find a good camera, I will buy it</span>.
-  
-  - But conditional sentences can have opinions
-  
-    - <span style="color:red">If you are looking for a good phone, buy Nokia</span>
-
-- Questions are also hard to handle
-  
-  - <span style="color:red">Are there any great perks for employees</span>?
-  
-  - <span style="color:red">Any idea how to fix this lousy Sony camera</span>?
-
-## Some interesting sentences (contd)
-- Sarcastic sentences
-  
-  - <span style="color:red">What a great car, it stopped working in the second day</span>.
-
-- Sarcastic sentences are common in political blogs, comments and discussions. 
-  
-  - They make political opinions difficult to handle
-
+```{r, echo=FALSE, out.width="49%", out.height="20%",fig.show='hold'}
+knitr::include_graphics(c("img/Bias_Sentiment_Results.png","img/Bias_Sentiment_Results_Race.png"))
+``` 
 
 # Summary
 
@@ -730,5 +1029,78 @@ include_graphics("img/implicit2.png")
 - Sentiment analysis
  - Lexicon-based methods
  - Learning-based methods
+ - Sentiment aware word embeddings
+ - Other aspects regarding sentiment analysis
+
+## Resources
+- Crawl your own data from Twitter:
+  - https://developer.twitter.com/en/docs/twitter-api
+
+- SemEval Datasets: 2012-now
+  - https://semeval.github.io/
+
+- Stanford Twitter Sentiment (STS):
+  - http://help.sentiment140.com/ (Go et al. 2009)
+
+- Sanders Corpus:
+  - https://github.com/zfz/twitter_corpus
+
+- IMDB movie reviews (50K)
+  - https://ai.stanford.edu/~amaas/data/sentiment/
+
+- Datasets from Bing Liu's group:
+  - https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html
+  
+- Amazon review data
+  - https://nijianmo.github.io/amazon/index.html
+
+## Lexicons and tools
+
+- VADER (Hutto and Gilbert, 2014)
+  - https://github.com/cjhutto/vaderSentiment
+- LIWC 
+  - https://www.liwc.app/
+- Bing Liu 
+  - https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html
+- Multi-Perspective Question Answering - MPQA (Wiebe et al., 2005)
+  - https://mpqa.cs.pitt.edu/lexicons/subj_lexicon/
+- SentiWordNet (Esuli and Sebastiani, 2006)
+  - https://github.com/aesuli/SentiWordNet
+- NRC Lexicons
+  - http://saifmohammad.com/WebPages/lexicons.html
+- AFFINN (Nielsen, 2011)
+  - https://github.com/fnielsen/afinn
+  
+## Tutorials
+- <a href = "https://huggingface.co/blog/sentiment-analysis-python">Sentiment analysis in huggingface </a>
+- <a href = "https://towardsdatascience.com/sentiment-analysis-in-10-minutes-with-bert-and-hugging-face-294e8a04b671"> Sentiment analysis with BERT </a>
+
+## References
+
+- <font size="3">Bagheri, A., Saraee, M, and De Jong, F. 2013. Care more about customers: Unsupervised domain-independent aspect detection for sentiment analysis of customer reviews. Knowledge-Based Systems. 52, 201–213</font>
+- <font size="3"> Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805 </font>
+- <font size="3">Esuli, A. and Sebastiani, F. 2006. SENTIWORDNET: A Publicly Available Lexical Resource for Opinion Mining. In Proceedings of the Fifth International Conference on Language Resources and Evaluation (LREC’06) </font>
+- <font size="3">Ghanem, B., Rosso, P., & Rangel, F. 2020. An emotional analysis of false information in social media and news articles. ACM Transactions on Internet Technology (TOIT), 20(2), 1-18</font>
+- <font size="3">Giachanou, A., Rosso, P., & Crestani, F. 2019. Leveraging emotional signals for credibility detection. In Proceedings of the 42nd international ACM SIGIR conference on research and development in information retrieval. pp. 877-880</font>
+- <font size="3">Hu, M., & Liu, B. 2004. Mining and summarizing customer reviews. In Proceedings of the tenth ACM SIGKDD international conference on Knowledge discovery and data mining. pp. 168-177 </font>
+
+
+## References (Contd)
+- <font size="3">Hutto, C. and Gilbert, E. 2014. Vader: A parsimonious rule-based model for sentiment analysis of social media text. In Proceedings of the international AAAI conference on web and social media, vol. 8, no. 1, pp. 216-225</font>
+- <font size="3">Kiritchenko, S., and Saif M. 2018. Examining Gender and Race Bias in Two Hundred Sentiment Analysis Systems. In Proceedings of the Seventh Joint Conference on Lexical and Computational Semantics, pp. 43-53. 2018 </font>
+- <font size="3">Kiritchenko, S., Zhu, X., & Mohammad, S. M. 2014. Sentiment analysis of short informal texts. Journal of Artificial Intelligence Research, 50, 723-762 </font>
+- <font size="3">Narayanan, R., Liu, B., & Choudhary, A. 2009. Sentiment analysis of conditional sentences. In Proceedings of the 2009 conference on empirical methods in natural language processing. pp. 180-189 </font>
+- <font size="3">Nielsen, F. A. 2011. A new ANEW: Evaluation of a word list for sentiment analysis in microblogs. Proceedings of the ESWC2011 Workshop on 'Making Sense of Microposts': Big things come in small packages 718 in CEUR Workshop Proceedings 93-98</font>
+- <font size="3">Tang, D., Wei, F., Yang, N., Zhou, M., Liu, T., & Qin, B. 2014. Learning sentiment-specific word embedding for twitter sentiment classification. In ACL. pp. 1555-1565 </font>
+
+
+## References (Contd)
+- <font size="3">Tausczik, Y. R., & Pennebaker, J. W. 2010. The psychological meaning of words: LIWC and computerized text analysis methods. Journal of language and social psychology, 29(1), 24-54 </font>
+- <font size="3">Turney, P. 2002. Thumbs Up or Thumbs Down? Semantic Orientation Applied to Unsupervised Classification of Reviews. In Proceedings of the 40th Annual Meeting of the Association for Computational Linguistics. pp. 417-424 </font>
+- <font size="3">Vosoughi, S., Roy, D., & Aral, S. 2018. The spread of true and false news online. science, 359(6380), 1146-1151 </font>
+- <font size="3">Wiebe, J., Wilson, T., & Cardie, C. 2005. Annotating expressions of opinions and emotions in language. Language resources and evaluation, 39(2), 165-210 </font>
+- <font size="3">Yu, L. C., Wang, J., Lai, K. R., & Zhang, X. 2017. Refining word embeddings for sentiment analysis. In Proceedings of the 2017 conference on empirical methods in natural language processing. pp. 534-539 </font>
+
+
 
 # Practical 9
