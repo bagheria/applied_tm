@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14454,6 +14455,11 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
+/* Force rendering true colors when outputing to pdf */
+* {
+  -webkit-print-color-adjust: exact;
+}
+
 /* Misc */
 a.anchor-link {
   display: none;
@@ -14515,11 +14521,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   width: 100%;
 }
 
-@media print {
-  .jp-Collapser {
-    display: none;
-  }
+/* Hiding the collapser by default */
+.jp-Collapser {
+  display: none;
+}
 
+@media print {
   .jp-Cell-inputWrapper,
   .jp-Cell-outputWrapper {
     display: block;
@@ -14553,12 +14560,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14573,7 +14580,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Impractical-3:-Feature-Selection-&amp;-Dimension-Reduction">Impractical 3: Feature Selection &amp; Dimension Reduction<a class="anchor-link" href="#Impractical-3:-Feature-Selection-&amp;-Dimension-Reduction">&#182;</a></h1><h4 id="Ayoub-Bagheri">Ayoub Bagheri<a class="anchor-link" href="#Ayoub-Bagheri">&#182;</a></h4><p><img src="img/uu_logo.png" alt="logo" align="right" title="UU" width="50" height="20" /></p>
+<h1 id="Practical-3:-Feature-Selection-&amp;-Dimension-Reduction">Practical 3: Feature Selection &amp; Dimension Reduction<a class="anchor-link" href="#Practical-3:-Feature-Selection-&amp;-Dimension-Reduction">&#182;</a></h1><h4 id="Ayoub-Bagheri">Ayoub Bagheri<a class="anchor-link" href="#Ayoub-Bagheri">&#182;</a></h4><p><img src="img/uu_logo.png" alt="logo" align="right" title="UU" width="50" height="20" /></p>
 <h4 id="Applied-Text-Mining---Utrecht-Summer-School">Applied Text Mining - Utrecht Summer School<a class="anchor-link" href="#Applied-Text-Mining---Utrecht-Summer-School">&#182;</a></h4>
 </div>
 </div>
@@ -14653,7 +14660,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1. <strong>Here we are going to use a news article data set, originating from BBC news website. This dataset provided for use as benchmarks for machine learning research. The BBC data set consists of 2225 documents and 5 categories: business, entertainment, politics, sport, and tech. Load the dataset and convert it to a dataframe.</strong></p>
+<p>1. <strong>Here we are going to use a news article data set, originating from BBC news website. This dataset was provided for benchmarking machine learning algorithms. The BBC data set consists of 2,225 documents and 5 categories: business, entertainment, politics, sport, and tech. Upload the <code>data.zip</code> file and extract it using the code below.</strong></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Load the dataset and convert it to a dataframe.</strong></p>
 
 </div>
 </div>
@@ -14677,7 +14696,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>3. <strong>Use the CountVectorizer from sklearn and convert the text data into a document-term matrix. What is the difference between CountVectorizer and tfidfVectorizer(use_idf=False)?</strong></p>
+<p>3. <strong>Use the <code>CountVectorizer</code> from <code>sklearn</code> and convert the text data into a document-term matrix. What is the difference between <code>CountVectorizer</code> and <code>tfidfVectorizer(use_idf=False)</code>?</strong></p>
 
 </div>
 </div>
@@ -14689,7 +14708,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>4. <strong>Print top 20 frequent words in the training set.</strong></p>
+<p>The only difference is that the <code>TfidfVectorizer()</code> returns floats while the <code>CountVectorizer()</code> returns ints. And that’s to be expected – as explained in the documentation quoted above, <code>TfidfVectorizer()</code> assigns a score while <code>CountVectorizer()</code> counts.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>4. <strong>Print top 20 most frequent words in the training set.</strong></p>
 
 </div>
 </div>
@@ -14712,7 +14743,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>5. <strong>From the feature selection library in sklearn load the SelectKBest function and apply it on the BBC dataset using the chi-squared method. Extract top 20 features.</strong></p>
+<p>5. <strong>From the feature selection library in <code>sklearn</code> load the <code>SelectKBest</code> function and apply it on the BBC dataset using the chi-squared method. Extract top 20 features.</strong></p>
 
 </div>
 </div>
@@ -14724,7 +14755,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>6. <strong>Repeat the analysis in question 5 with the mutual information feature selection method. Do you get the same list of words as compared to the chi-squared method?</strong></p>
+<p>6. <strong>Repeat the analysis in Question 5 with the mutual information feature selection method. Do you get the same list of words as compared to the chi-squared method?</strong></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Now you can build a classifier and train it using the output of these feature selection techniques. We are not going to do this right now, but if you are interested you can transform your training and test set using the selected features and continue with your classifier! Here are some tips:</p>
 
 </div>
 </div>
@@ -14747,7 +14790,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>7. <strong>One of the functions for embedded feature selection is the SelectFromModel function in sklearn. Use this function with L1 norm SVM and check how many non-zero coefficients left in the model.</strong></p>
+<p>7. <strong>One of the functions for embedded feature selection is the <code>SelectFromModel</code> function in <code>sklearn</code>. Use this function with L1 norm SVM and check how many non-zero coefficients left in the model.</strong></p>
 
 </div>
 </div>
@@ -14759,7 +14802,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>8. <strong>What are the top features according to the SVM model? Tip: Use the function model.get_support() to find these features.</strong></p>
+<p>8. <strong>What are the top features according to the SVM model? Tip: Use the function <code>model.get_support()</code> to find these features.</strong></p>
 
 </div>
 </div>
@@ -14806,7 +14849,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>11. <strong>Use the pipeline to predict the outcome variable on your test set. Evaluate the performance of the pipeline using the classification_report function on the test subset. How do you analyze your results?</strong></p>
+<p>11. <strong>Use the pipeline to predict the outcome variable on your test set. Evaluate the performance of the pipeline using the <code>classification_report</code> function on the test subset. How do you interpret your results?</strong></p>
 
 </div>
 </div>
@@ -14830,7 +14873,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>13. <strong>Create your third and forth pipelines with the tfidf representation, a chi2 feature selection (with 20 and 200 features for clf3 and clf4, respectively), and a random forest classifier.</strong></p>
+<p>13. <strong>Create your third and forth pipelines with the tfidf representation, a chi2 feature selection (with 20 and 200 features for <code>clf3</code> and <code>clf4</code>, respectively), and a random forest classifier.</strong></p>
 
 </div>
 </div>
@@ -14865,7 +14908,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>15. <strong>Dimensionality reduction methods such as PCA and SVD can be used to project the data into a lower dimensional space. If you run PCA with your text data, you might end up with the message "PCA does not support sparse input. See TruncatedSVD for a possible alternative." Therefore, we will use the Truncated SVD function from the sklearn package and we want to find out how much of the variance in the BBC data set is explained with different components. For this, first create a tfidf matrix and use that to make a co-occurrence matrix.</strong></p>
+<p>15. <strong>Dimensionality reduction methods such as PCA and SVD can be used to project the data into a lower dimensional space. If you run PCA with your text data, you might end up with the message:</strong></p>
+<blockquote> PCA does not support sparse input. See TruncatedSVD for a possible alternative. </blockquote><p><strong>Therefore, we will use the <code>TruncatedSVD</code> function from the <code>sklearn</code> package and we want to find out how much of the variance in the BBC data set is explained with different components. For this, first create a tfidf matrix and use that to make a co-occurrence matrix.</strong></p>
 
 </div>
 </div>
@@ -14877,7 +14921,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>16. <strong>Run the SVD function with different values for components: 1, 2, 4, 5, 10, 15, 20, 50, 100. Plot the explained variance ratio for each component of Truncated SVD.</strong></p>
+<p>16. <strong>Run the <code>TruncatedSVD</code> function with different values for components: 1, 2, 4, 5, 10, 15, 20, 50, 100. Plot the explained variance ratio for each component of Truncated SVD.</strong></p>
 
 </div>
 </div>
