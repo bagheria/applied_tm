@@ -242,8 +242,8 @@ Here you will find the materials for Thursday:
 - Part 8: Sentiment analysis
     - [Lecture 8](thursday/Lectures/lecture 8/Lecture_8.html)
     - [Lecture handout 8](thursday/Lectures/lecture 8/Lecture handout_8.pdf)
-    - [Practical 8](friday/Practicals/Practical 9/Impractical 9.html)
-    - [Answers practical 8](friday/Practicals/Practical 9/Practical 9.html)
+    - [Practical 8](thursday/Practicals/Practical 8/Impractical 8.html)
+    - [Answers practical 8](thursday/Practicals/Practical 8/Practical 8.html)
 
 
 ## Column 2
@@ -264,8 +264,8 @@ Here you will find the materials for Friday:
 - Part 9: Applications of text mining & NLP
     - [Lecture 9](friday/Lectures/lecture 9/Lecture_9.pdf)
     - [Lecture handout 9](friday/Lectures/lecture 9/Lecture handout_9.pdf)
-    - [Practical 9 (with an example answer)](thursday/Practicals/Practical 8/Practical 8.html)
-    - [Data for practical 9](thursday/Practicals/Practical 8/data.zip)
+    - [Practical 9 (with an example answer)](friday/Practicals/Practical 9/Practical 9.html)
+    - [Data for practical 9](friday/Practicals/Practical 9/data.zip)
 
 - Part 10: Responsible text mining
     - [Lecture 10](friday/Lectures/lecture 10/Lecture_10.pdf)
