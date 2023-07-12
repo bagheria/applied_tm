@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14454,6 +14455,11 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
+/* Force rendering true colors when outputing to pdf */
+* {
+  -webkit-print-color-adjust: exact;
+}
+
 /* Misc */
 a.anchor-link {
   display: none;
@@ -14515,11 +14521,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   width: 100%;
 }
 
-@media print {
-  .jp-Collapser {
-    display: none;
-  }
+/* Hiding the collapser by default */
+.jp-Collapser {
+  display: none;
+}
 
+@media print {
   .jp-Cell-inputWrapper,
   .jp-Cell-outputWrapper {
     display: block;
@@ -14553,12 +14560,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14573,7 +14580,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Genre-classification-with-sklearn">Genre classification with sklearn<a class="anchor-link" href="#Genre-classification-with-sklearn">&#182;</a></h1>
+<h1 id="Genre-classification-with-sklearn">Genre classification with <code>sklearn</code><a class="anchor-link" href="#Genre-classification-with-sklearn">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14584,7 +14591,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1. <strong>Upload the "book_reviews.csv" from your machine, following the <a href="https://colab.research.google.com/notebooks/io.ipynb">Colab documentation</a>. This file contains 10000 English language book reviews from Goodreads, with genre, age and star rating labels. Uploading may take a minute or so.</strong></p>
+<p>1. <strong>Upload the "book_reviews.csv" from your machine, following the <a href="https://colab.research.google.com/notebooks/io.ipynb">Colab documentation</a>. This file contains 10,000 English language book reviews from Goodreads, with genre, age and star rating labels. Uploading may take a minute or so.</strong></p>
 
 </div>
 </div>
@@ -14608,7 +14615,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>3. <strong>Now you can construct the document-term matrix. The <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html">CountVectorizer</a> class counts how often each word occurs in each document. Optionally, you can also pass ngram_range as a parameter, to see if combinations of multiple words are better predictors for ratings. Define the output of the <code>fit_transform</code> function on 'tokenised_text' as your feature matrix X, and the star ratings ('rating_no') as the variable y you're trying to predict.</strong></p>
+<p>3. <strong>Now you can construct the document-term matrix. The <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html"><code>CountVectorizer</code></a> class counts how often each word occurs in each document. Optionally, you can also pass <code>ngram_range</code> as a parameter, to see if combinations of multiple words are better predictors for ratings. Define the output of the <code>fit_transform</code> function on <code>'tokenised_text'</code> as your feature matrix <code>X</code>, and the star ratings (<code>'rating_no'</code>) as the variable <code>y</code> you're trying to predict.</strong></p>
 
 </div>
 </div>
@@ -14620,7 +14627,31 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>4. <strong>Now we can define a baseline model: use the DummyClassifier to always predict the most frequent genre in the dataset.</strong></p>
+<p>To inspect the words in the document-term matrix, you can call <code>get_feature_names_out()</code> on the vectorizer.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Alternatively, you could also use a <a href="https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer"><code>TfidfVectorizer</code></a>: this class counts how often a word occurs in a document and weighs it against how often the word occurs in the whole corpus. This is a way to eliminate words that are frequent but not very meaningful. You can play around with different vectorizers to see how they affect your results.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>4. <strong>Now we can define a baseline model: use the <code>DummyClassifier</code> to always predict the most frequent genre in the dataset.</strong></p>
 
 </div>
 </div>
