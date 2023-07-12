@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14454,6 +14455,11 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
+/* Force rendering true colors when outputing to pdf */
+* {
+  -webkit-print-color-adjust: exact;
+}
+
 /* Misc */
 a.anchor-link {
   display: none;
@@ -14515,11 +14521,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   width: 100%;
 }
 
-@media print {
-  .jp-Collapser {
-    display: none;
-  }
+/* Hiding the collapser by default */
+.jp-Collapser {
+  display: none;
+}
 
+@media print {
   .jp-Cell-inputWrapper,
   .jp-Cell-outputWrapper {
     display: block;
@@ -14553,12 +14560,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14573,7 +14580,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Impractical-1:-Text-Pre-processing">Impractical 1: Text Pre-processing<a class="anchor-link" href="#Impractical-1:-Text-Pre-processing">&#182;</a></h1><h4 id="Ayoub-Bagheri">Ayoub Bagheri<a class="anchor-link" href="#Ayoub-Bagheri">&#182;</a></h4><p><img src="img/uu_logo.png" alt="logo" align="right" title="UU" width="50" height="20" /></p>
+<h1 id="Practical-1:-Text-Pre-processing">Practical 1: Text Pre-processing<a class="anchor-link" href="#Practical-1:-Text-Pre-processing">&#182;</a></h1><h4 id="Ayoub-Bagheri">Ayoub Bagheri<a class="anchor-link" href="#Ayoub-Bagheri">&#182;</a></h4><p><img src="https://github.com/bagheria/applied_tm/blob/master/monday/Practicals/Practical%201/img/uu_logo.png?raw=1" alt="logo" align="right" title="UU" width="50" height="20" /></p>
 <h4 id="Applied-Text-Mining---Utrecht-Summer-School">Applied Text Mining - Utrecht Summer School<a class="anchor-link" href="#Applied-Text-Mining---Utrecht-Summer-School">&#182;</a></h4>
 </div>
 </div>
@@ -14603,19 +14610,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <li>Free access to GPUs</li>
 <li>Easy sharing</li>
 </ul>
-<p>Colab notebooks are Jupyter notebooks that are hosted by Colab. Here you can find links to more detailed introductions to Colab: <a href="https://colab.research.google.com/notebooks/intro.ipynb">https://colab.research.google.com/notebooks/intro.ipynb</a></p>
+<p>Colab notebooks are Jupyter notebooks that are hosted by Colab. You can find more detailed introductions to Colab <a href="https://colab.research.google.com/notebooks/intro.ipynb">here</a>, but we will also cover the basics.</p>
 
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Let's-get-started!">Let's get started!<a class="anchor-link" href="#Let's-get-started!">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14637,7 +14633,18 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Here we are going to introduce Python and colab a bit. If you are familiar with Python, start with question 11.</strong></p>
+<h3 id="Let's-get-started!">Let's get started!<a class="anchor-link" href="#Let's-get-started!">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Here we are going to introduce Python and Google Colab a bit. If you are familiar with Python, start with question 11.</strong></p>
 
 </div>
 </div>
@@ -14673,7 +14680,25 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>2. <strong>Text is also known as a string variable, or as an array of characters. Create a variable <em>a</em> with the text value of "Hello @Text Mining World! I'm here to learn everything, right?", and then print it!</strong></p>
+<p>If you want to insert a new code chunk below of the cell you are currently in, press <code>Alt + Enter</code>.</p>
+<p>If you want to stop your code from running in Colab:</p>
+<ul>
+<li>Interrupt execution by pressing <code>ctrl + M I</code> or simply click the stop button</li>
+<li>Or: Press <code>ctrl + A</code> to select all the code of that particular cell, press <code>ctrl + X</code> to cut the entire cell code. Now the cell is empty and can be deleted by using <code>ctrl + M D</code> or by pressing the delete button. You can paste your code in a new code chunk and adjust it.</li>
+</ul>
+<p>NB: On Macbooks, use <code>cmd</code> instead of <code>ctrl</code> in shortcuts.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>2. <strong>Text is also known as a string variable, or as an array of characters. Create a variable <code>a</code> with the text value of <code>"Hello @Text Mining World! I'm here to learn everything, right?"</code>, and then print it!</strong></p>
 
 </div>
 </div>
@@ -14697,26 +14722,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>4. <strong>Use <em>"!pip install"</em> command and install the packages: nltk, spacy, gensim, string, numpy.</strong></p>
+<p>4. <strong>Use the <code>!pip install</code> command and install the packages: <code>numpy</code>, <code>nltk</code>, <code>gensim</code>, and <code>spacy</code>.</strong></p>
 <p>Generally, you only need to install each package once on your computer and load it again, however, in Colab you may need to reinstall a package once you are reconnecting to the network.</p>
-<p>NB: nltk comes with many corpora, toy grammars, trained models, etc. A complete list is posted at: <a href="http://nltk.org/nltk_data/">http://nltk.org/nltk_data/</a>
-To install the data, after installing nltk, use nltk’s data downloader as "nltk.download()".</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>NB: If you want to stop your code in Jupyter and it does not stop from running:</p>
-<ul>
-<li>raise SystemExit("Stop right there!")</li>
-<li>Or: One simple trick to get rid of this problem, is to press "ctrl+a" to select all the code of that particular cell you want to stop the execution of and press "ctrl+x" to cut the entire cell code. Now the cell is empty and just the empty cell is executed.</li>
-</ul>
 
 </div>
 </div>
@@ -14726,14 +14733,13 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install numpy
-<span class="o">!</span>pip install string
-<span class="o">!</span>pip install nltk
-<span class="o">!</span>pip install gensim
-<span class="o">!</span>pip install spacy
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>numpy
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>nltk
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>gensim
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>-q<span class="w"> </span>spacy
 </pre></div>
 
      </div>
@@ -14748,7 +14754,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>5. <strong>Import (load) the nltk package and use the function lower() to convert the characters in string a to their lowercase form and save it into a new variable b.</strong></p>
+<p>5. <strong>Import (load) the <code>nltk</code> package and use the function <code>lower()</code> to convert the characters in string <code>a</code> to their lowercase form and save it into a new variable <code>b</code>.</strong></p>
 
 </div>
 </div>
@@ -14760,7 +14766,20 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>6. <strong>Use the <em>string</em> package to print the list of punctuations.</strong></p>
+<p>NB: <code>nltk</code> comes with many corpora, toy grammars, trained models, etc. A complete list is posted at: <a href="http://nltk.org/nltk_data/">http://nltk.org/nltk_data/</a></p>
+<p>To install the data, after installing <code>nltk</code>, you could use the <code>nltk.download()</code> data downloader. We will make use of this in Question 8.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>6. <strong>Use the <code>string</code> package to print the list of punctuations.</strong></p>
 <p>Punctuations can separate characters, words, phrases, or sentences. In some applications they are very important to the task at hand, in others they are redundant and should be removed!</p>
 
 </div>
@@ -14773,7 +14792,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>7. <strong>Use the punctuation list to remove the punctuations from the lowercase form of our example string a. Name your variable c.</strong></p>
+<p>7. <strong>Use the punctuation list to remove the punctuations from the lowercase form of our example string <code>a</code>. Name your variable <code>c</code>.</strong></p>
 
 </div>
 </div>
@@ -14785,7 +14804,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>8. <strong>Use word_tokenize function from <em>nltk</em> and tokenize string <em>b</em>. Compare that with the tokenization of string <em>c</em>.</strong></p>
+<p>8. <strong>Use the function <code>word_tokenize()</code> function from <code>nltk</code> and tokenize string <code>b</code>. Compare that with the tokenization of string <code>c</code>.</strong></p>
 
 </div>
 </div>
@@ -14797,7 +14816,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>9. <strong>Use the function <em>Regexptokenizer</em> from <em>nltk</em> to tokenize string <em>b</em> whilst removing punctuations. This way you will avoid unnecessary concatenations.</strong></p>
+<p>We see that the main difference is in punctuations, however, we also see that some words are now combined togehter in the tokenization of string <code>c</code>.</p>
 
 </div>
 </div>
@@ -14809,7 +14828,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>With this tokenizer, you get the same output as with tokenizing the string c.</p>
+<p>9. <strong>Use the function <code>Regexptokenizer()</code> from <code>nltk</code> to tokenize the string <code>b</code> whilst removing punctuations. This way you will avoid unnecessary concatenations.</strong></p>
 
 </div>
 </div>
@@ -14821,7 +14840,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>10. <strong>Use sent_tokenize function from the <em>nltk</em> package and split string b into sentences. Compare that with the sentence tokenization of string c.</strong></p>
+<p>With this tokenizer, you get similar output as with tokenizing the string <code>c</code>.</p>
 
 </div>
 </div>
@@ -14833,7 +14852,8 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Pre-processing-a-text-corpus-(data-set)">Pre-processing a text corpus (data set)<a class="anchor-link" href="#Pre-processing-a-text-corpus-(data-set)">&#182;</a></h3>
+<p>10. <strong>Use funtion <code>sent_tokenize()</code> from the <code>nltk</code> package and split the string <code>b</code> into sentences. Compare that with the sentence tokenization of string <code>c</code>.</strong></p>
+
 </div>
 </div>
 </div>
@@ -14844,11 +14864,34 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Pre-processing a data set is similar to pre-processing simple text strings. First, we need to get some data. For this, we can use our own data set, or we can scrape data from web or use social media APIs. There are also some websites with publicly available data sets:</p>
+<p>An obvious question in your mind would be why sentence tokenization is needed when we have the option of word tokenization. Imagine you need to count average words per sentence. How would you calculate it? For accomplishing such a task, you need both the NLTK sentence tokenizer as well as the NLTK word tokenizer to calculate the ratio. Such output serves as an important feature for machine training as the answer would be numeric.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Pre-processing-a-text-corpus-(dataset)">Pre-processing a text corpus (dataset)<a class="anchor-link" href="#Pre-processing-a-text-corpus-(dataset)">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Pre-processing a dataset is similar to pre-processing simple text strings. First, we need to get some data. For this, we can use our own dataset, or we can scrape data from web or use social media APIs. There are also some websites with publicly available datasets:</p>
 <ul>
-<li>CLARIN Resource Families: <a href="https://www.clarin.eu/portal">https://www.clarin.eu/portal</a></li>
-<li>UCI Machine Learning Repository: <a href="https://archive.ics.uci.edu/ml/datasets.php?format=&amp;task=&amp;att=&amp;area=&amp;numAtt=&amp;numIns=&amp;type=text&amp;sort=nameUp&amp;view=table">https://archive.ics.uci.edu/ml/datasets.php?format=&amp;task=&amp;att=&amp;area=&amp;numAtt=&amp;numIns=&amp;type=text&amp;sort=nameUp&amp;view=table</a></li>
-<li>Kaggle: <a href="https://www.kaggle.com/">https://www.kaggle.com/</a></li>
+<li><a href="https://www.clarin.eu/portal">CLARIN Resource Families</a></li>
+<li><a href="https://archive.ics.uci.edu/ml/datasets.php?format=&amp;task=&amp;att=&amp;area=&amp;numAtt=&amp;numIns=&amp;type=text&amp;sort=nameUp&amp;view=table">UCI Machine Learning Repository</a></li>
+<li><a href="https://www.kaggle.com/">Kaggle</a></li>
 </ul>
 
 </div>
@@ -14861,7 +14904,8 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Here, we want to analyze and pre-process the Taylor Swift song lyrics data from all her albums. We downloaded this data set from the Kaggle website and put that already in the data folder. Here is the link to the original data set: <a href="https://www.kaggle.com/PromptCloudHQ/taylor-swift-song-lyrics-from-all-the-albums">https://www.kaggle.com/PromptCloudHQ/taylor-swift-song-lyrics-from-all-the-albums</a></p>
+<p>Here, we want to analyze and pre-process the Taylor Swift song lyrics data from all her albums. The dataset can be downloaded from the course <a href="https://ayoubbagheri.nl/applied_tm/monday/Practicals/Practical%201/data.zip">website</a> or alternatively from <a href="https://www.kaggle.com/PromptCloudHQ/taylor-swift-song-lyrics-from-all-the-albums">Kaggle</a>.</p>
+<p>Upload <code>taylor_swift_lyrics.csv</code> to Google Colab. You can do this by clicking on the Files button on the very left side of Colab and drag and drop the data there or click the upload button. Alternatively you can mount Google Drive and upload the dataset there.</p>
 
 </div>
 </div>
@@ -14873,7 +14917,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>11. <strong>Read the “taylor_swift.csv” data set from the data folder. Check the head and tail functions with your dataframe.</strong></p>
+<p>11. <strong>Read the <code>taylor_swift.csv</code> dataset. Check the dataframe using <code>head()</code> and <code>tail()</code> functions.</strong></p>
 
 </div>
 </div>
@@ -14885,7 +14929,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>12. <strong>Add a new column to the dataframe and name it <em>Preprocessed</em> <em>Lyrics</em> , then fill the column out with the preprocessed text including the steps in this and the following questions. First replace the '\n' notations with a space character.</strong></p>
+<p>12. <strong>Add a new column to the dataframe and name it <code>Preprocessed Lyrics</code> , then fill the column with the preprocessed text including the steps in this and the following questions. First replace the <code>\n</code> sequences with a space character.</strong></p>
 
 </div>
 </div>
@@ -14897,7 +14941,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>13. <strong>Write another custom function to remove the punctuations. You can use the previous method or make use of the function maketrans from the string package.</strong></p>
+<p>13. <strong>Write another custom function to remove the punctuations. You can use the previous method or make use of the function <code>maketrans()</code> from the <code>string</code> package.</strong></p>
 
 </div>
 </div>
@@ -14933,7 +14977,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>16. <strong>Plot a wordcloud with max 50 words using the WordCloud function from the wordcloud package. Use the command <em>?WordCloud</em> to check the help for this function.</strong></p>
+<p>You see that these are mainly stop words. Before removing them let's plot a wordcloud of our data.</p>
 
 </div>
 </div>
@@ -14945,7 +14989,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>17. <strong>Use the English stop word list from the nltk package to remove the stop words. Check the stop words and update them with your optional list of words, for example: "im", "youre", "id", "dont", "cant", "didnt", "ive", "ill", "hasnt". Show the 20 most frequent terms and plot the wordcould of 50 words again.</strong></p>
+<p>16. <strong>Plot a wordcloud with max 50 words using the <code>WordCloud()</code> function from the <code>wordcloud</code> package. Use the command <code>?WordCloud</code> to check the help for this function.</strong></p>
 
 </div>
 </div>
@@ -14957,11 +15001,104 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>18. <strong>We can apply stemming or lemmatization on our text data. Apply a lemmatizer from nltk and save the results.</strong></p>
+<p>17. <strong>Use the English stop word list from the <code>nltk</code> package to remove the stop words. Check the stop words and update them with your optional list of words, for example: "im", "youre", "id", "dont", "cant", "didnt", "ive", "ill", "hasnt". Show the 20 most frequent terms and plot the wordcould of 50 words again.</strong></p>
 
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>18. <strong>We can apply stemming or lemmatization on our text data. Apply a lemmatizer from <code>nltk</code> and save the results.</strong></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>And here is the code for stemming:</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The <code>PorterStemmer()</code> is for English language. If we are working with other languages, we can use other stemmers such as the <code>SnowballStemmer()</code> which supports:</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.stem.snowball</span> <span class="kn">import</span> <span class="n">SnowballStemmer</span>
+<span class="n">SnowballStemmer</span><span class="o">.</span><span class="n">languages</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(&#39;arabic&#39;,
+ &#39;danish&#39;,
+ &#39;dutch&#39;,
+ &#39;english&#39;,
+ &#39;finnish&#39;,
+ &#39;french&#39;,
+ &#39;german&#39;,
+ &#39;hungarian&#39;,
+ &#39;italian&#39;,
+ &#39;norwegian&#39;,
+ &#39;porter&#39;,
+ &#39;portuguese&#39;,
+ &#39;romanian&#39;,
+ &#39;russian&#39;,
+ &#39;spanish&#39;,
+ &#39;swedish&#39;)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14980,7 +15117,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>19. <strong>Use the CountVectorizer from the sklearn package and build a bag of words model on <em>Preprocessed Lyrics</em> based on term frequency. Check the shape of the output matrix.</strong></p>
+<p>19. <strong>Use <code>CountVectorizer()</code> from the <code>sklearn</code> package and build a bag of words model on <code>Preprocessed Lyrics</code> based on term frequency. Check the shape of the output matrix.</strong></p>
 
 </div>
 </div>
@@ -15004,7 +15141,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>21. <strong>Using TfidfVectorizer, you can create a model based on tfidf. Apply a TfidfVectorizer to your text data. Does the shape of the output matrix differ from dtm?</strong></p>
+<p>21. <strong>Using <code>TfidfVectorizer()</code>, you can create a model based on tfidf. Apply this vectorizer to your text data. Does the shape of the output matrix differ from dtm?</strong></p>
 
 </div>
 </div>
@@ -15016,7 +15153,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>22. <strong>Use the TfidfVectorizer to create an n-gram based model with n = 1 and 2. Use the ngram_range argument to determine the lower and upper boundary of the range of n-values for different n-grams to be extracted. (tip: use ?TfidfVectorizer)</strong></p>
+<p>22. <strong>Use the <code>TfidfVectorizer()</code> to create an n-gram based model with n = 1 and 2. Use the <code>ngram_range</code> argument to determine the lower and upper boundary of the range of n-values for different n-grams to be extracted. (tip: use <code>?TfidfVectorizer</code>)</strong></p>
 
 </div>
 </div>
@@ -15028,7 +15165,8 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>23. <strong>We want to compare the lyrics of Friends theme song with the lyrics of Taylor Swift's songs and find the most similar one. Use the string below, first, apply the pre-processing steps and then transform the text into count and tfidf vectors. Do the bag of words models agree on the most similar song to Friends theme song?</strong></p>
+<p>23. **We want to compare the lyrics of Friends theme song with the lyrics of Taylor Swift's songs and find the most similar one. Use the string below. First, apply the pre-processing steps and then transform the text into count and tfidf vectors.</p>
+<p>Do the bag of words models agree on the most similar song to Friends theme song?**</p>
 
 </div>
 </div>
@@ -15038,10 +15176,10 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">friends_theme_lyrics</span> <span class="o">=</span> <span class="s2">&quot;So no one told you life was going to be this way. Your job&#39;s a joke, you&#39;re broke, you&#39;re love life&#39;s DOA. It&#39;s like you&#39;re always stuck in second gear, When it hasn</span><span class="se">\&#39;</span><span class="s2">t been your day, your week, your month, or even your year. But, I</span><span class="se">\&#39;</span><span class="s2">ll be there for you, when the rain starts to pour. I</span><span class="se">\&#39;</span><span class="s2">ll be there for you, like I</span><span class="se">\&#39;</span><span class="s2">ve been there before. I</span><span class="se">\&#39;</span><span class="s2">ll be there for you, cause you</span><span class="se">\&#39;</span><span class="s2">re there for me too.&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">friends_theme_lyrics</span> <span class="o">=</span> <span class="s2">"So no one told you life was going to be this way. Your job's a joke, you're broke, you're love life's DOA. It's like you're always stuck in second gear, When it hasn</span><span class="se">\'</span><span class="s2">t been your day, your week, your month, or even your year. But, I</span><span class="se">\'</span><span class="s2">ll be there for you, when the rain starts to pour. I</span><span class="se">\'</span><span class="s2">ll be there for you, like I</span><span class="se">\'</span><span class="s2">ve been there before. I</span><span class="se">\'</span><span class="s2">ll be there for you, cause you</span><span class="se">\'</span><span class="s2">re there for me too."</span>
 <span class="n">friends_theme_lyrics</span>
 </pre></div>
 
@@ -15060,7 +15198,7 @@ To install the data, after installing nltk, use nltk’s data downloader as "nlt
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
