@@ -33,11 +33,10 @@ Instructors:
 
 * [Ayoub Bagheri](https://ayoubbagheri.nl/)\
 - [Anastasia Giachanou](http://giachanou.com/)
-- [Janke Coetzee](https://www.linkedin.com/in/janke-coetzee-239868b2/?originalSubdomain=nl)
 - [Luka van der Plas](https://www.uu.nl/medewerkers/LPvanderPlas)
-* [Berit Janssen](https://www.uu.nl/staff/BDJanssen)\
 + [Dong Nguyen](https://dongnguyen.nl/)\
-- [Javier Garcia Bernardo](https://javier.science/)
+- [Daniel Anadria](https://www.researchgate.net/profile/Daniel-Anadria-2)
+- [Arjan van Dalfsen](https://www.uu.nl/staff/jadalfsen)
 
 
 Study load: 1.5 ECTS
@@ -240,11 +239,11 @@ Here you will find the materials for Thursday:
     - [Practical 7](thursday/Practicals/Practical 7/Impractical 7.html)
     - [Answers practical 7](thursday/Practicals/Practical 7/Practical 7.html)
 
-- Part 8: Applications of text mining & NLP
-    - [Lecture 8](thursday/Lectures/lecture 8/Lecture_8.pdf)
+- Part 8: Sentiment analysis
+    - [Lecture 8](thursday/Lectures/lecture 8/Lecture_8.html)
     - [Lecture handout 8](thursday/Lectures/lecture 8/Lecture handout_8.pdf)
-    - [Practical 8 (with an example answer)](thursday/Practicals/Practical 8/Practical 8.html)
-    - [Data for practical 8](thursday/Practicals/Practical 8/data.zip)
+    - [Practical 8](thursday/Practicals/Practical 8/Impractical 8.html)
+    - [Answers practical 8](thursday/Practicals/Practical 8/Practical 8.html)
 
 
 ## Column 2
@@ -262,11 +261,11 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 
 Here you will find the materials for Friday:
 
-- Part 9: Sentiment analysis
-    - [Lecture 9](friday/Lectures/lecture 9/Lecture_9.html)
+- Part 9: Applications of text mining & NLP
+    - [Lecture 9](friday/Lectures/lecture 9/Lecture_9.pdf)
     - [Lecture handout 9](friday/Lectures/lecture 9/Lecture handout_9.pdf)
-    - [Practical 9](friday/Practicals/Practical 9/Impractical 9.html)
-    - [Answers practical 9](friday/Practicals/Practical 9/Practical 9.html)
+    - [Practical 9 (with an example answer)](friday/Practicals/Practical 9/Practical 9.html)
+    - [Data for practical 9](friday/Practicals/Practical 9/data.zip)
 
 - Part 10: Responsible text mining
     - [Lecture 10](friday/Lectures/lecture 10/Lecture_10.pdf)
