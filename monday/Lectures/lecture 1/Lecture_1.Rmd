@@ -59,10 +59,10 @@ include_graphics("img/anastasia.png")
   
   <br/>
 ```{r, echo=FALSE, fig.align='center', out.width="30%"}
-include_graphics("img/janke.jpg")
+include_graphics("img/arjan.jpg")
 ```
   <div class="centered">
-  **Janke**
+  **Arjan**
   </div>
   
   <br/>
@@ -74,16 +74,8 @@ include_graphics("img/luka.jpg")
   </div>
 </div>
 
-<div style="float:right; width:50%">
-```{r, echo=FALSE, fig.align='center', out.width="30%"}
-include_graphics("img/berit.jpg")
-```
-  <div class="centered">
-  **Berit**
-  </div>
-
   <br/>
-```{r, echo=FALSE, fig.align='center', out.width="30%"}
+```{r, echo=FALSE, fig.align='center', out.width="20%"}
 include_graphics("img/page17dong.png")
 ```
   <div class="centered">
@@ -91,11 +83,11 @@ include_graphics("img/page17dong.png")
   </div>
   
   <br/>
-```{r, echo=FALSE, fig.align='center', out.width="30%"}
-include_graphics("img/javier.jpg")
+```{r, echo=FALSE, fig.align='center', out.width="20%"}
+include_graphics("img/Daniel_Anadria.jpg")
 ```
   <div class="centered">
-  **Javier**
+  **Daniel**
   </div>
 </div>
 
@@ -129,6 +121,70 @@ program %>%
   - using Python 
   - on a variety of applications 
   - in many domains.
+
+# Python?
+
+## How familiar are you with Python?
+
+- What is your experience level with Python?
+
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="90%"}
+include_graphics("img/q1.jpg")
+```
+</div>
+  
+## Python IDE?
+
+- Which Python IDE do you mostly use? If you use more than one environment fill in the other text boxes.
+
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="90%"}
+include_graphics("img/q1.jpg")
+```
+</div>
+
+## Google Colab?
+
+- How familiar are you with Google Colab? (1: limited to 5: expert)
+  
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="90%"}
+include_graphics("img/q1.jpg")
+```
+</div>
+
+## Python
+
+- Latest: <a href="https://www.python.org/downloads/release/python-3105/">Python 3.10</a>
+
+- Follow the tutorial on Python in Google Colab for the Applied Text Mining course: [link](https://ayoubbagheri.nl/applied_tm/Python_in_Google_Colab_Applied_Text_Mining.html)
+
+- Python For Beginners
+    - <a href="https://www.python.org/about/gettingstarted/">https://www.python.org/about/gettingstarted/</a>
+
+- The Python Language Reference
+    - <a href="https://docs.python.org/3/reference/">https://docs.python.org/3/reference/</a>
+
+- Python 3.9.1 documentation
+    - <a href="https://docs.python.org/3/">https://docs.python.org/3/</a>
+
+## Google Colab
+
+- Colaboratory, or "Colab" for short, allows you to write and execute Python in your browser, with
+  - Zero configuration required
+  - Free access to GPUs
+  - Easy sharing
+
+- [Intro](<a href="https://colab.research.google.com/notebooks/intro.ipynb">https://colab.research.google.com/notebooks/intro.ipynb</a>)
+
+- [Cheat-sheet for Google Colab](https://colab.research.google.com/github/Tanu-N-Prabhu/Python/blob/master/Cheat_sheet_for_Google_Colab.ipynb)
+
+- Keyboard shortcuts:
+```{r, echo=FALSE, out.width="90%", fig.align='center'}
+include_graphics("img/colab.png")
+```
+
 
 # What is Text Mining?
 
@@ -221,15 +277,15 @@ include_graphics("img/page5_person3.png")
 ```
 </div>
 
-## Challenges?
+<!-- ## Challenges? -->
 
-- What are the challenges they encounter in working with text?
+<!-- - What are the challenges they encounter in working with text? -->
 
-<div style="float: left; width:100%">
-```{r, echo=FALSE, fig.align='center', out.width="90%"}
-include_graphics("img/q1.jpg")
-```
-</div>
+<!-- <div style="float: left; width:100%"> -->
+<!-- ```{r, echo=FALSE, fig.align='center', out.width="90%"} -->
+<!-- include_graphics("img/q1.jpg") -->
+<!-- ``` -->
+<!-- </div> -->
 
 
 ## Language is hard!
@@ -503,68 +559,6 @@ include_graphics("img/page 75_2.png")
 
 <!-- - Stanford parser: http://nlp.stanford.edu:8080/parser/index.jsp -->
 
-# Python Questionnare
-
-## How familiar are you with Python?
-
-- What is your experience level with Python?
-
-<div style="float: left; width:100%">
-```{r, echo=FALSE, fig.align='center', out.width="90%"}
-include_graphics("img/q1.jpg")
-```
-</div>
-  
-## Python IDE?
-
-- Which Python IDE do you mostly use? If you use more than one environment fill in the other text boxes.
-
-<div style="float: left; width:100%">
-```{r, echo=FALSE, fig.align='center', out.width="90%"}
-include_graphics("img/q1.jpg")
-```
-</div>
-
-## Google Colab?
-
-- How familiar are you with Google Colab? (1: limited to 5: expert)
-  
-<div style="float: left; width:100%">
-```{r, echo=FALSE, fig.align='center', out.width="90%"}
-include_graphics("img/q1.jpg")
-```
-</div>
-
-## Python
-
-- Latest: <a href="https://www.python.org/downloads/release/python-3105/">Python 3.10</a>
-
-- Follow the tutorial on Python in Google Colab for the Applied Text Mining course: [link](https://ayoubbagheri.nl/applied_tm/Python_in_Google_Colab_Applied_Text_Mining.html)
-
-- Python For Beginners
-    - <a href="https://www.python.org/about/gettingstarted/">https://www.python.org/about/gettingstarted/</a>
-
-- The Python Language Reference
-    - <a href="https://docs.python.org/3/reference/">https://docs.python.org/3/reference/</a>
-
-- Python 3.9.1 documentation
-    - <a href="https://docs.python.org/3/">https://docs.python.org/3/</a>
-
-## Google Colab
-
-- Colaboratory, or "Colab" for short, allows you to write and execute Python in your browser, with
-  - Zero configuration required
-  - Free access to GPUs
-  - Easy sharing
-
-- [Intro](<a href="https://colab.research.google.com/notebooks/intro.ipynb">https://colab.research.google.com/notebooks/intro.ipynb</a>)
-
-- [Cheat-sheet for Google Colab](https://colab.research.google.com/github/Tanu-N-Prabhu/Python/blob/master/Cheat_sheet_for_Google_Colab.ipynb)
-
-- Keyboard shortcuts:
-```{r, echo=FALSE, out.width="90%", fig.align='center'}
-include_graphics("img/colab.png")
-```
 
 # Summary
 
