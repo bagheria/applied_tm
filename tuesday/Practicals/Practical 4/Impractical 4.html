@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14454,6 +14455,11 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
+/* Force rendering true colors when outputing to pdf */
+* {
+  -webkit-print-color-adjust: exact;
+}
+
 /* Misc */
 a.anchor-link {
   display: none;
@@ -14515,11 +14521,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   width: 100%;
 }
 
-@media print {
-  .jp-Collapser {
-    display: none;
-  }
+/* Hiding the collapser by default */
+.jp-Collapser {
+  display: none;
+}
 
+@media print {
   .jp-Cell-inputWrapper,
   .jp-Cell-outputWrapper {
     display: block;
@@ -14553,12 +14560,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14573,7 +14580,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Impractical-4:-Text-Clustering-and-Topic-Modeling">Impractical 4: Text Clustering and Topic Modeling<a class="anchor-link" href="#Impractical-4:-Text-Clustering-and-Topic-Modeling">&#182;</a></h1><h4 id="Ayoub-Bagheri">Ayoub Bagheri<a class="anchor-link" href="#Ayoub-Bagheri">&#182;</a></h4><p><img src="img/uu_logo.png" alt="logo" align="right" title="UU" width="50" height="20" /></p>
+<h1 id="Practical-4:-Text-Clustering-and-Topic-Modeling">Practical 4: Text Clustering and Topic Modeling<a class="anchor-link" href="#Practical-4:-Text-Clustering-and-Topic-Modeling">&#182;</a></h1><h4 id="Ayoub-Bagheri">Ayoub Bagheri<a class="anchor-link" href="#Ayoub-Bagheri">&#182;</a></h4><p><img src="img/uu_logo.png" alt="logo" align="right" title="UU" width="50" height="20" /></p>
 <h4 id="Applied-Text-Mining---Utrecht-Summer-School">Applied Text Mining - Utrecht Summer School<a class="anchor-link" href="#Applied-Text-Mining---Utrecht-Summer-School">&#182;</a></h4>
 </div>
 </div>
@@ -14607,7 +14614,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_files</span>
@@ -14627,6 +14634,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 
 <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">NMF</span>
 <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">LatentDirichletAllocation</span>
+
+<span class="c1"># for reproducibility</span>
+<span class="n">random_state</span> <span class="o">=</span> <span class="mi">321</span>
 </pre></div>
 
      </div>
@@ -14652,7 +14662,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1. <strong>Here we are going to use a another set of the BBC news articles, the BBCSport data. This data set provided for use as benchmarks for machine learning research. The BBCSport data set consists of 737 documents from the BBC Sport website corresponding to sports news articles from 2004-2005 in five topical areas: athletics, cricket, football, rugby, tennis. Load the dataset first and convert it to a dataframe.</strong></p>
+<p>1. <strong>Here we are going to use a another set of the BBC news articles, the BBC Sport dataset. This dataset provided for use as benchmarks for machine learning research. The BBC Sport dataset consists of 737 documents from the BBC Sport website corresponding to sports news articles from 2004-2005 in five topical areas: athletics, cricket, football, rugby, tennis. Upload the <code>bbcsport-fulltext.zip</code> file and extract it using the code below. Convert the resulting object to a dataframe.</strong></p>
 
 </div>
 </div>
@@ -14689,6 +14699,23 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># You can check the vocabulary of your vectorizer with the following line</span>
+<span class="c1"># tfidf_vectorizer.vocabulary_</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14731,6 +14758,25 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Based on these 10 top terms we can manually label our clustering output as:</p>
+<ul>
+<li>cluster 0: cricket</li>
+<li>cluster 1: tennis</li>
+<li>cluster 2: football</li>
+<li>cluster 3: athletics</li>
+<li>cluster 4: rugby</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>6. <strong>Visualize the output of the K-Means clustering: first apply a PCA method to transform the high-dimensional feature space into 2 dimensions, and then plot the points using a scatter plot.</strong></p>
 
 </div>
@@ -14743,7 +14789,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>7. <strong>Evaluate the quality of the K-Means clustering with the sklearn metrics for clustering: homogeneity_score, completeness_score, v_measure_score, adjusted_rand_score, silhouette_score.</strong></p>
+<p>7. <strong>Evaluate the quality of the K-Means clustering with the <code>sklearn</code> metrics for clustering: <code>homogeneity_score</code>, <code>completeness_score</code>, <code>v_measure_score</code>, <code>adjusted_rand_score</code>, <code>silhouette_score</code>.</strong></p>
 
 </div>
 </div>
@@ -14756,8 +14802,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Evaluation for unsupervised learning algorithms is a bit difficult and requires human judgement but there are some metrics which you might use. There are two kinds of metrics you can use depending on whether or not you have the labels.</p>
-<p>If you have a labelled data set you can use metrics that give you an idea of how good your clustering model is. For this purpose you can use the sklearn.metrics module, for example homogeneity_score is one of the possible metrics. As per the documentation, the score ranges between 0 and 1 where 1 stands for perfectly homogeneous labeling.</p>
-<p>If you do not have labels for your data set, then you can still evaluate your clustering model with some metrics. One of them is Silhouette Coefficient. From the sklearn's documentation: The Silhouette Coefficient is calculated using the mean intra-cluster distance (a) and the mean nearest-cluster distance (b) for each sample. The Silhouette Coefficient for a sample is (b - a) / max(a,b). To clarify, b is the distance between a sample and the nearest cluster that the sample is not a part of. The best value is 1 and the worst value is -1. Values near 0 indicate overlapping clusters. Negative values generally indicate that a sample has been assigned to the wrong cluster, as a different cluster is more similar.</p>
+<p>If you have a labelled dataset you can use metrics that give you an idea of how good your clustering model is. For this purpose you can use the <code>sklearn.metrics</code> module, for example <code>homogeneity_score</code> is one of the possible metrics. As per the documentation, the score ranges between 0 and 1 where 1 stands for perfectly homogeneous labeling.</p>
+<p>If you do not have labels for your dataset, then you can still evaluate your clustering model with some metrics. One of them is the <code>silhouette_score</code>. From the <code>sklearn</code>'s documentation: The Silhouette Coefficient is calculated using the mean intra-cluster distance (a) and the mean nearest-cluster distance (b) for each sample. The Silhouette Coefficient for a sample is (b - a) / max(a,b). To clarify, b is the distance between a sample and the nearest cluster that the sample is not a part of. The best value is 1 and the worst value is -1. Values near 0 indicate overlapping clusters. Negative values generally indicate that a sample has been assigned to the wrong cluster, as a different cluster is more similar.</p>
 
 </div>
 </div>
@@ -14769,7 +14815,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>8. <strong>Apply the K-Means clustering method on a range of 3 to 7 clusters, and calculate the squared loss obtained in each clustering. Apply the Elbow method to find the optimal k. (Tip: use the cls.inertia_ for the squared loss)</strong></p>
+<p>8. <strong>Apply the K-Means clustering method on a range of 3 to 7 clusters, and calculate the squared loss obtained in each clustering. Apply the Elbow method to find the optimal k. (Tip: use the <code>cls.inertia_</code> for the squared loss)</strong></p>
 
 </div>
 </div>
@@ -14781,11 +14827,28 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>9. <strong>Use the following two news articles as your test data, and predict cluster labels for your new data set with the best value for K and the K-Means algorithm.</strong></p>
+<p>9. <strong>Use the following two news articles as your test data, and predict cluster labels for your new dataset with the best value for K and the K-Means algorithm.</strong></p>
 
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">documents</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Frank de Boer out as Oranje manager after early Euro 2020 exit Dutch men’s football team coach.'</span><span class="p">,</span>
+             <span class="s1">'The time has come for Nadal to be selective in the events that he should and should not play. This is where he can start the difficulty. After a rigorous participation of the clay season, Rafael Nadal definitely wants to conserve his energies for as long as possible.'</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -14804,7 +14867,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>10. <strong>Hierarchical clustering is a type of unsupervised machine learning algorithm used to cluster unlabeled data points. Similar to the K-Means clustering, hierarchical clustering groups the data points with similar characteristics together. Apply a hierarchical clustering with the ward linkage on the Sports news dataset. Fit the model with 5 clusters and check the predicted labels.</strong></p>
+<p>10. <strong>Hierarchical clustering is a type of unsupervised machine learning algorithm used to cluster unlabeled data points. Similar to the K-Means clustering, hierarchical clustering groups the data points with similar characteristics together. Apply a hierarchical clustering with the ward linkage on the BBC Sport dataset. Fit the model with 5 clusters and check the predicted labels.</strong></p>
 
 </div>
 </div>
@@ -14839,7 +14902,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Topic modeling is another unsupervised method for text mining applications where we want to get an idea of what topics we have in our data set. A topic is a collection of words that describe the overall theme. For example, in case of news articles, you might think of topics as the categories in the data set. Just like clustering algorithms, there are some algorithms that need you to specify the number of topics you want to extract from the data set and some that automatically determine the number of topics. Here, we are going to use the Latent Dirichlet Allocation (LDA) method for topic modeling. You can check sklearn's documentation for more details about LDA from the sklearn.decomposition module.</p>
+<p>Topic modeling is another unsupervised method for text mining applications where we want to get an idea of what topics we have in our dataset. A topic is a collection of words that describe the overall theme. For example, in case of news articles, you might think of topics as the categories in the dataset. Just like clustering algorithms, there are some algorithms that need you to specify the number of topics you want to extract from the dataset and some that automatically determine the number of topics. Here, we are going to use the Latent Dirichlet Allocation (LDA) method for topic modeling. You can check sklearn's documentation for more details about LDA from the <code>sklearn.decomposition</code> module.</p>
 
 </div>
 </div>
@@ -14856,7 +14919,19 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <li>Documents exhibit multiple topics</li>
 <li>A topic is a distribution over a fixed vocabulary</li>
 </ul>
-<p><strong>Train a LDA model from the sklearn package for topic modeling with 5 components.**</strong></p>
+<p><strong>Train a LDA model from the <code>sklearn</code> package for topic modeling with 5 components.**</strong></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We used LDA to create topics along with the probability distribution for each word in our vocabulary for each topic. The parameter <code>n_components</code> specifies the number of categories, or topics, that we want our text to be divided into.</p>
 
 </div>
 </div>
@@ -14880,6 +14955,41 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You can also use the following function for this purpose:</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">display_topics</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">,</span> <span class="n">no_top_words</span><span class="p">):</span>
+    <span class="n">topic_dict</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">topic_idx</span><span class="p">,</span> <span class="n">topic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">components_</span><span class="p">):</span>
+        <span class="n">topic_dict</span><span class="p">[</span><span class="s2">"Topic </span><span class="si">%d</span><span class="s2"> words"</span> <span class="o">%</span> <span class="p">(</span><span class="n">topic_idx</span><span class="p">)]</span><span class="o">=</span> <span class="p">[</span><span class="s1">'</span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">feature_names</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">topic</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[:</span><span class="o">-</span><span class="n">no_top_words</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+        <span class="n">topic_dict</span><span class="p">[</span><span class="s2">"Topic </span><span class="si">%d</span><span class="s2"> weights"</span> <span class="o">%</span> <span class="p">(</span><span class="n">topic_idx</span><span class="p">)]</span><span class="o">=</span> <span class="p">[</span><span class="s1">'</span><span class="si">{:.1f}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">topic</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">topic</span><span class="o">.</span><span class="n">argsort</span><span class="p">()[:</span><span class="o">-</span><span class="n">no_top_words</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">topic_dict</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>14. <strong>Transform the learned topics into your data. Check the shape of the output. What can be the use of this output?</strong></p>
 
 </div>
@@ -14892,7 +15002,31 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>15. <strong>Use the score function for LDA to calculate the log likelihood for your data. Compare two LDA models with 5 and 10 topics.</strong></p>
+<p>This output can be used as our new observations and features for further tasks.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>15. <strong>Use the <code>score</code> function for LDA to calculate the log likelihood for your data. Compare two LDA models with 5 and 10 topics.</strong></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Many procedures use the log of the likelihood, rather than the likelihood itself, because it is easier to work with. The log likelihood (i.e., the log of the likelihood) will always be negative, with higher values (closer to zero) indicating a better fitting model. Here this belongs to the model with 5 topics.</p>
 
 </div>
 </div>
