@@ -36,6 +36,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 .highlight .m { color: var(--jp-mirror-editor-number-color) } /* Literal.Number */
 .highlight .s { color: var(--jp-mirror-editor-string-color) } /* Literal.String */
 .highlight .ow { color: var(--jp-mirror-editor-operator-color); font-weight: bold } /* Operator.Word */
+.highlight .pm { color: var(--jp-mirror-editor-punctuation-color) } /* Punctuation.Marker */
 .highlight .w { color: var(--jp-mirror-editor-variable-color) } /* Text.Whitespace */
 .highlight .mb { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Bin */
 .highlight .mf { color: var(--jp-mirror-editor-number-color) } /* Literal.Number.Float */
@@ -14454,6 +14455,11 @@ all of MD as it is not optimized for dense, information rich UIs.
 </style>
 
 <style type="text/css">
+/* Force rendering true colors when outputing to pdf */
+* {
+  -webkit-print-color-adjust: exact;
+}
+
 /* Misc */
 a.anchor-link {
   display: none;
@@ -14515,11 +14521,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
   width: 100%;
 }
 
-@media print {
-  .jp-Collapser {
-    display: none;
-  }
+/* Hiding the collapser by default */
+.jp-Collapser {
+  display: none;
+}
 
+@media print {
   .jp-Cell-inputWrapper,
   .jp-Cell-outputWrapper {
     display: block;
@@ -14553,12 +14560,12 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
                 },
                 displayAlign: 'center',
                 CommonHTML: {
-                    linebreaks: { 
-                    automatic: true 
+                    linebreaks: {
+                    automatic: true
                     }
                 }
             });
-        
+
             MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
     }
@@ -14573,7 +14580,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Impractical-6:-Deep-Learning-for-Multiclass-Text-Classification">Impractical 6: Deep Learning for Multiclass Text Classification<a class="anchor-link" href="#Impractical-6:-Deep-Learning-for-Multiclass-Text-Classification">&#182;</a></h1><h4 id="Ayoub-Bagheri">Ayoub Bagheri<a class="anchor-link" href="#Ayoub-Bagheri">&#182;</a></h4><p><img src="img/uu_logo.png" alt="logo" align="right" title="UU" width="50" height="20" /></p>
+<h1 id="Practical-6:-Deep-Learning-for-Multiclass-Text-Classification">Practical 6: Deep Learning for Multiclass Text Classification<a class="anchor-link" href="#Practical-6:-Deep-Learning-for-Multiclass-Text-Classification">&#182;</a></h1><h4 id="Ayoub-Bagheri">Ayoub Bagheri<a class="anchor-link" href="#Ayoub-Bagheri">&#182;</a></h4><p><img src="img/uu_logo.png" alt="logo" align="right" title="UU" width="50" height="20" /></p>
 <h4 id="Applied-Text-Mining---Utrecht-Summer-School">Applied Text Mining - Utrecht Summer School<a class="anchor-link" href="#Applied-Text-Mining---Utrecht-Summer-School">&#182;</a></h4>
 </div>
 </div>
@@ -14585,9 +14592,9 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>In this practical, we will apply various deep learning models for multiclass text classification. We will work with the famous 20 Newsgroups data set from the sklearn library and will apply deep learning models on that using the Keras library.</p>
+<p>In this practical, we will apply various deep learning models for multiclass text classification. We will work with the famous 20 Newsgroups dataset from the <code>sklearn</code> library and apply deep learning models using the <code>keras</code> library.</p>
 <p>The 20 Newsgroups data set is a collection of approximately 20,000 newsgroup documents, partitioned (nearly) evenly across 20 different newsgroups. It was originally collected by Ken Lang, and it has become a popular data set for experiments in text applications of machine learning techniques.</p>
-<p>On the other hand, today we will use the Keras library, which is a deep learning and neural networks API by François Chollet's team which is capable of running on top of Tensorflow (Google), Theano or CNTK (Microsoft).</p>
+<p>Also, we will use the <code>keras</code> library, which is a deep learning and neural networks API by François Chollet's team capable of running on top of Tensorflow (Google), Theano or CNTK (Microsoft).</p>
 
 </div>
 </div>
@@ -14609,7 +14616,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
@@ -14618,7 +14625,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
 
 <span class="kn">from</span> <span class="nn">keras.wrappers.scikit_learn</span> <span class="kn">import</span> <span class="n">KerasClassifier</span>
-<span class="kn">from</span> <span class="nn">keras.preprocessing.sequence</span> <span class="kn">import</span> <span class="n">pad_sequences</span>
+<span class="kn">from</span> <span class="nn">keras.utils</span> <span class="kn">import</span> <span class="n">pad_sequences</span>
 <span class="kn">from</span> <span class="nn">keras.preprocessing.text</span> <span class="kn">import</span> <span class="n">Tokenizer</span>
 <span class="kn">from</span> <span class="nn">keras.models</span> <span class="kn">import</span> <span class="n">Sequential</span>
 <span class="kn">from</span> <span class="nn">keras</span> <span class="kn">import</span> <span class="n">layers</span><span class="p">,</span> <span class="n">utils</span>
@@ -14651,7 +14658,8 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>1. <strong>Load the tarin and test subsets of the 20 Newsgroups data set from sklearn datasets. Remove the headers, footers and qoutes from the news article when loading data sets. Use number 321 for random_state. In order to get faster execution times for this practical we will work on a partial data set with only 5 categories out of the 20 available in the data set: ('rec.sport.hockey', 'talk.politics.mideast', 'soc.religion.christian', 'comp.graphics', 'sci.med').</strong></p>
+<p>1. <strong>Load the train and test subsets of the 20 Newsgroups data set from <code>sklearn</code> datasets. Remove the headers, footers and qoutes from the news article when loading data sets. Use number 321 for <code>random_state</code>.</strong>
+<strong>In order to get faster execution times for this practical we will work on a partial data set with only 5 categories out of the 20 available in the data set: <code>'rec.sport.hockey'</code>, <code>'talk.politics.mideast'</code>, <code>'soc.religion.christian'</code>, <code>'comp.graphics'</code>, and <code>'sci.med'</code>.</strong></p>
 
 </div>
 </div>
@@ -14663,7 +14671,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>2. <strong>Find out about the number of news articles in train and test sets.</strong></p>
+<p>2. <strong>Find out about the number of news articles in the train and test sets.</strong></p>
 
 </div>
 </div>
@@ -14687,7 +14695,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Train-a-neural-network-with-document-term-matrix">Train a neural network with document-term matrix<a class="anchor-link" href="#Train-a-neural-network-with-document-term-matrix">&#182;</a></h3>
+<h3 id="Train-a-neural-network-a-with-document-term-matrix">Train a neural network a with document-term matrix<a class="anchor-link" href="#Train-a-neural-network-a-with-document-term-matrix">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14698,7 +14706,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>4. <strong>In order to feed predictive deep learning models with text data, first you need to turn the text into vectors of numerical values suitable for statistical analysis. Use the binary representation with TfidfVectorizer and create document-term matrices for test and train (name them X_train and X_test).</strong></p>
+<p>4. <strong>In order to feed predictive deep learning models with text data, first you need to turn the text into vectors of numerical values suitable for statistical analysis. Use the binary representation with <code>TfidfVectorizer</code> and create document-term matrices for test and train (name them <code>X_train</code> and <code>X_test</code>).</strong></p>
 
 </div>
 </div>
@@ -14710,7 +14718,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>5. <strong>Use the LabelEncoder to create y_train and y_test from df_train.label.values and df_test.label.values respectively.</strong></p>
+<p>5. <strong>Use the <code>LabelEncoder</code> to create <code>y_train</code> and <code>y_test</code> from <code>df_train.label.values</code> and <code>df_test.label.values</code>, respectively.</strong></p>
 
 </div>
 </div>
@@ -14722,7 +14730,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>6. <strong>Use the sequential API in Keras and create a one-hidden-layer neural network. So, the first layer will be input layer with the number of features in your X_train, then one hidden layer, then one output layer. Set the number of neurons 5 in the hidden layer and activation function as relu. For the output layer you can use a softmax activation function.</strong></p>
+<p>6. <strong>Use the sequential API in <code>keras</code> and create a one-hidden-layer neural network. So, the first layer will be the input layer with the number of features in your X_train, followed by a single hidden layer, and an output layer. Set the number of neurons in the hidden layer to 5, and activation function as <code>relu</code>. For the output layer you can use a <code>softmax</code> activation function.</strong></p>
 
 </div>
 </div>
@@ -14747,7 +14755,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>7. <strong>The compile function defines the loss function, the optimizer and the metrics. Call this function for your neural network model with loss='binary_crossentropy', optimizer='adam', metrics=['accuracy']. Check the summary of the model.</strong></p>
+<p>7. <strong>The <code>compile</code> function defines the <code>loss</code> function, the <code>optimizer</code> and the evaluation <code>metrics</code>. Call this function for your neural network model with <code>loss='binary_crossentropy'</code>, <code>optimizer='adam'</code>, <code>metrics=['accuracy']</code>. Check the summary of the model.</strong></p>
 
 </div>
 </div>
@@ -14810,7 +14818,23 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>8. <strong>Time to train your model! Train your model in 20 iterations. What does batch_size represent?</strong></p>
+<p>8. <strong>Time to train your model! Train your model in 20 iterations. What does <code>batch_size</code> represent?</strong></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Note that if you rerun the <code>fit()</code> method, you will start off with the computed weights from the previous training. Make sure to call <code>clear_session()</code> before you start training the model again:</p>
+<p><br></p>
+<p><strong><code>from keras.backend import clear_session</code> <br>
+<code>clear_session()</code></strong></p>
+<p><br></p>
 
 </div>
 </div>
@@ -14834,7 +14858,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>10. <strong>Evaluate the accuracy of your trained model on the test set. Compare that with the accuarcy of train.</strong></p>
+<p>10. <strong>Evaluate the accuracy of your trained model on the test set. Compare that with the accuracy on train.</strong></p>
 
 </div>
 </div>
@@ -14857,7 +14881,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>11. <strong>Use the tokenizer from Keras with 20000 words and create X-train and X_test sequences.</strong></p>
+<p>11. <strong>Use the tokenizer from Keras with 20,000 words and create <code>X-train</code> and <code>X_test</code> sequences.</strong></p>
 
 </div>
 </div>
@@ -14869,7 +14893,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>12. <strong>Use the pad_sequence() function to pad each text sequence with zeros, so that each vector has the same length of 100 words.</strong></p>
+<p>12. <strong>Use the <code>pad_sequence()</code> function to pad each text sequence with zeros, so that each vector has the same length of 100 words.</strong></p>
 
 </div>
 </div>
@@ -14881,7 +14905,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>13. <strong>Now it is time to create a neural network model using an embedding layer as input. Take the output of the embedding layer (embedding_dim = 50) and plug it into a Dense layer with 10 neurons, and the relu activation function. In order to do this, you have to add a Flatten layer in between that prepares the sequential input for the Dense layer. Note that in the Embedding layer, input_dim is the size of the vocabulary, output_dim is the size of the embedding vector, and input_length is the length of the text sequence.</strong></p>
+<p>13. <strong>Now it is time to create a neural network model using an embedding layer as input. Take the output of the embedding layer (<code>embedding_dim = 50</code>) and plug it into a Dense layer with 10 neurons, and the <code>relu</code> activation function. In order to do this, you have to add a Flatten layer in between that prepares the sequential input for the Dense layer. Note that in the Embedding layer, <code>input_dim</code> is the size of the vocabulary, <code>output_dim</code> is the size of the embedding vector, and <code>input_length</code> is the length of the text sequence.</strong></p>
 
 </div>
 </div>
@@ -14904,7 +14928,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>14. <strong>Pretrained word embeddings are the embeddings learned in one task that are used for solving another similar task. These embeddings are trained on large data sets, saved, and then used for solving other tasks. Here, we are going to use the GloVe embeddings which are precomputed word embeddings simply trained on a large corpus of text. For this purpose, we wrote the following fuction to apply on the pretrained word embeddings and use the corresponding word vectors for words in our vocabulary. Download one of the GloVe embeddings (e.g. glove.6B.50d.txt) and create the embedding matrix using the provided function. (Link to download: <a href="https://nlp.stanford.edu/projects/glove/">https://nlp.stanford.edu/projects/glove/</a>)</strong></p>
+<p>14. <strong>Pretrained word embeddings are the embeddings learned in one task that are used for solving another similar task. These embeddings are trained on large data sets, saved, and then used for solving other tasks. Here, we are going to use the GloVe embeddings which are precomputed word embeddings simply trained on a large corpus of text. For this purpose, we wrote the following fuction to apply on the pretrained word embeddings and use the corresponding word vectors for words in our vocabulary. Download one of the GloVe embeddings (e.g. <code>glove.6B.50d.txt</code>) and create the embedding matrix using the provided function. (Link to download: <a href="https://nlp.stanford.edu/projects/glove/">https://nlp.stanford.edu/projects/glove/</a>)</strong></p>
 
 </div>
 </div>
@@ -14916,7 +14940,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>15. <strong>Build your previous neural network model again, but this time with the initial weights from the pretrained word embeddings. Set the trainable argument False so that your embedding layer does not learn the word vectors anymore, and then again back to True. How does the performances change?</strong></p>
+<p>15. <strong>Build your previous neural network model again, but this time with the initial weights from the pretrained word embeddings. Set the <code>trainable</code> argument <code>False</code> so that your embedding layer does not learn the word vectors anymore, and then again back to <code>True</code>. How does the performances change?</strong></p>
 
 </div>
 </div>
