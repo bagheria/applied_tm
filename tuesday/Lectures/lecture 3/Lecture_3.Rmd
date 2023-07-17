@@ -3,11 +3,11 @@ title: "Feature Selection in Text"
 author: "Ayoub Bagheri"
 subtitle: Applied Text Mining
 output:
-  word_document: default
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
+  word_document: default
   beamer_presentation: default
 ---
 
@@ -32,13 +32,13 @@ library(kableExtra)
 include_graphics("img/page 3.png")
 ```
 
-## Feature selection:  What
+## Feature selection: What
 
 <center><span style="color:red">You have some data, and you want to use it to build a classifier, so that you can predict something
  (e.g. email spam classification)
 </span></center>
 
-## Feature selection:  What
+## Feature selection: What
 
 <center><span style="color:blue">You have some data, and you want to use it to build a classifier, so that you can predict something (e.g. email spam classification)
 </span></center>
@@ -47,7 +47,7 @@ include_graphics("img/page 3.png")
 
 <center><span style="color:red">The data has 10,000 fields (features)</span></center>
 
-## Feature selection:  What
+## Feature selection: What
 
 <center><span style="color:red">You have some data, and you want to use it to build a classifier, so that you can predict something (e.g. email spam classification)
 </span></center>
@@ -60,7 +60,7 @@ include_graphics("img/page 3.png")
 
 <center><span style="color:brown">you need to cut it down to 1,000 fields before you try machine learning. Which 1,000? </span></center>
 
-## Feature selection:  What
+## Feature selection: What
 
 <center><span style="color:blue">You have some data, and you want to use it to build a classifier, so that you can predict something (e.g. email spam classification)
 </span></center>
@@ -83,7 +83,7 @@ include_graphics("img/page 3.png")
 <!-- include_graphics("img/page 8.png") -->
 <!-- ``` -->
 
-## Feature selection:  Why
+## Feature selection: Why
 
 ```{r, echo=FALSE, out.width="80%", fig.align='center'}
 include_graphics("img/page 9.png")
@@ -106,6 +106,16 @@ include_graphics("img/page 9.png")
 
 - The increased space of possibilities is more difficult to search.
 
+## Feature selection: accuracy
+<p style="float:left;font-size:18px;">Relevance popularity: A term event model based feature selection scheme for text classification: http://elpub.scix.net/data/works/att/02-28.content.pdf</p>
+
+```{r, echo=FALSE, out.width="65%", fig.align='center'}
+include_graphics("img/acc1.jpg")
+```
+
+```{r, echo=FALSE, out.width="65%", fig.align='center'}
+include_graphics("img/acc2.jpg")
+```
 
 ## Feature selection
 
