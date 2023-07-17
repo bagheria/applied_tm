@@ -166,7 +166,7 @@ include_graphics("img/q1.jpg")
 - The Python Language Reference
     - <a href="https://docs.python.org/3/reference/">https://docs.python.org/3/reference/</a>
 
-- Python 3.9.1 documentation
+- Python 3.11.4 documentation
     - <a href="https://docs.python.org/3/">https://docs.python.org/3/</a>
 
 ## Google Colab
@@ -299,7 +299,7 @@ include_graphics("img/page5_person3.png")
 - Negation ("not good" vs. "good"), spelling variations, jargon, abbreviations
 - All the above are different over languages, 99\% of work is on English!
 
-# Text Mining to the Rescue!
+<!-- # Text Mining to the Rescue! -->
 
 ## Text mining
 - “the discovery by computer of <span style="color:blue">new</span>, <span style="color:blue">previously unknown</span> information, by <span style="color:blue">automatically extracting</span> information from <span style="color:blue">different</span> written resources” Hearst (1999)
@@ -308,7 +308,7 @@ include_graphics("img/page5_person3.png")
 
 - Text mining describes a set of <span style="color:green">linguistic</span>, <span style="color:green">statistical</span>, and <span style="color:green">machine learning</span> techniques that model and structure the information content of textual sources. (Wikipedia)
 
-## Language is hard!
+## Can be quite effective!
 
 - We won't solve linguistics ...
 - In spite of the problems, text mining can be quite effective!
