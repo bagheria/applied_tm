@@ -3,12 +3,13 @@ title: "Text Clustering"
 author: "Ayoub Bagheri"
 subtitle: Applied Text Mining
 output:
-  word_document: default
+  pdf_document: default
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
   beamer_presentation: default
+  word_document: default
 ---
 
 ```{r, include=FALSE}
@@ -54,14 +55,14 @@ include_graphics("img/page 5.png")
 Which one is NOT a text clustering task?
 
 - Finding similar patterns in customer reviews
-- Grouping political tweets and finding their hidden topics
-- Detection of heart failure (yes or no) using discharge letters
-- Grouping scientific articles
+- Grouping tweets and finding their unknown topics
+- Cancer detection from patient notes
+- Grouping scientific articles into similar clusters
 
 ## Question
 
 <div style="float: left; width:100%">
-```{r, echo=FALSE, fig.align='center', out.width="90%"}
+```{r, echo=FALSE, fig.align='center', out.width="100%"}
 include_graphics("img/q1.jpg")
 ```
 </div>
@@ -78,7 +79,7 @@ include_graphics("img/q1.jpg")
 
 - Need similarity/distance as guidance to form clusters
 
-# Clustering algorithms
+# Clustering Algorithms
 
 ## Categories
 - Hard versus soft clustering
@@ -89,7 +90,7 @@ include_graphics("img/q1.jpg")
 
 - Topic modeling
 
-## Hard versus soft clustering
+## Hard versus Soft clustering
 - Hard clustering: Each document belongs to exactly one cluster
   
   - More common and easier to do
@@ -220,6 +221,11 @@ include_graphics("img/page 35.png")
     - Ward's minimum variance method, much in common with analysis of variance (ANOVA)
     - The distance between two clusters is computed as the increase in the "error sum of squares" (ESS) after fusing two clusters into a single cluster.
 
+## Clustering in SKlrean
+```{r, out.width="100%"}
+include_graphics("img/clustering.jpg")
+```
+
 # Topic Modeling
 
 ## Topic modeling
@@ -324,6 +330,32 @@ How does LDA perform this discovery?
 include_graphics("img/lda.png")
 ```
 
+## Variations of LDA
+
+- Hierarchical LDA (hLDA): automatically mine the hierarchical dimension of topics
+
+- Supervised LDA (sLDA): learn topics that are inline with the class label
+
+- Hybrid LDA: extracting topics and other information
+
+- LDA & BERT: we cover deep learning and BERT later
+
+## BERTtopic
+- https://github.com/MaartenGr/BERTopic
+- BERTopic is a topic modeling technique that leverages 🤗 transformers
+- creates dense clusters
+- allowing for easily interpretable topics
+- https://colab.research.google.com/drive/1BoQ_vakEVtojsd2x_U6-_x52OOuqruj2?usp=sharing
+
+## LDA in Python
+```{r, out.width="100%"}
+include_graphics("img/ldainPython.png")
+```
+
+## BERTtopic in Python
+```{r, out.width="100%"}
+include_graphics("img/berttopic.png")
+```
 
 # Cluster Validation
 
@@ -498,6 +530,19 @@ include_graphics("img/lda.png")
 
 <!-- $$P= \frac{A}{A + B} \ \ \ \ \ \ P = \frac{A}{A + C}$$ -->
 <!-- <center style="color:darkred">People also define and use a cluster F-measure, which is probably a better measure</center> -->
+
+## Clustering performance evaluation in SKlearn
+
+- https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation
+- Rand index
+- Mutual Information based scores
+- Homogeneity, completeness and V-measure
+- Fowlkes-Mallows scores
+- Silhouette Coefficient
+- Calinski-Harabasz Index
+- Davies-Bouldin Index
+- Contingency Matrix
+- Pair Confusion Matrix
 
 # Summary 
 
