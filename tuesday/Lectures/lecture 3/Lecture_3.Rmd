@@ -107,7 +107,7 @@ include_graphics("img/page 9.png")
 - The increased space of possibilities is more difficult to search.
 
 ## Feature selection: accuracy
-<p style="float:left;font-size:18px;">Relevance popularity: A term event model based feature selection scheme for text classification: http://elpub.scix.net/data/works/att/02-28.content.pdf</p>
+<p style="float:left;font-size:18px;">Relevance popularity: A term event model based feature selection scheme for text classification: https://doi.org/10.1371/journal.pone.0174341</p>
 
 ```{r, echo=FALSE, out.width="65%", fig.align='center'}
 include_graphics("img/acc1.jpg")
