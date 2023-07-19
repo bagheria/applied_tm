@@ -3,11 +3,11 @@ title: "Deep Learning for Text 1"
 author: "Ayoub Bagheri"
 subtitle: Applied Text Mining
 output:
-  beamer_presentation: default
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
+  beamer_presentation: default
 ---
 
 ```{r, include=FALSE}
@@ -484,7 +484,19 @@ Recursively apply <span style="color:orange;font-weight:bold">chain rule</span> 
 <!--       - Compute error between current output and correct output for $d$ -->
 <!--       - Update weights by backpropagating error and using learning rule -->
 <!--   - End epoch -->
-      
+
+## 
+
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
+include_graphics("img/activation.jpg")
+```
+
+## 
+
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
+include_graphics("img/activation2.jpg")
+```
+
 ## Notes on training
 
 - Not guaranteed to converge to zero training error, may converge to local optima or oscillate indefinitely.
@@ -652,6 +664,12 @@ include_graphics("img/page 26.png")
 - Use internal cross-validation to empirically determine an optimal number of hidden units.
 
 - Hyperparameter tuning
+
+## 
+
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/optimizers.jpg")
+```
 
 # Recurrent Neural Networks
 
