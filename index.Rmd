@@ -270,10 +270,10 @@ Here you will find the materials for Friday:
 - Part 10: Responsible text mining
     - [Lecture 10](friday/Lectures/lecture 10/Lecture_10.pdf)
     - [Lecture handout 10](friday/Lectures/lecture 10/Lecture handout_10.pdf)
-    - [Practical 10: classification with BERT](friday/Practicals/Practical 10/Impractical 10.html)
-    - [Answers practical 10](friday/Practicals/Practical 10/Impractical 10.html)
-    - [Additional practical: machine translation](friday/Practicals/Practical 10/Practical 10.html)
-    - [Data for machine translation](friday/Practicals/Practical 10/nld-eng.zip)
+    - [Practical 10: classification with BERT](friday/Practicals/Practical 10/Practical 10.html)
+    <!-- - [Answers practical 10](friday/Practicals/Practical 10/Impractical 10.html) -->
+    - [Additional practical: machine translation](friday/Practicals/Practical 10/Bonus/Bonus_Practical 10.html)
+    - [Data for additional practical: machine translation](friday/Practicals/Practical 10/Bonus/nld-eng.zip)
 
 
 ## Column 2
