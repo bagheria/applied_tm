@@ -801,7 +801,9 @@ There’s increasing evidence that pretrained models learn a wide variety of thi
 <!-- include_graphics("img/page 59.png") -->
 <!-- ``` -->
 
-## ChatGPT
+## ChatGPT (5-min exercise)
+
+- Go to https://chat.openai.com/ and login
 
 - How many hyperparameters has chatgpt-3 model been trained on?
 
