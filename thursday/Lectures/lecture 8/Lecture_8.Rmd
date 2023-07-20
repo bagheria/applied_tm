@@ -1,14 +1,14 @@
 ---
 title: "Sentiment Analysis"
-author: "Ayoub Bagheri & Anastasia Giachanou"
+author: "Anastasia Giachanou"
 output:
+  pdf_document:
+    toc: no
+    toc_depth: '5'
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
-  pdf_document:
-    toc: no
-    toc_depth: '5'
   beamer_presentation: default
 ---
 ```{r, include=FALSE}
@@ -43,58 +43,9 @@ include_graphics("img/page3_littleprince.png")
 
 ## Conceptual challenges
 
-Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
+Wooclap time
 
-## Conceptual challenges
-
-Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
-
-- There was an earthquake in Japan
-
-## Conceptual challenges
-
-Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
-
-- There was an earthquake in Japan
-
-- They said it would be a great experience
-
-## Conceptual challenges
-
-Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
-
-- There was an earthquake in Japan
-
-- They said it would be a great experience
-
-  - They said it would be a great experience. And yes it was!
-
-## Conceptual challenges
-
-Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
-
-- There was an earthquake in Japan
-
-- They said it would be a great experience
-
-  - They said it would be a great experience. And yes it was!
-
-  - They said it would be a great experience. However, I didn't have fun.
-
-## Conceptual challenges
-
-Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
-
-- There was an earthquake in Japan
-
-- They said it would be a great experience
-
-  - They said it would be a great experience. And yes it was!
-  
-  - They said it would be a great experience. However, I didn't have fun.
-
-- Go read the book
-
+<!--
 ## Conceptual challenges
 
 Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
@@ -110,6 +61,7 @@ Which of the following sentences express sentiment? If so, which is their polari
 - Go read the book
 
 - Yeah, sure!
+-->
 
 ## Sentiment
 
@@ -121,6 +73,7 @@ Which of the following sentences express sentiment? If so, which is their polari
 
 - Subjective impressions, not facts
 
+<!--
 ## Webster's dictionary
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 8.png")
@@ -130,9 +83,10 @@ include_graphics("img/page 8.png")
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 9.png")
 ```
-
-
+-->
+<!--
 ## Scherer typology of affective states
+
 - <b>Emotion</b>: brief organically synchronized, based on evaluation of a major event 
   - angry, sad, joyful, fearful, ashamed, proud, elated
 
@@ -147,8 +101,9 @@ include_graphics("img/page 9.png")
 
 - <b>Personality traits</b>: stable personality dispositions and typical behavior tendencies
   - nervous, anxious, reckless, morose, hostile, jealous
+-->
+## Plutchik wheel of emotions 
 
-## Plutchik wheel of emotions
 ```{r, echo=FALSE, out.width="70%", fig.align='center'}
 include_graphics("img/Plutchik-wheel.png")
 ```
@@ -159,6 +114,7 @@ include_graphics("img/Plutchik-wheel.png")
 - Other terms
   - Opinion mining
   - Sentiment mining
+  - Sentiment classification
   <!-- - Subjectivity analysis -->
 
 ## Related tasks
@@ -171,7 +127,7 @@ include_graphics("img/Plutchik-wheel.png")
 - Reputation analysis
 - Sarcasm/Irony detection
 - Hate-speech 
-- Bias detection
+
 
 ## Sentiment analysis 
 
@@ -182,7 +138,7 @@ include_graphics("img/Plutchik-wheel.png")
   - <em>Products</em>: what do people think about the new iPhone?
   - <em>Blog</em>: how are people thinking about immigrants?
   - <em>Politics</em>: who is going to win the election?
-  - <em>Twitter</em>: what is the trend today? 
+  - <em>Social Media</em>: what is the trend today? 
   - <em>Movie</em>:  is this review positive or negative (IMDB, Netflix)?
   - <em>Marketing</em>: how is consumer confidence? Consumer attitudes?
   - <em>Healthcare</em>: are patients happy with the hospital environment?
@@ -223,7 +179,7 @@ include_graphics("img/Plutchik-wheel.png")
 
 <!-- This has been my <span style="color:green">favorite</span> <span style="color:blue">book</span> since I was 14 and had to read it in French as an assignment in school. I fell in <span style="color:green">love</span> with it and immediately bought the English translation by Katherine Woods, as I knew I would read it many times over the years and I knew my French was not likely to improve. Today I bought this <span style="color:blue">version</span> to have on my Kindle as I was thinking of giving my 40 year old paperback to my best friend. I could not be more <span style="color:green">disappointed</span>. The changes in this <span style="color:blue">translation</span> take so much away from the <span style="color:blue">book</span> that it almost changes who the Little Prince really is. The charm of the <span style="color:blue">book</span> is completely <span style="color:green">missing</span>. In one of my favorite parts of the book the fox talks to the Little Prince, sharing his <span style="color:green">invaluable</span> truth: "what is essential is invisible to the eye." Howard changes it to "Anything essential is invisible to the eyes", which changes the entire concept of what is said. "The eye" is every eye, everywhere. Making it plural takes away the meaning of what the fox is really saying. If you want to read this book, if you want to read it to your children, please take my advice and find the Katherine Woods translation, even if it means going to a used book store. I simply cannot understand what Howard was thinking in all of the changes he made to this <span style="color:green">wonderful</span> <span style="color:blue">story</span> that will stay with you for a lifetime, but only if you read the Woods translation which will open your eyes to the true meaning of the Little Prince. As the fox says: "Words are the source of misunderstandings" and Howardh has changed the words so much that indeed, in this version, words are very much the source of <span style="color:green">misunderstandings</span>. -->
 
-## Sentiment analysis
+## Sentiment analysis tasks
 - Simplest task:
   
   - Is the attitude of this text positive or negative?
@@ -273,7 +229,6 @@ include_graphics("img/Plutchik-wheel.png")
 <p style="color:pink; padding-left: 2em; font-style:italic">The <span style="color:red">screen</span> is easily scratched. <br>
 I have a lot of difficulty in removing finger marks from the <span style="color:red">touch screen</span>. </p> 
 
-<p style="color:pink">... <br> <b>Aspect</b>:<b><span style="color:red"> Size</b> <br> ...</p>
 
 </div>
 <div style="float:right;width:50%">
@@ -303,14 +258,17 @@ include_graphics("img/page 17.png")
 
 - Must consider other features due to…
   - Subtlety of sentiment expression
-    - irony
+    - irony 
+    (<span style="color:blue">What a great car, it stopped working in the second day.</span>)
     - expression of sentiment using neutral words 
+    (<span style="color:blue">The concert didn't meet my expectations.</span>)
   
   - Domain/context dependence
-    - words/phrases can mean different things in different contexts and domains
+    - words/phrases can mean different things in different contexts and domains (<span style="color:blue">long queue vs long battery life</span>)
   
   - Effect of syntax on semantics
 
+<!--
 ## Some interesting sentences 
 - <span style="color:red">Trying out Chrome because Firefox keeps crashing</span>.
   
@@ -339,7 +297,7 @@ include_graphics("img/page 17.png")
 <!-- - “The top of the picture was brighter than the bottom.” -->
 
 <!-- - “When I first got the airbed a couple of weeks ago it was wonderful as all new things are, however as the weeks progressed I liked it less and less.” -->
-
+<!--
 ## Some interesting sentences (contd)
 - Conditional sentences are hard to deal with (Narayanan et al. 2009)
   
@@ -349,20 +307,11 @@ include_graphics("img/page 17.png")
   
     - <span style="color:red">If you are looking for a good phone, buy Nokia</span>
 
-- Questions are also hard to handle
-  
-  - <span style="color:red">Are there any great perks for employees</span>?
-  
-  - <span style="color:red">Any idea how to fix this lousy Sony camera</span>?
-
-## Some interesting sentences (contd)
 - Sarcastic sentences
   
   - <span style="color:red">What a great car, it stopped working in the second day</span>.
 
-- Sarcastic sentences are common in political blogs, comments and discussions. 
-  
-  - They make political opinions difficult to handle
+-->
 
 ## Explicit and implicit aspects
 - <span style="color:red">Explicit aspects</span>: Aspects explicitly mentioned as nouns or noun phrases in a sentence
@@ -405,7 +354,11 @@ include_graphics("img/implicit2.png")
   - Support Vector Machine
   - Deep learning
   - ...
-
+  
+- **Large Language Models**
+  - BERT
+  - ...
+  
 # Lexicon-based Methods
 
 <!-- ## The General Inquirer -->
@@ -439,8 +392,19 @@ knitr::include_graphics(c("img/NRC-Emotion-Lexicon.png", "img/AFINN.png"))
 ```
 
 </div>
+## Basic Lexicon Approach |
+
+- Detect sentiment in two independent dimensions:
+- Positive: {1, 2,… 5}
+- Negative: {-5, -4,… -1}
+
+- Example: “He is brilliant but boring”
+
+  - Sentiment(‘brilliant’) = +4
+  - Sentiment(‘boring’) = -2
+  - Overall sentiment = +2
+
 ## LIWC (Linguistic Inquiry and Word Count) | Tausczik and Pennebaker (2011)
-- Home page: http://liwc.wpengine.com/
 - 2,300 words, >70 classes
 
 - <b>Affective Processes</b>
@@ -454,7 +418,8 @@ knitr::include_graphics(c("img/NRC-Emotion-Lexicon.png", "img/AFINN.png"))
 
 ## VADER Sentiment Analysis | Hutto and Gilbert (2014)
 
-- VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis tool
+- VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis tool designed specifically for social media text. Contains a pre-built lexicon of words that are associated with sentiment scores ranging from -4 to +4
+
 - Five generalizable heuristics based on grammatical and syntactical cues:
 
   - <em>Punctuation</em>: “The food here is good<span style="color:red">!!!</span>” vs “The food here is good.”
@@ -475,7 +440,6 @@ knitr::include_graphics(c("img/NRC-Emotion-Lexicon.png", "img/AFINN.png"))
 
 ## Bing Liu opinion lexicon | Hu and Liu (2004)
 - <a href="https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">Bing Liu's Page on Opinion Mining</a>
-- http://www.cs.uic.edu/~liub/FBS/opinion-lexicon-English.rar
 
 - 6,786 words
   - 2,006 positive
@@ -657,25 +621,43 @@ The JJ tags indicate adjectives, the NN tags are nouns, the RB tags are adverbs,
 - <b>PMI between two words</b>:
   - How much more do two words co-occur than if they were independent?
 
+```{r, echo=FALSE, out.width="100%"}
+include_graphics("img/PMI.png")
+```
+
+<!--
 $$PMI(word_1,woprd_2)=log_2{\frac{P(word_1,word_2)}{P(word_1)P(word_2)}}$$
+-->
 \newpage
 
 ## How to estimate PMI
 <!-- - Query search engine  (Altavista) -->
 - P(word) estimated by \ \ \ \     ``hits(word)/N``
 - P(word1,word2) by \ \ \ \ ``hits(word1 NEAR word2)/N^2``
-  
+
+```{r, echo=FALSE, out.width="100%"}
+include_graphics("img/PMI1.png")
+```
+
+<!--
 $$PMI(word_1,woprd_2)=log_2{\frac{hits(word_1 \: \mathrm{NEAR} \: word_2)}{hits(word_1)hits(word_2)}}$$
+
+-->
 
 \newpage
 
 ## Does phrase appear more with “poor” or “excellent”?
 
+```{r, echo=FALSE, out.width="100%"}
+include_graphics("img/PMI2.png")
+```
+<!--
 $$
 \begin{align}
 \mathrm{Polarity}(phrase) = \mathrm{PMI}(pharse, \mathrm{''excellent''}) - \mathrm{PMI}(pharse, \mathrm{''poor''}) \\
 \end{align}
 $$
+-->
 
 <!-- \\ -->
 <!-- = log_2{\frac{hits(phrase \: \mathrm{NEAR} \: \mathrm{''excellent''})}{hits(phrase)hits(\mathrm{''excellent''})}} - log_2{\frac{hits(phrase \: \mathrm{NEAR} \: \mathrm{''poor''})}{hits(phrase)hits(\mathrm{''poor''})}} \\ -->
@@ -956,15 +938,18 @@ include_graphics("img/refineWE.png")
 include_graphics("img/BERT.png")
 ```
 
-<!-- ## Sentiment analysis with BERT models -->
+## Pre-trained models on SA 
 
-<!-- - Twitter-roberta-base-sentiment is a roBERTa model trained on ~58M tweets and fine-tuned for sentiment analysis (Barbieri et al. 2020) -->
+https://huggingface.co/blog/sentiment-analysis-python 
 
-<!-- - Bert-base-multilingual-uncased-sentiment is a model fine-tuned for sentiment analysis on product reviews in six languages: English, Dutch, German, French, Spanish and Italian (https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment) -->
+- <span style="color:red">Twitter-roberta-base-sentiment</span> is a roBERTa model trained on ~58M tweets and fine-tuned for sentiment analysis (https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment) 
 
-<!-- - Distilbert-base-uncased-emotion is a model fine-tuned for detecting emotions in texts, including sadness, joy, love, anger, fear and surprise (Sanh et al., 2019) -->
+- <span style="color:red">SST-2 BERT</span>: Fine-tuned on the Stanford Sentiment Treebank (SST-2) which consists of sentences from movie reviews. The model is well-suited for general sentiment analysis tasks. (https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english)
 
-<!-- https://huggingface.co/blog/sentiment-analysis-python -->
+- <span style="color:red">Bert-base-multilingual-uncased-sentiment</span> is a model fine-tuned for sentiment analysis on product reviews in six languages: English, Dutch, German, French, Spanish and Italian (https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment)
+
+- <span style="color:red">Distilbert-base-uncased-emotion</span> is a model fine-tuned for detecting emotions in texts, including sadness, joy, love, anger, fear and surprise (https://huggingface.co/bhadresh-savani/distilbert-base-uncased-emotion)
+
 
 # Interesting Aspects
 
@@ -1019,9 +1004,34 @@ include_graphics("img/race.png")
 
 ## Bias in sentiment analysis | Kiritchenko and Saif (2018)
 
-```{r, echo=FALSE, out.width="49%", out.height="20%",fig.show='hold'}
-knitr::include_graphics(c("img/Bias_Sentiment_Results.png","img/Bias_Sentiment_Results_Race.png"))
+```{r, echo=FALSE, out.width="49%", fig.align="center", out.height="20%",fig.show='hold'}
+knitr::include_graphics(c("img/Bias_Sentiment_Results.png"))
 ``` 
+
+## Bias in sentiment analysis | Kiritchenko and Saif (2018)
+
+```{r, echo=FALSE, out.width="49%", fig.align="center", out.height="20%",fig.show='hold'}
+knitr::include_graphics(c("img/Bias_Sentiment_Results_Race.png"))
+``` 
+
+## Bias in sentiment analysis
+
+What about biases in LLMs?
+
+- DistilBERT base uncased finetuned SST-2:
+  - "This movie was filmed in France" -> 0.89
+  - "This movie was filmed in Afghanistan" -> 0.08
+
+## Bias in sentiment analysis
+
+- "This movie was filmed in {country_name}"
+
+```{r, echo=FALSE, out.width="95%", fig.align="center", out.height="60%",fig.show='hold'}
+knitr::include_graphics(c("img/BiasMap.png"))
+``` 
+
+From Aurélien Géron [colab](https://colab.research.google.com/gist/ageron/fb2f64fb145b4bc7c49efc97e5f114d3/biasmap.ipynb#scrollTo=5KRHbhKiAp_4)
+
 
 # Summary
 
@@ -1053,6 +1063,9 @@ knitr::include_graphics(c("img/Bias_Sentiment_Results.png","img/Bias_Sentiment_R
   
 - Amazon review data
   - https://nijianmo.github.io/amazon/index.html
+  
+- iSarcasm
+  - https://github.com/dmbavkar/iSarcasm
 
 ## Lexicons and tools
 
@@ -1101,6 +1114,4 @@ knitr::include_graphics(c("img/Bias_Sentiment_Results.png","img/Bias_Sentiment_R
 - <font size="3">Wiebe, J., Wilson, T., & Cardie, C. 2005. Annotating expressions of opinions and emotions in language. Language resources and evaluation, 39(2), 165-210 </font>
 - <font size="3">Yu, L. C., Wang, J., Lai, K. R., & Zhang, X. 2017. Refining word embeddings for sentiment analysis. In Proceedings of the 2017 conference on empirical methods in natural language processing. pp. 534-539 </font>
 
-
-
-# Practical 9
+# Practical 8
