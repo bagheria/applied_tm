@@ -3,12 +3,13 @@ title: "Deep Learning for Text 2"
 author: "Ayoub Bagheri"
 subtitle: Applied Text Mining
 output:
+  word_document: default
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
   beamer_presentation: default
-  word_document: default
+  pdf_document: default
 ---
 
 ```{r, include=FALSE}
