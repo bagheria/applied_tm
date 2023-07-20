@@ -3,11 +3,11 @@ title: "Deep Learning for Text 2"
 author: "Ayoub Bagheri"
 subtitle: Applied Text Mining
 output:
-  beamer_presentation: default
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
+  beamer_presentation: default
   word_document: default
 ---
 
@@ -683,7 +683,10 @@ There’s increasing evidence that pretrained models learn a wide variety of thi
 <div align="center">
 <img src="img/talk5.png" width=450>
 </div>
+
 ## Transformers
+
+- ChatGPT: https://chat.openai.com/
 
 - Write with Transformer: https://transformer.huggingface.co/
 
@@ -797,6 +800,18 @@ There’s increasing evidence that pretrained models learn a wide variety of thi
 <!-- ```{r, echo=FALSE, out.width="70%", fig.align='center'} -->
 <!-- include_graphics("img/page 59.png") -->
 <!-- ``` -->
+
+## ChatGPT
+
+- How many hyperparameters has chatgpt-3 model been trained on?
+
+- How many hyperparameters has chatgpt-4 model been trained on?
+
+- What is the next generation NLP?
+
+- Build a neural network model with an LSTM layer of 100 units in Keras. As before, the first layer should be an embedding layer, then the LSTM layer, a Dense layer, and the output Dense layer for the 5 news categories. Compile the model and print its summary.
+
+- Can you make it functional keras?
 
 # Summary
 
