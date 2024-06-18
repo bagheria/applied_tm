@@ -17,26 +17,26 @@ This dashboard covers the course materials for the course [S42: Data Science: Ap
 <!-- ![](logo.jpg){width=100%} -->
 <!-- </center> -->
 
----
+<!-- --- -->
+
 <!-- ADD COURSE INFO -->
 <!-- Instructor: FILL    -->
 <!-- Study load: FILL    -->
 <!-- Assessment: FILL    -->
 
 
----
+<!-- --- -->
 
 \
 Course director: [Ayoub Bagheri](https://ayoubbagheri.nl/)
 
 Instructors:
 
-* [Ayoub Bagheri](https://ayoubbagheri.nl/)\
-- [Anastasia Giachanou](http://giachanou.com/)
-- [Luka van der Plas](https://www.uu.nl/medewerkers/LPvanderPlas)
 + [Dong Nguyen](https://dongnguyen.nl/)\
-- [Daniel Anadria](https://danadria.com/)
-- [Arjan van Dalfsen](https://www.uu.nl/staff/jadalfsen)
+- [Arjan van Dalfsen](https://www.uu.nl/staff/jadalfsen)\
+- [Pablo Mosteiro](https://www.uu.nl/staff/PJMosteiroRomero)\
+- [Jelte van Boheemen](https://www.uu.nl/medewerkers/JvanBoheemen)\
+* [Ayoub Bagheri](https://ayoubbagheri.nl/)
 
 
 Study load: 1.5 ECTS
@@ -76,7 +76,7 @@ Participants are requested to bring their own laptop for the lab meetings.
 Participants will receive a certificate at the end of the course.
 
 ### Additional references
-1- Jurafsky, D., Martin, J.H. (2021). Speech and language processing, third edition. Find online chapters [here](https://web.stanford.edu/~jurafsky/slp3/)
+1- Jurafsky, D., Martin, J.H. (2024). Speech and language processing, third edition. Find online chapters [here](https://web.stanford.edu/~jurafsky/slp3/)
 
 
 2- Eisenstein, J. (2018). Natural Language Processing. Find online chapters [here](https://github.com/jacobeisenstein/gt-nlp-class/blob/master/notes/eisenstein-nlp-notes.pdf)
