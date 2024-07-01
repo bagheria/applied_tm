@@ -1,0 +1,5 @@
+Must: Summarize the basic principles and techniques used in sentiment analysis for text data.
+
+Nice-to-Have 1: Explain simple sentiment analysis models using machine learning algorithms such as Support Vector Machines.
+
+Nice-to-Have 2: Discuss bias in sentiment analysis.
