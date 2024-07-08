@@ -2,19 +2,25 @@
 title: "Sentiment Analysis"
 author: "Pablo Mosteiro (many slides by Anastasia Giachanou)"
 output:
+  pdf_document:
+    toc: no
+    toc_depth: '5'
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
-  pdf_document:
-    toc: no
-    toc_depth: '5'
   beamer_presentation: default
 ---
 ```{r, include=FALSE}
 library(knitr)
 library(kableExtra)
 ```
+
+## Recap
+
+- What is a deep-learning word embedding?
+
+- 2 Wooclap questions
 
 ## The Little Prince example
 
@@ -726,12 +732,6 @@ include_graphics("img/Kiritchenko2014.png")
   - Not good performance in multiclass classification
   
 # Deep Learning
-
-## Recap
-
-- What is a deep-learning word embedding?
-
-- 2 Wooclap questions
 
 ## Sentiment-specific word embedding | Tang et al. (2014)
 
