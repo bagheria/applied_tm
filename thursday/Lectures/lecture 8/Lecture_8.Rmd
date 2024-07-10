@@ -1,6 +1,6 @@
 ---
 title: "Sentiment Analysis"
-author: "Pablo Mosteiro (many slides by Anastasia Giachanou)"
+author: "Pablo Mosteiro (many slides by Ayoub Bagheri)"
 output:
   pdf_document:
     toc: no
