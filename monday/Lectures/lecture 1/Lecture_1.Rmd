@@ -15,10 +15,19 @@ library(knitr)
 library(kableExtra)
 ```
 
-## 
+## ChatGPT4o
+<br>
 <div style="float: left; width:100%">
 ```{r, echo=FALSE, fig.align='center', out.width="100%"}
-include_graphics("img/ex1.jpg")
+include_graphics("img/ex01.png")
+```
+</div>
+
+
+## Ask Delphi: Allen Institute for AI
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="100%"}
+include_graphics("img/ex02.png")
 ```
 </div>
 
@@ -38,6 +47,13 @@ include_graphics("img/ex3.jpg")
 ```
 </div>
 
+## <font size="6">Opinions on Plants and Animals through Time</font>  <font size="3">Van Dalfsen et al. 2024</font> 
+<div style="float: left; width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="100%"}
+include_graphics("img/ex4.png")
+```
+</div>
+
 # Course Logistics
 
 ## Course materials
@@ -51,10 +67,10 @@ https://ayoubbagheri.nl/applied_tm/
 
 <div style="float:left; width:50%">
 ```{r, echo=FALSE, fig.align='center', out.width="30%"}
-include_graphics("img/anastasia.png")
+include_graphics("img/pablo.jpg")
 ```
   <div class="centered">
-  **Anastasia**
+  **Pablo**
   </div>
   
   <br/>
@@ -67,10 +83,10 @@ include_graphics("img/arjan.jpg")
   
   <br/>
 ```{r, echo=FALSE, fig.align='center', out.width="30%"}
-include_graphics("img/luka.jpg")
+include_graphics("img/Jelte.jpg")
 ```
   <div class="centered">
-  **Luka**
+  **Jelte**
   </div>
 </div>
 
@@ -83,18 +99,18 @@ include_graphics("img/page17dong.png")
   </div>
   
   <br/>
-```{r, echo=FALSE, fig.align='center', out.width="20%"}
-include_graphics("img/Daniel_Anadria.jpg")
+```{r, echo=FALSE, fig.align='center', out.width="19%"}
+include_graphics("img/ayoub.jpg")
 ```
   <div class="centered">
-  **Daniel**
+  **Ayoub**
   </div>
 </div>
 
 
 ## Program {.smaller}
 ```{r, echo = FALSE, warning=FALSE}
-time <- c("9:00 - 10:30", "", "10:45 – 11:45", "11:45 – 12:15", "", "13:45 – 15:15", "", "15:30 – 16:30", "16:30 – 17:00")
+time <- c("9:00 - 10:30", "", "10:50 – 12:00", "12:00 – 12:30", "", "14:00 – 15:20", "", "15:30 – 16:30", "16:30 – 17:00")
 monday <- c("Lecture 1", "Break", "Practical 1", "Discussion 1", "Lunch", "Lecture 2", "Break", "Practical 2", "Discussion 2")
 tuesday <- c("Lecture 3", "Break", "Practical 3", "Discussion 3", "Lunch", "Lecture 4", "Break", "Practical 4", "Discussion 4")
 wednesday <- c("Lecture 5", "Break", "Practical 5", "Discussion 5", "Lunch", "Lecture 6", "Break", "Practical 6", "Discussion 6")
@@ -128,6 +144,8 @@ program %>%
 
 - What is your experience level with Python?
 
+<br>
+
 <div style="float: left; width:100%">
 ```{r, echo=FALSE, fig.align='center', out.width="90%"}
 include_graphics("img/q1.jpg")
@@ -138,6 +156,8 @@ include_graphics("img/q1.jpg")
 
 - Which Python IDE do you mostly use? If you use more than one environment fill in the other text boxes.
 
+<br>
+
 <div style="float: left; width:100%">
 ```{r, echo=FALSE, fig.align='center', out.width="90%"}
 include_graphics("img/q1.jpg")
@@ -147,7 +167,9 @@ include_graphics("img/q1.jpg")
 ## Google Colab?
 
 - How familiar are you with Google Colab? (1: limited to 5: expert)
-  
+
+<br>
+
 <div style="float: left; width:100%">
 ```{r, echo=FALSE, fig.align='center', out.width="90%"}
 include_graphics("img/q1.jpg")
@@ -156,7 +178,7 @@ include_graphics("img/q1.jpg")
 
 ## Python
 
-- Latest: <a href="https://www.python.org/downloads/release/python-3105/">Python 3.11.4</a>
+- Latest: <a href="https://www.python.org/downloads/">Python 3.12.4</a>
 
 - Follow the tutorial on Python in Google Colab for the Applied Text Mining course: [link](https://ayoubbagheri.nl/applied_tm/Python_in_Google_Colab_Applied_Text_Mining.html)
 
@@ -166,8 +188,8 @@ include_graphics("img/q1.jpg")
 - The Python Language Reference
     - <a href="https://docs.python.org/3/reference/">https://docs.python.org/3/reference/</a>
 
-- Python 3.11.4 documentation
-    - <a href="https://docs.python.org/3/">https://docs.python.org/3/</a>
+- Python 3.12.4 documentation
+    - <a href="https://www.python.org/doc/">https://www.python.org/doc/</a>
 
 ## Google Colab
 
