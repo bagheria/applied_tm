@@ -3,11 +3,11 @@ title: "Deep Learning for Text 1"
 author: "Ayoub Bagheri"
 subtitle: Applied Text Mining
 output:
-  beamer_presentation: default
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
+  beamer_presentation: default
 ---
 
 ```{r, include=FALSE}
@@ -17,14 +17,90 @@ library(kableExtra)
 
 ## Lecture plan
 
-1. Feed-forward neural networks
-2. Recurrent neural networks
-    1. SRN
-    2. LSTM
-    3. Bi-LSTM
-    4. GRU
+1. Language modeling
+2. Feed-forward neural networks
+3. Recurrent neural networks
 
-## What is Deep Learning (DL) ? 
+## What is a Language Model?
+A Language Model is a statistical tool that uses algorithms to predict the next word or sequence of words in a sentence. These models are fundamental in natural language processing (NLP) and are used to understand and generate human language.
+
+Key Points:
+
+- Predictive Power: Language models can predict the next word based on the context of previous words.
+- Applications: Used in machine translation, speech recognition, text generation, and more.
+- Training Data: Trained on large datasets containing text, learning the structure and nuances of the language.
+
+Types of Models:
+
+- n-gram Models: Predict words based on the previous 'n' words.
+- Neural Network Models: Use deep learning to understand and generate text, such as GPT (Generative Pre-trained Transformer).
+
+<!-- ##  -->
+
+<!-- ```{r, echo=FALSE, out.width="100%",  fig.align='center'} -->
+<!-- include_graphics("img/optimizers.jpg") -->
+<!-- ``` -->
+
+## 
+
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/lm1.jpg")
+```
+<br>
+
+<font size="2"> source: http://web.stanford.edu/class/cs224n/ </font>
+
+##
+
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/lm2.jpg")
+```
+
+##
+
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/lm3.jpg")
+```
+
+##
+
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/lm4.jpg")
+```
+
+##
+
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/lm5.jpg")
+```
+
+##
+
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/lm6.jpg")
+```
+
+##
+
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/lm7.jpg")
+```
+
+##
+
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/lm8.jpg")
+```
+
+##
+
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/lm9.jpg")
+```
+
+# Deep Learning
+
+## What is Deep Learning?
 
 A machine learning subfield of learning <span style="color:orange;">representations</span> of data. Exceptional effective at <span style="color:orange;">learning patterns</span>.
 
@@ -491,26 +567,26 @@ Recursively apply <span style="color:orange;font-weight:bold">chain rule</span> 
 include_graphics("img/activation.jpg")
 ```
 
-## 
+<!-- ##  -->
 
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/activation2.jpg")
-```
+<!-- ```{r, echo=FALSE, out.width="100%", fig.align='center'} -->
+<!-- include_graphics("img/activation2.jpg") -->
+<!-- ``` -->
 
 ## Notes on training
 
 - Not guaranteed to converge to zero training error, may converge to local optima or oscillate indefinitely.
 - However, in practice, does converge to low error for many large networks on real data.
 - Many epochs (thousands) may be required, hours or days of training for large networks.
-- To avoid local-minima problems, run several trials starting with different random weights (*random restarts*).
+- **To avoid local-minima problems**, run several trials starting with different random weights (*random restarts*).
     - Take results of trial with lowest training set error.
     - Build a committee of results from multiple trials (possibly weighting votes by training set accuracy).
 
 ## Hidden unit representations
 
-- Trained hidden units can be seen as newly constructed features that make the target concept linearly separable in the transformed space.
+- Trained hidden units can be seen as **newly constructed features** that make the target concept linearly separable in the transformed space.
 - On many real domains, hidden units can be interpreted as representing meaningful features such as vowel detectors or edge detectors, etc..
-- However, the hidden layer can also become a distributed representation of the input in which each individual unit is not easily interpretable as a meaningful feature.
+- However, the hidden layer can also become a **distributed representation of the input** in which each individual unit is not easily interpretable as a meaningful feature.
 
 
 <!-- ## Activation functions -->
@@ -665,51 +741,12 @@ include_graphics("img/page 26.png")
 
 - Hyperparameter tuning
 
-## 
-
-```{r, echo=FALSE, out.width="100%",  fig.align='center'}
-include_graphics("img/optimizers.jpg")
-```
-
-## 
-
-```{r, echo=FALSE, out.width="100%",  fig.align='center'}
-include_graphics("img/lm1.jpg")
-```
-
-##
-
-```{r, echo=FALSE, out.width="100%",  fig.align='center'}
-include_graphics("img/lm2.jpg")
-```
-
-##
-
-```{r, echo=FALSE, out.width="100%",  fig.align='center'}
-include_graphics("img/lm3.jpg")
-```
-
-##
-
-```{r, echo=FALSE, out.width="100%",  fig.align='center'}
-include_graphics("img/lm4.jpg")
-```
-
-##
-
-```{r, echo=FALSE, out.width="100%",  fig.align='center'}
-include_graphics("img/lm5.jpg")
-```
-
-source: http://web.stanford.edu/class/cs224n/
-
 # Recurrent Neural Networks
-
-- Another architecture of NN
-- RNN for LM
 
 ## Recurrent Neural Network (RNN)
 
+- Another architecture of NN
+- RNN for LM
 - Add feedback loops where some units’ current outputs determine some future network inputs.
 - RNNs can model dynamic finite-state machines, beyond the static combinatorial circuits modeled by feed-forward networks. 
 
@@ -727,35 +764,50 @@ include_graphics("img/page 29.png")
 - Behavior of RNN is perhaps best viewed by “unrolling” the network over time.
 
 ```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 30.png")
+include_graphics("img/unroll.jpg")
 ```  
 
-## Training RNNs
+##
 
-- RNNs can be trained using “backpropagation through time.”
-- Can viewed as applying normal backprop to the unrolled network.
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/rnnlm.jpg")
+```
 
-```{r, echo=FALSE, out.width="80%", fig.align='center'}
-include_graphics("img/page 31.png")
-```  
+##
+
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/rnnad.jpg")
+```
+
 
 # LSTM
 
 ## Vanishing gradient problem
 
-Suppose we had the following scenario:
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/vg.jpg")
+```
 
-Day 1: Lift Weights
+## Vanishing gradient problem
 
-Day 2: Swimming
+```{r, echo=FALSE, out.width="100%",  fig.align='center'}
+include_graphics("img/vg1.jpg")
+```
 
-Day 3: At this point, our model must decide whether we should take a rest day or yoga. Unfortunately, it only has access to the previous day. In other words, it knows we swam yesterday but it doesn’t know whether had taken a break the day before. Therefore, it can end up predicting yoga.
 
-- Backpropagated errors multiply at each layer, resulting in exponential decay (if derivative is small) or growth (if derivative is large).
-- Makes it very difficult train deep networks, or simple recurrent networks over many time steps.
-- LSTMs were invented, to get around this problem.
+<!-- Suppose we had the following scenario: -->
 
-<font size="2"> https://towardsdatascience.com/ </font>
+<!-- Day 1: Lift Weights -->
+
+<!-- Day 2: Swimming -->
+
+<!-- Day 3: At this point, our model must decide whether we should take a rest day or yoga. Unfortunately, it only has access to the previous day. In other words, it knows we swam yesterday but it doesn’t know whether had taken a break the day before. Therefore, it can end up predicting yoga. -->
+
+<!-- - Backpropagated errors multiply at each layer, resulting in exponential decay (if derivative is small) or growth (if derivative is large). -->
+<!-- - Makes it very difficult train deep networks, or simple recurrent networks over many time steps. -->
+<!-- - LSTMs were invented, to get around this problem. -->
+
+<!-- <font size="2"> https://towardsdatascience.com/ </font> -->
 
 <!-- ## Long distance dependencies -->
 
@@ -1008,7 +1060,14 @@ $$h_t = (1 - z_t) * h_{t-1} + z_t * \tilde(h)_t$$
 
 ## Summary
 
+- Language Model: A system that predicts the next word
 - Deep learning can be applied for automatic feature engineering
-- Recurrent neural networks are are ideal for sequential data such as text
+- Recurrent Neural Network: A family of deep learning / neural networks that:
+  • Take sequential input (Text) of any length; apply the same weights on each step
+  • Can optionally produce output on each step
+
+- Recurrent Neural Network ≠ Language Model
+- RNNs can be used for many other things
+- Language modeling can be done with different models, e.g., n-grams or transformers: GPT is an LM!
 
 # Practical 6
