@@ -32,8 +32,8 @@ Key Points:
 
 Types of Models:
 
-- n-gram Models: Predict words based on the previous 'n' words.
-- Neural Network Models: Use deep learning to understand and generate text, such as GPT (Generative Pre-trained Transformer).
+- **n-gram Models**: Predict words based on the previous 'n' words.
+- **Neural Network Models**: Use deep learning to understand and generate text, such as GPT (Generative Pre-trained Transformer).
 
 <!-- ##  -->
 
@@ -178,6 +178,12 @@ include_graphics("img/page 5_3.png")
 
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/page 16.png")
+```
+
+##
+
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
+include_graphics("img/activation.jpg")
 ```
 
 
@@ -561,11 +567,6 @@ Recursively apply <span style="color:orange;font-weight:bold">chain rule</span> 
 <!--       - Update weights by backpropagating error and using learning rule -->
 <!--   - End epoch -->
 
-## 
-
-```{r, echo=FALSE, out.width="100%", fig.align='center'}
-include_graphics("img/activation.jpg")
-```
 
 <!-- ##  -->
 
@@ -740,6 +741,13 @@ include_graphics("img/page 26.png")
 - Use internal cross-validation to empirically determine an optimal number of hidden units.
 
 - Hyperparameter tuning
+
+## A Neural Network Playground
+
+What are the hyperparameters?
+<br>
+<br>
+https://playground.tensorflow.org/
 
 # Recurrent Neural Networks
 
@@ -999,6 +1007,10 @@ $$h_t = (1 - z_t) * h_{t-1} + z_t * \tilde(h)_t$$
 - Allows network to learn to attend to different parts of the input at different time steps, shifting its attention to focus on different aspects during its processing.
 - Used in image captioning to focus on different parts of an image when generating different parts of the output sentence.
 - In MT, allows focusing attention on different parts of the source sentence when generating different parts of the translation.
+
+```{r, echo=FALSE, out.width="70%", fig.align='center'}
+include_graphics("img/attention.png")
+```  
 
 <!-- ## Attention mechanism -->
 
