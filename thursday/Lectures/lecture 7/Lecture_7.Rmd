@@ -4,10 +4,12 @@ author: "Ayoub Bagheri"
 subtitle: Applied Text Mining
 output:
   word_document: default
+  html_document:
+    df_print: paged
   ioslides_presentation:
     logo: logo.png
-    smaller: yes
-    widescreen: no
+    smaller: true
+    widescreen: false
   beamer_presentation: default
   pdf_document: default
 ---
@@ -570,13 +572,17 @@ include_graphics("img/cnn.png")
 <!-- include_graphics("img/page 48.png") -->
 <!-- ``` -->
 
-# Contextual Word Embeddings <br> & <br> Transformers
+# Transformers
 
 ## Contextual Word Embeddings
 ```{r, echo=FALSE, out.width="100%", fig.align='center'}
 include_graphics("img/cwe.png")
 ```
 
+## Transformers
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
+include_graphics("img/t1.jpg")
+```
 
 ## Transformers
 
@@ -614,6 +620,12 @@ include_graphics("img/trans3.png")
 include_graphics("img/bertelmogpt.png")
 ```
 
+## Transformer foundation models: <br> BERT, GPT, BART
+
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
+include_graphics("img/t2.jpg")
+```
+
 ## BERT: Bidirectional Encoder Representations from Tranformers
 <div align="center">
 <img src="img/bert1.png" width=750>
@@ -624,66 +636,46 @@ include_graphics("img/bertelmogpt.png")
 <img src="img/bert2.png" width=750>
 </div>
 
-## What kinds of things does pretraining learn?
-There’s increasing evidence that pretrained models learn a wide variety of things about the statistical properties of language:
+## Transformers for OTHER languages
 
-*Talk to Transformer:* https://app.inferkit.com/demo
+```{r, echo=FALSE, out.width="100%", fig.align='center'}
+include_graphics("img/t3.jpg")
+```
 
-- Utrecht University is located in ...
+<!-- ## What kinds of things does pretraining learn? -->
+<!-- There’s increasing evidence that pretrained models learn a wide variety of things about the statistical properties of language: -->
 
+<!-- - **Basic arithmetic:** I was thinking about the sequence that goes 1, 1, 2, 3, 5, 8, 13, 21, ... -->
 
-## Transformers
+<!-- ## Transformers -->
 
-<div align="center">
-<img src="img/talk0.png" width=450>
-</div>
+<!-- <div align="center"> -->
+<!-- <img src="img/talk2.png" width=450> -->
+<!-- </div> -->
 
-## Transformers
+<!-- ## What kinds of things does pretraining learn? -->
+<!-- There’s increasing evidence that pretrained models learn a wide variety of things about the statistical properties of language: -->
 
-<div align="center">
-<img src="img/talk01.png" width=450>
-</div>
-
-## Transformers
-
-<div align="center">
-<img src="img/talk02.png" width=450>
-</div>
-
-## What kinds of things does pretraining learn?
-There’s increasing evidence that pretrained models learn a wide variety of things about the statistical properties of language:
-
-- **Basic arithmetic:** I was thinking about the sequence that goes 1, 1, 2, 3, 5, 8, 13, 21, ...
-
-## Transformers
-
-<div align="center">
-<img src="img/talk2.png" width=450>
-</div>
-
-## What kinds of things does pretraining learn?
-There’s increasing evidence that pretrained models learn a wide variety of things about the statistical properties of language:
-
-- **Reasoning:** Garry went into the kitchen to make some tea. Standing next to Garry, Carrie pondered her destiny. Carrie left the ...
+<!-- - **Reasoning:** Garry went into the kitchen to make some tea. Standing next to Garry, Carrie pondered her destiny. Carrie left the ... -->
 
 
-## Transformers
+<!-- ## Transformers -->
 
-<div align="center">
-<img src="img/talk3.png" width=450>
-</div>
+<!-- <div align="center"> -->
+<!-- <img src="img/talk3.png" width=450> -->
+<!-- </div> -->
 
-## Transformers
+<!-- ## Transformers -->
 
-<div align="center">
-<img src="img/talk4.png" width=450>
-</div>
+<!-- <div align="center"> -->
+<!-- <img src="img/talk4.png" width=450> -->
+<!-- </div> -->
 
-## Transformers
+<!-- ## Transformers -->
 
-<div align="center">
-<img src="img/talk5.png" width=450>
-</div>
+<!-- <div align="center"> -->
+<!-- <img src="img/talk5.png" width=450> -->
+<!-- </div> -->
 
 ## Transformers
 
@@ -820,10 +812,13 @@ There’s increasing evidence that pretrained models learn a wide variety of thi
 
 ## Summary
 - Convolutional Neural Networks
-
-- Transformers
-  - “Small” models like BERT have become general tools in a wide range of settings
-  - GPT-3 has 175 billion parameters
+- A transformer is a type of model architecture, while a large language model (LLM) refers to a model that is typically built using such architectures and is trained on a large corpus of text.
+- “Small” models like BERT have become general tools in a wide range of settings
+- GPT-3 has 175 billion parameters
+  
+  ```{r, echo=FALSE, out.width="45%", fig.align='center'}
+include_graphics("img/t4.jpg")
+```
 
 - These models are still not well-understood
 
