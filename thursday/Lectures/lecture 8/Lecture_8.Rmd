@@ -2,13 +2,13 @@
 title: "Sentiment Analysis"
 author: "Pablo Mosteiro (many slides by Anastasia Giachanou)"
 output:
-  pdf_document:
-    toc: no
-    toc_depth: '5'
   ioslides_presentation:
     logo: logo.png
     smaller: yes
     widescreen: no
+  pdf_document:
+    toc: no
+    toc_depth: '5'
   beamer_presentation: default
 ---
 ```{r, include=FALSE}
