@@ -283,6 +283,14 @@ Here you will find the materials for Friday:
 - Ref 2: Chapters 6, 14
 
 # Archive
+
+### Interesting links
+- [Financial times: Generative AI exists because of the transformer](https://ig.ft.com/generative-ai/)
+- [Talk: Intro to Large Language Models](https://youtu.be/zjkBMFhNj_g?si=cgExVbVuUV6HvqSx)
+- [Talk: LSTM is dead. Long Live Transformers!](https://youtu.be/S27pHKBEp30?si=LtW0WydG_Ep0lXCC)
+- [What Is ChatGPT Doing … and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
+
+### All materials in a ZIP file
 On the **last day of the course**, all the materials will be available in a compact file for download:
 
 <!-- [Download the Materials](materials/Applied_TM_all_materials.zip) -->
