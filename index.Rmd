@@ -1,5 +1,5 @@
 ---
-title: "Data Science: Applied Text Mining"
+title: "Data Science: Applied Text Mining, from Foundations to Advanced"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -8,7 +8,7 @@ output:
 ---
 
 # Intro {.sidebar}
-This dashboard covers the course materials for the course [S42: Data Science: Applied Text Mining](https://www.utrechtsummerschool.nl/courses/social-sciences/data-science-applied-text-mining).
+This dashboard covers the course materials for the course [S42: Data Science: Applied Text Mining, from Foundations to Advanced](https://utrechtsummerschool.nl/courses/data-science/data-science-applied-text-mining-from-foundations-to-advanced).
 
 
 ---
@@ -33,15 +33,13 @@ Course director: [Ayoub Bagheri](https://ayoubbagheri.nl/)
 Instructors:
 
 + [Dong Nguyen](https://dongnguyen.nl/)\
-- [Arjan van Dalfsen](https://www.uu.nl/staff/jadalfsen)\
 - [Pablo Mosteiro](https://www.uu.nl/staff/PJMosteiroRomero)\
-- [Jelte van Boheemen](https://www.uu.nl/medewerkers/JvanBoheemen)\
 * [Ayoub Bagheri](https://ayoubbagheri.nl/)
 
 
 Study load: 1.5 ECTS
 
-Location: [Koningsberger Building, lecture hall Atlas](https://www.uu.nl/en/victor-j-koningsberger-building)
+Location: [Koningsberger Building, room 224 (Budapestlaan 4a-b, Utrecht Science Park)](https://www.uu.nl/en/victor-j-koningsberger-building)
 
 ---
 
@@ -62,12 +60,13 @@ The course deals with the following topics:
 * Define a text mining pipeline given a practical data science problem;
 * Implement all steps in a text mining pipeline: feature extraction, feature selection, model learning, model evaluation;
 * Understand and apply state-of-the-art methods in text mining;
-* Implement word embedding and advanced deep learning techniques.
+* Implement word embedding and advanced deep learning techniques;
+* Review the advanced approaches to text mining: transformers, LLMs, prompting, responsible text mining.
 
-The course starts with reviewing basic concepts of text mining and implementing advanced concepts in natural language processing. At the end of the week, participants will master advanced skills of text mining with Python.
+The course begins with a review of the basic concepts of text mining, before moving on to implement advanced concepts in natural language processing. By the end of the week, participants will have mastered the advanced skills required for text mining and NLP using Python.
 
 ### Requirements
-Participants should have a basic knowledge of data science and programming and a motivation of scripting and programming in Python.
+Participants should have a basic knowledge of data science and programming, as well as an interest in scripting and programming in Python.
 
 ### Prerequisites
 Participants are requested to bring their own laptop for the lab meetings.
@@ -76,7 +75,7 @@ Participants are requested to bring their own laptop for the lab meetings.
 Participants will receive a certificate at the end of the course.
 
 ### Additional references
-1- Jurafsky, D., Martin, J.H. (2024). Speech and language processing, third edition. Find online chapters [here](https://web.stanford.edu/~jurafsky/slp3/)
+1- Jurafsky, D., Martin, J.H. (2025). Speech and language processing, third edition. Find online chapters [here](https://web.stanford.edu/~jurafsky/slp3/)
 
 
 2- Eisenstein, J. (2018). Natural Language Processing. Find online chapters [here](https://github.com/jacobeisenstein/gt-nlp-class/blob/master/notes/eisenstein-nlp-notes.pdf)
@@ -107,17 +106,17 @@ Participants will receive a certificate at the end of the course.
 
 Dear all,
 
-This summer you will participate in the S42: Data Science: Applied Text Mining course in Utrecht, the Netherlands. To realize a steeper learning curve, we will use some functionality from the Python programming language using Google Colab. The below steps guide you through how to use Python and work on the practicals in this course.
+This summer you will participate in the S42: Applied Text Mining, from Foundations to Advanced course in Utrecht, the Netherlands. To realize a steeper learning curve, we will use some functionality from the Python programming language using Google Colab. The below steps guide you through how to use Python and work on the practicals in this course.
 
-If you follow this course online please have a look at [this instructional page on MS Teams.](https://www.uu.nl/en/education/quality-and-innovation/remote-teaching/microsoft-teams)
+<!-- If you follow this course online please have a look at [this instructional page on MS Teams.](https://www.uu.nl/en/education/quality-and-innovation/remote-teaching/microsoft-teams) -->
 
-We look forward to see you all in Utrecht and online.
+We look forward to seeing you all in Utrecht!
 
-_The Applied Text Mining team_
+_The teaching team of the Applied Text Mining, from Foundations to Advanced course_
 
 ### System requirements
 
-Bring a laptop computer to the course and make sure that you have an Internet connection to be able to use Python in Google Colab. If you are using PyCharm or Jupyte Notebook, also check that you have full write access and administrator rights to the machine. We will explore programming and compiling in this course. Some corporate laptops come with limited access for their users, we therefore advise you to bring a personal laptop computer, if you have one.
+Bring a laptop computer to the course and make sure that you have an Internet connection to be able to use Python in Google Colab. If you are using PyCharm, Jupyter Notebook, VS code or any other Python environment also check that you have full write access and administrator rights to the machine. We will explore programming and compiling Python codes in this course. Some corporate laptops have limited user access. In this case, we advise you to bring your own laptop, if you have one.
 
 ### Python in Google Colab
 Python is a general-purpose interpreted, interactive, object-oriented, and high-level programming language. It is a powerful environment for scientific computing.
@@ -147,7 +146,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 
 Here you will find the materials for Monday:
 
-- Part 1: Introduction
+- Part 1: Introduction to TM & NLP
     - [Lecture 1](monday/Lectures/lecture 1/Lecture_1.html)
     - [Lecture handout 1](monday/Lectures/lecture 1/Lecture handout_1.pdf)
     - [Practical 1](monday/Practicals/Practical 1/Impractical 1.html)
@@ -176,7 +175,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 
 Here you will find the materials for Tuesday:
 
-- Part 3: Feature selection
+- Part 3: Feature selection for text data
     - [Lecture 3](tuesday/Lectures/lecture 3/Lecture_3.html)
     - [Lecture handout 3](tuesday/Lectures/lecture 3/Lecture handout_3.pdf)
     - [Practical 3](tuesday/Practicals/Practical 3/Impractical 3.html)
@@ -261,7 +260,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 
 Here you will find the materials for Friday:
 
-- Part 9: Applications of text mining & NLP
+- Part 9: LLMs pre-training, prompting, & learning from human feedback
     - [Lecture 9](friday/Lectures/lecture 9/Lecture_9.pdf)
     - [Lecture handout 9](friday/Lectures/lecture 9/Lecture handout_9.pdf)
     - [Practical 9 (with an example answer)](friday/Practicals/Practical 9/Practical 9.html)
@@ -296,6 +295,6 @@ On the **last day of the course**, all the materials will be available in a comp
 [Download the Materials](materials/Applied_TM_all_materials.zip)
 
 
-We wish all the participants success with their Text Mining projects!
+We wish all the participants success with their Text Mining / NLP projects!
 
-*The Applied Text Mining team*
+*The teaching team*
