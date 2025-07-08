@@ -28,13 +28,13 @@ This dashboard covers the course materials for the course [S42: Data Science: Ap
 <!-- --- -->
 
 \
-Course director: [Ayoub Bagheri](https://ayoubbagheri.nl/)
+Course director: [Ayoub Bagheri](https://www.uu.nl/staff/ABagheri)
 
 Instructors:
 
-+ [Dong Nguyen](https://dongnguyen.nl/)\
++ [Dong Nguyen](https://www.uu.nl/staff/DPNguyen)\
 - [Pablo Mosteiro](https://www.uu.nl/staff/PJMosteiroRomero)\
-* [Ayoub Bagheri](https://ayoubbagheri.nl/)
+* [Ayoub Bagheri](https://www.uu.nl/staff/ABagheri)
 
 
 Study load: 1.5 ECTS
@@ -110,9 +110,9 @@ This summer you will participate in the S42: Applied Text Mining, from Foundatio
 
 <!-- If you follow this course online please have a look at [this instructional page on MS Teams.](https://www.uu.nl/en/education/quality-and-innovation/remote-teaching/microsoft-teams) -->
 
-We look forward to seeing you all in Utrecht!
+We look forward to seeing you in Utrecht!
 
-_The teaching team of the Applied Text Mining, from Foundations to Advanced course_
+_The teaching team_
 
 ### System requirements
 
