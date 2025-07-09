@@ -147,15 +147,13 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 Here you will find the materials for Monday:
 
 - Part 1: Introduction to TM & NLP
-    - [Lecture 1](monday/Lectures/lecture 1/Lecture_1.html)
-    - [Lecture handout 1](monday/Lectures/lecture 1/Lecture handout_1.pdf)
+    - [Lecture 1](monday/Lectures/lecture 1/Lecture_1.pdf)
     - [Practical 1](monday/Practicals/Practical 1/Impractical 1.html)
     - [Answers practical 1](monday/Practicals/Practical 1/Practical 1.html)
     - [Data for practical 1](monday/Practicals/Practical 1/data.zip)
 
 - Part 2: Text classification
     - [Lecture 2](monday/Lectures/lecture 2/Lecture_2.pdf)
-    - [Lecture handout 2](monday/Lectures/lecture 2/Lecture handout_2.pdf)
     - [Practical 2](monday/Practicals/Practical 2/Impractical 2.html)
     - [Answers practical 2](monday/Practicals/Practical 2/Practical 2.html)
     - [Data for practical 2](monday/Practicals/Practical 2/data.zip)
@@ -176,15 +174,13 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 Here you will find the materials for Tuesday:
 
 - Part 3: Feature selection for text data
-    - [Lecture 3](tuesday/Lectures/lecture 3/Lecture_3.html)
-    - [Lecture handout 3](tuesday/Lectures/lecture 3/Lecture handout_3.pdf)
+    - [Lecture 3](tuesday/Lectures/lecture 3/Lecture_3.pdf)
     - [Practical 3](tuesday/Practicals/Practical 3/Impractical 3.html)
     - [Answers practical 3](tuesday/Practicals/Practical 3/Practical 3.html)
     - [Data for practical 3](tuesday/Practicals/Practical 3/data.zip)
 
 - Part 4: Text clustering & topic modeling
-    - [Lecture 4](tuesday/Lectures/lecture 4/Lecture_4.html)
-    - [Lecture handout 4](tuesday/Lectures/lecture 4/Lecture handout_4.pdf)
+    - [Lecture 4](tuesday/Lectures/lecture 4/Lecture_4.pdf)
     - [Practical 4](tuesday/Practicals/Practical 4/Impractical 4.html)
     - [Answers practical 4](tuesday/Practicals/Practical 4/Practical 4.html)
     - [Data for practical 4](tuesday/Practicals/Practical 4/bbcsport-fulltext.zip)
@@ -206,13 +202,11 @@ Here you will find the materials for Wednesday:
 
 - Part 5: Word embedding
     - [Lecture 5](wednesday/Lectures/lecture 5/Lecture_5.pdf)
-    - [Lecture handout 5](wednesday/Lectures/lecture 5/Lecture handout_5.pdf)
     - [Practical 5](wednesday/Practicals/Practical 5/Impractical 5.html)
     - [Answers practical 5](wednesday/Practicals/Practical 5/Practical 5.html)
 
 - Part 6: Deep learning for text 1
-    - [Lecture 6](wednesday/Lectures/lecture 6/Lecture_6.html)
-    - [Lecture handout 6](wednesday/Lectures/lecture 6/Lecture handout_6.pdf)
+    - [Lecture 6](wednesday/Lectures/lecture 6/Lecture_6.pdf)
     - [Practical 6](wednesday/Practicals/Practical 6/Impractical 6.html)
     - [Answers practical 6](wednesday/Practicals/Practical 6/Practical 6.html) 
 
@@ -233,8 +227,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 Here you will find the materials for Thursday:
 
 - Part 7: Deep learning for text 2
-    - [Lecture 7](thursday/Lectures/lecture 7/Lecture_7.html)
-    - [Lecture handout 7](thursday/Lectures/lecture 7/Lecture handout_7.pdf)
+    - [Lecture 7](thursday/Lectures/lecture 7/Lecture_7.pdf)
     - [Practical 7](thursday/Practicals/Practical 7/Impractical 7.html)
     - [Answers practical 7](thursday/Practicals/Practical 7/Practical 7.html)
 
@@ -262,13 +255,11 @@ Here you will find the materials for Friday:
 
 - Part 9: LLMs pre-training, prompting, & learning from human feedback
     - [Lecture 9](friday/Lectures/lecture 9/Lecture_9.pdf)
-    - [Lecture handout 9](friday/Lectures/lecture 9/Lecture handout_9.pdf)
     - [Practical 9 (with an example answer)](friday/Practicals/Practical 9/Practical 9.html)
     - [Data for practical 9](friday/Practicals/Practical 9/data.zip)
 
 - Part 10: Responsible text mining
     - [Lecture 10](friday/Lectures/lecture 10/Lecture_10.pdf)
-    - [Lecture handout 10](friday/Lectures/lecture 10/Lecture handout_10.pdf)
     - [Practical 10: classification with BERT](friday/Practicals/Practical 10/Practical 10.html)
     <!-- - [Answers practical 10](friday/Practicals/Practical 10/Impractical 10.html) -->
     - [Additional practical: machine translation](friday/Practicals/Practical 10/Bonus/Bonus_Practical 10.html)
