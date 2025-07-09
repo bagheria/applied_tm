@@ -1,5 +1,0 @@
-Must: *Summarise* (3/6) the applications and impact of text mining in addressing societal issues, such as fake news detection, hate speech detection, and healthcare applications.
-
-Nice-to-Have 1: *Apply* (3/6) fundamental concepts of text mining, including text representation, similarity measures, clustering and topic modelling, and classification algorithms to specific text-based problems.
-
-Nice-to-Have 2: *Examine* (4/6) the interpretability of the results of text mining models, considering the ethical implications and the potential for bias in the data and algorithms used.
