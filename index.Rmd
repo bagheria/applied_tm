@@ -255,8 +255,9 @@ Here you will find the materials for Friday:
 
 - Part 9: LLMs pre-training, prompting, & learning from human feedback
     - [Lecture 9](friday/Lectures/lecture 9/Lecture_9.pdf)
-    - [Practical 9 (with an example answer)](friday/Practicals/Practical 9/Practical 9.html)
-    - [Data for practical 9](friday/Practicals/Practical 9/data.zip)
+    - [Practical 9](friday/Practicals/Practical 9/Impractical 9.html)
+    - [Answers practical 9](friday/Practicals/Practical 9/Practical 9.html)
+    <!-- - [Data for practical 9](friday/Practicals/Practical 9/data.zip) -->
 
 - Part 10: Responsible text mining
     - [Lecture 10](friday/Lectures/lecture 10/Lecture_10.pdf)
