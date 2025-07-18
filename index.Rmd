@@ -284,6 +284,7 @@ Here you will find the materials for Friday:
 - [Post: Financial times: Generative AI exists because of the transformer](https://ig.ft.com/generative-ai/)
 - [Post: What Is ChatGPT Doing … and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
 - [Post: Stone Soup AI](https://simons.berkeley.edu/news/stone-soup-ai)
+- [NAVI study on Friendly vs Direct chatbot](https://navi-study-ffakhscea8ghc3dz.westeurope-01.azurewebsites.net/?ACCESS_TOKEN=4jZTDhlZ6R7a6t1BPF4GqcVeY0c8ziy71yCfZbQ82eY)
 
 ### All materials in a ZIP file
 On the **last day of the course**, all the materials will be available in a compact file for download:
