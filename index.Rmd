@@ -276,15 +276,19 @@ Here you will find the materials for Friday:
 # Archive
 
 ### Interesting links
-- [Financial times: Generative AI exists because of the transformer](https://ig.ft.com/generative-ai/)
+- [Paper: Natural Language processing and text mining (turning unstructured data into structured)](https://dspace.library.uu.nl/bitstream/handle/1874/436378/978-3-031-36678-9_5.pdf?sequence=1)
+- [Paper: Collaborative Growth: When Large Language Models Meet Sociolinguistics](https://compass.onlinelibrary.wiley.com/doi/pdf/10.1111/lnc3.70010)
+- [Paper: Explainability in Practice: A Survey of Explainable NLP Across Various Domains](https://arxiv.org/pdf/2502.00837?)
 - [Talk: Intro to Large Language Models](https://youtu.be/zjkBMFhNj_g?si=cgExVbVuUV6HvqSx)
 - [Talk: LSTM is dead. Long Live Transformers!](https://youtu.be/S27pHKBEp30?si=LtW0WydG_Ep0lXCC)
-- [What Is ChatGPT Doing … and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
+- [Post: Financial times: Generative AI exists because of the transformer](https://ig.ft.com/generative-ai/)
+- [Post: What Is ChatGPT Doing … and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
+- [Post: Stone Soup AI](https://simons.berkeley.edu/news/stone-soup-ai)
 
 ### All materials in a ZIP file
 On the **last day of the course**, all the materials will be available in a compact file for download:
 
-[Download the Materials](materials/.zip)
+[Download the Materials](materials/Applied_TM_all_materials.zip)
 
 
 We wish all the participants success with their Text Mining / NLP projects!
