@@ -1,5 +1,5 @@
 ---
-title: "Data Science: Applied Text Mining, from Foundations to Advanced"
+title: "Data Science: Applied Text Mining and Natural Language Processing"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -8,7 +8,7 @@ output:
 ---
 
 # Intro {.sidebar}
-This dashboard covers the course materials for the course [S42: Data Science: Applied Text Mining, from Foundations to Advanced](https://utrechtsummerschool.nl/courses/data-science/data-science-applied-text-mining-from-foundations-to-advanced).
+This dashboard covers the course materials for the course [S42: Data Science: Applied Text Mining and Natural Language Processing](https://utrechtsummerschool.nl/courses/data-science/data-science-applied-text-mining-from-foundations-to-advanced).
 
 
 ---
@@ -28,13 +28,14 @@ This dashboard covers the course materials for the course [S42: Data Science: Ap
 <!-- --- -->
 
 \
-Course director: [Ayoub Bagheri](https://www.uu.nl/staff/ABagheri)
+Course director: [Robert Bagheri](https://www.uu.nl/staff/ABagheri)
 
 Instructors:
 
 + [Dong Nguyen](https://www.uu.nl/staff/DPNguyen)\
-- [Pablo Mosteiro](https://www.uu.nl/staff/PJMosteiroRomero)\
-* [Ayoub Bagheri](https://www.uu.nl/staff/ABagheri)
+- [Daniel Anadria](https://www.uu.nl/staff/DAnadria)\
+- [Qixiang Fang](https://www.uu.nl/staff/QFang)\
+* [Robert Bagheri](https://www.uu.nl/staff/ABagheri)
 
 
 Study load: 1.5 ECTS
@@ -75,7 +76,7 @@ Participants are requested to bring their own laptop for the lab meetings.
 Participants will receive a certificate at the end of the course.
 
 ### Additional references
-1- Jurafsky, D., Martin, J.H. (2025). Speech and language processing, third edition. Find online chapters [here](https://web.stanford.edu/~jurafsky/slp3/)
+1- Jurafsky, D., Martin, J.H. (2026). Speech and language processing, third edition. Find online chapters [here](https://web.stanford.edu/~jurafsky/slp3/)
 
 
 2- Eisenstein, J. (2018). Natural Language Processing. Find online chapters [here](https://github.com/jacobeisenstein/gt-nlp-class/blob/master/notes/eisenstein-nlp-notes.pdf)
@@ -90,12 +91,12 @@ Participants will receive a certificate at the end of the course.
 |  09:00     | 10:30    | Lecture   |
 |            |**Break** |           |
 |  10:50     | 12:00    | Practical |
-|  12:00     | 12:30    | Discussion|
-|            |**[Lunch at Vening Meinesz building (A)](https://www.uu.nl/en/vening-meineszgebouw-a)** |           |
-|  14:00     | 15:20    | Lecture   |
+|  12:00     | 12:15    | Discussion|
+|            |**[Lunch at the university restaurant at the Educatorium Building](https://www.uu.nl/educatorium)** |           |
+|  13:30     | 15:00    | Lecture   |
 |            |**Break** |           |
-|  15:30     | 16:30    | Practical |
-|  16:30     | 17:00    | Discussion|
+|  15:15     | 16:15    | Practical |
+|  16:15     | 16:30    | Discussion|
 
 
 # How to prepare
@@ -106,7 +107,7 @@ Participants will receive a certificate at the end of the course.
 
 Dear all,
 
-This summer you will participate in the S42: Applied Text Mining, from Foundations to Advanced course in Utrecht, the Netherlands. To realize a steeper learning curve, we will use some functionality from the Python programming language using Google Colab. The below steps guide you through how to use Python and work on the practicals in this course.
+This summer you will participate in the "S42: Applied Text Mining and Natural Language Processing, from Foundations to Advanced" course in Utrecht, the Netherlands. To realize a steeper learning curve, we will use some functionality from the Python programming language using Google Colab. The below steps guide you through how to use Python and work on the practicals in this course.
 
 <!-- If you follow this course online please have a look at [this instructional page on MS Teams.](https://www.uu.nl/en/education/quality-and-innovation/remote-teaching/microsoft-teams) -->
 
@@ -146,7 +147,7 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 
 Here you will find the materials for Monday:
 
-- Part 1: Introduction to TM & NLP
+- Part 1: Introduction to Text Mining & NLP
     - [Lecture 1](monday/Lectures/lecture 1/Lecture_1.pdf)
     - [Practical 1](monday/Practicals/Practical 1/Impractical 1.html)
     - [Answers practical 1](monday/Practicals/Practical 1/Practical 1.html)
@@ -205,10 +206,11 @@ Here you will find the materials for Wednesday:
     - [Practical 5](wednesday/Practicals/Practical 5/Impractical 5.html)
     - [Answers practical 5](wednesday/Practicals/Practical 5/Practical 5.html)
 
-- Part 6: Deep learning for text 1
-    - [Lecture 6](wednesday/Lectures/lecture 6/Lecture_6.pdf)
-    - [Practical 6](wednesday/Practicals/Practical 6/Impractical 6.html)
-    - [Answers practical 6](wednesday/Practicals/Practical 6/Practical 6.html) 
+- Part 6: Sentiment analysis
+    - [Lecture 6](thursday/Lectures/lecture 8/Lecture_8.html)
+    - [Lecture handout 6](thursday/Lectures/lecture 8/Lecture handout_8.pdf)
+    - [Practical 6](thursday/Practicals/Practical 8/Impractical 8.html)
+    - [Answers practical 6](thursday/Practicals/Practical 8/Practical 8.html)
 
 
 ## Column 2
@@ -226,16 +228,15 @@ We adapt the course as we go. To ensure that you work with the latest iteration 
 
 Here you will find the materials for Thursday:
 
-- Part 7: Deep learning for text 2
-    - [Lecture 7](thursday/Lectures/lecture 7/Lecture_7.pdf)
-    - [Practical 7](thursday/Practicals/Practical 7/Impractical 7.html)
-    - [Answers practical 7](thursday/Practicals/Practical 7/Practical 7.html)
-
-- Part 8: Sentiment analysis
-    - [Lecture 8](thursday/Lectures/lecture 8/Lecture_8.html)
-    - [Lecture handout 8](thursday/Lectures/lecture 8/Lecture handout_8.pdf)
-    - [Practical 8](thursday/Practicals/Practical 8/Impractical 8.html)
-    - [Answers practical 8](thursday/Practicals/Practical 8/Practical 8.html)
+- Part 7: Deep learning for text 1
+    - [Lecture 7](wednesday/Lectures/lecture 6/Lecture_6.pdf)
+    - [Practical 7](wednesday/Practicals/Practical 6/Impractical 6.html)
+    - [Answers practical 7](wednesday/Practicals/Practical 6/Practical 6.html)
+    
+- Part 8: Deep learning for text 2
+    - [Lecture 8](thursday/Lectures/lecture 7/Lecture_7.pdf)
+    - [Practical 8](thursday/Practicals/Practical 7/Impractical 7.html)
+    - [Answers practical 8](thursday/Practicals/Practical 7/Practical 7.html)
 
 
 ## Column 2
@@ -263,8 +264,8 @@ Here you will find the materials for Friday:
     - [Lecture 10](friday/Lectures/lecture 10/Lecture_10.pdf)
     - [Practical 10: classification with BERT](friday/Practicals/Practical 10/Practical 10.html)
     <!-- - [Answers practical 10](friday/Practicals/Practical 10/Impractical 10.html) -->
-    - [Additional practical: machine translation](friday/Practicals/Practical 10/Bonus/Bonus_Practical 10.html)
-    - [Data for additional practical: machine translation](friday/Practicals/Practical 10/Bonus/nld-eng.zip)
+   <!-- - - [Additional practical: machine translation](friday/Practicals/Practical 10/Bonus/Bonus_Practical 10.html) -->
+  <!-- -  - [Data for additional practical: machine translation](friday/Practicals/Practical 10/Bonus/nld-eng.zip) -->
 
 
 ## Column 2
@@ -284,12 +285,12 @@ Here you will find the materials for Friday:
 - [Post: Financial times: Generative AI exists because of the transformer](https://ig.ft.com/generative-ai/)
 - [Post: What Is ChatGPT Doing … and Why Does It Work?](https://writings.stephenwolfram.com/2023/02/what-is-chatgpt-doing-and-why-does-it-work/)
 - [Post: Stone Soup AI](https://simons.berkeley.edu/news/stone-soup-ai)
-- [NAVI study on Friendly vs Direct chatbot](https://navi-study-ffakhscea8ghc3dz.westeurope-01.azurewebsites.net/?ACCESS_TOKEN=4jZTDhlZ6R7a6t1BPF4GqcVeY0c8ziy71yCfZbQ82eY)
+- [NAVI study on Friendly vs Direct chatbot](https://arxiv.org/abs/2602.17850)
 
 ### All materials in a ZIP file
 On the **last day of the course**, all the materials will be available in a compact file for download:
 
-[Download the Materials](materials/Applied_TM_all_materials.zip)
+[Download the Materials]<!-- -(materials/Applied_TM_all_materials.zip) -->
 
 
 We wish all the participants success with their Text Mining / NLP projects!
