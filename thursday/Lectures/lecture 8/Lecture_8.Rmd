@@ -101,9 +101,10 @@ include_graphics("img/page 9.png")
 - Use of natural language processing (NLP) and computational techniques to automate the extraction or classification of sentiment from unstructured text
 
 - Other terms
-  - Opinion mining
-  - Sentiment mining
   - Sentiment classification
+  - Sentiment mining
+
+- More broadly: **opinion mining**
 
 ## Related tasks
 
