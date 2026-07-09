@@ -19,7 +19,7 @@ library(kableExtra)
 ## The Little Prince example
 
 <div style="float: left; width: 60%;">
-This is a nice book for both young and old. It gives beautiful life lessons in a fun way. Definitely worth the money!
+"This is a nice book for both young and old. It gives beautiful life lessons in a fun way. Definitely worth the money!"
 
 <span style="color:green">+ Educational</span>
 
