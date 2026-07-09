@@ -104,7 +104,6 @@ include_graphics("img/page 9.png")
   - Opinion mining
   - Sentiment mining
   - Sentiment classification
-  <!-- - Subjectivity analysis -->
 
 ## Related tasks
 
