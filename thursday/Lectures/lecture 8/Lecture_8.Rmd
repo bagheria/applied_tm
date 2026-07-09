@@ -16,12 +16,6 @@ library(knitr)
 library(kableExtra)
 ```
 
-## Recap
-
-- What is a deep-learning word embedding?
-
-- 2 Wooclap questions
-
 ## The Little Prince example
 
 <div style="float: left; width: 60%;">
