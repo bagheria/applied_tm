@@ -43,12 +43,7 @@ include_graphics("img/page3_littleprince.png")
 
 ## Conceptual challenges
 
-Wooclap time
-
-<!--
-## Conceptual challenges
-
-Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
+Which of the following sentences express sentiment? If so, which is their polarity (positive, neutral or negative)?
 
 - There was an earthquake in Japan
 
@@ -61,7 +56,6 @@ Which of the following sentences express sentiment? If so, which is their polari
 - Go read the book
 
 - Yeah, sure!
--->
 
 ## Sentiment
 
