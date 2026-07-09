@@ -117,22 +117,16 @@ include_graphics("img/page 9.png")
 
 ## Sentiment analysis 
 
-- Can be applied in every topic & domain (non exhaustive list):
+- Can be applied to almost every topic & domain (non exhaustive list):
 
-  - <em>Book</em>: is this review positive or negative?
-  - <em>Humanities</em>: sentiment analysis for German historic plays.
-  - <em>Products</em>: what do people think about the new iPhone?
-  - <em>Blog</em>: how are people thinking about immigrants?
-  - <em>Politics</em>: who is going to win the election?
-  - <em>Social Media</em>: what is the trend today? 
-  - <em>Movie</em>:  is this review positive or negative (IMDB, Netflix)?
-  - <em>Marketing</em>: how is consumer confidence? Consumer attitudes?
-  - <em>Healthcare</em>: are patients happy with the hospital environment?
-
-## Opinion types
-- <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
-  
-- <span style="color:red">Comparative opinions</span>: <span style="color:blue">?</span>
+  - <em>Book</em>: is this review *positive* or *negative*?
+  - <em>Products</em>: what do people *think about* the new iPhone?
+  - <em>Blog</em>: how are people *thinking about* immigrants?
+  - <em>Politics</em>: *who* is going to win the election?
+  - <em>Social Media</em>: what is the *trend* today? 
+  - <em>Movie</em>:  is this review *positive* or *negative* (IMDB, Netflix)?
+  - <em>Marketing</em>: how is consumer *confidence*? Consumer *attitudes*?
+  - <em>Healthcare</em>: are patients *happy* with the hospital environment?
 
 ## Opinion types
 - <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
