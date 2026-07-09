@@ -206,17 +206,15 @@ include_graphics("img/page 9.png")
   
 ## Sentiment analysis tasks
 - Simplest task:
-  
-  - Is the attitude of this text positive or negative?
+  - Is this text positive or negative?
 
 - More complex:
-  - Is the attitude of this text positive, negative or neutral?
-  - Label the attitude of this text from 1 to 5
+  - Is this text positive, negative or neutral?
+  - Label this text from 1 to 5
 
 - Advanced:
-  - Detect the target, source, or complex opinion types
-  - Implicit opinions or aspects
-
+  - Detect the entity, aspect, sentiment, holder and time
+  - Implicit opinions
 
 ## Document sentiment analysis
 - <span style="color:red">Classify a document</span> (e.g., a review) based on the overall sentiment of the opinion holder <span style="font-size:16px"></span>
