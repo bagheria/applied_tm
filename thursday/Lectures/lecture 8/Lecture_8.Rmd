@@ -5,7 +5,7 @@ output:
   ioslides_presentation:
     logo: logo.png
     smaller: yes
-    widescreen: no
+    widescreen: yes
   pdf_document:
     toc: no
     toc_depth: '5'
