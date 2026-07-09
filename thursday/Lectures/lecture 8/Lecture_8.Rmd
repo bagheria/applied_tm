@@ -204,12 +204,6 @@ include_graphics("img/page 9.png")
   
   - <span style="color:brown; font-weight:bold; font-style:italic">time</span>: time when the opinion was expressed. 
   
-<!-- ## Example -->
-
-<!-- <span style="color:purple">Kindle Customer</span> Reviewed in the <span style="color:purple">United States</span> on <span style="color:purple">August 16, 2015</span>: -->
-
-<!-- This has been my <span style="color:green">favorite</span> <span style="color:blue">book</span> since I was 14 and had to read it in French as an assignment in school. I fell in <span style="color:green">love</span> with it and immediately bought the English translation by Katherine Woods, as I knew I would read it many times over the years and I knew my French was not likely to improve. Today I bought this <span style="color:blue">version</span> to have on my Kindle as I was thinking of giving my 40 year old paperback to my best friend. I could not be more <span style="color:green">disappointed</span>. The changes in this <span style="color:blue">translation</span> take so much away from the <span style="color:blue">book</span> that it almost changes who the Little Prince really is. The charm of the <span style="color:blue">book</span> is completely <span style="color:green">missing</span>. In one of my favorite parts of the book the fox talks to the Little Prince, sharing his <span style="color:green">invaluable</span> truth: "what is essential is invisible to the eye." Howard changes it to "Anything essential is invisible to the eyes", which changes the entire concept of what is said. "The eye" is every eye, everywhere. Making it plural takes away the meaning of what the fox is really saying. If you want to read this book, if you want to read it to your children, please take my advice and find the Katherine Woods translation, even if it means going to a used book store. I simply cannot understand what Howard was thinking in all of the changes he made to this <span style="color:green">wonderful</span> <span style="color:blue">story</span> that will stay with you for a lifetime, but only if you read the Woods translation which will open your eyes to the true meaning of the Little Prince. As the fox says: "Words are the source of misunderstandings" and Howardh has changed the words so much that indeed, in this version, words are very much the source of <span style="color:green">misunderstandings</span>. -->
-
 ## Sentiment analysis tasks
 - Simplest task:
   
@@ -249,7 +243,7 @@ include_graphics("img/page 9.png")
 - <span style="color:blue">Think Pair Share</span>
 
 ## Challenges
-- Hard to do with bag of words
+- Hard to do with *bag of words*
 
 - Must consider other features due to…
   - Subtlety of sentiment expression
