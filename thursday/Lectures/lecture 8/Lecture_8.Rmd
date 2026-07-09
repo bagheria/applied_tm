@@ -129,16 +129,12 @@ include_graphics("img/page 9.png")
   - <em>Healthcare</em>: are patients *happy* with the hospital environment?
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
-
-  - <span style="color:blue">E.g.?</span>
+- <span style="color:red">Regular opinions</span>: evaluative expressions on some target entities
   
-- <span style="color:red">Comparative opinions</span>: Comparison of more than one entity. 
-
-  - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
+- <span style="color:red">Comparative opinions</span>: <span style="color:blue">?</span>
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
+- <span style="color:red">Regular opinions</span>: evaluative expressions on some target entities
   
   - “The <span style="color:blue">touch screen<span> is really cool.”
   
@@ -147,7 +143,7 @@ include_graphics("img/page 9.png")
   - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
+- <span style="color:red">Regular opinions</span>: evaluative expressions on some target entities
   
   - <span style="color:blue">Direct opinions</span>: 
     
@@ -162,7 +158,7 @@ include_graphics("img/page 9.png")
   - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
+- <span style="color:red">Regular opinions</span>: evaluative expressions on some target entities
   
   - <span style="color:blue">Direct opinions</span>: 
     
@@ -177,7 +173,7 @@ include_graphics("img/page 9.png")
   - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
+- <span style="color:red">Regular opinions</span>: evaluative expressions on some target entities
   
   - <span style="color:blue">Direct opinions</span>: 
     
