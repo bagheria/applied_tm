@@ -108,19 +108,12 @@ include_graphics("img/page 9.png")
 
 ## Related tasks
 
-- Subjectivity (neutral vs sentimental text)
 - Emotion detection (e.g., happiness, anger, sadness)
-- Stance detection  (in favor or against)
-- Reputation analysis
+- Stance detection  (in favor, neutral or against)
+- Subjectivity analysis (objective vs subjective text)
 - Sarcasm/Irony detection
-- Hate-speech 
-
-
-## Sentiment analysis 
-
-- Can be applied in every topic & domain (non exhaustive list):
-
-  - <span style="color:red"><em>Examples?</em></span>
+- Hate-speech detection
+- Reputation analysis
 
 ## Sentiment analysis 
 
