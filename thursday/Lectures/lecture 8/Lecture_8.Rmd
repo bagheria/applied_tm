@@ -1,6 +1,6 @@
 ---
 title: "Sentiment Analysis"
-author: "Pablo Mosteiro (many slides by Ayoub Bagheri)"
+author: "Qixiang Fang, Pablo Mosteiro, Robert Bagheri"
 output:
   ioslides_presentation:
     logo: logo.png
