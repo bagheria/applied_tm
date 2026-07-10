@@ -59,13 +59,15 @@ Which of the following sentences express sentiment? If so, which is their polari
 
 ## Sentiment
 
-- Sentiment = 
-  
-  - Feelings, Attitudes, Emotions, Opinions
-  
+- Sentiment =
+
+  - Feelings, Attitudes, Emotions
+
   - A thought, view, or attitude, especially one based mainly on emotion instead of reason
 
 - Subjective impressions, not facts
+
+- An <b>opinion</b> is a sentiment expressed about a specific target (more on this later)
 
 <!--
 ## Webster's dictionary
@@ -100,11 +102,10 @@ include_graphics("img/page 9.png")
 ## Sentiment analysis
 - Use of natural language processing (NLP) and computational techniques to automate the extraction or classification of sentiment from unstructured text
 
-- Other terms
+- Other terms (often used interchangeably)
   - Sentiment classification
   - Sentiment mining
-
-- More broadly: **opinion mining**
+  - **Opinion mining**: emphasizes the fuller structure of *who* holds *what* sentiment, about *what* target, and *when* (see "Practical definition" later)
 
 ## Related tasks
 
