@@ -131,12 +131,12 @@ include_graphics("img/page 9.png")
   - <em>Healthcare</em>: are patients *happy* with the hospital environment?
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: evaluative expressions on some target entities
+- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
   
 - <span style="color:red">Comparative opinions</span>: <span style="color:blue">?</span>
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: evaluative expressions on some target entities
+- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
   
   - “The <span style="color:blue">touch screen<span> is really cool.”
   
@@ -145,7 +145,7 @@ include_graphics("img/page 9.png")
   - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: evaluative expressions on some target entities
+- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
   
   - <span style="color:blue">Direct opinions</span>: 
     
@@ -160,7 +160,7 @@ include_graphics("img/page 9.png")
   - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: evaluative expressions on some target entities
+- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
   
   - <span style="color:blue">Direct opinions</span>: 
     
@@ -175,7 +175,7 @@ include_graphics("img/page 9.png")
   - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: evaluative expressions on some target entities
+- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
   
   - <span style="color:blue">Direct opinions</span>: 
     
@@ -236,7 +236,7 @@ include_graphics("img/page 9.png")
 
 - <span style="color:red; font-size:22px">But bear in mind</span>
   - <span style="color:blue">Explicit opinion</span>: “I like this car.” 
-  - <span style="color:blue">Fact-implied opinion</span>: “I bought this car yesterday and it broke today.”
+  - <span style="color:blue">Fact-implied (indirect) opinion</span>: “I bought this car yesterday and it broke today.”
   - <span style="color:blue;font-weight:bold">Mixed opinion</span>: “Apple is doing well in this poor economy”
 
 ## Challenges
@@ -248,7 +248,7 @@ include_graphics("img/page 9.png")
 - Must consider other features due to…
   - Subtlety of sentiment expression
     - irony 
-    (<span style="color:blue">What a great car, it stopped working in the second day.</span>)
+    (<span style="color:blue">What a great car, it stopped working on the second day.</span>)
     - expression of sentiment using neutral words 
     (<span style="color:blue">The concert didn't meet my expectations.</span>)
   
@@ -264,9 +264,9 @@ include_graphics("img/page 9.png")
   - Corpus-based: Using co-occurrence statistics or syntactic patterns embedded in text corpora
   <!-- - <span style="color:red">Not completely unsupervised!</span> -->
 
-- **Supervised learning methods**: to classify reviews into positive and negative. 
+- **Supervised learning methods**: to classify reviews into positive and negative.
   - Traditional Machine Learning: Naïve Bayes, Support Vector Machine
-  - Deep learning: BERT, GPT
+  - Deep learning: pretrained language models fine-tuned on labeled sentiment data (e.g., BERT, GPT)
   
 # Lexicon-based Methods
 
@@ -321,6 +321,8 @@ knitr::include_graphics(c("img/AFINN.png"))
   - Sentiment(‘brilliant’) = +4
   - Sentiment(‘boring’) = -2
   - Overall sentiment = +2
+
+- <span style="color:red">Limitation</span>: naive summation treats both words as equally important, but "but" signals that the second clause should dominate (see VADER's *conjunction* heuristic, next)
 
 ## LIWC (Linguistic Inquiry and Word Count) | Tausczik and Pennebaker (2010)
 - 2,300 words, >70 classes
@@ -753,7 +755,7 @@ https://huggingface.co/blog/sentiment-analysis-python
 
 - <span style="color:red">Twitter-roberta-base-sentiment</span> is a roBERTa model trained on ~58M tweets and fine-tuned for sentiment analysis (https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment) 
 
-- <span style="color:red">SST-2 BERT</span>: Fine-tuned on the Stanford Sentiment Treebank (SST-2) which consists of sentences from movie reviews. The model is well-suited for general sentiment analysis tasks. (https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english)
+- <span style="color:red">SST-2 DistilBERT</span>: Fine-tuned on the Stanford Sentiment Treebank (SST-2) which consists of sentences from movie reviews. The model is well-suited for general sentiment analysis tasks. (https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english)
 
 - <span style="color:red">Bert-base-multilingual-uncased-sentiment</span> is a model fine-tuned for sentiment analysis on product reviews in six languages: English, Dutch, German, French, Spanish and Italian (https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment)
 
@@ -825,8 +827,8 @@ From Aurélien Géron [colab](https://colab.research.google.com/gist/ageron/fb2f
 ## Summary
 - Sentiment analysis
  - Lexicon-based methods
- - Learning-based methods
- - Sentiment-aware word embeddings
+ - Supervised methods (traditional ML)
+ - Deep learning (incl. sentiment-aware word embeddings, BERT)
  - Bias
 
 ## Resources
