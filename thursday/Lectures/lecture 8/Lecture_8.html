@@ -3289,7 +3289,7 @@ line-height: 1.9;
 
 <ul>
 <li><p><span style="color:red">
-Regular opinions</span>: evaluative expressions on some target entities</p></li>
+Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)</p></li>
 <li><p><span style="color:red">
 Comparative opinions</span>: <span style="color:blue">
 ?</span></p></li>
@@ -3299,7 +3299,7 @@ Comparative opinions</span>: <span style="color:blue">
 
 <ul>
 <li><p><span style="color:red">
-Regular opinions</span>: evaluative expressions on some target entities</p>
+Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)</p>
 
 <ul>
 <li>“The <span style="color:blue">touch screen<span> is really cool.”</li>
@@ -3317,7 +3317,7 @@ is better than</span> Blackberry.”</li>
 
 <ul>
 <li><p><span style="color:red">
-Regular opinions</span>: evaluative expressions on some target entities</p>
+Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)</p>
 
 <ul>
 <li><p><span style="color:blue">
@@ -3347,7 +3347,7 @@ is better than</span> Blackberry.”</li>
 
 <ul>
 <li><p><span style="color:red">
-Regular opinions</span>: evaluative expressions on some target entities</p>
+Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)</p>
 
 <ul>
 <li><p><span style="color:blue">
@@ -3377,7 +3377,7 @@ is better than</span> Blackberry.”</li>
 
 <ul>
 <li><p><span style="color:red">
-Regular opinions</span>: evaluative expressions on some target entities</p>
+Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)</p>
 
 <ul>
 <li><p><span style="color:blue">
@@ -3504,7 +3504,7 @@ But bear in mind</span>
 <li><span style="color:blue">
 Explicit opinion</span>: “I like this car.”</li>
 <li><span style="color:blue">
-Fact-implied opinion</span>: “I bought this car yesterday and it broke today.”</li>
+Fact-implied (indirect) opinion</span>: “I bought this car yesterday and it broke today.”</li>
 <li><span style="color:blue;font-weight:bold">
 Mixed opinion</span>: “Apple is doing well in this poor economy”</li>
 </ul></li>
@@ -3528,7 +3528,7 @@ Think Pair Share</span></li>
 
 <ul>
 <li>irony (<span style="color:blue">
-What a great car, it stopped working in the second day.</span>)</li>
+What a great car, it stopped working on the second day.</span>)</li>
 <li>expression of sentiment using neutral words (<span style="color:blue">
 The concert didn’t meet my expectations.</span>)</li>
 </ul></li>
@@ -3556,7 +3556,7 @@ Negation</span>)</li>
 
 <ul>
 <li>Traditional Machine Learning: Naïve Bayes, Support Vector Machine</li>
-<li>Deep learning: BERT, GPT</li>
+<li>Deep learning: pretrained language models fine-tuned on labeled sentiment data (e.g., BERT, GPT)</li>
 </ul></li>
 </ul>
 
@@ -3634,6 +3634,8 @@ Negation</span>)</li>
 <li>Sentiment(‘boring’) = -2</li>
 <li>Overall sentiment = +2</li>
 </ul></li>
+<li><p><span style="color:red">
+Limitation</span>: naive summation treats both words as equally important, but &ldquo;but&rdquo; signals that the second clause should dominate (see VADER’s <em>conjunction</em> heuristic, next)</p></li>
 </ul>
 
 </article></slide><slide class=""><hgroup><h2>LIWC (Linguistic Inquiry and Word Count) </h2><h3> Tausczik and Pennebaker (2010)</h3></hgroup><article  id="liwc-linguistic-inquiry-and-word-count-tausczik-and-pennebaker-2010" class="smaller ">
@@ -4216,7 +4218,7 @@ Syntactic dependency</span></li>
 <li><p><span style="color:red">
 Twitter-roberta-base-sentiment</span> is a roBERTa model trained on ~58M tweets and fine-tuned for sentiment analysis (<a href='https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment' title=''>https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment</a>)</p></li>
 <li><p><span style="color:red">
-SST-2 BERT</span>: Fine-tuned on the Stanford Sentiment Treebank (SST-2) which consists of sentences from movie reviews. The model is well-suited for general sentiment analysis tasks. (<a href='https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english' title=''>https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english</a>)</p></li>
+SST-2 DistilBERT</span>: Fine-tuned on the Stanford Sentiment Treebank (SST-2) which consists of sentences from movie reviews. The model is well-suited for general sentiment analysis tasks. (<a href='https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english' title=''>https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english</a>)</p></li>
 <li><p><span style="color:red">
 Bert-base-multilingual-uncased-sentiment</span> is a model fine-tuned for sentiment analysis on product reviews in six languages: English, Dutch, German, French, Spanish and Italian (<a href='https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment' title=''>https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment</a>)</p></li>
 <li><p><span style="color:red">
@@ -4294,8 +4296,8 @@ Distilbert-base-uncased-emotion</span> is a model fine-tuned for detecting emoti
 <ul>
 <li>Sentiment analysis</li>
 <li>Lexicon-based methods</li>
-<li>Learning-based methods</li>
-<li>Sentiment-aware word embeddings</li>
+<li>Supervised methods (traditional ML)</li>
+<li>Deep learning (incl. sentiment-aware word embeddings, BERT)</li>
 <li>Bias</li>
 </ul>
 
