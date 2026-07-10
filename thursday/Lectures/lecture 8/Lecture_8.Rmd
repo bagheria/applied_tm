@@ -2,13 +2,13 @@
 title: "Sentiment Analysis"
 author: "Qixiang Fang, Pablo Mosteiro, Robert Bagheri"
 output:
+  pdf_document:
+    toc: false
+    toc_depth: '5'
   ioslides_presentation:
     logo: logo.png
-    smaller: yes
-    widescreen: yes
-  pdf_document:
-    toc: no
-    toc_depth: '5'
+    smaller: true
+    widescreen: true
   beamer_presentation: default
 ---
 ```{r, include=FALSE}
