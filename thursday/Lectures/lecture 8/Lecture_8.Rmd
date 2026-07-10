@@ -37,9 +37,10 @@ Nice story for older children.
 </div>
 
 <div style="float: right; width: 40%;">
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width="90%"}
 include_graphics("img/page3_littleprince.png")
 ```
+</div>
 
 ## Conceptual challenges
 
@@ -680,7 +681,7 @@ include_graphics("img/page 60.png")
 
 ## Supervised sentiment analysis | Kiritchenko et al. (2014)
 
-```{r, echo=FALSE, out.width="90%"}
+```{r, echo=FALSE, out.width="80%"}
 include_graphics("img/Kiritchenko2014.png")
 ```
 
@@ -710,8 +711,8 @@ include_graphics("img/Kiritchenko2014.png")
 - Calculate the semantic similarity between each sentiment word and the other words in the     lexicon based on the cosine distance of their pre-trained vectors
 - Select top-k most similar words as the nearest neighbors and re-rank according to sentiment scores
 
-<div width:80%">
-```{r, echo=FALSE, fig.align='center'}
+<div width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="45%"}
 include_graphics("img/refineNN.png")
 ```
 </div>
@@ -769,18 +770,18 @@ https://huggingface.co/blog/sentiment-analysis-python
 - Hypothesis: a system should equally rate the intensity of the emotion expressed by two sentences that differ in the gender/race
 
 <div width:40%">
-```{r, echo=FALSE, fig.align="center", out.width="40%"}
+```{r, echo=FALSE, fig.align="center", out.width="30%"}
 include_graphics("img/Bias_Sentiment.png")
 ```
 </div>
 
 ## Bias in sentiment analysis | Kiritchenko and Mohammad (2018)
 
-```{r, echo=FALSE, fig.align="center"}
+```{r, echo=FALSE, fig.align="center", out.width="30%"}
 include_graphics("img/gender.png")
 ```
 
-```{r, echo=FALSE, fig.align="center"}
+```{r, echo=FALSE, fig.align="center", out.width="40%"}
 include_graphics("img/race.png")
 ```
 
