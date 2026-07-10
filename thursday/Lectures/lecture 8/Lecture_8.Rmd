@@ -299,7 +299,7 @@ knitr::include_graphics(c("img/AFINN.png"))
 ```
 
 </div>
-## Basic Lexicon Approach |
+## Basic Lexicon Approach
 
 - Detect sentiment in two independent dimensions:
   - Positive: {1, 2,… 5}
@@ -309,7 +309,7 @@ knitr::include_graphics(c("img/AFINN.png"))
 
   - Overall sentiment = <span style="color:blue">?</span>
 
-## Basic Lexicon Approach |
+## Basic Lexicon Approach
 
 - Detect sentiment in two independent dimensions:
   - Positive: {1, 2,… 5}
@@ -321,7 +321,7 @@ knitr::include_graphics(c("img/AFINN.png"))
   - Sentiment(‘boring’) = -2
   - Overall sentiment = +2
 
-## LIWC (Linguistic Inquiry and Word Count) | Tausczik and Pennebaker (2011)
+## LIWC (Linguistic Inquiry and Word Count) | Tausczik and Pennebaker (2010)
 - 2,300 words, >70 classes
 
 - <b>Affective Processes</b>
@@ -877,7 +877,7 @@ From Aurélien Géron [colab](https://colab.research.google.com/gist/ageron/fb2f
 ## References
 
 - <font size="3">Bagheri, A., Saraee, M, and De Jong, F. 2013. Care more about customers: Unsupervised domain-independent aspect detection for sentiment analysis of customer reviews. Knowledge-Based Systems. 52, 201–213</font>
-- <font size="3"> Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805 </font>
+- <font size="3"> Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of NAACL-HLT 2019, pp. 4171–4186 </font>
 - <font size="3">Esuli, A. and Sebastiani, F. 2006. SENTIWORDNET: A Publicly Available Lexical Resource for Opinion Mining. In Proceedings of the Fifth International Conference on Language Resources and Evaluation (LREC’06) </font>
 - <font size="3">Ghanem, B., Rosso, P., & Rangel, F. 2020. An emotional analysis of false information in social media and news articles. ACM Transactions on Internet Technology (TOIT), 20(2), 1-18</font>
 - <font size="3">Giachanou, A., Rosso, P., & Crestani, F. 2019. Leveraging emotional signals for credibility detection. In Proceedings of the 42nd international ACM SIGIR conference on research and development in information retrieval. pp. 877-880</font>
