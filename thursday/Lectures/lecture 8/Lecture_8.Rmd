@@ -1,31 +1,29 @@
 ---
 title: "Sentiment Analysis"
-author: "Pablo Mosteiro (many slides by Ayoub Bagheri)"
+author: "Qixiang Fang, Pablo Mosteiro, Robert Bagheri"
 output:
+  pdf_document:
+    toc: false
+    toc_depth: '5'
+  html_document:
+    toc: false
+    toc_depth: '5'
+    df_print: paged
+  beamer_presentation: default
   ioslides_presentation:
     logo: logo.png
-    smaller: yes
-    widescreen: no
-  pdf_document:
-    toc: no
-    toc_depth: '5'
-  beamer_presentation: default
+    smaller: true
+    widescreen: true
 ---
 ```{r, include=FALSE}
 library(knitr)
 library(kableExtra)
 ```
 
-## Recap
-
-- What is a deep-learning word embedding?
-
-- 2 Wooclap questions
-
 ## The Little Prince example
 
 <div style="float: left; width: 60%;">
-This is a nice book for both young and old. It gives beautiful life lessons in a fun way. Definitely worth the money!
+"This is a nice book for both young and old. It gives beautiful life lessons in a fun way. Definitely worth the money!"
 
 <span style="color:green">+ Educational</span>
 
@@ -43,18 +41,14 @@ Nice story for older children.
 </div>
 
 <div style="float: right; width: 40%;">
-```{r, echo=FALSE}
+```{r, echo=FALSE, out.width="90%"}
 include_graphics("img/page3_littleprince.png")
 ```
+</div>
 
 ## Conceptual challenges
 
-Wooclap time
-
-<!--
-## Conceptual challenges
-
-Which of the following sentences express sentiment? If so, which is their polarity (positive or negative)?
+Which of the following sentences express sentiment? If so, which is their polarity (positive, neutral or negative)?
 
 - There was an earthquake in Japan
 
@@ -67,17 +61,18 @@ Which of the following sentences express sentiment? If so, which is their polari
 - Go read the book
 
 - Yeah, sure!
--->
 
 ## Sentiment
 
-- Sentiment = 
-  
-  - Feelings, Attitudes, Emotions, Opinions
-  
+- Sentiment =
+
+  - Feelings, Attitudes, Emotions
+
   - A thought, view, or attitude, especially one based mainly on emotion instead of reason
 
 - Subjective impressions, not facts
+
+- An <b>opinion</b> is a sentiment expressed about a specific target (more on this later)
 
 <!--
 ## Webster's dictionary
@@ -112,58 +107,40 @@ include_graphics("img/page 9.png")
 ## Sentiment analysis
 - Use of natural language processing (NLP) and computational techniques to automate the extraction or classification of sentiment from unstructured text
 
-- Other terms
-  - Opinion mining
-  - Sentiment mining
+- Other terms (often used interchangeably)
   - Sentiment classification
-  <!-- - Subjectivity analysis -->
+  - Sentiment mining
+  - **Opinion mining**: emphasizes the fuller structure of *who* holds *what* sentiment, about *what* target, and *when* (see "Practical definition" later)
 
 ## Related tasks
 
-- Subjectivity (neutral vs sentimental text)
 - Emotion detection (e.g., happiness, anger, sadness)
-- Stance detection  (in favor or against)
-- Reputation analysis
+- Stance detection  (in favor, neutral or against)
+- Subjectivity analysis (objective vs subjective text)
 - Sarcasm/Irony detection
-- Hate-speech 
-
-
-## Sentiment analysis 
-
-- Can be applied in every topic & domain (non exhaustive list):
-
-  - <span style="color:red"><em>Examples?</em></span>
+- Hate-speech detection
+- Reputation analysis
 
 ## Sentiment analysis 
 
-- Can be applied in every topic & domain (non exhaustive list):
+- Can be applied to almost every topic & domain (non exhaustive list):
 
-  - <em>Book</em>: is this review positive or negative?
-  - <em>Humanities</em>: sentiment analysis for German historic plays.
-  - <em>Products</em>: what do people think about the new iPhone?
-  - <em>Blog</em>: how are people thinking about immigrants?
-  - <em>Politics</em>: who is going to win the election?
-  - <em>Social Media</em>: what is the trend today? 
-  - <em>Movie</em>:  is this review positive or negative (IMDB, Netflix)?
-  - <em>Marketing</em>: how is consumer confidence? Consumer attitudes?
-  - <em>Healthcare</em>: are patients happy with the hospital environment?
+  - <em>Book</em>: is this review *positive* or *negative*?
+  - <em>Products</em>: what do people *think about* the new iPhone?
+  - <em>Blog</em>: how are people *thinking about* immigrants?
+  - <em>Politics</em>: *who* is going to win the election?
+  - <em>Social Media</em>: what is the *trend* today? 
+  - <em>Movie</em>:  is this review *positive* or *negative* (IMDB, Netflix)?
+  - <em>Marketing</em>: how is consumer *confidence*? Consumer *attitudes*?
+  - <em>Healthcare</em>: are patients *happy* with the hospital environment?
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
+- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
   
 - <span style="color:red">Comparative opinions</span>: <span style="color:blue">?</span>
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
-
-  - <span style="color:blue">E.g.?</span>
-  
-- <span style="color:red">Comparative opinions</span>: Comparison of more than one entity. 
-
-  - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
-
-## Opinion types
-- <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
+- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
   
   - “The <span style="color:blue">touch screen<span> is really cool.”
   
@@ -172,7 +149,7 @@ include_graphics("img/page 9.png")
   - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
+- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
   
   - <span style="color:blue">Direct opinions</span>: 
     
@@ -187,7 +164,7 @@ include_graphics("img/page 9.png")
   - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
+- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
   
   - <span style="color:blue">Direct opinions</span>: 
     
@@ -202,7 +179,7 @@ include_graphics("img/page 9.png")
   - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: Sentiment/opinion expressions on some target entities
+- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
   
   - <span style="color:blue">Direct opinions</span>: 
     
@@ -233,25 +210,17 @@ include_graphics("img/page 9.png")
   
   - <span style="color:brown; font-weight:bold; font-style:italic">time</span>: time when the opinion was expressed. 
   
-<!-- ## Example -->
-
-<!-- <span style="color:purple">Kindle Customer</span> Reviewed in the <span style="color:purple">United States</span> on <span style="color:purple">August 16, 2015</span>: -->
-
-<!-- This has been my <span style="color:green">favorite</span> <span style="color:blue">book</span> since I was 14 and had to read it in French as an assignment in school. I fell in <span style="color:green">love</span> with it and immediately bought the English translation by Katherine Woods, as I knew I would read it many times over the years and I knew my French was not likely to improve. Today I bought this <span style="color:blue">version</span> to have on my Kindle as I was thinking of giving my 40 year old paperback to my best friend. I could not be more <span style="color:green">disappointed</span>. The changes in this <span style="color:blue">translation</span> take so much away from the <span style="color:blue">book</span> that it almost changes who the Little Prince really is. The charm of the <span style="color:blue">book</span> is completely <span style="color:green">missing</span>. In one of my favorite parts of the book the fox talks to the Little Prince, sharing his <span style="color:green">invaluable</span> truth: "what is essential is invisible to the eye." Howard changes it to "Anything essential is invisible to the eyes", which changes the entire concept of what is said. "The eye" is every eye, everywhere. Making it plural takes away the meaning of what the fox is really saying. If you want to read this book, if you want to read it to your children, please take my advice and find the Katherine Woods translation, even if it means going to a used book store. I simply cannot understand what Howard was thinking in all of the changes he made to this <span style="color:green">wonderful</span> <span style="color:blue">story</span> that will stay with you for a lifetime, but only if you read the Woods translation which will open your eyes to the true meaning of the Little Prince. As the fox says: "Words are the source of misunderstandings" and Howardh has changed the words so much that indeed, in this version, words are very much the source of <span style="color:green">misunderstandings</span>. -->
-
 ## Sentiment analysis tasks
 - Simplest task:
-  
-  - Is the attitude of this text positive or negative?
+  - Is this text positive or negative?
 
 - More complex:
-  - Is the attitude of this text positive, negative or neutral?
-  - Label the attitude of this text from 1 to 5
+  - Is this text positive, negative or neutral?
+  - Label this text from 1 to 5
 
 - Advanced:
-  - Detect the target, source, or complex opinion types
-  - Implicit opinions or aspects
-
+  - Detect the entity, aspect, sentiment, holder and time
+  - Implicit opinions
 
 ## Document sentiment analysis
 - <span style="color:red">Classify a document</span> (e.g., a review) based on the overall sentiment of the opinion holder <span style="font-size:16px"></span>
@@ -271,19 +240,19 @@ include_graphics("img/page 9.png")
 
 - <span style="color:red; font-size:22px">But bear in mind</span>
   - <span style="color:blue">Explicit opinion</span>: “I like this car.” 
-  - <span style="color:blue">Fact-implied opinion</span>: “I bought this car yesterday and it broke today.”
+  - <span style="color:blue">Fact-implied (indirect) opinion</span>: “I bought this car yesterday and it broke today.”
   - <span style="color:blue;font-weight:bold">Mixed opinion</span>: “Apple is doing well in this poor economy”
 
 ## Challenges
 - <span style="color:blue">Think Pair Share</span>
 
 ## Challenges
-- Hard to do with bag of words
+- Hard to do with *bag of words*
 
 - Must consider other features due to…
   - Subtlety of sentiment expression
     - irony 
-    (<span style="color:blue">What a great car, it stopped working in the second day.</span>)
+    (<span style="color:blue">What a great car, it stopped working on the second day.</span>)
     - expression of sentiment using neutral words 
     (<span style="color:blue">The concert didn't meet my expectations.</span>)
   
@@ -299,9 +268,9 @@ include_graphics("img/page 9.png")
   - Corpus-based: Using co-occurrence statistics or syntactic patterns embedded in text corpora
   <!-- - <span style="color:red">Not completely unsupervised!</span> -->
 
-- **Supervised learning methods**: to classify reviews into positive and negative. 
+- **Supervised learning methods**: to classify reviews into positive and negative.
   - Traditional Machine Learning: Naïve Bayes, Support Vector Machine
-  - Deep learning: BERT, GPT
+  - Deep learning: pretrained language models fine-tuned on labeled sentiment data (e.g., BERT, GPT)
   
 # Lexicon-based Methods
 
@@ -335,7 +304,7 @@ knitr::include_graphics(c("img/AFINN.png"))
 ```
 
 </div>
-## Basic Lexicon Approach |
+## Basic Lexicon Approach
 
 - Detect sentiment in two independent dimensions:
   - Positive: {1, 2,… 5}
@@ -345,7 +314,7 @@ knitr::include_graphics(c("img/AFINN.png"))
 
   - Overall sentiment = <span style="color:blue">?</span>
 
-## Basic Lexicon Approach |
+## Basic Lexicon Approach
 
 - Detect sentiment in two independent dimensions:
   - Positive: {1, 2,… 5}
@@ -357,7 +326,9 @@ knitr::include_graphics(c("img/AFINN.png"))
   - Sentiment(‘boring’) = -2
   - Overall sentiment = +2
 
-## LIWC (Linguistic Inquiry and Word Count) | Tausczik and Pennebaker (2011)
+- <span style="color:red">Limitation</span>: naive summation treats both words as equally important, but "but" signals that the second clause should dominate (see VADER's *conjunction* heuristic, next)
+
+## LIWC (Linguistic Inquiry and Word Count) | Tausczik and Pennebaker (2010)
 - 2,300 words, >70 classes
 
 - <b>Affective Processes</b>
@@ -716,7 +687,7 @@ include_graphics("img/page 60.png")
 
 ## Supervised sentiment analysis | Kiritchenko et al. (2014)
 
-```{r, echo=FALSE, out.width="90%"}
+```{r, echo=FALSE, out.width="80%"}
 include_graphics("img/Kiritchenko2014.png")
 ```
 
@@ -746,8 +717,8 @@ include_graphics("img/Kiritchenko2014.png")
 - Calculate the semantic similarity between each sentiment word and the other words in the     lexicon based on the cosine distance of their pre-trained vectors
 - Select top-k most similar words as the nearest neighbors and re-rank according to sentiment scores
 
-<div width:80%">
-```{r, echo=FALSE, fig.align='center'}
+<div width:100%">
+```{r, echo=FALSE, fig.align='center', out.width="45%"}
 include_graphics("img/refineNN.png")
 ```
 </div>
@@ -788,7 +759,7 @@ https://huggingface.co/blog/sentiment-analysis-python
 
 - <span style="color:red">Twitter-roberta-base-sentiment</span> is a roBERTa model trained on ~58M tweets and fine-tuned for sentiment analysis (https://huggingface.co/cardiffnlp/twitter-roberta-base-sentiment) 
 
-- <span style="color:red">SST-2 BERT</span>: Fine-tuned on the Stanford Sentiment Treebank (SST-2) which consists of sentences from movie reviews. The model is well-suited for general sentiment analysis tasks. (https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english)
+- <span style="color:red">SST-2 DistilBERT</span>: Fine-tuned on the Stanford Sentiment Treebank (SST-2) which consists of sentences from movie reviews. The model is well-suited for general sentiment analysis tasks. (https://huggingface.co/distilbert-base-uncased-finetuned-sst-2-english)
 
 - <span style="color:red">Bert-base-multilingual-uncased-sentiment</span> is a model fine-tuned for sentiment analysis on product reviews in six languages: English, Dutch, German, French, Spanish and Italian (https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment)
 
@@ -805,18 +776,18 @@ https://huggingface.co/blog/sentiment-analysis-python
 - Hypothesis: a system should equally rate the intensity of the emotion expressed by two sentences that differ in the gender/race
 
 <div width:40%">
-```{r, echo=FALSE, fig.align="center", out.width="40%"}
+```{r, echo=FALSE, fig.align="center", out.width="30%"}
 include_graphics("img/Bias_Sentiment.png")
 ```
 </div>
 
 ## Bias in sentiment analysis | Kiritchenko and Mohammad (2018)
 
-```{r, echo=FALSE, fig.align="center"}
+```{r, echo=FALSE, fig.align="center", out.width="30%"}
 include_graphics("img/gender.png")
 ```
 
-```{r, echo=FALSE, fig.align="center"}
+```{r, echo=FALSE, fig.align="center", out.width="40%"}
 include_graphics("img/race.png")
 ```
 
@@ -860,8 +831,8 @@ From Aurélien Géron [colab](https://colab.research.google.com/gist/ageron/fb2f
 ## Summary
 - Sentiment analysis
  - Lexicon-based methods
- - Learning-based methods
- - Sentiment-aware word embeddings
+ - Supervised methods (traditional ML)
+ - Deep learning (incl. sentiment-aware word embeddings, BERT)
  - Bias
 
 ## Resources
@@ -913,7 +884,7 @@ From Aurélien Géron [colab](https://colab.research.google.com/gist/ageron/fb2f
 ## References
 
 - <font size="3">Bagheri, A., Saraee, M, and De Jong, F. 2013. Care more about customers: Unsupervised domain-independent aspect detection for sentiment analysis of customer reviews. Knowledge-Based Systems. 52, 201–213</font>
-- <font size="3"> Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. 2018. Bert: Pre-training of deep bidirectional transformers for language understanding. arXiv preprint arXiv:1810.04805 </font>
+- <font size="3"> Devlin, J., Chang, M. W., Lee, K., & Toutanova, K. 2019. BERT: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of NAACL-HLT 2019, pp. 4171–4186 </font>
 - <font size="3">Esuli, A. and Sebastiani, F. 2006. SENTIWORDNET: A Publicly Available Lexical Resource for Opinion Mining. In Proceedings of the Fifth International Conference on Language Resources and Evaluation (LREC’06) </font>
 - <font size="3">Ghanem, B., Rosso, P., & Rangel, F. 2020. An emotional analysis of false information in social media and news articles. ACM Transactions on Internet Technology (TOIT), 20(2), 1-18</font>
 - <font size="3">Giachanou, A., Rosso, P., & Crestani, F. 2019. Leveraging emotional signals for credibility detection. In Proceedings of the 42nd international ACM SIGIR conference on research and development in information retrieval. pp. 877-880</font>
