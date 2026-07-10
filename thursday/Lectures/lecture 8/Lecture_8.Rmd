@@ -5,11 +5,15 @@ output:
   pdf_document:
     toc: false
     toc_depth: '5'
+  html_document:
+    toc: false
+    toc_depth: '5'
+    df_print: paged
+  beamer_presentation: default
   ioslides_presentation:
     logo: logo.png
     smaller: true
     widescreen: true
-  beamer_presentation: default
 ---
 ```{r, include=FALSE}
 library(knitr)
