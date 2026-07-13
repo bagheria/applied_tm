@@ -60,7 +60,7 @@ include_graphics("img/ex4.png")
 
 You can access the course materials quickly from
 
-https://ayoubbagheri.nl/applied_tm/
+https://robertab.nl/applied_tm/
 
 
 ## Teachers
@@ -180,7 +180,7 @@ include_graphics("img/q1.jpg")
 
 - Latest: <a href="https://www.python.org/downloads/">Python 3.12.4</a>
 
-- Follow the tutorial on Python in Google Colab for the Applied Text Mining course: [link](https://ayoubbagheri.nl/applied_tm/Python_in_Google_Colab_Applied_Text_Mining.html)
+- Follow the tutorial on Python in Google Colab for the Applied Text Mining course: [link](https://robertab.nl/applied_tm/Python_in_Google_Colab_Applied_Text_Mining.html)
 
 - Python For Beginners
     - <a href="https://www.python.org/about/gettingstarted/">https://www.python.org/about/gettingstarted/</a>
