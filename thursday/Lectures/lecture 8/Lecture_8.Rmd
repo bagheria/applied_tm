@@ -33,7 +33,7 @@ library(kableExtra)
 
 <hr align=left width="90%" color=#987cb9 size=3>
 
-Nice story for older children.
+"Nice story for older children."
 
 <span style="color:green">+ Funny</span>
 
@@ -52,11 +52,11 @@ Which of the following sentences express sentiment? If so, which is their polari
 
 - There was an earthquake in Japan
 
-- They said it would be a great experience
+- They said it would be a great experience...
 
-  - They said it would be a great experience. And yes it was!
+  - ...And yes it was!
   
-  - They said it would be a great experience. However, I didn't have fun.
+  - ...However, I didn't have fun.
 
 - Go read the book
 
@@ -64,15 +64,15 @@ Which of the following sentences express sentiment? If so, which is their polari
 
 ## Sentiment
 
-- Sentiment =
+- **Sentiment =**
 
   - Feelings, Attitudes, Emotions
 
   - A thought, view, or attitude, especially one based mainly on emotion instead of reason
 
-- Subjective impressions, not facts
+  - Subjective impressions, not facts
 
-- An <b>opinion</b> is a sentiment expressed about a specific target (more on this later)
+- **Opinion =** a sentiment expressed about a specific target (more on this later)
 
 <!--
 ## Webster's dictionary
@@ -119,7 +119,6 @@ include_graphics("img/page 9.png")
 - Subjectivity analysis (objective vs subjective text)
 - Sarcasm/Irony detection
 - Hate-speech detection
-- Reputation analysis
 
 ## Sentiment analysis 
 
@@ -135,116 +134,99 @@ include_graphics("img/page 9.png")
   - <em>Healthcare</em>: are patients *happy* with the hospital environment?
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
+- **Regular opinions**: an evaluation of a target entity
+  - e.g., “The *touch screen* is really cool.”
   
-- <span style="color:red">Comparative opinions</span>: <span style="color:blue">?</span>
+- **Comparative opinions**: Comparison of more than one entity. 
+
+  - e.g., “iPhone *is better than* Blackberry.”
 
 ## Opinion types
-- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
-  
-  - “The <span style="color:blue">touch screen<span> is really cool.”
-  
-- <span style="color:red">Comparative opinions</span>: Comparison of more than one entity. 
+- **Regular opinions**: an evaluation of a target entity, stated either explicitly (direct) or implied through a statement (indirect)
 
-  - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
-
-## Opinion types
-- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
+  - **Direct opinions**: 
+    - e.g., “The *touch screen* is really cool.”
   
-  - <span style="color:blue">Direct opinions</span>: 
-    
-    - “The <span style="color:blue">touch screen<span> is really cool.”
-  
-  - <span style="color:blue">Indirect opinions</span>: 
-    
-    - <span style="color:blue">Example?</span>
-
-- <span style="color:red">Comparative opinions</span>: Comparison of more than one entity. 
-
-  - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
-
-## Opinion types
-- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
-  
-  - <span style="color:blue">Direct opinions</span>: 
-    
-    - “The <span style="color:blue">touch screen<span> is really cool.”
-  
-  - <span style="color:blue">Indirect opinions</span>: 
-    
-    - “After taking <span style="color:blue">the drug</span>, my pain has gone.” 
-
-- <span style="color:red">Comparative opinions</span>: Comparison of more than one entity. 
-
-  - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
-
-## Opinion types
-- <span style="color:red">Regular opinions</span>: an evaluation of a target entity, stated either explicitly (direct) or implied through a stated fact (indirect)
-  
-  - <span style="color:blue">Direct opinions</span>: 
-    
-    - “The <span style="color:blue">touch screen<span> is really cool.”
-  
-  - <span style="color:blue">Indirect opinions</span>: 
-    
-    - “After taking <span style="color:blue">the drug</span>, my pain has gone.” 
+  - **Indirect opinions**: 
+    - e.g., “After taking *the drug*, my pain has gone.” 
       
       - <span style="color:green">Positive</span> or <span style="color:red">negative</span>? About what/whom?
 
-- <span style="color:red">Comparative opinions</span>: Comparison of more than one entity. 
+- **Comparative opinions**: Comparison of more than one entity. 
 
-  - E.g., “iPhone <span style="color:blue">is better than</span> Blackberry.”
+  - e.g., “iPhone *is better than* Blackberry.”
 
 ## Practical definition
-- An opinion is a quintuple <br>
-  <br>
-	(<em><span style="color:red">entity</span>, <span style="color:red">aspect</span>, <span style="color:blue">sentiment</span>, <span style="color:green">holder</span>, <span style="color:brown">time</span></em>) <br> <br> where 
+- An **opinion** is a quintuple:
+
+  - *entity*: target entity (or object).
   
-  - <span style="color:red; font-weight:bold; font-style:italic">entity</span>: target entity (or object).
+  - *aspect*: aspect (or feature) of the entity.
   
-  - <span style="color:red; font-weight:bold; font-style:italic">aspect</span>: aspect (or feature) of the entity.
+  - *sentiment*: +, -, or neutral, a rating, or an emotion. 
   
-  - <span style="color:blue; font-weight:bold; font-style:italic">sentiment</span>: +, -, or neu, a rating, or an emotion. 
+  - *holder*: opinion holder. 
   
-  - <span style="color:green; font-weight:bold; font-style:italic">holder</span>: opinion holder. 
-  
-  - <span style="color:brown; font-weight:bold; font-style:italic">time</span>: time when the opinion was expressed. 
-  
+  - *time*: time when the opinion was expressed. 
+
+
+## Revisiting The Little Prince example
+
+<div style="float: left; width: 60%;">
+"This is a nice book for both young and old. It gives beautiful life lessons in a fun way. Definitely worth the money!"
+
+<span style="color:green">+ Educational</span>
+
+<span style="color:green">+ Fun</span>
+
+<span style="color:green">+ Price</span>
+
+<hr align=left width="90%" color=#987cb9 size=3>
+
+"Nice story for older children."
+
+<span style="color:green">+ Funny</span>
+
+<span style="color:red">- Readability</span>
+</div>
+
+<div style="float: right; width: 40%;">
+```{r, echo=FALSE, out.width="90%"}
+include_graphics("img/page3_littleprince.png")
+```
+</div>
+
 ## Sentiment analysis tasks
-- Simplest task:
+- **Simplest task**:
   - Is this text positive or negative?
 
-- More complex:
+- **More complex**:
   - Is this text positive, negative or neutral?
   - Label this text from 1 to 5
 
-- Advanced:
+- **Advanced**:
   - Detect the entity, aspect, sentiment, holder and time
   - Implicit opinions
 
 ## Document sentiment analysis
-- <span style="color:red">Classify a document</span> (e.g., a review) based on the overall sentiment of the opinion holder <span style="font-size:16px"></span>
-  - <span style="font-size:18px"><span style="color:blue">Classes</span>: Positive, negative (possibly neutral)</span>
-    - <b>Neutral</b> means no sentiment expressed
-    - "I believe he went home yesterday."
-    - "I bought an iPhone yesterday"
+- Classify a document (e.g., a review) based on the overall sentiment of the opinion holder
+  - Classes: Positive, negative, and neutral
+  - Essentially a text classification problem.
     
-- <span style="color:blue">An example review</span>: 
-  -  <span style="font-size:18px;font-style:italic">“I bought an iPhone a few days ago. It is such a nice phone, although a little large. The touch screen is cool. The voice quality is great too. I simply love it!”</span>
-  -  <span style="font-size:18px"><span style="color:blue">Classification</span>: positive or negative?</span>
-- <span style="color:red">It is basically a text classification problem</span>
+- An example review: 
+  -  *“I bought an iPhone a few days ago. It is such a nice phone, although a little large. The touch screen is cool. The voice quality is great too. I simply love it!”*
 
 ## Sentence sentiment analysis
-- <span style="color:red; font-size: 22px">Classify the sentiment expressed in a sentence </span>
-  - <span style="color:blue">Classes</span>: positive, negative (possibly neutral) 
+- Classify the sentiment expressed in a sentence
+  - Classes: positive, negative, and neutral
 
-- <span style="color:red; font-size:22px">But bear in mind</span>
-  - <span style="color:blue">Explicit opinion</span>: “I like this car.” 
-  - <span style="color:blue">Fact-implied (indirect) opinion</span>: “I bought this car yesterday and it broke today.”
-  - <span style="color:blue;font-weight:bold">Mixed opinion</span>: “Apple is doing well in this poor economy”
+- But bear in mind:
+  - *Explicit opinion*: “I like this car.” 
+  - *Implied (indirect) opinion*: “I bought this car yesterday and it broke today.”
+  - *Mixed opinion*: “Apple is doing well in this poor economy”
 
 ## Challenges
-- <span style="color:blue">Think Pair Share</span>
+- What challenges do you think we will face in sentiment analysis?
 
 ## Challenges
 - Hard to do with *bag of words*
@@ -252,25 +234,28 @@ include_graphics("img/page 9.png")
 - Must consider other features due to…
   - Subtlety of sentiment expression
     - irony 
-    (<span style="color:blue">What a great car, it stopped working on the second day.</span>)
+    (*"What a great car, it stopped working on the second day."*)
     - expression of sentiment using neutral words 
-    (<span style="color:blue">The concert didn't meet my expectations.</span>)
+    (*"The concert didn't meet my expectations."*)
   
   - Domain/context dependence
-    - words/phrases can mean different things in different contexts and domains (<span style="color:blue">long queue vs long battery life</span>)
+    - words/phrases can mean different things in different contexts and domains (*"long queue" vs "long battery life"*)
   
-  - Effect of syntax on semantics (<span style="color:blue">Negation</span>)
+  - Effect of syntax on semantics (*Negation*)
 
 ## Methods for sentiment analysis
 
 - **Lexicon-based methods**
-  - Dictionary based: Using sentiment words and phrases (e.g., good, wonderful, awesome, troublesome, cost an arm and leg)
+  - Dictionary based: Using sentiment words and phrases (e.g., "good", "wonderful", "awesome", "troublesome", "cost an arm and leg")
   - Corpus-based: Using co-occurrence statistics or syntactic patterns embedded in text corpora
-  <!-- - <span style="color:red">Not completely unsupervised!</span> -->
 
 - **Supervised learning methods**: to classify reviews into positive and negative.
   - Traditional Machine Learning: Naïve Bayes, Support Vector Machine
   - Deep learning: pretrained language models fine-tuned on labeled sentiment data (e.g., BERT, GPT)
+
+- **Prompt-based methods**:
+  - Use large language models (LLMs) to classify sentiment by providing a prompt and asking the model to generate a response.
+  - More to come later in the course.
   
 # Lexicon-based Methods
 
@@ -322,45 +307,45 @@ knitr::include_graphics(c("img/AFINN.png"))
 
 - Example: “He is brilliant but boring”
 
-  - Sentiment(‘brilliant’) = +4
-  - Sentiment(‘boring’) = -2
+  - Sentiment("brilliant") = +4
+  - Sentiment("boring") = -2
   - Overall sentiment = +2
 
-- <span style="color:red">Limitation</span>: naive summation treats both words as equally important, but "but" signals that the second clause should dominate (see VADER's *conjunction* heuristic, next)
+- <span style="color:red">Limitation</span>: naive summation treats both words as equally important, but "but" signals that what comes after should dominate
 
 ## LIWC (Linguistic Inquiry and Word Count) | Tausczik and Pennebaker (2010)
-- 2,300 words, >70 classes
+- 2,300 words, >70 classes, based on psychological theory and research
 
-- <b>Affective Processes</b>
-  - negative emotion (bad, weird, hate, problem, tough)
-  - positive emotion (love, nice, sweet)
+- **Affective Processes**
+  - negative emotion ("bad", "weird", "hate", "problem", "tough")
+  - positive emotion ("love", "nice", "sweet")
 
-- <b>Cognitive Processes</b>
-  - Tentative (maybe, perhaps, guess), Inhibition (block, constraint)
+- **Cognitive Processes**
+  - Tentative ("maybe", "perhaps", "guess"), Inhibition ("block", "constraint")
 
-- <b>Pronouns, Negation</b> (<em>no, never</em>), <b>Quantifiers</b> (<em>few, many</em>)
+- **Pronouns, Negation** ("no", "never"), **Quantifiers** ("few", "many")
 
 ## VADER Sentiment Analysis | Hutto and Gilbert (2014)
 
-- VADER (Valence Aware Dictionary and sEntiment Reasoner) is a lexicon and rule-based sentiment analysis tool designed specifically for social media text. Contains a pre-built lexicon of words that are associated with sentiment scores ranging from -4 to +4
+- VADER (**V**alence **A**ware **D**ictionary and s**E**ntiment **R**easoner) is a lexicon and rule-based sentiment analysis tool designed specifically for social media text. Contains a pre-built lexicon of words that are associated with sentiment scores ranging from -4 to +4
 
 - Five generalizable heuristics based on grammatical and syntactical cues:
 
-  - <em>Punctuation</em>: “The food here is good<span style="color:red">!!!</span>” vs “The food here is good.”
-  - <em>Capitalization</em>: “The food here is <span style="color:red">GREAT</span>!” vs “The food here is great!”
-  - <em>Degree modifiers</em>: “The service here is <span style="color:red">extremely</span> good” vs “The service here is good”
-  - <em>The conjunction “but”</em>: “The food here is great, <span style="color:red">but</span> the service is horrible” has mixed sentiment
-  - <em>For negation</em> examine the tri-gram preceding a sentiment lexical feature: “<span style="color:red">The food here isn’t</span> really all that great”
+  - **Punctuation**: “The food here is good **!!!**” vs “The food here is good.”
+  - **Capitalization**: “The food here is **GREAT**!” vs “The food here is great!”
+  - **Degree modifiers**: “The service here is **extremely** good” vs “The service here is good”
+  - **The conjunction “but”**: “The food here is great, **but** the service is horrible” has mixed sentiment
+  - **For negation**: examine the tri-gram preceding a sentiment lexical feature: “The food **here isn’t that** great”
   
 ## SentiWordNet | Esuli and Sebastiani (2006)
 - https://github.com/aesuli/SentiWordNet
 
 - All WordNet synsets automatically annotated for degrees of positivity, negativity, and objectivity
 
-- [estimable(J,3)] “may be computed or estimated”  <br>
-	$$\operatorname{Pos\ \  0\ \ \  Neg\ \  0\ \ \  Obj\ \ 1} $$
-- [estimable(J,1)] “deserving of respect or high regard” 
+- **estimable(J,1)**: “deserving of respect or high regard” 
 	$$\operatorname{Pos\ \  .75\ \ \  Neg\ \  0\ \ \  Obj\ \ .25} $$
+- **estimable(J,3)**: “may be computed or estimated”
+	$$\operatorname{Pos\ \  0\ \ \  Neg\ \  0\ \ \  Obj\ \ 1} $$
 
 <!-- ## Disagreements between polarity lexicons -->
 
@@ -481,23 +466,28 @@ knitr::include_graphics(c("img/AFINN.png"))
 
 <!-- $$PMI(X,Y)=log_2{\frac{P(x,y)}{P(x)P(y)}}$$ -->
 
-- <b>PMI between two words</b>:
+- **PMI between two words**:
   - How much more do two words co-occur than if they were independent?
+- **Positive PMI (> 0)**: x and y co-occur more often than expected.
+- **PMI = 0**: They are independent.
+- **Negative PMI (< 0)**: They co-occur less often than expected.
 
 ```{r, echo=FALSE, out.width="100%"}
 include_graphics("img/PMI.png")
 ```
 
-<!--
-$$PMI(word_1,woprd_2)=log_2{\frac{P(word_1,word_2)}{P(word_1)P(word_2)}}$$
--->
 \newpage
 
 ## How to estimate PMI
+```{r, echo=FALSE, out.width="100%"}
+include_graphics("img/PMI.png")
+```
+
 <!-- - Query search engine  (Altavista) -->
 - P(word) estimated by \ \ \ \     ``hits(word)/N``
 - P(word1,word2) by \ \ \ \ ``hits(word1 NEAR word2)/N^2``
 
+## How to estimate PMI
 ```{r, echo=FALSE, out.width="100%"}
 include_graphics("img/PMI1.png")
 ```
@@ -535,7 +525,7 @@ $$
 
 ## Lexicon-based methods in summary 
 
-- Intuition
+- **Intuition**
   - Start with a seed set of words (“good”, “poor”)
   - Find other words that have similar polarity:
     - Using “and” and “but”
@@ -544,18 +534,17 @@ $$
     - Using rules based on punctuation, emoticons
 
 ## Lexicon-based methods in summary (contd)
-- Advantages and Disadvantages:
-  - <span style="color:blue">Think Pair Share</span>
+- What are the advantages and disadvantages?
 
 ## Lexicon-based methods in summary (contd)
-- Advantages:
+- **Advantages**:
   - Can be domain-independent with general purpose lexicons
   - Can become domain-dependent
-  - Can be easy to rationalise prediction output
+  - Can be easy to interpret/explain prediction output
   - Can be applied when no training data is available
-- Disadvantages:
+- **Disadvantages**:
   - Compared to a well-trained, in-domain ML model they typically underperform
-  - Sensitive to affective dictionary coverage
+  - Sensitive to dictionary coverage
 
 # Supervised Methods
 
@@ -579,7 +568,7 @@ $$
 <div style="float:left;width:55%">
 - Deal with HTML and XML markup
 
-- Twitter mark-up (names, hash tags)
+- X/Twitter mark-up (names, hash tags)
 
 - Capitalization (preserve for words in all caps)
 
@@ -606,29 +595,20 @@ include_graphics("img/pagee 58.png")
 
 - But:
 
-  - objective (pos) and objection (neg) -> object
+  - "objective" (pos) and "objection" (neg) -> "object"
 
-  - competence (pos) and compete (neg) -> compet
+  - "competence" (pos) and "compete" (neg) -> "compet"
   
 ## Features for supervised learning
 - The problem has been studied by numerous researchers.
 
-- <span style="color:red">Key</span>: feature engineering. A large set of features have been tried by researchers. E.g., 
-  - <span style="color:blue">Terms frequency and different IR weighting schemes</span>
+- **Key:** feature engineering. A large set of features have been tried by researchers. E.g., 
+  - <span style="color:blue">Terms frequency and different weighting schemes</span>
   - <span style="color:blue">Part of speech (POS) tags</span>
   - <span style="color:blue">Opinion words and phrases</span>
   - <span style="color:blue">Negations</span>
   - <span style="color:blue">Stylistic</span>
   - <span style="color:blue">Syntactic dependency</span>
-
-<!-- ## Extracting features for sentiment classification -->
-<!-- - How to handle negation -->
-
-<!--   - I didn’t like this movie -->
-<!--    <br>vs<br> -->
-<!--   - I really like this movie -->
-
-<!-- - Which features to use? -->
 
     
 ## Negation
@@ -661,8 +641,8 @@ include_graphics("img/page 60.png")
 ## Challenges of negation
 
 - "terrible" vs "wasn’t terrible" 
-  - The movie was terrible
-  - The movie was bad but wasn't that terrible as they said
+  - *The movie was terrible*
+  - *The movie was bad but wasn't that terrible as they said*
 
 - The degree of the intensity shift varies from term to term for both positive and negative terms
 
@@ -672,9 +652,9 @@ include_graphics("img/page 60.png")
 - For negation: estimate sentiment scores of individual terms in the presence of negation
 - One lexicon for words in negated contexts and one for words in affirmative 
 
-## Supervised sentiment analysis | Kiritchenko et al. (2014)
+<!-- ## Supervised sentiment analysis | Kiritchenko et al. (2014)
 
-- Features: 
+- **Features**: 
   - ngrams 
   - character ngrams
   - all-caps: the number of tokens with all characters in upper case
@@ -683,7 +663,7 @@ include_graphics("img/page 60.png")
   - sentiment lexicons
   - the number of hashtags, punctuation, emoticons,  elongated words
 
-- Classifier: linear-kernel SVM
+- **Classifier**: linear-kernel SVM -->
 
 ## Supervised sentiment analysis | Kiritchenko et al. (2014)
 
@@ -706,15 +686,17 @@ include_graphics("img/Kiritchenko2014.png")
 
 ## Sentiment-specific word embedding | Tang et al. (2014)
 
-- Continuous word representations model the syntactic context of words but ignore the sentiment of text
+- Word embedding models learn the syntactic context of words but ignore the sentiment of text
 
-- Good vs bad: They will be represented as neighboring word vectors
+- Example: 
+  - "good" and "bad" will be represented as neighboring word vectors
+  - "good" and "excellent" will be represented as more distant word vectors
 
-- Solution: Learn sentiment specific word embedding, which encodes sentiment information in the continuous representation of words
+- Solution: Learn sentiment specific word embedding
 
 ## Word vector refinement | Yu et al. (2017)
 - Start with a set of pre-trained word vectors and a sentiment lexicon
-- Calculate the semantic similarity between each sentiment word and the other words in the     lexicon based on the cosine distance of their pre-trained vectors
+- Calculate the semantic similarity between each sentiment word and the other words in the lexicon based on the cosine distance of their pre-trained vectors
 - Select top-k most similar words as the nearest neighbors and re-rank according to sentiment scores
 
 <div width:100%">
@@ -801,7 +783,7 @@ include_graphics("img/race.png")
 
 ## Bias in sentiment analysis
 
-What about biases in LLMs?
+What about biases in sentiment classification models?
 
 - DistilBERT base uncased finetuned SST-2:
   - "This movie was filmed in France" -> ?
@@ -809,7 +791,7 @@ What about biases in LLMs?
 
 ## Bias in sentiment analysis
 
-What about biases in LLMs?
+What about biases in sentiment classification models?
 
 - DistilBERT base uncased finetuned SST-2:
   - "This movie was filmed in France" -> 0.89
@@ -836,8 +818,8 @@ From Aurélien Géron [colab](https://colab.research.google.com/gist/ageron/fb2f
  - Bias
 
 ## Resources
-- Crawl your own data from Twitter:
-  - https://developer.twitter.com/en/docs/twitter-api
+- Crawl your own data from X/Twitter:
+  - https://docs.x.com/overview
 
 - SemEval Datasets: 2012-now
   - https://semeval.github.io/
@@ -868,8 +850,6 @@ From Aurélien Géron [colab](https://colab.research.google.com/gist/ageron/fb2f
   - https://www.liwc.app/
 - Bing Liu 
   - https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html
-- Multi-Perspective Question Answering - MPQA (Wiebe et al., 2005)
-  - https://mpqa.cs.pitt.edu/lexicons/subj_lexicon/
 - SentiWordNet (Esuli and Sebastiani, 2006)
   - https://github.com/aesuli/SentiWordNet
 - NRC Lexicons
@@ -877,9 +857,8 @@ From Aurélien Géron [colab](https://colab.research.google.com/gist/ageron/fb2f
 - AFFINN (Nielsen, 2011)
   - https://github.com/fnielsen/afinn
   
-## Tutorials
+## Tutorial
 - <a href = "https://huggingface.co/blog/sentiment-analysis-python">Sentiment analysis in huggingface </a>
-- <a href = "https://towardsdatascience.com/sentiment-analysis-in-10-minutes-with-bert-and-hugging-face-294e8a04b671"> Sentiment analysis with BERT </a>
 
 ## References
 
