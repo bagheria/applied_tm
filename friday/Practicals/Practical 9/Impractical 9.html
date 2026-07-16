@@ -7482,19 +7482,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Practical-9:-LLMs-pre-training,-prompting,-&amp;-learning-from-human-feedback">Practical 9: LLMs pre-training, prompting, &amp; learning from human feedback<a class="anchor-link" href="#Practical-9:-LLMs-pre-training,-prompting,-&amp;-learning-from-human-feedback">¶</a></h1><p>Dong Nguyen</p>
-<p>Applied Text Mining - Utrecht Summer School</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Settings">Settings<a class="anchor-link" href="#Settings">¶</a></h1><p>To run this notebook, use GPU or TPU. In Google Colab, select T4. ('<strong>Change runtime type</strong>').</p>
+<h1 id="Settings">Settings<a class="anchor-link" href="#Settings">¶</a></h1><p>To run this notebook, use GPU. In Google Colab, select T4. ('<strong>Change runtime type</strong>').</p>
 <p>We're going to use the Hugging Face Transformers library, which is a very popular Python library/platform for working with language models.
 See more at <a href="https://huggingface.co/docs/transformers/en/index">https://huggingface.co/docs/transformers/en/index</a></p>
 </div>
@@ -7524,7 +7512,8 @@ See more at <a href="https://huggingface.co/docs/transformers/en/index">https://
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>transformers
-<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span><span class="nv">datasets</span><span class="o">==</span><span class="m">2</span>.15.0
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>datasets
+<span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>accelerate
 </pre></div>
 </div>
 </div>
@@ -7537,8 +7526,8 @@ See more at <a href="https://huggingface.co/docs/transformers/en/index">https://
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Phi-3-mini-4k-instruct">Phi-3-mini-4k-instruct<a class="anchor-link" href="#Phi-3-mini-4k-instruct">¶</a></h1><p>The model below loads in a pre-trained LLM (Phi-3-mini-4k-instruct; 3.8B).</p>
-<p>Take a look at <a href="https://huggingface.co/microsoft/Phi-3-mini-4k-instruct">https://huggingface.co/microsoft/Phi-3-mini-4k-instruct</a> to read more about Phi-3-mini-4k-instruct.</p>
+<h1 id="Qwen/Qwen3-1.7B">Qwen/Qwen3-1.7B<a class="anchor-link" href="#Qwen/Qwen3-1.7B">¶</a></h1><p>The model below loads in a pre-trained LLM (Qwen/Qwen3-1.7B).</p>
+<p>Take a look at <a href="https://huggingface.co/Qwen/Qwen3-1.7B">https://huggingface.co/Qwen/Qwen3-1.7B</a> to learn more.</p>
 <p><strong>Tip:</strong> Run the code below (which can take a few - 10 minutes), and look at the
 webpage in between.</p>
 </div>
@@ -7554,14 +7543,18 @@ webpage in between.</p>
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
 
-<span class="c1"># Load model and tokenizer</span>
+<span class="n">MODEL_NAME</span> <span class="o">=</span> <span class="s2">"Qwen/Qwen3-1.7B"</span>
+
+<span class="c1"># load the tokenizer (the tokenizer chops up text and maps it into numbers)</span>
+<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="n">MODEL_NAME</span><span class="p">)</span>
+
+<span class="c1"># Load the language model.</span>
+<span class="c1"># device_map="auto" automatically chooses the right device (e.g. CPU, GPU, TPU)</span>
 <span class="n">model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
-    <span class="s2">"microsoft/Phi-3-mini-4k-instruct"</span><span class="p">,</span>
-    <span class="n">device_map</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">,</span>  <span class="c1"># store the model on GPU</span>
-    <span class="n">torch_dtype</span><span class="o">=</span><span class="s2">"auto"</span><span class="p">,</span>  <span class="c1"># automatically determines the best data type</span>
-    <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">MODEL_NAME</span><span class="p">,</span>
+    <span class="n">torch_dtype</span><span class="o">=</span><span class="s2">"auto"</span><span class="p">,</span>
+    <span class="n">device_map</span><span class="o">=</span><span class="s2">"auto"</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="n">tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">"microsoft/Phi-3-mini-4k-instruct"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7577,13 +7570,13 @@ webpage in between.</p>
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">pipeline</span>
 
+<span class="n">MODEL_NAME</span> <span class="o">=</span> <span class="s2">"Qwen/Qwen3-1.7B"</span>
+
 <span class="n">generator</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span>
     <span class="s2">"text-generation"</span><span class="p">,</span>
-    <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
-    <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
-    <span class="n">return_full_text</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
-    <span class="n">do_sample</span><span class="o">=</span><span class="kc">False</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">MODEL_NAME</span><span class="p">,</span>
+    <span class="n">device_map</span><span class="o">=</span><span class="s2">"auto"</span><span class="p">,</span>
+    <span class="n">torch_dtype</span><span class="o">=</span><span class="s2">"auto"</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -7629,12 +7622,40 @@ webpage in between.</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Experiment with the following:</strong></p>
 <ul>
-<li><code>return_full_text</code> controls whether the input prompt is returned as well.
- Experiment with <code>True</code> and <code>False</code>.</li>
 <li><code>max_new_tokens</code> The number of maximum tokens to generate. Experiment with different values.</li>
 <li>Different prompts. Experiment with both factual and more subjective questions.</li>
 <li>Experiment with deterministic generation (<code>do_sample=False</code>) and non-deterministic generation (<code>do_sample=True</code>). When you do sample, you can also set the temperature parameter. Try out different values.</li>
+<li>Experiment with and without <code>no_think</code> to disable/enable thinking</li>
 </ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Subjective prompts, for example: "How are you feeling?", "What is the most beautiful name in the world?"</span>
+<span class="c1">## Factual prompts: "What is 5 + 5?", "How many people live in the Netherlands?"</span>
+<span class="n">generator</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span>
+    <span class="s2">"text-generation"</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+    <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
+    <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span>
+    <span class="n">do_sample</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1">## apply sampling</span>
+    <span class="n">temperature</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"/no_think What is 5 + 5?"</span><span class="p">}</span>
+<span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">generator</span><span class="p">(</span><span class="n">messages</span><span class="p">))</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -7656,7 +7677,8 @@ webpage in between.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>With the system message we can set the overall behavior of the model.</p>
+<p>With the system message we can set the overall behavior of the model.
+We'll use <code>no_think</code> for now to keep it simple/faster</p>
 </div>
 </div>
 </div>
@@ -7670,9 +7692,9 @@ webpage in between.</p>
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Respond as if you're a 15-year old girl named Lisa, who loves thrillers."</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"What is your favorite movie?"</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"/no_think What is your favorite movie?"</span><span class="p">}</span>
 <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">generator</span><span class="p">(</span><span class="n">messages</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'generated_text'</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">generator</span><span class="p">(</span><span class="n">messages</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"generated_text"</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">"content"</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -7688,9 +7710,9 @@ webpage in between.</p>
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"You're a 50-year-old man named Dave, who has a dry sense of humor and loves sci-fi movies."</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"What is your favorite movie?"</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"/no_think What is your favorite movie?"</span><span class="p">}</span>
 <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">generator</span><span class="p">(</span><span class="n">messages</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'generated_text'</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">generator</span><span class="p">(</span><span class="n">messages</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"generated_text"</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">"content"</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -7706,9 +7728,9 @@ webpage in between.</p>
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"You are a high school teacher."</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Explain photosynthesis to 13 year old. "</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"/no_think Explain photosynthesis to 13 year old. "</span><span class="p">}</span>
 <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">generator</span><span class="p">(</span><span class="n">messages</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'generated_text'</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">generator</span><span class="p">(</span><span class="n">messages</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"generated_text"</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">"content"</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -7751,9 +7773,9 @@ webpage in between.</p>
     <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"You are a helpful assistant."</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Who wrote 'Pride and Prejudice'?"</span><span class="p">},</span>
     <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"assistant"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"Jane Austen wrote 'Pride and Prejudice'."</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"What else did she write?"</span><span class="p">}</span>
+    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"/no_think Name two other books by her"</span><span class="p">}</span>
 <span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">generator</span><span class="p">(</span><span class="n">messages</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'generated_text'</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">generator</span><span class="p">(</span><span class="n">messages</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"generated_text"</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="s2">"content"</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -7803,7 +7825,11 @@ webpage in between.</p>
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
 
 <span class="c1"># Load a sentiment dataset, only the first 10 instances</span>
-<span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">"glue"</span><span class="p">,</span> <span class="s2">"sst2"</span><span class="p">,</span> <span class="n">split</span><span class="o">=</span><span class="s2">"validation[:10]"</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span>
+    <span class="n">path</span><span class="o">=</span><span class="s2">"nyu-mll/glue"</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s2">"sst2"</span><span class="p">,</span>
+    <span class="n">split</span><span class="o">=</span><span class="s2">"validation[:10]"</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="c1"># Pipeline for zero-shot prompting</span>
 <span class="n">classification_generator</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span>
@@ -7852,25 +7878,30 @@ webpage in between.</p>
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Format and run examples</span>
-<span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
     <span class="n">text</span> <span class="o">=</span> <span class="n">example</span><span class="p">[</span><span class="s2">"sentence"</span><span class="p">]</span>
-    <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""### Instruction:</span>
-<span class="s2">Is the sentence below Positive or Negative? Only answer with Positive or Negative.</span>
 
-<span class="s2">### Text:</span>
-<span class="s2">"</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span>
-
-<span class="s2">### Sentiment:"""</span>
     <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
-      <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}</span>
-  <span class="p">]</span>
+    <span class="p">{</span>
+        <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span>
+        <span class="s2">"content"</span><span class="p">:</span> <span class="p">(</span>
+            <span class="s2">"/no_think "</span>
+            <span class="s2">"You are a sentiment classifier. "</span>
+            <span class="s2">"Respond with exactly one word: Positive or Negative."</span>
+        <span class="p">),</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span>
+        <span class="s2">"content"</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">]</span>
 
+    <span class="n">result</span> <span class="o">=</span> <span class="n">classification_generator</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
 
-    <span class="n">output</span> <span class="o">=</span> <span class="n">classification_generator</span><span class="p">(</span><span class="n">messages</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">'generated_text'</span><span class="p">]</span>
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"generated_text"</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Text: </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Predicted Sentiment: </span><span class="si">{</span><span class="n">output</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"---"</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Predicted sentiment: </span><span class="si">{</span><span class="n">prediction</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"#######"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7885,6 +7916,43 @@ webpage in between.</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Exercise</strong>
 Experiment with different prompts, for example, you can ask for an explanation</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">example</span> <span class="ow">in</span> <span class="n">dataset</span><span class="p">:</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">example</span><span class="p">[</span><span class="s2">"sentence"</span><span class="p">]</span>
+
+    <span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"system"</span><span class="p">,</span>
+        <span class="s2">"content"</span><span class="p">:</span> <span class="p">(</span>
+            <span class="s2">"/no_think "</span>
+            <span class="s2">"You are a sentiment classifier. "</span>
+            <span class="s2">"Respond first with Positive or Negative. Then provide a shrot explanation"</span>
+        <span class="p">),</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span>
+        <span class="s2">"content"</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">]</span>
+
+    <span class="n">result</span> <span class="o">=</span> <span class="n">classification_generator</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+
+    <span class="n">prediction</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">"generated_text"</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Text: </span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Predicted sentiment: </span><span class="si">{</span><span class="n">prediction</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"#######"</span><span class="p">)</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -7976,19 +8044,6 @@ Experiment with uncommon words, misspelled words, dialect words, or word that do
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="If-you-have-the-time:-experiment-with-another-model">If you have the time: experiment with another model<a class="anchor-link" href="#If-you-have-the-time:-experiment-with-another-model">¶</a></h1><p>You can experiment with the <code>HuggingFaceTB/SmolLM3-3B</code> model,
-which was very recently released <a href="https://huggingface.co/HuggingFaceTB/SmolLM3-3B">https://huggingface.co/HuggingFaceTB/SmolLM3-3B</a>.
-Note that <em>extended thinking</em> is enabled by default, whichgenerates the output with a reasoning trace.</p>
-</div>
-</div>
-</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7997,57 +8052,7 @@ Note that <em>extended thinking</em> is enabled by default, whichgenerates the o
 <div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">import</span> <span class="nn">gc</span>
-
-<span class="c1"># if you run into out of memory error, you can either restart the notebook</span>
-<span class="c1"># and just load this model, explicitly delete the previous model</span>
-<span class="c1"># from memory</span>
-
-<span class="c1"># del model</span>
-<span class="c1"># del tokenizer</span>
-<span class="c1"># del generator</span>
-<span class="c1">#gc.collect()</span>
-<span class="c1">#torch.cuda.empty_cache()</span>
-<span class="c1">#print(torch.cuda.memory_allocated())</span>
-
-
-<span class="c1"># Load model and tokenizer</span>
-<span class="n">smol_model</span> <span class="o">=</span> <span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span>
-    <span class="s2">"HuggingFaceTB/SmolLM3-3B"</span><span class="p">,</span>
-    <span class="n">device_map</span><span class="o">=</span><span class="s2">"cuda"</span><span class="p">,</span>  <span class="c1"># store the model on GPU</span>
-    <span class="n">torch_dtype</span><span class="o">=</span><span class="s2">"auto"</span><span class="p">,</span>  <span class="c1"># automatically determines the best data type</span>
-    <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="p">)</span>
-<span class="n">smol_tokenizer</span> <span class="o">=</span> <span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">"HuggingFaceTB/SmolLM3-3B"</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">smol_generator</span> <span class="o">=</span> <span class="n">pipeline</span><span class="p">(</span>
-    <span class="s2">"text-generation"</span><span class="p">,</span>
-    <span class="n">model</span><span class="o">=</span><span class="n">smol_model</span><span class="p">,</span>
-    <span class="n">tokenizer</span><span class="o">=</span><span class="n">smol_tokenizer</span><span class="p">,</span>
-    <span class="n">return_full_text</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">max_new_tokens</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
-    <span class="n">do_sample</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="c1">## apply sampling</span>
-<span class="p">)</span>
-
-<span class="n">messages</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">"role"</span><span class="p">:</span> <span class="s2">"user"</span><span class="p">,</span> <span class="s2">"content"</span><span class="p">:</span> <span class="s2">"How are you?"</span><span class="p">}</span>
-<span class="p">]</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">smol_generator</span><span class="p">(</span><span class="n">messages</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 </div>
 </div>
